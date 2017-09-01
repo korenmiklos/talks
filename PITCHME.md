@@ -4,10 +4,12 @@ Direction:
 Emphatizing:
 Motivation: 
 
+---
 Onboarding proces
 -----------------
 discuss roles and responsibilities with new hires, set up check-in meetings for the first six months, and match new hires with a peer buddy
 
+---
 New teams process
 -----------------
 - Each team shall craft a statement of purpose.
@@ -15,6 +17,7 @@ New teams process
 - Each team creates a knowledge base on how to serve.
 - Regular meetings with boss and primary and secondary assignments.
 
+---
 Teams
 -----
 - student helpdesk
