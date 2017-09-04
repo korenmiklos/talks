@@ -13,20 +13,15 @@
 # Teams
 +++
 ![Teams](https://raw.githubusercontent.com/korenmiklos/talks/staff-meeting/ECOBUS-teams.svg?sanitize=true)
-+++
-- student helpdesk
-- faculty helpdesk
-- academic cooperation
-- external relation
-- operations
-+++
 
++++
 ## Student Helpdesk
 ### Lead
 Kati
 ### Members
-Anita, Corinne, Eszter F, Verka, Zsuzsa
+Anita, Corinne, Eszter F, Verka, Zsuzsa (2)
 ### Main tasks
+Student files, registration, grades, theses
 
 +++
 ## Faculty Helpdesk
@@ -43,23 +38,25 @@ Márta
 ### Members
 Andrea, Lilla (2), Melinda (2)
 ### Main tasks
-
+Seminar schedules, incoming and outgoing faculty and student travel
 
 +++
 ## External Relations
 ### Lead
 Kati
 ### Members
-Zsuzsa, Ági, Verka
+Zsuzsa, Ági (2), Verka (2)
 ### Main tasks
+Website, social media, alumni and corporate relations
 
 +++
 ## Operations
 ### Lead
 Miklós
 ### Members
-Ági, Éva, Kati, Márta
+Ági, Eszter R, Éva, Kati, Márta
 ### Main tasks
+Scheduling, room booking, contracting
 
 ---
 # Work processes
@@ -83,13 +80,7 @@ Miklós
 ---
 # Next steps
 +++
-- Each team crafts a statement of purpose.
-- Each team creates a knowledge base on how to serve.
+- Each team crafts a statement of purpose. (Mission: what we do. Purpose: why we do it.)
+- Each team creates a knowledge base on how to serve this purpose.
 - Regular meetings with lead and primary and secondary assignments.
 
----
-# Questions
-- business vs other students
-- weekends
-- docs or Dropbox or o or one drive
-- Podio for student helpdesk 
