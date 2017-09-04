@@ -1,3 +1,7 @@
+# Department of Economics and Business
+## Staff Meeting
+## September 4, 2017
+---
 
 # Purpose
 +++
@@ -8,6 +12,8 @@
 ---
 # Teams
 +++
+![Teams](https://raw.githubusercontent.com/korenmiklos/talks/staff-meeting/ECOBUS-teams.svg?sanitize=true)
++++
 - student helpdesk
 - faculty helpdesk
 - academic cooperation
@@ -16,6 +22,15 @@
 +++
 Each team reports to a single person.
 Has primary and secondary assignments.
+
+---
+# Work processes
++++
+## Communication
++++
+## Sharing
++++
+## Feedback
 
 ---
 # Next steps
@@ -36,3 +51,9 @@ Onboarding proces
 -----------------
 discuss roles and responsibilities with new hires, set up check-in meetings for the first six months, and match new hires with a peer buddy
 
+---
+# Questions
+- business vs other students
+- weekends
+- docs or Dropbox or o or one drive
+- Podio for student helpdesk 
