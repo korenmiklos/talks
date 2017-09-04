@@ -1,4 +1,4 @@
-# Department of Economics and Business
+## Department of Economics and Business
 ## Staff Meeting
 ## September 4, 2017
 ---
@@ -20,36 +20,72 @@
 - external relation
 - operations
 +++
-Each team reports to a single person.
-Has primary and secondary assignments.
+
+## Student Helpdesk
+### Lead
+Kati
+### Members
+Anita, Corinne, Eszter F, Verka, Zsuzsa
+### Main tasks
+
++++
+## Faculty Helpdesk
+### Lead
+Márta
+### Members
+Lilla, Melinda
+### Main tasks
+
++++
+## Academic Cooperation
+### Lead
+Márta
+### Members
+Andrea, Lilla (2), Melinda (2)
+### Main tasks
+
+
++++
+## External Relations
+### Lead
+Kati
+### Members
+Zsuzsa, Ági, Verka
+### Main tasks
+
++++
+## Operations
+### Lead
+Miklós
+### Members
+Ági, Éva, Kati, Márta
+### Main tasks
 
 ---
 # Work processes
 +++
 ## Communication
+- Slack: ceueconomics.slack.com
+- Use the designated channels.
+
 +++
 ## Sharing
+- Use one of
+	1. Dropbox
+	2. O: drive
+	3. Google Drive (Docs + Spreadsheet)
+	4. Microsoft OneDrive
+- Never attachment in email.
+
 +++
 ## Feedback
 
 ---
 # Next steps
 +++
-- Each team shall craft a statement of purpose.
-	- propose metrics
+- Each team crafts a statement of purpose.
 - Each team creates a knowledge base on how to serve.
-- Regular meetings with boss and primary and secondary assignments.
-
-
-Pep speech
-----------
-Direction:
-Emphatizing:
-Motivation: 
-
-Onboarding proces
------------------
-discuss roles and responsibilities with new hires, set up check-in meetings for the first six months, and match new hires with a peer buddy
+- Regular meetings with lead and primary and secondary assignments.
 
 ---
 # Questions
