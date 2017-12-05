@@ -1,11 +1,11 @@
-# CEU MicroData
 ![](https://github.com/korenmiklos/talks/raw/pydata/decal.png)
----
 
+---
 ## Kik vagyunk?
 - A CEU Közgazdaságtan és Üzleti Gazdaságtan Tanszékének kutatócsoportja.
 - Vállalati és dolgozói mikroadatokat elemzünk a gazdasági hálózatok és a tudásáramlás megértéséhez.
 - 2012 óta. 
+
 ---
 ## Csapat
 - Eddig 45 kutató, elemző, diák, fejlesztő fordult meg a MicroDatában.
@@ -13,16 +13,13 @@
 ![](https://github.com/korenmiklos/talks/raw/pydata/team.png)
 - Gyakori cserélődés.
 
-## Partnerek
-+++
-![](http://microdata.io/img/partners/logo_ceu.jpg)
-
+---
 # Projektek
----
-- 
 
-# Eszközök
+
 ---
+# Eszközök
++++
 ## Kezdetben
 - postgres
 - /db
