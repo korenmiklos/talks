@@ -1,4 +1,4 @@
-![](https://github.com/korenmiklos/talks/raw/pydata/decal.png)
+![CEU MicroData](https://github.com/korenmiklos/talks/raw/pydata/decal.png)
 
 ---
 ## Kik vagyunk?
@@ -15,6 +15,10 @@
 
 ---
 # Projektek
++++
+![kozbeszerzes.ceu.hu](https://github.com/korenmiklos/talks/raw/pydata/kozbeszerzes3.png)
++++
+![Supplier Survey](https://github.com/korenmiklos/talks/raw/pydata/suppliersurvey.png)
 
 
 ---
@@ -24,9 +28,10 @@
 - postgres
 - /db
 - saját orchestration eszköz
+
 +++
 ## Manapság
 - csv
-- python: `['pandas', 'petl', 'numpy', 'csvtools / csvkit', 'Bs4' 'matpotlib']`
+- python: `['pandas', 'petl', 'numpy', 'csvtools / csvkit', 'Bs4' 'matpotlib', 'scikit-learn', 'networkx', 'parsley']` + sok saját fejlesztés
 - statisztikai elemzés: Stata, R
-- kísérlet: docker
+- kísérlet: docker, neo4j, spark
