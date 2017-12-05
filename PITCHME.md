@@ -9,9 +9,8 @@
 ---
 ## Csapat
 - Eddig 45 kutató, elemző, diák, fejlesztő fordult meg a MicroDatában.
-- Egy korábbi csoportkép:
++++
 ![](https://github.com/korenmiklos/talks/raw/pydata/team.png)
-- Gyakori cserélődés.
 
 ---
 # Projektek
@@ -35,3 +34,8 @@
 - python: `['pandas', 'petl', 'numpy', 'csvtools / csvkit', 'Bs4' 'matpotlib', 'scikit-learn', 'networkx', 'parsley']` + sok saját fejlesztés
 - statisztikai elemzés: Stata, R
 - kísérlet: docker, neo4j, spark
+
+---
+# Elérhetőség
+- github.com/ceumicrodata
+- facebook.com/CEUMicroData
