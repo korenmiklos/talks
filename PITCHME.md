@@ -1,4 +1,4 @@
-![CEU MicroData](https://github.com/korenmiklos/talks/raw/pydata/decal.png)
+---?image=https://github.com/korenmiklos/talks/raw/pydata/decal.png&size=auto
 
 ---
 ## Kik vagyunk?
@@ -9,15 +9,12 @@
 ---
 ## Csapat
 - Eddig 45 kutató, elemző, diák, fejlesztő fordult meg a MicroDatában.
-+++
-![](https://github.com/korenmiklos/talks/raw/pydata/team.png)
++++?image=https://github.com/korenmiklos/talks/raw/pydata/team.png&size=auto
 
 ---
 # Projektek
-+++
-![kozbeszerzes.ceu.hu](https://github.com/korenmiklos/talks/raw/pydata/kozbeszerzes3.png)
-+++
-![Supplier Survey](https://github.com/korenmiklos/talks/raw/pydata/suppliersurvey.png)
++++?image=https://github.com/korenmiklos/talks/raw/pydata/kozbeszerzes3.png&size=auto
++++?image=https://github.com/korenmiklos/talks/raw/pydata/suppliersurvey.png&size=auto
 
 
 ---
