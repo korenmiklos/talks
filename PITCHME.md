@@ -36,6 +36,48 @@
 - kísérlet: docker, neo4j, spark
 
 ---
+## Kézműves eszközök
+- címparszoló
+- magyarnév-parszoló
+- cégkereső
+- szervezetkereső
+
++++
+## Néhány tipikus cégnév
+- `VASI PEGAZUS Személyszállító, Áruszállító és Távközlési Betéti Társaság`
+- `Dr. Ecsedi és Társa Háziorvosi Betéti Társaság`
+- `SEC Trading Kft.`
+- `LUBAVI Korlátolt Felelősségű Tárasaság`
+- `PARADISO VENDÉGLÁTÓ Korlátolt Felelősségű Társaság "kényszertörlés alatt"`
+
++++
+## Néhány tipikus szervezetnév
+- `Budapest V. Kerület Belváros-lipótváros Önkormányzat Napközi Otthonos Óvoda`
+- `Általános Iskola`
+- `"Baglyaskő" Idősek Otthona`
+- `Halásztelki Bolgár Nemzetiségi Önkormányzat`
+- `Általános Iskola És Napköziotthonos Ovoda Közös Igazgatásu Közoktatási Intézmény Dunaszentbenedek`
+
++++
+### `pir_search`
+```
+ORG_TYPE = any_of(
+    group(
+        'bolcsode',
+        WORD_START + 'bölcsőd[eé]'),
+    group(
+        'ovoda',
+        any_of(
+            'napközi ?otthonos óvod[aá]',
+            'óvod[aá]')),
+
+    group(
+        'altalanosiskola',
+        any_of(
+            'általános iskol',
+            'általános és' + JUNK_WORDS + 'iskol')),...
+```
+---
 # Elérhetőség
 - github.com/ceumicrodata
 - facebook.com/CEUMicroData
