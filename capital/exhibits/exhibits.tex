@@ -1,0 +1,364 @@
+\documentclass[10pt]{beamer}
+%\documentclass[notes=show, 10pt]{beamer}
+%\documentclass[handout,notes=hide, 10pt]{beamer}
+
+\mode<presentation>
+{
+  \usetheme{default}
+  \useinnertheme{circles}
+  \setbeamercovered{transparent}
+}
+\usepackage{amsmath}
+\usepackage[latin2]{inputenc}
+\usepackage[magyar]{babel}
+\usepackage{graphicx}
+
+\newcommand{\directory}{figures}
+\newcommand*{\newtitle}{\egroup\begin{frame}\frametitle}
+
+\newcommand{\fullpagefigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[height=0.9\textheight]{\directory/#1}\end{center}}}\end{frame}}
+\newcommand{\widefigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[width=\linewidth]{\directory/#1}\end{center}}}\end{frame}}
+\newcommand{\longfigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[height=0.8\textheight]{\directory/#1}\end{center}}}\end{frame}}
+
+
+
+\title{Exhibits}
+\subtitle {}
+\author{}
+\date{\today}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}[plain]
+    \frametitle{\color{red}\insertsection}
+    \addtocounter{framenumber}{-1}
+    %\tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{{}\hfill\insertframenumber}
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    \addtocounter{framenumber}{-1}
+\end{frame}
+
+
+\begin{frame}{Investment descriptives}
+Investment rate statistics shown here always exclude the first year of the firm, because there $I_t$ equals $K_t$ by construction.
+\medskip
+\begin{itemize}
+	\item "Table II" on three samples
+	\begin{enumerate}
+		\item manufacturing firms, excl. small firms (mean $L < 10$); manuf firm: being in manuf in min 1 year between 1992 and 2003
+		\item non-machine manufacturing, excl. small firms
+		\item non-machine manuf, all firm sizes
+	\end{enumerate}
+	\item histogram of investment flow/stock
+  	\begin{itemize}
+  		\item these are based on winsorized IRs, for all firm sizes in non-machine manufacturing
+  		\item total, domestic, imported, and lumpy vs non-lumpy imported IRs
+  		\item A firm-product dyad is lumpy if i. it is mainly reported in countable units in the import statistics, ii. its median price $>$ 2500 USD, and iii. the product is not classified as parts by BEC.
+  		\item lumpy and non-lumpy IR distributions are compared both on the whole sample and without inaction observations
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{"Table II": Investment rate (${I_t}/{K_t}$) statistics}
+\begin{table}
+\vspace{0.3cm} \renewcommand{\baselinestretch}{1.2} \vspace{0.3cm} \scriptsize \centering
+    \begin{tabular}{lccc}
+    \hline \hline
+	& Manufacturing & Non-machine manuf & Non-machine manuf \\
+	& 10+ employees & 10+ employees & all firm sizes \\
+	\hline
+	Average IR & 0.321 & 0.270 & -0.132 \\
+	Average IR (winsor. 0.01) & 0.378 & 0.335 & 0.338 \\
+	Median IR & 0.291 & 0.260 & 0.247 \\
+	Inaction (\%) & 5.9   & 6.4   & 13.3 \\
+	Positive investment (\%) & 85.9  & 85.0  & 77.0 \\
+	Negative investment (\%) & 8.1   & 8.6   & 9.8 \\
+	Positive spike (\%) & 59.9  & 56.9  & 54.1 \\
+	Negative spike (\%) & 3.7   & 3.8   & 5.1 \\
+	\hline
+	Observations &   75,281    &   57,607    &  137,508    \\
+	\hline \hline
+	\multicolumn{4}{l}{%
+	\begin{minipage}{9cm}
+			\scriptsize Notes: Inaction: abs(IR)$<$0.01, Positive spike: IR$>$0.2, Negative spike: IR$<$-0.2. All samples exclude the first year of firms, where  $I_t$ equals $K_t$ by construction.%
+	\end{minipage}%
+	}\\
+\end{tabular}%
+\renewcommand{\baselinestretch}{1.62}\normalsize \setlength{\baselineskip}{0.65\baselineskip}
+\end{table}
+\end{frame}
+
+\longfigure{IR_dist_tot}{Investment Rate distribution}
+\longfigure{IR_dist_dom}{Domestic IR distribution}
+\longfigure{IR_dist_imp}{Imported IR distribution}
+\longfigure{IR_dist_lumpiness}{Imported IR distribution - lumpy vs non-lumpy}
+\longfigure{IR_dist_lumpiness_na}{Imported IR distribution - lumpy vs non-lumpy, without inaction}
+
+\begin{frame}{Event studies around large imports}
+\begin{itemize}
+	\item Machine producers import much more machines than non-machine producers. They partly use machines as intermediates inputs.
+\begin{table}
+	\renewcommand{\baselinestretch}{1.2}  \scriptsize \centering
+	\begin{tabular}{lcccc}
+		\hline \hline
+		  & mean & median & stdev & N \\ \hline
+		Machine producers & 779.6 & 7.3   & 14213.0 & 19,138 \\
+		Non-machine producers & 48.6  & 2.4   & 370.6 & 34,729 \\
+		\hline \hline
+		\multicolumn{5}{l}{%
+			\begin{minipage}{7cm}
+				\scriptsize Notes: Non-zero imports (in million HUF) of machines and parts.%
+			\end{minipage}%
+		}\\
+	\end{tabular}%
+	\renewcommand{\baselinestretch}{1.62}\normalsize \setlength{\baselineskip}{0.65\baselineskip}
+\end{table}
+\bigskip
+	\item Define import$>$2.5 million HUF as an import peak and observe around this peak how capital stock and material use change within the firm.
+	\item Event study graphs are normalized to event year -1
+\end{itemize}
+\end{frame}
+
+\longfigure{ES_import_lnK}{Capital stock around import peaks}
+\longfigure{ES_import_ln_K_L}{Capital intensity around import peaks}
+\longfigure{ES_import_lnM}{Material use around import peaks}
+\longfigure{ES_import_ln_M_L}{Material intensity around import peaks}
+
+\begin{frame}{Event studies around large investments}
+\begin{itemize}
+	\item These event studies are based on a sample of non-machine producers of all sizes.
+	\item Peak if net investment $>$ 2.5 million HUF
+	\item Domestic versus import
+	\item Lumpy import versus nonlumpy import
+	\item Same-sized shock to lnK between year -1 and year 0 is enforced pairwise
+\end{itemize}
+\end{frame}
+
+\longfigure{ES_lnK}{Capital stock around investment peaks (dom vs imp)}
+\longfigure{ES_lumpy_lnK}{Capital stock around investment peaks (lumpy vs nonlumpy)}
+\longfigure{ES_TFP}{TFP around investment peaks (dom vs imp)}
+\longfigure{ES_lumpy_TFP}{TFP around investment peaks (lumpy vs nonlumpy)}
+\longfigure{ES_ln_K_L}{Capital intensity around investment peaks (dom vs imp)}
+\longfigure{ES_lumpy_ln_K_L}{Capital intensity around investment peaks (lumpy vs nonlumpy)}
+\longfigure{ES_ln_M_L}{Material intensity around investment peaks (dom vs imp)}
+\longfigure{ES_lumpy_ln_M_L}{Material intensity around investment peaks (lumpy vs nonlumpy)}
+\longfigure{ES_matimpshare}{Material import intensity around investment peaks (dom vs imp)}
+\longfigure{ES_lumpy_matimpshare}{Material import intensity around investment peaks (lumpy vs nonlumpy)}
+\longfigure{ES_ln_wage}{Average wage around investment peaks (dom vs imp)}
+\longfigure{ES_lumpy_ln_wage}{Average wage around investment peaks (lumpy vs nonlumpy)}
+
+\begin{frame}{Hazard and IV exhibits}
+\begin{itemize}
+	\item These regressions are run on a sample of non-machine producers of all sizes.
+	\item The sample excludes firstyear importer firms.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{First-stage regression}
+\begin{table}
+	\renewcommand{\baselinestretch}{1.2}  \scriptsize \centering
+    \begin{tabular}{lcc}
+	\hline \hline
+	Depvar: having imported (dummy) &  Pooled     &  Firm FE \\
+	\hline
+	cdtariffeu X size 0-10 & -0.017*** & 0.009* \\
+	& (0.001) & (0.005) \\
+	cdtariffeu X size 10-50 & -0.026*** & -0.001 \\
+	& (0.001) & (0.005) \\
+	cdtariffeu X size 50+ & -0.046*** & -0.019*** \\
+	& (0.002) & (0.005) \\
+	lnK   & 0.048*** & 0.027*** \\
+	& (0.002) & (0.001) \\
+	lnM   & 0.018*** & 0.007*** \\
+	& (0.001) & (0.001) \\
+	lnL   & 0.008** & 0.018*** \\
+	& (0.003) & (0.003) \\
+	foreign (dummy) & 0.321*** & 0.149*** \\
+	& (0.011) & (0.022) \\
+	size dummies & yes   & yes \\
+	age dummies & yes   & yes \\
+	industry x year effects & yes   &  \\
+	year effects &       & yes \\
+	Observations & 102,516 & 102,516 \\
+	R-squared & 0.296 & 0.211 \\
+	Number of id &       & 17,736 \\
+	F-test & 239.1 & 91.74 \\
+	\hline \hline
+\multicolumn{3}{l}{%
+	\begin{minipage}{7cm}
+		\scriptsize Notes: Robust standard errors (clustered by industry) are in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1%
+	\end{minipage}%
+}\\
+\end{tabular}%
+\renewcommand{\baselinestretch}{1.62}\normalsize \setlength{\baselineskip}{0.65\baselineskip}
+\end{table}
+\end{frame}
+
+
+
+\begin{frame}{IV results on productivity: TFP}
+\begin{table}
+	\renewcommand{\baselinestretch}{1.2}  \scriptsize \centering
+	\begin{tabular}{lcccc}
+		\hline \hline
+		Depvar: lnY & \multicolumn{2}{c}{Pooled} & \multicolumn{2}{c}{Firm FE} \\ 
+		& OLS   & IV    & OLS   & IV \\ \hline
+		having imported (dummy) & 0.199*** & 0.263*** & 0.086*** & 0.781*** \\
+		& (0.015) & (0.075) & (0.012) & (0.112) \\
+		lnK   & 0.132*** & 0.129*** & 0.092*** & 0.073*** \\
+		& (0.005) & (0.006) & (0.004) & (0.005) \\
+		lnM   & 0.413*** & 0.412*** & 0.297*** & 0.292*** \\
+		& (0.009) & (0.010) & (0.010) & (0.010) \\
+		lnL   & 0.299*** & 0.299*** & 0.364*** & 0.353*** \\
+		& (0.010) & (0.010) & (0.010) & (0.010) \\
+		foreign (dummy) & 0.161*** & 0.140*** & 0.091** & -0.033 \\
+		& (0.023) & (0.034) & (0.043) & (0.047) \\
+		size dummies & yes   & yes   & yes   & yes \\
+		age dummies & yes   & yes   & yes   & yes \\
+		industry x year effects & yes   & yes   &       &  \\
+		year effects &       &       & yes   & yes \\
+		Observations & 102,516 & 102,516 & 102,516 & 102,516 \\
+		R-squared & 0.771 & 0.771 & 0.545 & 0.503 \\
+		Number of id &       &       & 17,736 & 17,736 \\
+	\hline \hline
+\multicolumn{5}{l}{%
+	\begin{minipage}{8cm}
+		\scriptsize Notes: Robust standard errors (clustered by industry) are in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1%
+	\end{minipage}%
+}\\
+\end{tabular}%
+\renewcommand{\baselinestretch}{1.62}\normalsize \setlength{\baselineskip}{0.65\baselineskip}
+\end{table}
+\end{frame}
+
+
+\begin{frame}{IV results on productivity: capital intensity}
+\begin{table}
+	\renewcommand{\baselinestretch}{1.2}  \scriptsize \centering
+	\begin{tabular}{lcccc}
+		\hline \hline
+		Depvar: ln K/L & \multicolumn{2}{c}{Pooled} & \multicolumn{2}{c}{Firm FE} \\ 
+		& OLS   & IV    & OLS   & IV \\ \hline
+    	having imported (dummy) & 0.748*** & 0.555*** & 0.403*** & 0.902*** \\
+		& (0.023) & (0.126) & (0.022) & (0.200) \\
+		foreign (dummy) & 0.143*** & 0.212*** & -0.007 & -0.096 \\
+		& (0.038) & (0.060) & (0.081) & (0.088) \\
+		size dummies & yes   & yes   & yes   & yes \\
+		age dummies & yes   & yes   & yes   & yes \\
+		industry x year effects & yes   & yes   &       &  \\
+		year effects &       &       & yes   & yes \\
+		Observations & 102,516 & 102,516 & 102,516 & 102,516 \\
+		R-squared & 0.153 & 0.151 & 0.080 & 0.066 \\
+		Number of id &       &       & 17,736 & 17,736 \\
+		\hline \hline
+		\multicolumn{5}{l}{%
+			\begin{minipage}{8cm}
+				\scriptsize Notes: Robust standard errors (clustered by industry) are in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1%
+			\end{minipage}%
+		}\\
+	\end{tabular}%
+	\renewcommand{\baselinestretch}{1.62}\normalsize \setlength{\baselineskip}{0.65\baselineskip}
+\end{table}
+\end{frame}
+
+\begin{frame}{IV results on complementarity: material intensity}
+\begin{table}
+	\renewcommand{\baselinestretch}{1.2}  \scriptsize \centering
+	\begin{tabular}{lcccc}
+		\hline \hline
+    	Depvar: ln M/L & \multicolumn{2}{c}{Pooled} & \multicolumn{2}{c}{Firm FE} \\
+		& OLS   & IV    & OLS   & IV \\ \hline
+		having imported (dummy) & 0.542*** & 0.706*** & 0.206*** & 1.218*** \\
+		& (0.021) & (0.119) & (0.020) & (0.185) \\
+		foreign (dummy) & -0.032 & -0.091* & 0.109 & -0.072 \\
+		& (0.037) & (0.055) & (0.073) & (0.078) \\
+		size dummies & yes   & yes   & yes   & yes \\
+		age dummies & yes   & yes   & yes   & yes \\
+		industry x year effects & yes   & yes   &       &  \\
+		year effects &       &       & yes   & yes \\
+		Observations & 102,516 & 102,516 & 102,516 & 102,516 \\
+		R-squared & 0.161 & 0.159 & 0.056 & 0.007 \\
+		Number of id &       &       & 17,736 & 17,736 \\
+		\hline \hline
+		\multicolumn{5}{l}{%
+			\begin{minipage}{8cm}
+				\scriptsize Notes: Robust standard errors (clustered by industry) are in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1%
+			\end{minipage}%
+		}\\
+	\end{tabular}%
+	\renewcommand{\baselinestretch}{1.62}\normalsize \setlength{\baselineskip}{0.65\baselineskip}
+\end{table}
+\end{frame}
+
+\begin{frame}{IV results on complementarity: material import intensity}
+\begin{table}
+	\renewcommand{\baselinestretch}{1.2}  \scriptsize \centering
+	\begin{tabular}{lcccc}
+		\hline \hline
+    	Depvar: matimpshare & \multicolumn{2}{c}{Pooled} & \multicolumn{2}{c}{Firm FE} \\
+		& OLS   & IV    & OLS   & IV \\ \hline
+		having imported (dummy) & 0.127*** & 0.110*** & 0.042*** & 0.148*** \\
+		& (0.005) & (0.026) & (0.004) & (0.034) \\
+		foreign (dummy) & 0.138*** & 0.144*** & 0.032** & 0.014 \\
+		& (0.009) & (0.013) & (0.014) & (0.015) \\
+		size dummies & yes   & yes   & yes   & yes \\
+		age dummies & yes   & yes   & yes   & yes \\
+		industry x year effects & yes   & yes   &       &  \\
+		year effects &       &       & yes   & yes \\
+		Observations & 102,516 & 102,516 & 102,516 & 102,516 \\
+		R-squared & 0.186 & 0.186 & 0.010 & -0.023 \\
+		Number of id &       &       & 17,736 & 17,736 \\
+		\hline \hline
+		\multicolumn{5}{l}{%
+			\begin{minipage}{8cm}
+				\scriptsize Notes: Robust standard errors (clustered by industry) are in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1%
+			\end{minipage}%
+		}\\
+	\end{tabular}%
+	\renewcommand{\baselinestretch}{1.62}\normalsize \setlength{\baselineskip}{0.65\baselineskip}
+\end{table}
+\end{frame}
+
+\begin{frame}{IV results on complementarity: average wage}
+\begin{table}
+	\renewcommand{\baselinestretch}{1.2}  \scriptsize \centering
+	\begin{tabular}{lcccc}
+		\hline \hline
+    	Depvar: ln wage & \multicolumn{2}{c}{Pooled} & \multicolumn{2}{c}{Firm FE} \\
+		& OLS   & IV    & OLS   & IV \\ \hline
+		having imported (dummy) & 0.151*** & 0.586*** & 0.089*** & 0.796*** \\
+		& (0.009) & (0.049) & (0.009) & (0.090) \\
+		foreign (dummy) & 0.280*** & 0.125*** & 0.089** & -0.037 \\
+		& (0.017) & (0.024) & (0.036) & (0.041) \\
+		size dummies & yes   & yes   & yes   & yes \\
+		age dummies & yes   & yes   & yes   & yes \\
+		industry x year effects & yes   & yes   &       &  \\
+		year effects &       &       & yes   & yes \\
+		Observations & 102,516 & 102,516 & 102,516 & 102,516 \\
+		R-squared & 0.463 & 0.417 & 0.587 & 0.523 \\
+		Number of id &       &       & 17,736 & 17,736 \\
+		\hline \hline
+		\multicolumn{5}{l}{%
+			\begin{minipage}{8cm}
+				\scriptsize Notes: Robust standard errors (clustered by industry) are in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1%
+			\end{minipage}%
+		}\\
+	\end{tabular}%
+	\renewcommand{\baselinestretch}{1.62}\normalsize \setlength{\baselineskip}{0.65\baselineskip}
+\end{table}
+\end{frame}
+
+\longfigure{hist_impstock}{Import share in capital sock}
+
+\end{document}
