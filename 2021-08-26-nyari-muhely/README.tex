@@ -1,32 +1,36 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[ignorenonframetext,aspectratio=16,]{beamer}
+\documentclass[
+  ignorenonframetext,
+  aspectratio=16,
+]{beamer}
 \usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
 \beamertemplatenavigationsymbolsempty
-% Prevent slide breaks in the middle of a paragraph:
+% Prevent slide breaks in the middle of a paragraph
 \widowpenalties 1 10000
 \raggedbottom
 \setbeamertemplate{part page}{
-\centering
-\begin{beamercolorbox}[sep=16pt,center]{part title}
-  \usebeamerfont{part title}\insertpart\par
-\end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
 }
 \setbeamertemplate{section page}{
-\centering
-\begin{beamercolorbox}[sep=12pt,center]{part title}
-  \usebeamerfont{section title}\insertsection\par
-\end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
 }
 \setbeamertemplate{subsection page}{
-\centering
-\begin{beamercolorbox}[sep=8pt,center]{part title}
-  \usebeamerfont{subsection title}\insertsubsection\par
-\end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
 }
 \AtBeginPart{
   \frame{\partpage}
@@ -43,37 +47,42 @@
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-            pdftitle={The Death and Life of Great British Cities},
-            pdfauthor={Heblich, Nagy and Trew; Discussion by Miklós Koren},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+  pdftitle={The Death and Life of Great British Cities},
+  pdfauthor={Heblich; Nagy; Trew},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \newif\ifbibliography
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -82,16 +91,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{pgfpages}
 \usepackage{microtype}
 
@@ -152,15 +159,17 @@
 \providecommand{\exhibit}[2]{\includegraphics[keepaspectratio, height=0.9\textheight, width=\textwidth]{assets/img/#1}\\ {\tiny #2}}
 
 \title{The Death and Life of Great British Cities}
-\author{Heblich, Nagy and Trew \and Discussion by Miklós Koren}
-\date{}
+\author{Heblich \and Nagy \and Trew}
+\date{Discussion by Miklós Koren}
 
 \begin{document}
 \frame{\titlepage}
 
+\hypertarget{broader-points}{%
+\section{Broader points}\label{broader-points}}
+
 \begin{frame}{One-page summary}
 \protect\hypertarget{one-page-summary}{}
-
 Use 200 years of data from England and Wales.
 
 Large, contiguous plots of land around the city are associated with:
@@ -172,56 +181,77 @@ Large, contiguous plots of land around the city are associated with:
 \item
   fast population growth earlier, decline later
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Broader comments}
 \protect\hypertarget{broader-comments}{}
-
 Economies of scale, scope and density are most interesting in economics.
 
 Big shifts in sectoral specialization, population, productivity and
 economic geography likely related.
 
 Spatial macroeconomics is promising not only for historical development.
-
 \end{frame}
 
-\begin{frame}{One point about empirics}
-\protect\hypertarget{one-point-about-empirics}{}
+\hypertarget{one-point-about-empirics}{%
+\section{One point about empirics}\label{one-point-about-empirics}}
 
+\begin{frame}{One point about empirics}
+\protect\hypertarget{one-point-about-empirics-1}{}
 Meanshift algorithm clusters points in multidimensional space.
 
 \includegraphics{clusters.png}
 
 \begin{block}{But}
-
+\protect\hypertarget{but}{}
 Much depends on relative weights of other dimensions; need to know more.
 
 Very few spatial data is truly raster; often based on vectoral data; can
 be misleading.
-
 \end{block}
-
 \end{frame}
 
 \begin{frame}{Example: WorldPop raster}
 \protect\hypertarget{example-worldpop-raster}{}
-
 \includegraphics{raster.png}
-
 \end{frame}
 
 \begin{frame}{Example: OpenStreetMap vector}
 \protect\hypertarget{example-openstreetmap-vector}{}
-
 \includegraphics{vector.png}
-
 \end{frame}
 
-\begin{frame}{One point about theory}
-\protect\hypertarget{one-point-about-theory}{}
+\begin{frame}{This is a problem for all top-down datasets}
+\protect\hypertarget{this-is-a-problem-for-all-top-down-datasets}{}
+\includegraphics{topdown.jpg}
+\end{frame}
 
+\hypertarget{one-point-about-theory}{%
+\section{One point about theory}\label{one-point-about-theory}}
+
+\begin{frame}{One point about theory}
+\protect\hypertarget{one-point-about-theory-1}{}
+This is a reversal of fortune story. These stories are challenging for
+neoclassical economics for two reasons:
+
+\begin{enumerate}
+\tightlist
+\item
+  contradict perfect foresight
+\item
+  contradict free disposal
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Why are some cities bad that used to be good?}
+\protect\hypertarget{why-are-some-cities-bad-that-used-to-be-good}{}
+\begin{enumerate}
+\tightlist
+\item
+  myopia or externalities
+\item
+  adjustment costs, irreversbilities, non-convexities
+\end{enumerate}
 \end{frame}
 
 \end{document}
