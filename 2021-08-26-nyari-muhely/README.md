@@ -4,11 +4,16 @@ author:
 	- Heblich
 	- Nagy
 	- Trew
+	- Zylberberg
 date: Discussion by Miklós Koren
 aspectratio: 16
 ---
 
-# Broader points
+## Outline
+1. One-page summary
+2. Broader comments
+3. One point about empirics
+4. One point about theory
 
 ## One-page summary
 Use 200 years of data from England and Wales. 
@@ -54,4 +59,6 @@ This is a reversal of fortune story. These stories are challenging for neoclassi
 
 ## Why are some cities bad that used to be good?
 1. myopia or externalities
-2. adjustment costs, irreversbilities, non-convexities
+2. adjustment costs, irreversibilities, non-convexities
+	- more relevant for heavy industry
+	- potentially relevant for spatial development
