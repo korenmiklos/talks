@@ -128,9 +128,7 @@ firm,manager,country,from,to
 * **CONTROL${}^k$**: one of the three ($k=1,2,3$)
 * **lnL**: log employment
 * **lnQL**: log output per worker
-* **TFP\_cd**: TFP (simple Cobb--Douglas)
 * **exporter**: firm has positive exports
-* **RperK**: share of immaterial assets in total [0,1]
 
 
 ## Estimating equations
