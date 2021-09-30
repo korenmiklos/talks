@@ -20,27 +20,18 @@ aspectratio: 16
 
 ## Research question
 * What role do expatriate managers play in foreign direct investment?
-* Do they improve firm performance?
-* Do they facilitate trade with their "home country"?
+    * Do they improve firm performance?
+    * Do they facilitate trade with their "home country"?
+* What role for personal connections and face-to-face meetings in globalization?
 
-# Data
-## Data
-* Administrative data on *all* Hungarian corporations, 1992--2018.
-* Financial data, trade transactions (1992--2003)
-
-
-
-
-# Motivation
-## Motivation
-Why and how do firms produce abroad?
-
+## Related to four strands of literature
 1. What are the boundaries of (global) firms?
 2. Foreign owned firms perform better than domestic firms
-3. Managers matter
+3. Management/managers matter
+4. Personal networks matter
 
 
-## What are the boundaries of (global) firms?
+## Degrees of control between/within firms
 \begin{tikzpicture}
 \node (a) at (0,0) {arm's length};
 \node (b) at (3,0) {relational};
@@ -48,21 +39,6 @@ Why and how do firms produce abroad?
 \node (d) at (9,0) {management};
 \graph { (a) -> (b) -> (c) -> (d)};
 \end{tikzpicture}
-
-
-## Foreign owned firms perform better than domestic firms
-* US: Doms and Jensen (1998)
-* UK: Griffith (1999)
-* Hungary, Romania, Russia, Ukraine: Brown, Earle, Telegdy (2006)
-* Indonesia: Arnold and Javorcik (2009)
-
-## Managers matter
-* Good management practices  increase  productivity  (Bloom  and  Van  Reenen  2010;  Bloom  et  al.  2012;  Bloom  et  al.  2014) and market access (Bloom et al. 2016). 
-* CEOs behaving like ``leaders" gradually improve firm performance. (Bandiera, Hansen, Prat and Sadun 2018)
-* Large increase  in  the  level  and  inequality  of  CEO  pay.  (Murphy  and  Zábojník  2004;  Gabaix  and  Landier  2008;  Tervio  2008; Frydman and Saks 2010)
-* Managers have persistent effects across firms on investment policy, R\&D, advertising, return on assets.  (Bertrand and Schoar 2003)
-* Sudden CEO death worsens firm performance. (Bennedsen, Pérez-González and Wolfenzon 2007) 
-* Managers having past export experience increase likelihood of exporting (Mion and Opromolla 2014; Mion, Opromolla and Sforza 2016) and importing (Bisztray, Koren and Szeidl 2018).
 
 
 ## This paper
@@ -73,12 +49,10 @@ Why and how do firms produce abroad?
     3. hire expat CEO
 * Results:
     * Exporters and low-productivity firms become more tightly controlled. 
-    * Firms with high immaterial capital receive local managers.
-    * Foreign controlled firms become more productive and more likely to export. 
-
+    * Firms with high intangible capital receive local managers.
+    * Expat controlled firms become more productive and more likely to export (relative to other forms of control). 
 
 # Data
-
 ### Hungarian Manager Database
 * coverage: universe of corporations, 1980--2018
 * CEO: highest officer of corporation as specified in corporate law.
@@ -105,10 +79,12 @@ Why and how do firms produce abroad?
 * Allow for misspelling, omitted middle name, missing data (jr, dr)
 
 ## Shape of data
-`firm,manager,country,from,to`
-`123456,Szilágyi Erika,HU,1992-01-01,1996-12-31`
-`123456,Pálffy György,HU,1997-01-01,1999-12-31`
-`123456,Greta Schröder,DE,2000-01-01,2003-03-31`
+```
+firm,manager,country,from,to
+123456,Szilágyi Erika,HU,1992-01-01,1996-12-31
+123456,Pálffy György,HU,1997-01-01,1999-12-31
+123456,Greta Schröder,DE,2000-01-01,2003-03-31
+```
 
 ## Data cleaning
 1. Convert names to numerical IDs
@@ -117,15 +93,6 @@ Why and how do firms produce abroad?
 4. Clean up time interval and position description
 5. Create annual panel for June 21
 6. In progress: Infer ethnicity (other than Hungarian) from name
-
-## Sample
-- Exclude: 
-    - employing less than 20 people
-    - financial sector
-    - domestic firms with expat CEO
-    - greenfield FDI
-    - firms with more than 15 CEOs
-- Left with 24,500 firms
 
 # Descriptives
 ## The number of CEOs increased sharply until 2010
@@ -137,23 +104,21 @@ Why and how do firms produce abroad?
 ## Founders stay longest at the firm
 ![](figure/tenure-by-type-weighted/fig.pdf)
 
+## Sample
+- Exclude: 
+    - employing less than 20 people
+    - financial sector
+    - domestic firms with expat CEO
+    - greenfield FDI
+    - firms with more than 15 CEOs
+- Left with 24,500 firms
+
 ## Largest investment partners of Hungary 1992--2003
 ![](figure/map.png)
 
 ## Foreign owners often replace managers
 ![](figure/sample-size.png)
 
-
-
-
-## Degree of control
-\begin{tikzpicture}
-\node (a) [text width=1.5cm] at (0,0) {domestic (243,388) (22,761)};
-\node (b) [text width=1.5cm] at (3,0) {acquired (20,781) (1,770)};
-\node (c) [text width=1.5cm] at (6,0) {mgr replaced (15,784) (1,235)};
-\node (d) [text width=1.5cm] at (9,0) {expat hired (9,184) (654)};
-\graph { (a) -> (b) -> (c) -> (d)};
-\end{tikzpicture}
 
 # Estimation
 ## Variables
@@ -184,11 +149,10 @@ $$
 ## Differences in differences
 $$
 Y_{it} = \alpha_i + \nu_t + \beta \text{CONTROL}_{it} + u_{it}
-\tag{*}
 $$
 
 ### Old diff-in-diff
-Estimate (\*) by two-way fixed effects.
+Estimate by two-way fixed effects.
 
 ### New diff-in-diff
 Compute group-specific treatment effects and aggregate. (Callaway and Sant'Anna 2020)
@@ -206,8 +170,8 @@ $G_{i}$: time of treatment of unit $i$ (may be $\infty$)
 $C_{gt} = \{i: G_i > \max(g,t)\}$: control group is not yet treated
 
 $$
-\gamma_{gt} := \sum_{i: G_i=g} (Y_{it} - Y_{ig})
-- \sum_{i\in C_{gt}} (Y_{it} - Y_{ig})
+\gamma_{gt} := E_{i: G_i=g} (Y_{it} - Y_{ig})
+- E_{i\in C_{gt}} (Y_{it} - Y_{ig})
 $$
 
 Aggregate $\gamma_{gt}$ with "suitable" weights
@@ -226,16 +190,13 @@ $G_{i}^k$: time of treatment $k$ of unit $i$ (may be $\infty$)
 $C_{gt} = \{i: \min_k G_i^k > \max(g,t)\}$: control group is not yet treated with **any** of the treatments
 
 $$
-\gamma_{gt}^k := \sum_{i: G_i=g} (Y_{it} - Y_{ig})
-- \sum_{i\in C_{gt}} (Y_{it} - Y_{ig})
+\gamma_{gt}^k := E_{i: G_i=g} (Y_{it} - Y_{ig})
+- E_{i\in C_{gt}} (Y_{it} - Y_{ig})
 $$
 
 Each treatment has the **same** control group.
 
-
-## Callaway-Sant'Anna estimates
-
-## Abadie (2005)
+We also do inverse-probability weighting within control group (Abadie 2005). This helps kill pretrends.
 
 # Results
 
@@ -274,7 +235,10 @@ Each treatment has the **same** control group.
 
 
 # Market access
-## Inferring ethnicity from name
+## Market access
+Ongoing work with Krisztina Orbán and Álmos Telegdy.
+
+## Infer ethnicity from name
 \begin{tabular}{lll|ccc}
 Address & Name & Partner & \texttt{count} & \texttt{lang} & \texttt{ethn} \\
 \hline
@@ -339,30 +303,6 @@ Managers help connect different firms within their professional network.
 ### Business culture
 Managers know the business culture of their home country.
 
-## Why managers matter
-Three broader implications:
-
-1. Trade within "supply chains" larger than previously thought.
-2. Entry into new trade markets is inelastic.
-3. Experience with existing partners leads to preferential attachment.
-
-## Business network trade
-* Contrary to evidence from US, investment in Hungary leads to large increases in trade with home region.
-
-## Inelastic market entry 
-* If professional networks are hard to build, extensive margin of trade is less responsive.
-* Competitiveness leads to higher manager wages, not more entry.
-* Complementarity of trade and migration policies.
-
-## Preferential attachment 
-* It may be easier to trade with friends of friends.
-* We (will) highlight a mechanism for why that is.
-
-# Conclusions 
-## Conclusions 
-* We find firm-level evidence that the nationality and ethnicity of owners and managers matters for the direction of trade.
-* Whatever the specific mechanism, we need to model markets and individuals jointly.
-
 # Conclusions
 ## Conclusions
 * What are the causes and consequences of foreign acquisitions?
@@ -371,6 +311,3 @@ Three broader implications:
 * Foreign controlled firms become more productive and more likely to export. 
 * These facts help inform theories about the boundaries of global firms and about the role of managers in firm performance.
 
-## Next steps
-* Collect data on parent firms.
-* Build an incomplete-contract model.
