@@ -88,3 +88,17 @@ With the due differences, the Polya Index can also be applied to bilateral inves
 
 
 # Findings
+## The histogram of Polya Index
+![](../economic-diplomacy/exhibit/hist_p_all.png)
+
+## The Polya Index is stable over time
+![](../economic-diplomacy/exhibit/scatter_p_all.png)
+
+## The histogram of GDELT intent and visits
+![](../economic-diplomacy/exhibit/hist_dependent_before.png)
+
+## Trade similarity and intent to cooperate are negatively correlated for most countries
+![](../economic-diplomacy/exhibit/coefficients_intent_both_all_wofe.png)
+
+## Trade similarity and state visits are negatively correlated for most countries
+![](../economic-diplomacy/exhibit/coefficients_visits_both_all_wofe.png)

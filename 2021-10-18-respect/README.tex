@@ -82,6 +82,19 @@
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \newif\ifbibliography
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -368,5 +381,32 @@ Index for investment to be larger than its trade counterpart.
 
 \hypertarget{findings}{%
 \section{Findings}\label{findings}}
+
+\begin{frame}{The histogram of Polya Index}
+\protect\hypertarget{the-histogram-of-polya-index}{}
+\includegraphics{../economic-diplomacy/exhibit/hist_p_all.png}
+\end{frame}
+
+\begin{frame}{The Polya Index is stable over time}
+\protect\hypertarget{the-polya-index-is-stable-over-time}{}
+\includegraphics{../economic-diplomacy/exhibit/scatter_p_all.png}
+\end{frame}
+
+\begin{frame}{The histogram of GDELT intent and visits}
+\protect\hypertarget{the-histogram-of-gdelt-intent-and-visits}{}
+\includegraphics{../economic-diplomacy/exhibit/hist_dependent_before.png}
+\end{frame}
+
+\begin{frame}{Trade similarity and intent to cooperate are negatively
+correlated for most countries}
+\protect\hypertarget{trade-similarity-and-intent-to-cooperate-are-negatively-correlated-for-most-countries}{}
+\includegraphics{../economic-diplomacy/exhibit/coefficients_intent_both_all_wofe.png}
+\end{frame}
+
+\begin{frame}{Trade similarity and state visits are negatively
+correlated for most countries}
+\protect\hypertarget{trade-similarity-and-state-visits-are-negatively-correlated-for-most-countries}{}
+\includegraphics{../economic-diplomacy/exhibit/coefficients_visits_both_all_wofe.png}
+\end{frame}
 
 \end{document}
