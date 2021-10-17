@@ -1,0 +1,169 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+  aspectratio=16,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdfauthor={Matteo Fiorini; Miklós Koren; Filippo Santi; Gergő Závecz},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{pgfpages}
+\usepackage{microtype}
+\usepackage{tikz}
+  \usetikzlibrary{positioning}
+  \usetikzlibrary{arrows}
+  \usetikzlibrary{graphs}
+
+\definecolor{CTred}{RGB}{229,32,32}
+\definecolor{CTgrey}{RGB}{153,153,153}
+
+
+% colors: white text on 90% black background
+\setbeamercolor{normal text}{fg=black,bg=white}
+
+% light blue as a highlight color
+\setbeamercolor*{structure}{fg=CTred}
+\setbeamercolor{section title}{fg=CTred}
+\setbeamercolor{alerted text}{use=structure,fg=CTred}
+\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+\setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+
+\setbeamercolor*{framesubtitle}{fg=white}
+
+
+% use system fonts: here, Gill Sans
+\usefonttheme{professionalfonts}
+\setbeamerfont{quote}{shape=\upshape}
+
+% eliminate silly beamer navigation line at bottom of slides
+\setbeamertemplate{navigation symbols}{}
+
+% ensure text jusfication
+\usepackage{ragged2e}
+\justifying
+
+% pandoc makes 2nd-lever headers into blocks, and this ensures justification
+% in blocks too
+\addtobeamertemplate{block begin}{}{\justifying}
+
+
+
+
+\urlstyle{same}
+\usepackage[overlay,absolute]{textpos}
+
+\setbeamertemplate{items}[square]
+
+\TPGrid[10 mm,8 mm]{9}{8}
+% beamer's left and right margin is 10 mm. The top/bottom margin is ??
+% or without a header ??
+% the slide dimensions are 128 mm x 96 mm
+% so the resulting \TPHorizModule = 12 mm and \TPVertModule = 10 mm
+
+% uncomment if you want biblatex for citations on slides
+
+% \usepackage{csquotes}
+% \usepackage[notes,short,noibid,backend=biber]{biblatex-chicago}
+% \bibliography{course.bib} 
+
+\providecommand{\exhibit}[2]{\includegraphics[keepaspectratio, height=0.9\textheight, width=\textwidth]{assets/img/#1}\\ {\tiny #2}}
+
+\author{Matteo Fiorini \and Miklós Koren \and Filippo Santi \and Gergő
+Závecz}
+\date{RESPECT Closing Conference}
+
+\begin{document}
+
+\hypertarget{motivation}{%
+\section{Motivation}\label{motivation}}
+
+\hypertarget{data}{%
+\section{Data}\label{data}}
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+\hypertarget{findings}{%
+\section{Findings}\label{findings}}
+
+\end{document}
