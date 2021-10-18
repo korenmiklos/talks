@@ -10,8 +10,79 @@ date:
 aspectratio: 16
 ---
 # Motivation
+## Is the E.U. an "optimal trade policy union"?
+1. Measure heterogeneity in direction of trade (and investment) between Member States.
+    - comparative advantage
+    - political economy
+    - geopolitical incentives
+2. Estimate how this affects their bilateral diplomatic efforts.
+3. Develop an early warning system for which bilateral country relations are most "out-of-line" with E.U. average.
+
+## Measuring economic diplomacy
+- News mentions from Global Database of Events, Language and Tone 2015--17 (The GDELT Project 2020).
+- Actor 1, Actor 2, Type of event, Tone, Date...
+- Select: Actor 1 is government entity in EUMS, Actor 2 outside.
+    - intent to materially cooperate
+    - state visit
+    - agreement
+- Measure "intent" and "visits" at bilaterial level.
+
+## Examples of "intent to cooperate"
+![](exhibit/szijjarto.png) 
+
+## Examples of "intent to cooperate"
+Coded as 
+
+- HUN $\to$ SRB, intent (meeting took place in Budapest)
+- HUN $\to$ UKR, visit (meeting took place in Kiev)
+
+## The histogram of GDELT intent and visits
+![](../economic-diplomacy/exhibit/hist_dependent_before.png)
+
+## Gravity works for state visits
+\input{../economic-diplomacy/exhibit/results_gravity_dependent.tex}
+
+# Methods
+## Measuring dissimilarity
+- Given a metric, is a MS *different* from the E.U. average?
+    - How strongly?
+- What is the proper metric?
+    - capture incentives to deviate
+    - statistically robust
+
+## Trade shares
+$s_{ijtp}$: export share of product $p$ in trade between country $i$ and $j$ at time $t$
+
+$s_{*jtp}$: export share of product $p$ in trade between E.U. and country $j$ at time $t$
+
+All dissimilarity measures (e.g., Finger and Kreinin 1979, Krugman 1991, and Fontagné et al 2018) will be
+$$
+F(\{s_{ijtp}\}, \{s_{*jtp}\}),
+$$
+typically
+$$
+\sum_{p=1}^P f(s_{ijtp}, s_{*jtp}).
+$$
+
+## Kullback-Leibler Divergence
+Our preferred measure of difference between country-specific and EU trade shares is the Kullback-Leibler divergence (Kullback 1987, KLD henceforth), defined as
+\begin{equation}
+    \text{KLD}_{ijt} =
+    \sum_{p=1}^P
+        s_{ijtp}
+        \ln(s_{ijtp} / s_{*jtp}).
+\end{equation}
+
+- only zero if all the products have the same share, positive otherwise 
+- based on utility maximizing decision model (logit)
+
+## But this is not statistically robust
+![](../economic-diplomacy/exhibit/graph_good_total.png)
+
+Small-sample upward bias because of data sparsity (Armenter and Koren 2014)
+
 # Data
-## Trade, Investments, and additional controls
+## Trade, investments, and additional controls
 
 Export data come from COMEXT (Eurostat 2019). We use the chapter-level product distribution of bilateral exports between EUMS and their Extra-EU partners, measured between 2001 and 2017 (although most analysis uses the years 2015-17 due to unavailability of other political measures discussed below). Because we do not have access to shipment-level data, we approximate the number of shipments by dividing the value of exports by EUR 12,000, following estimates in Hornok and Koren (2015a,b).
 
@@ -38,22 +109,7 @@ The \emph{Difference in democracy} comes from the Quality of Government Basic Da
 
 # Methods
 
-## Export composition
-The exports of country $i$ to country $j$ in year $t$ is hence characterized by a sequence of shares, $s_{ijt1}, s_{ijt2}, ..., s_{ijtP}$, where $P$ is the overall number of products, with the shares summing to one, $\sum_{p=1}^P s_{ijtp}=1$. These value shares completely characterize the trade structure of a pair of countries for our purposes. We also control for the overall volume of trade.
 
-Comparing country $i$ to the EU average (denoted by $*$) amounts to comparing two sets of shares, $\{s_{ijtp}\}$ and $\{s_{*jtp}\}$. Our goal is to ask if country $i$'s trade shares are different from the EU average, and if so, to quantify the magnitude of the difference.
-
-Industry similarity indexes between regions and countries have been proposed in other contexts by Finger and Kreinin (1979), Krugman (1991), and Fontagné et al (2018). In contrast to these, our proposed index of similarity is based on an economic choice model (Anderson et al. 1992).
-
-## Kullback-Leibler Divergence
-Our preferred measure of difference between country-specific and EU trade shares is the Kullback-Leibler divergence (Kullback 1987, KLD henceforth), defined as
-\begin{equation}
-    \text{KLD}_{ijt} =
-    \sum_{p=1}^P
-        s_{ijtp}
-        \ln(s_{ijtp} / s_{*jtp}).
-\end{equation}
-This is a measure of distance between the two distributions, only taking the value zero if all the products have the same share, and positive otherwise. As mentioned above, a key benefit of this index is that it is based on utility maximizing decision model. More specifically, take a consumer with logit preferences (a standard assumption in discrete choice models) whose ideal consumption shares are given by $s_{ijt}$. If this consumer instead consumes the products in shares $s_{*jt}$, her utility will be reduced by a magnitude proportional to the KLD between $s$ and $s*$.
 
 ## The problems with sparsity
 In practice, the KLD index will never be zero, as no two countries have exactly the same product composition of exports. In order to quantitatively judge what constitutes a significant gap between the trade composition of two countries, we test whether the KLD is significantly different from zero. This is important because the KLD index will be biased upwards in small samples. 
@@ -93,12 +149,6 @@ With the due differences, the Polya Index can also be applied to bilateral inves
 
 ## The Polya Index is stable over time
 ![](../economic-diplomacy/exhibit/scatter_p_all.png)
-
-## The histogram of GDELT intent and visits
-![](../economic-diplomacy/exhibit/hist_dependent_before.png)
-
-## Gravity works for state visits
-\input{../economic-diplomacy/exhibit/results_gravity_dependent.tex}
 
 ## Trade similarity and intent to cooperate are negatively correlated for most countries
 ![](../economic-diplomacy/exhibit/coefficients_intent_both_all_wofe.png)
