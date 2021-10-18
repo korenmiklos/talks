@@ -6,7 +6,7 @@ author:
     - Filippo Santi
     - Gergő Závecz
 date: 
-    - "RESPECT Closing Conference"
+    - "RESPECT Final Conference"
 aspectratio: 16
 ---
 # Motivation
@@ -123,3 +123,10 @@ heterogeneity: $1/T$
 
 ## Trade similarity and state visits are negatively correlated for most countries
 ![](../economic-diplomacy/exhibit/coefficients_visits_both_all_wofe.png)
+
+# Discussion
+## Discussion
+- New approach to measure the similarity in trade and investment structures between EU Member States and the E.U. average.
+- Strong correlation of trade with economic diplomacy (outside EUNP): dissimilar countries engage in more diplomacy.
+- No such correlation for investment.
+- Method is applicable to measuring similarlity in other domains.
