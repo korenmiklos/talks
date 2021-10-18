@@ -97,6 +97,9 @@ With the due differences, the Polya Index can also be applied to bilateral inves
 ## The histogram of GDELT intent and visits
 ![](../economic-diplomacy/exhibit/hist_dependent_before.png)
 
+## Gravity works for state visits
+\input{../economic-diplomacy/exhibit/results_gravity_dependent.tex}
+
 ## Trade similarity and intent to cooperate are negatively correlated for most countries
 ![](../economic-diplomacy/exhibit/coefficients_intent_both_all_wofe.png)
 
