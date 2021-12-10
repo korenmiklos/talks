@@ -11,12 +11,12 @@ aspectratio: 54
 - November 2019: outbreak in Wuhan
 - December 27, 2019: new coronarivurs
 - December 31, 2019: WHO informed
-- January 30, 2020: WHO declares "public health emergency"
+- January 30, 2020: WHO declares ``public health emergency''
 - March 11, 2020: WHO declares pandemic
 - by March 31, 2020: most countries adopted strict social distancing measures
 
 ## Typical statistics publication calendar (BLS.gov)
-![](exhibit/fig/bls-march-2020.png)
+![BLS 2020](exhibit/fig/bls-march-2020.png)
 
 ## Time-sensitive questions
 - How does the virus spread?
@@ -38,103 +38,18 @@ aspectratio: 54
 ### Is this the future of policy analysis?
 
 ## About 250,000 Covid-related articles
-![](exhibit/fig/google-scholar.png)
+![Google Scholar 2021](exhibit/fig/google-scholar.png)
 
 ## Timely data collection
 How to avoid the 2-3-month lag of official statistical releases? (Plus several months of peer review.)
 
-Reuse existing data collected during "normal course of business":
+Reuse existing data collected during ``normal course of business'':
 
 - administrative
 - private
 
 
-## Good examples with data
-### Medical
-enormous amount of clinical, epi, virology data OPEN
-
-### Stock returns
-STANDARD
-
-### Financial transactions
-- What and how did people buy during the Great Lockdown? Evidence from electronic payments. Bruno P. Carvalho, Susana Peralta and João Pereira dos Santos
-- Who spent their COVID-19 stimulus payment? Evidence from personal finance software in Japan. Michiru Kaneda, So Kubota and Satoshi Tanaka
-- The English Patient: Evaluating Local Lockdowns Using Real-Time COVID-19 & Consumption Data. John Gathergood and Benedict Guttman-Kenney
-- Consumption Dynamics in the COVID Crisis: Real Time Insights from French Transaction & Bank Data. David Bounie, Youssouf Camara, Etienne Fize, John Galbraith, Camille Landais, Chloe Lavest, Tatiana Pazem and Baptiste Savatier
-- Disentangling the effect of government restrictions and consumers’ reaction function to the Covid-19 pandemic: Evidence from geo-located transactions data for the Netherlands. Pascal Golec, George Kapetanios, Nora Neuteboom, Feiko Ritsema and Alexia Ventouri
-- Tracking inflation on a daily basis. Santiago E. Alvarez, Sarah M. Lein
-- The COVID-19 Shock and Consumer Credit: Evidence from Credit Card Data. Akos Horvath, Benjamin Kay and Carlo Wix
-- Consumer Responses to the COVID-19 Crisis: Evidence From Bank Account Transaction Data. Asger Lau Andersen, Emil Toft Hansen, Niels Johannesen and Adam Sheridan
-
-
-### Tracking mobility, spatial effects
-- Flattening the Curve: Pandemic-Induced Revaluation of Urban Real Estate. Arpit Gupta, Vrinda Mittal, Jonas Peeters and Stijn Van Nieuwerburgh
-- The Impact of COVID-19 on the European Short-Term Rental Market. Elisa Guglielminetti, Michele Loberto and Alessandro Mistretta> Airbnb
-- Spatial distancing: air traffic, Covid-19 propagation, and the cost efficiency of air travel restrictions. Nicolas Gonne and Olivier Hubert
-- A first look at the impact of COVID-19 on commercial real estate prices: Asset-level evidence. David C. Ling, Chongyu Wang and Tingyu Zhou
-- Air passenger mobility, travel restrictions, and the transmission of the covid-19 pandemic between countries. Sekou Keita
-- Staying at home: Mobility effects of Covid-19. Sam Engle, John Stromme and Anson Zhou
-- Business disruptions from social distancing. Miklós Koren and Rita Pető
-
-### Economic activity on platforms
-- Restaurant Closures during the Pandemic: A Descriptive Analysis (Dmitry Sedov): Yelp
-- Sharing when stranger equals danger: Ridesharing during Covid-19 pandemic. Marc Ivaldi and Emil Palikot
-- Seller reputation and price gouging: Evidence from the COVID-19 pandemic. Luís Cabral and Lei Xu
-- Mobility Restrictions and Remote Work: Empirical Evidence on Demand and Supply on a European Online Labour Market. Frank Mueller-Langera and Estrella Gomez-Herrera
-- The Impact of COVID-19 on the European Short-Term Rental Market. Elisa Guglielminetti, Michele Loberto and Alessandro Mistretta> Airbnb
-
-
-### Using Covid as a natural experiment
-- COVID-19, Home Advantage in Professional Soccer, and Betting Market Efficiency (Kai Fischer and Justus Haucap)
-
-### Other data to track infections
-- sewage
-- air traffic
-
-### Other data to track the economy
-- Firms and Households during the Pandemic: What do we learn from their electricity consumption? Olympia Bover, Natalia Fabra, Sandra Garcıa-Uribe, Aitor Lacuesta, and Roberto Ramos
-- How Has Labor Demand Been Affected by the COVID-19 Pandemic? Evidence from Job Ads in Mexico. Raymundo M. Campos-Vazquez, Gerardo Esquivel, Raquel Y. Badillo
-- The short-run effect of COVID-19 on new marketing endeavors: Evidence from EUIPO’s trademark applications. Kyriakos Drivas
-- Using the eye of the storm to predict the wave of Covid-19 UI claims. Daniel Aaronson, Scott A. Brave, R. Andrew Butters, Daniel W. Sacks and Boyoung Seo [Google Trends]
-
-### Other data to track social outcomes
-- U.S. Churches' Response to Covid-19: Results from Facebook. Eva Raiber and Paul Seabright
-- Online learning during school closure due to COVID-19. Masato Ikeda and Shintaro Yamaguchi
-- COVID-19 and the Future of US Fertility: What Can We Learn from Google? Joshua Wilde, Wei Chen, and Sophie Lohmann
-- Did the COVID-19 Pandemic trigger nostalgia? Evidence of Music Consumption on Spotify. Timothy Yu-Cheong Yeung
-- Consumption and Geographic Mobility in Pandemic Times: Evidence from Mexico. Raymundo M. Campos-Vazquez, and Gerardo Esquivel
-- Valuing goods online and offline: the impact of Covid19. Diane Coyle and David Nguyen
-- The Early Impact of COVID-19 on Local Commerce: Changes in Spend Across Neighborhoods and Online. Lindsay E. Relihan, Marvin M. Ward Jr., Chris W. Wheat and Diana Farrell
-- In crisis, we pray: Religiosity and the Covid-19 pandemic. Jeanet Sinding Bentzen
-
-## Bad examples with data
-
-# Benefits
-## Speed
-## Universal coverage
-
-# Concerns
-## Statistics
-- Sampling
-- representativity
-	- only for small random samples
-
-## Economics / system modeling
-- Lucas critique
-- relative to SIR model of pandemic
-- nonlinear responses
-	- Gerardo Chowell, 2017. Fitting dynamic models to epidemic outbreaks with quantified uncertainty: A primer for parameter uncertainty, identifiability, and forecasts, Infectious Disease Modelling, Volume 2, Issue 3, https://doi.org/10.1016/j.idm.2017.08.001.
-
-## Peaks of pandemic are notoriously hard to forecast (Chowell 2017)
-![](exhibit/fig/nonlinear.jpg)
-
-## Politics
-- incentives to hide/share information
-	- governments
-	- corporations
-
-# The COVID shock
-
+# Examples of real-time data
 ## Visits to retail and recreation places collapsed 
 ![Data from Hungarian cell phone users (Google Mobility Report 2020)](exhibit/fig/gmr-retail.pdf){width=100%}
 
@@ -144,76 +59,156 @@ STANDARD
 ## People are staying at home 
 ![Data from Hungarian cell phone users (Google Mobility Report 2020)](exhibit/fig/gmr-home.pdf){width=100%}
 
-## Which jobs are most affected?
-Important for economic subsidy, vaccination programs.
 
-[The most communication intensive sectors](https://www.datawrapper.de/_/NNmIa/)
 
-## Many occupations rely heavily on face-to-face communication
-!["Teamwork" refers to face-to-face communication with coworkers, "Customer contact" with customers (Koren and Pető 2020, based on U.S. data)](exhibit/fig/koren-peto-3.pdf){ height=65% }
+## Examples of real-time data (1)
+### Medical
+Enormous amount of clinical, epi, virology data sharing 
 
-## Face-to-face intensive industries have contracted the most
-![Employment change in March 2020 against compound measure of social-distancing cost (Koren and Pető 2020, based on U.S. data)](exhibit/fig/koren-peto-5.pdf){height=70%}
+### Stock returns
+Stock prices react to news almost instantaneously. But: noisy, only for traded stocks.
 
-## Job losses explained by fewer customer visits *and* communication intensity 
-![](exhibit/t003.png)
+### Financial transactions
+Credit cards. Bank transactions. 
 
-## Tax-equivalent losses are huge
-![](exhibit/t004.png)
+## Examples of real-time data (2)
+### Tracking mobility, spatial effects
+Cell phone tracking. Visiting POIs. Contact tracing. Air travel. Real estate pricing.
 
-# The year after
+### Economic activity on platforms
+Restaurant closures (Yelp). Ride sharing. Airbnb. Online work. E-commerce.
 
-## The year after
-What will be the long-run consequences? To speculate, we use
+## Other data sources
+### Other data to track infections
+Virus concentration in sewage. 
 
-* The 2017 CEU-MTA Business Relations Survey.
-* A mini survey of 2020 CEU MBA students.
+### Other data to track the economy
+Electricity consumption. Job ads. Trademark applications.
 
-## The CEU-MTA Business Relations Survey
-CEU and MTA asked 1,200 Hungarian, Slovakian and Romanian manufacturing firms about relationships with their key buyers and suppliers.
+### Other data to track social outcomes
+Religiousity. Schools and learning. Fertility. Nostalgia.
 
-## Meetings are important for joint innovation
-![A third of firms collaborated with their key customer in order to improve their product (Békés, Koren, Muraközy and Telegdy 2019)](exhibit/fig/supplier-start.pdf)
 
-## This collaboration remained after start
-![A quarter of firms collaborated with their key customer in order to improve their product (Békés, Koren, Muraközy and Telegdy 2019)](exhibit/fig/supplier-recent.pdf)
+# Why private data alone is not sufficient
+## Why private data alone is not sufficient
+1. Statistics
+2. Economics
+3. Politics
+4. Law and ethics
 
-## Major business changes are expected
-![](exhibit/fig/scenarios.png)
+# Statistics
+## Why statistics matters
+Statistics provides rules for generalizing from (limited) data. 
 
-## Most meetings are with coworkers and clients
-![](exhibit/fig/meet.png)
+## Stories vs statistics
+Suppose you want to predict the outcome of U.S. presidential elections in Pennsylvania. What are the benefits of a statistical prediction relative to talking to friends and watching TV pundits?
 
-## Lack of new business opportunities is strongest risk
-![](exhibit/fig/risks.png)
+1. $n=1$ vs $n=\text{many}$. (``The plural of anecdote is data.'' /Raymond Wolfinger)
+2. Stories subject to biases.
+3. Biases are unknown and hard to account for.
 
-## Why are face-to-face meetings important for you work?
+## Sample vs population
 
-> "I work as a sales professional, where face-to-face interactions are key to build trustful relationships with my customers."
->
-> "Face-to-face meetings ensure better quality of transferring strategic messages."
->
-> "Non-verbal communication counts at least 30% of the total messages during meetings."
->
-> "To build strong, lasting relationships."
+Suppose you ask 1,000 Pennsylvania voters. 
+$$
+\hat p = \frac {\# \text{Republican}}{1000}
+$$
+$$
+\text{s.e.}(\hat p) = \sqrt{\frac {\hat p (1-\hat p)}{1000}} \approx 0.016
+$$
+if $\hat p\approx 0.5$.
 
-## Can videoconferencing tools substitute for face-to-face meetings in your work?
+## Rules of generalizing from sample
+Suppose
 
-> “We tried several times videoconferencing with customers, but not successfully. I doubt that we can switch to videoconferencing completely.”
-> 
-> “Lack of client and staff interaction reduces quality of service “
->
-> “They can, up to certain level.”
->
-> “Yes, we already moved to video conferencing, no loss in productivity”
+1. random
+2. independent sample
+3. full compliance. 
 
-# Conclusion
-## Conclusion
-* Face-to-face interaction is a key aspect of many jobs.
-* In internal teamwork, working from home is a good alternative. But not for customer contact.
-* Retail services suffer the most, in proportion to our predictions.
+(1+3 ensure representativity, 2 dictates statistical properties)
 
-## Thank you
-Connect on Twitter:
-- @[korenmiklos](https://twitter.com/korenmiklos)
+- Then estimation accuracy increases with $\sqrt{n}$.
+- Irrespective of size of population.
+
+# Selection bias
+## Selection bias
+If sample is not representative, may suffer from **selection bias**.
+
+1. nonrandom selection into sample
+2. nonrandom response rate
+
+## Getting a representative sample
+![](exhibit/fig/selection-bias.png)
+
+Selection may occur at each of these steps.
+
+- phone survey not representative
+- people do not respond
+- some voters hide their preferences
+
+## A tactic to improve response rates
+![](exhibit/fig/coppock-2017.pdf)
+
+## Sample vs big data
+Why take a sample when we can study the population directly?
+
+## Electoral forecasts
+* based on random sample
+* based on votes already counted
+
+Both are helpful but have very different properties.
+
+## The blue shift
+![FiveThirtyEight 2020](exhibit/fig/blue-shift.png){height=80%}
+
+## Lessons from statistics
+- Human judgement is necessary for good data analysis
+- Understand selection bias
+- Models and domain expertise matter
+
+# Economics
+## Why economics matters
+1. People respond to incentives.
+2. Systems matter.
+3. Scarce resources are worth more.
+
+## The Susceptible-Infectious-Recovered model of epidemiology
+![Wefatherley 2018](exhibit/fig/SIR_trajectory.png){height=80%}
+
+## Flattening the curve
+![RCraig09 2020](exhibit/fig/flatten1.png)
+
+## Flattening the curve
+![RCraig09 2020](exhibit/fig/flatten2.png)
+
+## People respond to incentives
+- Past data may lose its predictive power once people change their behavior (Lucas critique).
+	- key missing element of SIR model
+- There is voluntary social distancing, as well as non-compliance with policy measures.
+
+## Systems matter
+- The SIR model is highly nonlinear. My getting sick depends on behavior of others.
+	- difficult to forecast
+	- externalities
+	- non-intuitive
+
+## Peaks of pandemic are notoriously hard to forecast
+![Chowell 2017](exhibit/fig/nonlinear.jpg){height=80%}
+
+## Lessons from economics
+- Even big data not sufficient to describe *future* behavior. Understand incentives and externalities.
+- Hard to forecast non-linear system without theory.
+
+# Politics, law and ethics
+## Politics
+- incentives to hide/share information
+	- governments
+	- corporations
+
+
+## Collecting data
+- Distinguish between qualitative and quantitative data
+- Differentiate text, numerical and categorical data
+- Select the proper tool to inspect the data for each variable type
+
 
