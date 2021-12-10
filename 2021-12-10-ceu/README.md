@@ -1,6 +1,6 @@
 ---
 title: "When Time Really Matters: Analyzing Data in the Time of COVID"
-date: "CEU Economics and Business webinar"
+date: "https://economics.ceu.edu"
 author: 
  - Miklós Koren (@korenmiklos) 
 aspectratio: 54
@@ -172,7 +172,7 @@ Both are helpful but have very different properties.
 2. Systems matter.
 3. Scarce resources are worth more.
 
-## The Susceptible-Infectious-Recovered model of epidemiology
+## The Susceptible-Infectious-Recovered model
 ![Wefatherley 2018](exhibit/fig/SIR_trajectory.png){height=80%}
 
 ## Flattening the curve
@@ -187,12 +187,13 @@ Both are helpful but have very different properties.
 - There is voluntary social distancing, as well as non-compliance with policy measures.
 
 ## Systems matter
-- The SIR model is highly nonlinear. My getting sick depends on behavior of others.
-	- difficult to forecast
-	- externalities
-	- non-intuitive
+The SIR model is highly nonlinear. My getting sick depends on behavior of others.
 
-## Peaks of pandemic are notoriously hard to forecast
+- difficult to forecast
+- externalities
+- non-intuitive
+
+## Peaks of epidemics are notoriously hard to forecast
 ![Chowell 2017](exhibit/fig/nonlinear.jpg){height=80%}
 
 ## Lessons from economics
@@ -200,15 +201,29 @@ Both are helpful but have very different properties.
 - Hard to forecast non-linear system without theory.
 
 # Politics, law and ethics
-## Politics
-- incentives to hide/share information
+## Politics, law and ethics
+1. Conflict of interest to share information
 	- governments
 	- corporations
+2. Privacy and surveillance
 
+## Is ride sharing killing people?
+Barrios, Hochberg and Yi (2018): Uber and Lyft increased traffic and congestion. Associated with 2--3% increase in fatalities.
 
-## Collecting data
-- Distinguish between qualitative and quantitative data
-- Differentiate text, numerical and categorical data
-- Select the proper tool to inspect the data for each variable type
+Got no data from Uber! (unlike other researchers)
+
+## Your phone knows everything about you
+Thomson and Warzel (2019): Twelve Million Phones, One Dataset, Zero Privacy (New York Times)
+
+Tracking individuals in location data dumps can (i) identify them, (ii) reveal highly sensitive information.
+
+## Mapping U.S. bases
+![Strava 2017](exhibit/fig/strava.jpeg)
+
+# Conclusion and discussion
+## Conclusion and discussion
+1. Private sources of data can effectively *complement* official statistics in times of urgency.
+2. But *rules* of statistics should always be followed.
+3. Big data will never *substitute* domain expertise, human judgement, ethical and political accountability.
 
 
