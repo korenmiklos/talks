@@ -20,6 +20,9 @@ aspectratio: 54
 - Mi egy közgazdaságtan tanszék szerepe Magyarországon / Közép-Európában?
 - Kell-e magyarul művelni a közgadaságtant?
 
+## Itt például nem értünk egyet
+![](panel-square.jpg)
+
 ## Újdonság és fejlődés
 - Se divat, se dogma.
 - ,,Strong opinions, loosely held.''
@@ -41,6 +44,10 @@ aspectratio: 54
 - Alapító tag.
 - Elnökségi tag 2007-10.
 
+## Defacto blog
+- 2014 óta 105 cikk
+- Összesen több, mint 3 milliós olvasottság
+
 ## CEU tanszék
 - Legyen-e a tanszéknek fókusza?
 - Új institucionalizmus javaslat vs fősodor (2005)
@@ -61,13 +68,11 @@ aspectratio: 54
 ## Diák-visszajelzések (1)
 > “Professor Kezdi is a very good professor and professional. He is among the best teachers in the Department of Economics within CEU. He is always straight-to-the-point, answers the emails and it really shows that he knows what he is talking about. 10/10”
 
-
->“Gabor is a great instructor, it’s visible during classes that he enjoys teaching and enjoys data analysis in general. He is putting the needs of the students before everything else, he is easily accessible and friendly.” 
-
-## Diák-visszajelzések (2)
 > “I would like to thank professor Kezdi for his immense work that he put in his class and the knowledge he shared. The knowledge I received helped me to advance my little skills I already possessed in this field when starting the course. Coming from a different background, I can surely say that I did a huge progress. Some of the courses at your university studies grab you to a different direction that you might want to follow in the future. This course was one of them for me. Thank you.”
 
+## Diák-visszajelzések (2)
 
-> “One of the best ever!”
+>“Gabor is a great instructor, it’s visible during classes that he **enjoys teaching and enjoys data analysis** in general. He is **putting the needs of the students before everything else**, he is easily accessible and friendly.” 1
 
-
+## Kézdi Gábor 1971-2021
+![](bretton-woods.png)
