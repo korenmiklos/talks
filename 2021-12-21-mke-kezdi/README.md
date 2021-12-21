@@ -24,30 +24,39 @@ aspectratio: 54
 - Se divat, se dogma.
 - ,,Strong opinions, loosely held.''
 
+# Mi az a data science?
+
 ## Divatok jönnek, mennek
 ![](big-data.png)
 
-# Mi az a data science?
-
 ## Data science a CEU-n
+- 2009: Institute for New Economic Thinking
 - 2011: Tools for Academic Research
 - 2012: MS in Data Science for Economics (-)
 - 2014: MS in Business Analytics 
 - 2021: Data Analysis for Business, Economics, and Policy
 
 # A tudomány szolgálata
-## MKE 2007-
+## Magyar Közgazdaságtudományi Egyesület
 - Alapító tag.
 - Elnökségi tag 2007-10.
 
-## CEU tanszékvezetés 2010-14
+## CEU tanszék
 - Legyen-e a tanszéknek fókusza?
-    - "Új institucionalizmus" javaslat
+- Új institucionalizmus javaslat vs fősodor (2005)
+    - időzítés
     - kutatás vs tanítás
+- Tanszékvezetés 2010-14
 
 # Tanítás
 ## Tanítás
 ![](students-landscape.jpg)
+
+## Tanítás
+- Rajk
+- Corvinus
+- CEU 
+- Michigan
 
 ## Diák-visszajelzések (1)
 > “Professor Kezdi is a very good professor and professional. He is among the best teachers in the Department of Economics within CEU. He is always straight-to-the-point, answers the emails and it really shows that he knows what he is talking about. 10/10”
@@ -60,13 +69,5 @@ aspectratio: 54
 
 
 > “One of the best ever!”
-
-
-## Tankönyv
-Három új terület a könyvben:
-
-1. gépi tanulás
-2. adatmérnökség
-3. adatvizualizáció
 
 
