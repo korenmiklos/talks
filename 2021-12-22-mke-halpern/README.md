@@ -10,7 +10,7 @@ aspectratio: 54
 ![](babel-puzzle.png)
 
 ## Ugye, milyen gyönyörűek?
-![](babel-complete.jpg)
+![](babel-complete.png)
 
 ## Gondolati keret
 1. formális modell
