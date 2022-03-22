@@ -1,0 +1,189 @@
+% presentation.tex
+
+= Four facts =
+== 1. Global exposure differs across firms, even conditional on size ==
+1. Export shares vary widely, mostly independently of size. (next slide, Kee and Krishna 2008)
+2. Size is a minor determinant of becoming an exporter. (Armenter and Koren 2015: pseudo-$R^2=0.05$)
+3. Size is a minor determinant of importing intermediate inputs. (Halpern, Koren and Szeidl 2015)
+
+== ==
+\longfigure{export_share}{Export shares vary widely, mostly independently of size\\ (Hungary, manufacturing, 2003)}
+\longfigure{export_share_by_owner}{Variation not fully explained by foreign ownership\\ (Hungary, manufacturing, 2003)}
+
+== 2. Measures of global exposure are correlated ==
+1. Firms with ''anything'' foreign are more likely to export (next slide, Bernard, Jensen and Schott 2009)
+2. Foreign ''owned'' firms import more intermediate inputs (Halpern, Koren and Szeidl 2015) and machines (Halpern, Hornok, Koren and Szeidl 2019)
+3. Exports and capital imports increase after foreign ''manager'' takes over firm (Koren and Telegdy 2019)
+
+== ==
+\longfigure{global_engagement_slope}{Firms with anything foreign are more likely to export\\ (Hungary, manufacturing, 2003)}
+
+== 3. Firms enter new markets small ==
+1. New exporters grow gradually (next slide from Ruhl and Willis 2017)
+2. Young firms grow gradually (Arkolakis, Papageorgiou and Timoshenko 2018)
+
+== ==
+\longfigure{ruhl-willis-2017}{New exporters grow gradually \\ (Ruhl and Willis 2017)}
+
+
+== 4. Managers earn high wages, especially at large firms ==
+1. CEOs earn ''high'' wages, especially at large firms (next slide from Frydman and Saks 2010)
+2. Managers with special experience earn more (Bertrand and Schoar 2003, Mion and Opromolla 2014)
+
+== ==
+\longfigure{frydman-saks-2010}{CEOs earn ''high'' wages, especially at large firms\\ (Frydman and Saks 2010)}
+
+
+= Model =
+
+== Production function ==
+Firm $j$, market $i$
+\[
+Q_{ij}=A_j K_{ij}^\alpha L_{ij}^{1-\alpha}\text{ with } i=H,F
+\]
+...
+in contrast to
+\[
+\sum_iQ_{ij} = A_jK_j^\alpha L_j^{1-\alpha}
+\]
+...
+Firm characterized by $(A_j, K_{Hj}, K_{Fj})$
+
+== Market access skills ==
+Manager $m$, market $i$
+\[
+\kappa_{im}p_i \text{ with }\kappa_{im} \in (0,1)
+\]
+...
+Manager characterized by $(\kappa_{Hm}, \kappa_{Fm})$
+
+== Net revenue per market ==
+\[
+\kappa_{im}p_i A_j K_{ij}^{\alpha} L_{ij}^{1-\alpha} - w L_{ij}
+\]
+Labor frictionlessly hired,
+\[
+R_{ijm} =  \left(\frac {1-\alpha} {w}\right)^{1/\alpha-1} 
+{(\kappa_{im}p_i)^{1/\alpha}\strut} {A_j^{1/\alpha} K_{ij}\strut}
+\]
+...
+\[
+R_{ijm} = \tilde \kappa_{im} \tilde K_{ij}
+\]
+
+== Assignment ==
+Firms hire managers in frictionless, competitive markets. Optimal manager maximizes net revenue minus her wage,
+\[
+\max_m \alpha\sum_i R_{ijm} - \nu_m =  \max_m \alpha\sum_i \tilde\kappa_{im}\tilde K_{ij} - \nu_m,
+\]
+
+== Equilibrium ==
+Given fixed distributions over $(A_j, K_{Hj}, K_{Fj})$ and $(\kappa_{Hm}, \kappa_{Fm})$ (with $\#j = \#m$), determine
+- firm-manager assignment: $\mu(j,m)$
+- manager wages: $\nu_m$
+- firm profits: $\pi_j$
+- revenue per market: $R_{ijm}$
+
+== Key ingredients ==
+1. Diminishing returns within each market
+2. Inelastic supply of manager skills
+3. Complementarity of manager skills with firm capital
+
+
+== Optimal transport ==
+Equilibrium assingment is equivalent to following optimal transport problem (Galichon 2016)
+\[
+\int_{j,m}\mu(j,m) (\tilde {\mathbf K}_j - \tilde{\mathbf\kappa}_m)^2 djdm \to \min
+\]
+s.t.
+\[
+\int_j \mu(j,m) dj = \mu(j)
+\]
+\[
+\int_m \mu(j,m) dm = \mu(m)
+\]
+...
+Focus on discrete manager types, continuous firm types.
+
+= Predictions =
+== Cross sectional predictions ==
+1. Conditional on $R_{j}$, there is heterogeneity in $R_{Fj}/R_{Dj}$.
+2. Managers at larger firms earn more.
+3. Manager wages convex in $\mathbf K$.
+4. Conditional on $R_{Dj}$, managers at high $R_{Fj}$ firms earn more.
+
+== Export heterogeneity ==
+\[
+\text{Var}\ln R_{ij} =
+	\text{Var}\ln \tilde \kappa_{im} +
+	\text{Var}\ln \tilde K_{jm} +
+	2\text{Cov}(\ln \tilde \kappa_{im},
+				\ln \tilde K_{jm})
+\]
+- additional heterogeneity in managers: $\text{Var}\ln \tilde \kappa_{im}>0$
+- complementarity of managers and firms: $2\text{Cov}(\ln \tilde \kappa_{im},\ln \tilde K_{jm})>0$
+
+= Comparative statics =
+== Supply shock ==
+
+== Trade liberalization ==
+Export markets become liberalized ($p_F$ increases).
+1. Managers with export skills earn more.
+2. Net entry into exporting is zero (by assumption).
+3. Export-skilled managers move from low export-intensity firms to high export-intensity firms. (magnifying export heterogeneity)
+
+= Measurement =
+== (Potential) Data ==
+* Panel of all Hungarian firms, 1992--2017.
+* Panel of all CEOs active in Hungary, 1992--2017.
+* Export and domestic revenue. (Also by destination country, 1992--2003.)
+* CEO wages?
+
+== Measurement ==
+We have data on
+\[
+R_{ijm} = \tilde\kappa_{im} \tilde K_{ij}
+\]
+and
+\[
+\sum_i K_{ij}.
+\]
+...
+How to recover $\tilde\kappa_{im}$ and $\tilde K_{ij}$?
+
+== Option 1 ==
+Treat both as fixed effects (Abowd, Kramarz and Margolis 1999).
+\[
+\ln R_{ijm} = \ln\tilde\kappa_{im} + \ln\tilde K_{ij}
+\]
+Estimate separate firm- and manager-effects for each market.
+...
+But
+1. $\tilde\kappa_{im}$ changes over time (prices)
+2. $\tilde K_{i}$ may change over time (capital accumulation)
+
+== Option 2 ==
+Treat $\tilde\kappa_{im}$ as parameter (few manager types), $\tilde K_{ij}$ as error term.
+...
+After arrival of foreign manager,
+\[
+\Delta \ln R_{Fjm} = \ln \frac{\tilde\kappa_{FF}}{\tilde\kappa_{FD}}  + \ln \tilde K_{Fj}.
+\]
+Diff-in-diff in Koren and Telegdy (2019) consistent with $\tilde\kappa_{FF} \gg \tilde\kappa_{FD}$ and $\tilde\kappa_{DF} > \tilde\kappa_{DD}$.
+...
+Instrument manager assignment with supply shocks (EU accession 2004, 2007, cohort effects).
+
+== Option 3 ==
+Exploit multi-dimensionality of problem. Assignment based on
+\[
+\sum_i R_{ijm},
+\]
+not $R_{ijm}$. 
+...
+Shocks affecting $R_{ijm}$ can be used to estimate revenue function in all markets $\neq i$.
+
+= Next steps =
+== Next steps ==
+1. Think more about measurement.
+2. Having more fun with the model: Firms can change $K$ with some adjustment cost. Could explain sluggish export market dynamics.
+3. Think about zeros. But not fixed costs.
