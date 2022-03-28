@@ -257,11 +257,21 @@ $$
 {}+ u_{ict}
 $$
 
-## Large and permanent effects on exports
-![](figure/event_study_export.png)
+## Managers matter for exports
+```
+      export | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+     manager |   .0860192   .0337138     2.55   0.011     .0197129    .1523256
+       owner |   .0746909   .0228919     3.26   0.001     .0296682    .1197135
+```
 
-## And on imports
-![](figure/event_study_import.png)
+## Even more form imports
+```
+      import | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
+-------------+----------------------------------------------------------------
+     manager |   .2418064   .0507659     4.76   0.000     .1417964    .3418165
+       owner |   .1097679   .0309542     3.55   0.000     .0487873    .1707485
+```
 
 # Discussion 
 
