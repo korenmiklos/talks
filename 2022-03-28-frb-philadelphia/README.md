@@ -295,43 +295,44 @@ Managers know the business culture of their home country.
 # A potential model
 ## Production function
 Firm $j$, market $i$
-\[
+$$
 Q_{ij}=A_j K_{ij}^\alpha L_{ij}^{1-\alpha}\text{ with } i=H,F
-\]
+$$
 in contrast to
-\[
+$$
 \sum_iQ_{ij} = A_jK_j^\alpha L_j^{1-\alpha}
-\]
+$$
 Firm characterized by $(A_j, K_{Hj}, K_{Fj})$
 
 ## Market access skills
 Manager $m$, market $i$
-\[
+$$
 \kappa_{im}p_i \text{ with }\kappa_{im} \in (0,1)
-\]
+$$
 Manager characterized by $(\kappa_{Hm}, \kappa_{Fm})$
 
 ## Net revenue per market
-\[
+$$
 \kappa_{im}p_i A_j K_{ij}^{\alpha} L_{ij}^{1-\alpha} - w L_{ij}
-\]
+$$
 Labor frictionlessly hired,
-\[
+$$
 R_{ijm} =  \left(\frac {1-\alpha} {w}\right)^{1/\alpha-1} 
 {(\kappa_{im}p_i)^{1/\alpha}\strut} {A_j^{1/\alpha} K_{ij}\strut}
-\]
-\[
+$$
+$$
 R_{ijm} = \tilde \kappa_{im} \tilde K_{ij}
-\]
+$$
 
 ## Assignment
 Firms hire managers in frictionless, competitive markets. Optimal manager maximizes net revenue minus her wage,
-\[
+$$
 \max_m \alpha\sum_i R_{ijm} - \nu_m =  \max_m \alpha\sum_i \tilde\kappa_{im}\tilde K_{ij} - \nu_m,
-\]
+$$
 
 ## Equilibrium
 Given fixed distributions over $(A_j, K_{Hj}, K_{Fj})$ and $(\kappa_{Hm}, \kappa_{Fm})$ (with $\#j = \#m$), determine
+
 - firm-manager assignment: $\mu(j,m)$
 - manager wages: $\nu_m$
 - firm profits: $\pi_j$
@@ -345,17 +346,16 @@ Given fixed distributions over $(A_j, K_{Hj}, K_{Fj})$ and $(\kappa_{Hm}, \kappa
 
 ## Optimal transport
 Equilibrium assingment is equivalent to following optimal transport problem (Galichon 2016)
-\[
+$$
 \int_{j,m}\mu(j,m) (\tilde {\mathbf K}_j - \tilde{\mathbf\kappa}_m)^2 djdm \to \min
-\]
+$$
 s.t.
-\[
+$$
 \int_j \mu(j,m) dj = \mu(j)
-\]
-\[
+$$
+$$
 \int_m \mu(j,m) dm = \mu(m)
-\]
-...
+$$
 Focus on discrete manager types, continuous firm types.
 
 # Predictions
@@ -366,13 +366,14 @@ Focus on discrete manager types, continuous firm types.
 4. Conditional on $R_{Dj}$, managers at high $R_{Fj}$ firms earn more.
 
 ## Export heterogeneity
-\[
+$$
 \text{Var}\ln R_{ij} =
 	\text{Var}\ln \tilde \kappa_{im} +
 	\text{Var}\ln \tilde K_{jm} +
 	2\text{Cov}(\ln \tilde \kappa_{im},
 				\ln \tilde K_{jm})
-\]
+$$
+
 - additional heterogeneity in managers: $\text{Var}\ln \tilde \kappa_{im}>0$
 - complementarity of managers and firms: $2\text{Cov}(\ln \tilde \kappa_{im},\ln \tilde K_{jm})>0$
 
@@ -381,6 +382,7 @@ Focus on discrete manager types, continuous firm types.
 
 ## Trade liberalization
 Export markets become liberalized ($p_F$ increases).
+
 1. Managers with export skills earn more.
 2. Net entry into exporting is zero (by assumption).
 3. Export-skilled managers move from low export-intensity firms to high export-intensity firms. (magnifying export heterogeneity)
