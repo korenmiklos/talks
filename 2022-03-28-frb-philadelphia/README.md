@@ -214,7 +214,7 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 ![](figure/event_study/expat_hire_lnL.png)
 
 ## Positive capital investments after expat manager is hired
-![](figure/event_study/expat_hire_lnL.png)
+![](figure/event_study/expat_hire_lnK.png)
 
 ## Productivity growth of same magnitude as with local manager
 ![](figure/event_study/expat_hire_lnQL.png)
