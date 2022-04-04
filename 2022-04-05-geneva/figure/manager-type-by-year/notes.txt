@@ -1,0 +1,1 @@
+Number of CEOs across all firms in each year. ``Founder'' was a firm owner in its first year. ``Insider'' was an owner or manager before becoming CEO. ``Outsider'' did not ownership or manager relation to the firm before becoming CEO. ``Expat'' is a manager with a foreign name or address. ``Local'' is everyone else.  
