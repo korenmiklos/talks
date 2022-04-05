@@ -9,6 +9,16 @@ aspectratio: 169
 ---
 
 # Motivation
+
+## The end of a Qatari project in Budapest
+![](figure/kopaszi.jpg)
+
+## The end of a Qatari project in Budapest
+* Qatari real estate investors made several high-value investments in Budapest in 2015 (Brückner 2021).
+* For them, however, the projects were small, not worth delegating an expatriate manager.
+* Business deals, even simple decisions often took months.
+* Finally, they sold their stake in December 2020.
+
 ## Research question
 * What role do expatriate managers play in foreign direct investment?
     * Do they improve firm performance?
@@ -373,7 +383,7 @@ Export markets become liberalized ($p_F$ increases).
 3. Export-skilled managers move from low export-intensity firms to high export-intensity firms. (magnifying export heterogeneity)
 
 ## Wage returns to exporting increased among CEOs
-![](figure/exporter_wage_premium.png)
+![](figure/exporter_wage_premium.png){height=70%}
 
 # Conclusions
 ## Conclusions
