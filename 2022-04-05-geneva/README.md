@@ -372,6 +372,8 @@ Export markets become liberalized ($p_F$ increases).
 2. Net entry into exporting is zero (by assumption).
 3. Export-skilled managers move from low export-intensity firms to high export-intensity firms. (magnifying export heterogeneity)
 
+## Wage returns to exporting increased among CEOs
+![](figure/exporter_wage_premium.png)
 
 # Conclusions
 ## Conclusions
