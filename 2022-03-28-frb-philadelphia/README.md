@@ -199,8 +199,11 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 ## No effects of foreign acquisition on capital
 ![](figure/event_study/no_hire_lnK.png)
 
-## No effects of foreign acquisition on productivity
+## No effects of foreign acquisition on labor productivity
 ![](figure/event_study/no_hire_lnQL.png)
+
+## ...or TFP
+![](figure/event_study/no_hire_TFP_cd.png)
 
 ## Some transitory increase in exporting
 ![](figure/event_study/no_hire_exporter.png)

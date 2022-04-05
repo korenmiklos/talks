@@ -163,8 +163,11 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 ## No effects of foreign acquisition on capital
 ![](figure/event_study/no_hire_lnK.png)
 
-## No effects of foreign acquisition on productivity
+## No effects of foreign acquisition on labor productivity
 ![](figure/event_study/no_hire_lnQL.png)
+
+## ...or TFP
+![](figure/event_study/no_hire_TFP_cd.png)
 
 ## Some transitory increase in exporting
 ![](figure/event_study/no_hire_exporter.png)
@@ -172,6 +175,10 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 # Hire a local manager
 ## Fast productivity growth after local manager is hired
 ![](figure/event_study/local_hire_lnQL.png)
+
+## Also in TFP
+![](figure/event_study/local_hire_TFP_cd.png)
+
 
 # Hire an expat manager
 ## Fast employment growth after expat manager is hired
@@ -182,6 +189,10 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 
 ## Productivity growth of same magnitude as with local manager
 ![](figure/event_study/expat_hire_lnQL.png)
+
+## Also in TFP
+![](figure/event_study/expat_hire_TFP_cd.png)
+
 
 ## Large effects on exporting
 ![](figure/event_study/expat_hire_exporter.png)
