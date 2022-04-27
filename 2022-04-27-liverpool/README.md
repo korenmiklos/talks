@@ -5,19 +5,10 @@ author:
     - Álmos Telegdy
 date: 
     - "Thanks: ERC Knowledgeflows, Krisztián Fekete, Dávid Koller, Olivér Kiss, Szilárd Perédi, Bálint Szilágyi, András Vereckei, Rita Zágoni, Gergő Závecz"
-aspectratio: 169
+aspectratio: 43
 ---
 
 # Motivation
-
-## The end of a Qatari project in Budapest
-![](figure/kopaszi.jpg)
-
-## The end of a Qatari project in Budapest
-* Qatari real estate investors made several high-value investments in Budapest in 2015 (Brückner 2021).
-* For them, however, the projects were small, not worth delegating an expatriate manager.
-* Business deals, even simple decisions often took months.
-* Finally, they sold their stake in December 2020.
 
 ## Research question
 * What role do expatriate managers play in foreign direct investment?
@@ -72,7 +63,7 @@ aspectratio: 169
 ## Names
 * We use manager names to infer 
     1. CEO change
-    2. ethnicity
+    2. nationality
     3. gender (not used today)
 * Foreign manager: firm representative with a non-Hungarian first name
     1. e.g. Eva Bauer v Bauer Éva
@@ -212,21 +203,13 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 ## Market access
 Ongoing work with Krisztina Orbán and Álmos Telegdy.
 
-## Infer ethnicity from name
-\begin{tabular}{lll|ccc}
-Address & Name & Partner & \texttt{count} & \texttt{lang} & \texttt{ethn} \\
+## Infer nationality from name
+\begin{tabular}{llcc|ccc}
+Addr. & Name & Nat. & Lang. & AT & DE & IT\\
 \hline
-DE & Klaudia Wolf & DE & 1 & 1 & 1\\
-DE & Klaudia Wolf & AT & 0 & 1 & 1\\
-DE & Klaudia Wolf & IT & 0 & 0 & 0\\
-\hline
-DE & Enrico Mazzanti & DE & 1 & 1 & 0\\
-DE & Enrico Mazzanti & AT & 0 & 1 & 0\\
-DE & Enrico Mazzanti & IT & 0 & 0 & 1\\
-\hline
-IT & Fioretta Luchesi & DE & 0 & 0 & 0 \\
-IT & Fioretta Luchesi & AT & 0 & 0 & 0 \\
-IT & Fioretta Luchesi & IT & 1 & 1 & 1 
+DE & Klaudia Wolf & de & de         & N+L & A+N+L & \\
+AT & Enrico Mazzanti & it & de,it   & A+L & L & N+L\\
+IT & Fioretta Luchesi & it & it     & & & A+N+L
 \end{tabular}
 
 ## Estimating equation
@@ -237,26 +220,32 @@ $$
 \mu_{ct} + \nu_{it} 
 $$
 $$
-{}+ \beta_o \text{OWNER}_{ict} 
-{}+ \beta_m \text{MANAGER}_{ict} 
+{}+ \beta_1 \text{ADDRESS}_{ict} 
+{}+ \beta_2 \text{NATIONALITY}_{ict} 
+{}+ \beta_3 \text{LANGUAGE}_{ict} 
 {}+ u_{ict}
 $$
 
-## Managers matter for exports
-```
-      export | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-     manager |   .0860192   .0337138     2.55   0.011     .0197129    .1523256
-       owner |   .0746909   .0228919     3.26   0.001     .0296682    .1197135
-```
-
-## Even more form imports
-```
-      import | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-     manager |   .2418064   .0507659     4.76   0.000     .1417964    .3418165
-       owner |   .1097679   .0309542     3.55   0.000     .0487873    .1707485
-```
+## Manager address and nationality matter for trade
+\begin{tabular}{lcccc} \hline
+& (1) & (2) & (3) & (4) \\
+& export & export & import & import \\ \hline
+&  &  &  &  \\
+ADDRESS & 0.142*** & 0.100*** & 0.220*** & 0.183*** \\
+& (0.031) & (0.031) & (0.038) & (0.040) \\
+NATIONALITY & 0.037** & 0.034* & 0.091*** & 0.090*** \\
+& (0.018) & (0.018) & (0.026) & (0.025) \\
+LANGUAGE & -0.025** & -0.032*** & 0.005 & 0.003 \\
+& (0.011) & (0.012) & (0.012) & (0.012) \\
+ADDRESS (owner) &  & 0.090*** &  & 0.075*** \\
+&  & (0.021) &  & (0.021) \\
+LANGUAGE (owner) &  & 0.018** &  & 0.005 \\
+&  & (0.009) &  & (0.010) \\
+&  &  &  &  \\
+Observations & 67,965 & 67,965 & 64,834 & 64,834 \\
+R-squared & 0.232 & 0.235 & 0.269 & 0.270 \\
+Mean dep.~var.& 0.0387 & 0.0387 & 0.0624 & 0.0624 \\ \hline
+\end{tabular}  
 
 # Discussion 
 
