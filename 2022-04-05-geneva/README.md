@@ -4,11 +4,21 @@ author:
     - Miklós Koren
     - Álmos Telegdy
 date: 
-    - "FRB Philadelphia. Thanks: ERC Knowledgeflows, Krisztián Fekete, Dávid Koller, Olivér Kiss, Szilárd Perédi, Bálint Szilágyi, András Vereckei, Rita Zágoni, Gergő Závecz"
-aspectratio: 54
+    - "Thanks: ERC Knowledgeflows, Krisztián Fekete, Dávid Koller, Olivér Kiss, Szilárd Perédi, Bálint Szilágyi, András Vereckei, Rita Zágoni, Gergő Závecz"
+aspectratio: 169
 ---
 
 # Motivation
+
+## The end of a Qatari project in Budapest
+![](figure/kopaszi.jpg)
+
+## The end of a Qatari project in Budapest
+* Qatari real estate investors made several high-value investments in Budapest in 2015 (Brückner 2021).
+* For them, however, the projects were small, not worth delegating an expatriate manager.
+* Business deals, even simple decisions often took months.
+* Finally, they sold their stake in December 2020.
+
 ## Research question
 * What role do expatriate managers play in foreign direct investment?
     * Do they improve firm performance?
@@ -69,32 +79,6 @@ aspectratio: 54
     2. but: George Soros v Soros György
 * Allow for misspelling, omitted middle name, missing data (jr, dr)
 
-## Shape of data
-```
-firm,manager,country,from,to
-123456,Szilágyi Erika,HU,1992-01-01,1996-12-31
-123456,Pálffy György,HU,1997-01-01,1999-12-31
-123456,Greta Schröder,DE,2000-01-01,2003-03-31
-```
-
-## Data cleaning
-1. Convert names to numerical IDs
-2. Infer Hungarian ethnicity from name
-3. Classify everyone else as foreign
-4. Clean up time interval and position description
-5. Create annual panel for June 21
-6. In progress: Infer ethnicity (other than Hungarian) from name
-
-# Descriptives
-## The number of CEOs increased sharply until 2010
-![](figure/manager-type-by-year/fig.pdf)
-
-## The share of firms managed by founders gradually decreases with age
-![](figure/manager-type-by-age/fig.pdf)
-
-## Founders stay longest at the firm
-![](figure/tenure-by-type-weighted/fig.pdf)
-
 ## Sample
 - Exclude: 
     - employing less than 20 people
@@ -112,16 +96,6 @@ firm,manager,country,from,to
 
 
 # Estimation
-## Variables
-* **foreign**: firm has majority foreign owner
-* **foreign\_hire**: firm has a manager hired by foreign owner
-* **has\_expat**: firm has an expat manager
-* **CONTROL${}^k$**: one of the three ($k=1,2,3$)
-* **lnL**: log employment
-* **lnQL**: log output per worker
-* **exporter**: firm has positive exports
-
-
 ## Estimating equations
 ### Selection
 Sample: $\text{CONTROL}_{i}^{k-1} = 1$, years before acquisition
@@ -212,6 +186,10 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 ## Fast productivity growth after local manager is hired
 ![](figure/event_study/local_hire_lnQL.png)
 
+## Also in TFP
+![](figure/event_study/local_hire_TFP_cd.png)
+
+
 # Hire an expat manager
 ## Fast employment growth after expat manager is hired
 ![](figure/event_study/expat_hire_lnL.png)
@@ -221,6 +199,10 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 
 ## Productivity growth of same magnitude as with local manager
 ![](figure/event_study/expat_hire_lnQL.png)
+
+## Also in TFP
+![](figure/event_study/expat_hire_TFP_cd.png)
+
 
 ## Large effects on exporting
 ![](figure/event_study/expat_hire_exporter.png)
@@ -400,6 +382,8 @@ Export markets become liberalized ($p_F$ increases).
 2. Net entry into exporting is zero (by assumption).
 3. Export-skilled managers move from low export-intensity firms to high export-intensity firms. (magnifying export heterogeneity)
 
+## Wage returns to exporting increased among CEOs
+![](figure/exporter_wage_premium.png){height=70%}
 
 # Conclusions
 ## Conclusions

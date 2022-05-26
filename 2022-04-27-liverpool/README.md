@@ -4,11 +4,12 @@ author:
     - Miklós Koren
     - Álmos Telegdy
 date: 
-    - "FRB Philadelphia. Thanks: ERC Knowledgeflows, Krisztián Fekete, Dávid Koller, Olivér Kiss, Szilárd Perédi, Bálint Szilágyi, András Vereckei, Rita Zágoni, Gergő Závecz"
-aspectratio: 54
+    - "Thanks: ERC Knowledgeflows, Krisztián Fekete, Dávid Koller, Olivér Kiss, Szilárd Perédi, Bálint Szilágyi, András Vereckei, Rita Zágoni, Gergő Závecz"
+aspectratio: 43
 ---
 
 # Motivation
+
 ## Research question
 * What role do expatriate managers play in foreign direct investment?
     * Do they improve firm performance?
@@ -62,38 +63,12 @@ aspectratio: 54
 ## Names
 * We use manager names to infer 
     1. CEO change
-    2. ethnicity
+    2. nationality
     3. gender (not used today)
 * Foreign manager: firm representative with a non-Hungarian first name
     1. e.g. Eva Bauer v Bauer Éva
     2. but: George Soros v Soros György
 * Allow for misspelling, omitted middle name, missing data (jr, dr)
-
-## Shape of data
-```
-firm,manager,country,from,to
-123456,Szilágyi Erika,HU,1992-01-01,1996-12-31
-123456,Pálffy György,HU,1997-01-01,1999-12-31
-123456,Greta Schröder,DE,2000-01-01,2003-03-31
-```
-
-## Data cleaning
-1. Convert names to numerical IDs
-2. Infer Hungarian ethnicity from name
-3. Classify everyone else as foreign
-4. Clean up time interval and position description
-5. Create annual panel for June 21
-6. In progress: Infer ethnicity (other than Hungarian) from name
-
-# Descriptives
-## The number of CEOs increased sharply until 2010
-![](figure/manager-type-by-year/fig.pdf)
-
-## The share of firms managed by founders gradually decreases with age
-![](figure/manager-type-by-age/fig.pdf)
-
-## Founders stay longest at the firm
-![](figure/tenure-by-type-weighted/fig.pdf)
 
 ## Sample
 - Exclude: 
@@ -112,16 +87,6 @@ firm,manager,country,from,to
 
 
 # Estimation
-## Variables
-* **foreign**: firm has majority foreign owner
-* **foreign\_hire**: firm has a manager hired by foreign owner
-* **has\_expat**: firm has an expat manager
-* **CONTROL${}^k$**: one of the three ($k=1,2,3$)
-* **lnL**: log employment
-* **lnQL**: log output per worker
-* **exporter**: firm has positive exports
-
-
 ## Estimating equations
 ### Selection
 Sample: $\text{CONTROL}_{i}^{k-1} = 1$, years before acquisition
@@ -212,6 +177,10 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 ## Fast productivity growth after local manager is hired
 ![](figure/event_study/local_hire_lnQL.png)
 
+## Also in TFP
+![](figure/event_study/local_hire_TFP_cd.png)
+
+
 # Hire an expat manager
 ## Fast employment growth after expat manager is hired
 ![](figure/event_study/expat_hire_lnL.png)
@@ -222,6 +191,10 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 ## Productivity growth of same magnitude as with local manager
 ![](figure/event_study/expat_hire_lnQL.png)
 
+## Also in TFP
+![](figure/event_study/expat_hire_TFP_cd.png)
+
+
 ## Large effects on exporting
 ![](figure/event_study/expat_hire_exporter.png)
 
@@ -230,21 +203,13 @@ We also do inverse-probability weighting within control group (Abadie 2005). Thi
 ## Market access
 Ongoing work with Krisztina Orbán and Álmos Telegdy.
 
-## Infer ethnicity from name
-\begin{tabular}{lll|ccc}
-Address & Name & Partner & \texttt{count} & \texttt{lang} & \texttt{ethn} \\
+## Infer nationality from name
+\begin{tabular}{llcc|ccc}
+Addr. & Name & Nat. & Lang. & AT & DE & IT\\
 \hline
-DE & Klaudia Wolf & DE & 1 & 1 & 1\\
-DE & Klaudia Wolf & AT & 0 & 1 & 1\\
-DE & Klaudia Wolf & IT & 0 & 0 & 0\\
-\hline
-DE & Enrico Mazzanti & DE & 1 & 1 & 0\\
-DE & Enrico Mazzanti & AT & 0 & 1 & 0\\
-DE & Enrico Mazzanti & IT & 0 & 0 & 1\\
-\hline
-IT & Fioretta Luchesi & DE & 0 & 0 & 0 \\
-IT & Fioretta Luchesi & AT & 0 & 0 & 0 \\
-IT & Fioretta Luchesi & IT & 1 & 1 & 1 
+DE & Klaudia Wolf & de & de         & N+L & A+N+L & \\
+AT & Enrico Mazzanti & it & de,it   & A+L & L & N+L\\
+IT & Fioretta Luchesi & it & it     & & & A+N+L
 \end{tabular}
 
 ## Estimating equation
@@ -255,26 +220,32 @@ $$
 \mu_{ct} + \nu_{it} 
 $$
 $$
-{}+ \beta_o \text{OWNER}_{ict} 
-{}+ \beta_m \text{MANAGER}_{ict} 
+{}+ \beta_1 \text{ADDRESS}_{ict} 
+{}+ \beta_2 \text{NATIONALITY}_{ict} 
+{}+ \beta_3 \text{LANGUAGE}_{ict} 
 {}+ u_{ict}
 $$
 
-## Managers matter for exports
-```
-      export | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-     manager |   .0860192   .0337138     2.55   0.011     .0197129    .1523256
-       owner |   .0746909   .0228919     3.26   0.001     .0296682    .1197135
-```
-
-## Even more form imports
-```
-      import | Coefficient  std. err.      t    P>|t|     [95% conf. interval]
--------------+----------------------------------------------------------------
-     manager |   .2418064   .0507659     4.76   0.000     .1417964    .3418165
-       owner |   .1097679   .0309542     3.55   0.000     .0487873    .1707485
-```
+## Manager address and nationality matter for trade
+\begin{tabular}{lcccc} \hline
+& (1) & (2) & (3) & (4) \\
+& export & export & import & import \\ \hline
+&  &  &  &  \\
+ADDRESS & 0.142*** & 0.100*** & 0.220*** & 0.183*** \\
+& (0.031) & (0.031) & (0.038) & (0.040) \\
+NATIONALITY & 0.037** & 0.034* & 0.091*** & 0.090*** \\
+& (0.018) & (0.018) & (0.026) & (0.025) \\
+LANGUAGE & -0.025** & -0.032*** & 0.005 & 0.003 \\
+& (0.011) & (0.012) & (0.012) & (0.012) \\
+ADDRESS (owner) &  & 0.090*** &  & 0.075*** \\
+&  & (0.021) &  & (0.021) \\
+LANGUAGE (owner) &  & 0.018** &  & 0.005 \\
+&  & (0.009) &  & (0.010) \\
+&  &  &  &  \\
+Observations & 67,965 & 67,965 & 64,834 & 64,834 \\
+R-squared & 0.232 & 0.235 & 0.269 & 0.270 \\
+Mean dep.~var.& 0.0387 & 0.0387 & 0.0624 & 0.0624 \\ \hline
+\end{tabular}  
 
 # Discussion 
 
@@ -400,6 +371,8 @@ Export markets become liberalized ($p_F$ increases).
 2. Net entry into exporting is zero (by assumption).
 3. Export-skilled managers move from low export-intensity firms to high export-intensity firms. (magnifying export heterogeneity)
 
+## Wage returns to exporting increased among CEOs
+![](figure/exporter_wage_premium.png){height=70%}
 
 # Conclusions
 ## Conclusions

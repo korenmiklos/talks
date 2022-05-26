@@ -1,0 +1,1 @@
+For firms with multiple CEOs, we kept the one most independent from the firm.
