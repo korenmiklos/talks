@@ -16,6 +16,12 @@ aspectratio: 43
     * Do they facilitate trade with their "home country"?
 * What role for personal connections and face-to-face meetings in globalization?
 
+## Instead of a literature review
+![](figure/Peoples-Front-of-Judea-700x394.jpeg)
+
+``So, apart from the roads — which go without saying — the aqueduct, sanitation, irrigation, medicine, education, wine, public baths and public order — what have the Romans *ever* done for us?''
+
+
 ## Related to four strands of literature
 1. What are the boundaries of (global) firms?
 2. Foreign owned firms perform better than domestic firms
@@ -89,10 +95,11 @@ aspectratio: 43
 # Estimation
 ## Estimating equations
 ### Selection
-Sample: $\text{CONTROL}_{i}^{k-1} = 1$, years before acquisition
+Sample: 1 year before acquisition
 $$
-\text{CONTROL}_{i}^k = \mu_{st} + \gamma X_{it}  + u_{ist}
+\Pr(\text{CONTROL}_{it}=k) = \Lambda(\mu_{st} + \gamma X_{it})
 $$
+estimated with multinomial or ordered logit
 
 ### Diff-in-diff (!)
 Sample: acquisitions
@@ -100,6 +107,10 @@ $$
 Y_{ist} = \alpha_i + \mu_{st} + \sum_{k=1}^3 \beta_k \text{CONTROL}_{it}^k + u_{ist}
 $$
 
+## Positive selection on capital and exports, negative on TFP
+\input{table/selection.tex}
+
+# Differences in differences
 ## Differences in differences
 $$
 Y_{it} = \alpha_i + \nu_t + \beta \text{CONTROL}_{it} + u_{it}
@@ -153,9 +164,6 @@ Each treatment has the **same** control group.
 We also do inverse-probability weighting within control group (Abadie 2005). This helps kill pretrends.
 
 # Results
-
-## Positive selection on exports, negative on TFP
-\input{table/selection.tex}
 
 # Without change in management
 ## No effects of foreign acquisition on employment
@@ -265,16 +273,14 @@ Both & 0.226 & \$600
 ### Trade experience premia
 Mion, Opromolla and Sforza (2016) estimate a 0.01--0.04 increase in hazard after manager with relevant export experience joins. Bisztray, Koren and Szeidl (2018) estimiate 0.002--0.005 peer effects in importing.
 
+## Summary
+1. Acquired firms only change business practices if management is also changed. 
+2. It matters who the managers are where they come from.
+3. Managers matter more than owners for firm performance.
 
-## Three stories
-### Vertical integration 
-Foreign owner takes over firm to export/import within own supply chain.
-
-### Professional network
-Managers help connect different firms within their professional network.
-
-### Business culture
-Managers know the business culture of their home country.
+## Two directions
+1. Causes: incomplete contracts, loyalty, embodied knowledge.
+2. Consequences: inelastic supply of good management, interesting reallocation of managers across firms.
 
 # A potential model
 ## Production function
@@ -370,6 +376,12 @@ Export markets become liberalized ($p_F$ increases).
 1. Managers with export skills earn more.
 2. Net entry into exporting is zero (by assumption).
 3. Export-skilled managers move from low export-intensity firms to high export-intensity firms. (magnifying export heterogeneity)
+
+## Firms run by expat managers dominate local firms in MLR sense 
+![](figure/FSD.pdf){height=70%}
+
+## CEO wages at large firms have increased disproportionately
+![](figure/wage_premium.pdf){height=70%}
 
 ## Wage returns to exporting increased among CEOs
 ![](figure/exporter_wage_premium.png){height=70%}

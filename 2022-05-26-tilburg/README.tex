@@ -197,6 +197,15 @@ Gergő Závecz}
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Instead of a literature review}
+\protect\hypertarget{instead-of-a-literature-review}{}
+\includegraphics{figure/Peoples-Front-of-Judea-700x394.jpeg}
+
+``So, apart from the roads --- which go without saying --- the aqueduct,
+sanitation, irrigation, medicine, education, wine, public baths and
+public order --- what have the Romans \emph{ever} done for us?'\,'
+\end{frame}
+
 \begin{frame}{Related to four strands of literature}
 \protect\hypertarget{related-to-four-strands-of-literature}{}
 \begin{enumerate}
@@ -377,9 +386,9 @@ Gergő Závecz}
 \protect\hypertarget{estimating-equations}{}
 \begin{block}{Selection}
 \protect\hypertarget{selection}{}
-Sample: \(\text{CONTROL}_{i}^{k-1} = 1\), years before acquisition \[
-\text{CONTROL}_{i}^k = \mu_{st} + \gamma X_{it}  + u_{ist}
-\]
+Sample: 1 year before acquisition \[
+\Pr(\text{CONTROL}_{it}=k) = \Lambda(\mu_{st} + \gamma X_{it})
+\] estimated with multinomial or ordered logit
 \end{block}
 
 \begin{block}{Diff-in-diff (!)}
@@ -390,8 +399,17 @@ Y_{ist} = \alpha_i + \mu_{st} + \sum_{k=1}^3 \beta_k \text{CONTROL}_{it}^k + u_{
 \end{block}
 \end{frame}
 
+\begin{frame}{Positive selection on capital and exports, negative on
+TFP}
+\protect\hypertarget{positive-selection-on-capital-and-exports-negative-on-tfp}{}
+\input{table/selection.tex}
+\end{frame}
+
+\hypertarget{differences-in-differences}{%
+\section{Differences in differences}\label{differences-in-differences}}
+
 \begin{frame}{Differences in differences}
-\protect\hypertarget{differences-in-differences}{}
+\protect\hypertarget{differences-in-differences-1}{}
 \[
 Y_{it} = \alpha_i + \nu_t + \beta \text{CONTROL}_{it} + u_{it}
 \]
@@ -463,11 +481,6 @@ We also do inverse-probability weighting within control group (Abadie
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
-
-\begin{frame}{Positive selection on exports, negative on TFP}
-\protect\hypertarget{positive-selection-on-exports-negative-on-tfp}{}
-\input{table/selection.tex}
-\end{frame}
 
 \hypertarget{without-change-in-management}{%
 \section{Without change in
@@ -627,22 +640,30 @@ importing.
 \end{block}
 \end{frame}
 
-\begin{frame}{Three stories}
-\protect\hypertarget{three-stories}{}
-\begin{block}{Vertical integration}
-\protect\hypertarget{vertical-integration}{}
-Foreign owner takes over firm to export/import within own supply chain.
-\end{block}
+\begin{frame}{Summary}
+\protect\hypertarget{summary}{}
+\begin{enumerate}
+\tightlist
+\item
+  Acquired firms only change business practices if management is also
+  changed.
+\item
+  It matters who the managers are where they come from.
+\item
+  Managers matter more than owners for firm performance.
+\end{enumerate}
+\end{frame}
 
-\begin{block}{Professional network}
-\protect\hypertarget{professional-network}{}
-Managers help connect different firms within their professional network.
-\end{block}
-
-\begin{block}{Business culture}
-\protect\hypertarget{business-culture}{}
-Managers know the business culture of their home country.
-\end{block}
+\begin{frame}{Two directions}
+\protect\hypertarget{two-directions}{}
+\begin{enumerate}
+\tightlist
+\item
+  Causes: incomplete contracts, loyalty, embodied knowledge.
+\item
+  Consequences: inelastic supply of good management, interesting
+  reallocation of managers across firms.
+\end{enumerate}
 \end{frame}
 
 \hypertarget{a-potential-model}{%
@@ -788,6 +809,18 @@ Export markets become liberalized (\(p_F\) increases).
   Export-skilled managers move from low export-intensity firms to high
   export-intensity firms. (magnifying export heterogeneity)
 \end{enumerate}
+\end{frame}
+
+\begin{frame}{Firms run by expat managers dominate local firms in MLR
+sense}
+\protect\hypertarget{firms-run-by-expat-managers-dominate-local-firms-in-mlr-sense}{}
+\includegraphics[width=\textwidth,height=0.7\textheight]{figure/FSD.pdf}
+\end{frame}
+
+\begin{frame}{CEO wages at large firms have increased
+disproportionately}
+\protect\hypertarget{ceo-wages-at-large-firms-have-increased-disproportionately}{}
+\includegraphics[width=\textwidth,height=0.7\textheight]{figure/wage_premium.pdf}
 \end{frame}
 
 \begin{frame}{Wage returns to exporting increased among CEOs}
