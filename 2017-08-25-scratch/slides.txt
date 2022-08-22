@@ -1,0 +1,123 @@
+% ./preamble.tex
+
+= Magamról =
+\widefigure{stencil}{Első hasznos programom}
+\widefigure{keyboard.jpg}{Első haszontalan programom}
+\widefigure{zipdrive}{Első beruházásom az adatforradalomba}
+
+
+%= Algoritmusok és adatok =
+%\widefigure{AIBreakthrough}{A mesterséges intelligencia mérföldkövei \cite{Wissner-Gross, 2016}}
+
+
+= Programozás oktatása =
+== Két megközelítés ==
+=== A programozás egyszerű ===
+,,Menj előre 10 lépést!"
+
+=== A programozás bonyolult ===
+,,Szimuláld a bayesi poszterior eloszlást GPU-n!"
+
+
+%% TODO: képek?
+
+== Hogyan lesz valakiből adattudós? ==
+\begin{columns}
+\begin{column}{0.6\textwidth}
+  1. \textbf<1>{Tanuld meg a matekot!}
+  2. \textbf<2>{Tanuld meg a statisztikát!}
+  3. \textbf<3>{Fejleszd a geometriai intuiciód!}
+  4. \textbf<4>{Tanulj meg kezelni egy statisztikai programcsomagot!}
+  5. \textbf<5>{Ha túl bonyolult dolgot akarsz csinálni, programozd le!}
+\end{column}
+\begin{column}{0.4\textwidth}
+    \begin{center}
+     \includegraphics<1>[width=\textwidth]{exhibits/matrix} %
+     \includegraphics<2>[width=\textwidth]{exhibits/ols-formula} %
+     \includegraphics<3>[width=\textwidth]{exhibits/regression-scatter} %
+     \includegraphics<4>[width=\textwidth]{exhibits/regress-stata} %
+     \includegraphics<5>[width=\textwidth]{exhibits/weibull} %
+    \end{center}
+\end{column}
+\end{columns}
+
+== ==
+\longfigure{efron-hastie}{A statisztika fejlődése \cite{Efron és Hastie, 2016}}
+
+= Pedig a programozás egyszerű =
+== Pedig a programozás egyszerű ==
+1. Programozás számok nélkül.
+2. Világos célok.
+3. Azonnali visszacsatolás.
+
+== Programozás számok nélkül ==
+- Az ,,adatmesterség" (data carpentry) az adatokkal való bánás mestersége.
+- Az ,,adattudomány" (data science) előszobája.
+
+== Világos célok ==
+- web scraping
+- adattisztítás
+
+
+
+== Web scraping ==
+1. Felderítés
+2. Letöltés
+3. Adatkinyerés
+4. Adatmentés
+
+== ==
+\widefigure{scraping1}{Egy egyszerű statikus honlap}
+\widefigure{scraping2}{Találjuk meg benne a struktúrát!}
+
+== Adattisztítási példa: Címfeldolgozás ==
+* 2,5 millió címhely (1,7 millió székhely, 900 ezer telephely)
+* Egy cím anatómiája: 1075 Budapest, Károly körút 9.
+
+
+== Hibás irányítószám ==
+'''1052''' Budapest, Kossuth Lajos tér 3.
+== Részleges utcanév ==
+1055 Budapest, '''Kossuth''' tér 3.
+== Kétértelműség ==
+2700 Cegléd, Kossuth '''Lajos''' utca 5.
+...
+2700 Cegléd, Kossuth '''Ferenc''' utca 5.
+== Elírás ==
+1151 Budapest, '''Kosut''' utca 7.
+== Feldolgozhatatlan mezők ==
+6600 Szentes, Ipari park '''hrsz. 3967/3.'''
+...
+1093 Budapest, '''(Pólus Irodaház),''' Lónyai utca 15.
+
+= Interaktív adattisztító alkalmazások =
+== ==
+\longfigure{trifacta}{Trifacta}
+\longfigure{tamr}{Tamr}
+\longfigure{openrefine}{OpenRefine}
+
+== Azonnali visszacsatolás ==
+- interaktív IDE
+- csoportmunka, pair programming
+- játékos feladatok
+
+== ==
+\longfigure{mosoly}{Együtt programozni jó}
+\longfigure{codebug}{Sikerélmény}
+
+
+= Összefoglaló =
+== Összefoglaló ==
+=== Programozni jó! ===
+- A programozásnak legyen kézzel fogható célja!
+- Kezdjük minél korábban!
+- Programozzunk akár számok nélkül!
+
+=== Adatozás a CEU-n ===
+- MSc in Business Analytics
+- Data Analysis for Business and Policy
+- Data @ CEU
+
+=== Kapcsolat ===
+- economics.ceu.edu
+- twitter.com/korenmiklos

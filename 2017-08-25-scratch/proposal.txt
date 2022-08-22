@@ -1,0 +1,6 @@
+Szeretnék összerakni egy olyan szekciót, ami az életpályán átívelően mutatja be a technológia és a oktatás kapcsolatát. Az alábbi témákban gondoltam 15-20 perces előadásokra:
+
+kora gyermekkori gondolkodási fejlődés 
+programozás tanítása általános iskolában
+technológiával segített tanulás középiskolában
+programozás tanítása felnőttkorban
