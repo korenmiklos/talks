@@ -1,32 +1,36 @@
-\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[ignorenonframetext,aspectratio=54,]{beamer}
+\documentclass[
+  ignorenonframetext,
+  aspectratio=54,
+]{beamer}
 \usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
 \beamertemplatenavigationsymbolsempty
-% Prevent slide breaks in the middle of a paragraph:
+% Prevent slide breaks in the middle of a paragraph
 \widowpenalties 1 10000
 \raggedbottom
 \setbeamertemplate{part page}{
-\centering
-\begin{beamercolorbox}[sep=16pt,center]{part title}
-  \usebeamerfont{part title}\insertpart\par
-\end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
 }
 \setbeamertemplate{section page}{
-\centering
-\begin{beamercolorbox}[sep=12pt,center]{part title}
-  \usebeamerfont{section title}\insertsection\par
-\end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
 }
 \setbeamertemplate{subsection page}{
-\centering
-\begin{beamercolorbox}[sep=8pt,center]{part title}
-  \usebeamerfont{subsection title}\insertsubsection\par
-\end{beamercolorbox}
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
 }
 \AtBeginPart{
   \frame{\partpage}
@@ -40,40 +44,37 @@
 \AtBeginSubsection{
   \frame{\subsectionpage}
 }
+\usepackage{amsmath,amssymb}
 \usepackage{lmodern}
-\usepackage{amssymb,amsmath}
-\usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\usepackage{iftex}
+\ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provides euro and other symbols
-\else % if luatex or xelatex
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
   \usepackage{unicode-math}
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage[]{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\usepackage{hyperref}
-\hypersetup{
-            pdftitle={When Time Really Matters: Analyzing Data in the Time of COVID},
-            pdfauthor={Miklós Koren (@korenmiklos)},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
 \newif\ifbibliography
-\usepackage{graphicx,grffile}
+\usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -82,16 +83,14 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
-
-% set default figure placement to htbp
+% Set default figure placement to htbp
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{pgfpages}
 \usepackage{microtype}
 \usepackage{tikz}
@@ -157,6 +156,17 @@
 % \bibliography{course.bib} 
 
 \providecommand{\exhibit}[2]{\includegraphics[keepaspectratio, height=0.9\textheight, width=\textwidth]{assets/img/#1}\\ {\tiny #2}}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={When Time Really Matters: Analyzing Data in the Time of COVID},
+  pdfauthor={Miklós Koren (@korenmiklos)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{When Time Really Matters: Analyzing Data in the Time of COVID}
 \author{Miklós Koren (@korenmiklos)}
@@ -165,45 +175,72 @@
 \begin{document}
 \frame{\titlepage}
 
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+\begin{frame}{Can you carbon date me?}
+\protect\hypertarget{can-you-carbon-date-me}{}
+\includegraphics{exhibit/zipdrive.jpg}
+\end{frame}
+
+\begin{frame}[fragile]{My tools}
+\protect\hypertarget{my-tools}{}
+\begin{verbatim}
+economics,1994-
+econometrics,1996-
+stata,1997-
+python,2003-
+julia,2017-
+\end{verbatim}
+\end{frame}
+
+\begin{frame}{Outline}
+\protect\hypertarget{outline}{}
+\begin{enumerate}
+\tightlist
+\item
+  When time really matters
+\item
+  Examples of real-time data
+\item
+  Challenges of private data
+\end{enumerate}
+\end{frame}
+
 \hypertarget{when-time-really-matters}{%
 \section{When time really matters}\label{when-time-really-matters}}
 
 \begin{frame}{When time really matters}
 \protect\hypertarget{when-time-really-matters-1}{}
-
 \begin{itemize}
 \tightlist
 \item
   November 2019: outbreak in Wuhan
 \item
-  December 27, 2019: new coronarivurs
+  December 27, 2019: new coronarivus
 \item
   December 31, 2019: WHO informed
 \item
-  January 30, 2020: WHO declares ``public health emergency''
+  January 30, 2020: WHO declares ``public health emergency'\,'
 \item
   March 11, 2020: WHO declares pandemic
 \item
   by March 31, 2020: most countries adopted strict social distancing
   measures
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Typical statistics publication calendar (BLS.gov)}
 \protect\hypertarget{typical-statistics-publication-calendar-bls.gov}{}
-
 \begin{figure}
 \centering
 \includegraphics{exhibit/fig/bls-march-2020.png}
 \caption{BLS 2020}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{Time-sensitive questions}
 \protect\hypertarget{time-sensitive-questions}{}
-
 \begin{itemize}
 \tightlist
 \item
@@ -220,7 +257,6 @@
   (in addition to genome sequencing, drug and vaccine development,
   clinical research)
 \end{itemize}
-
 \end{frame}
 
 \hypertarget{the-response-of-open-science}{%
@@ -229,7 +265,6 @@ science}\label{the-response-of-open-science}}
 
 \begin{frame}{The response of open science}
 \protect\hypertarget{the-response-of-open-science-1}{}
-
 \begin{itemize}
 \tightlist
 \item
@@ -248,29 +283,25 @@ science}\label{the-response-of-open-science}}
 \end{itemize}
 
 \begin{block}{Is this the future of policy analysis?}
-
+\protect\hypertarget{is-this-the-future-of-policy-analysis}{}
 \end{block}
-
 \end{frame}
 
 \begin{frame}{About 250,000 Covid-related articles}
 \protect\hypertarget{about-250000-covid-related-articles}{}
-
 \begin{figure}
 \centering
 \includegraphics{exhibit/fig/google-scholar.png}
 \caption{Google Scholar 2021}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{Timely data collection}
 \protect\hypertarget{timely-data-collection}{}
-
 How to avoid the 2-3-month lag of official statistical releases? (Plus
 several months of peer review.)
 
-Reuse existing data collected during ``normal course of business'':
+Reuse existing data collected during ``normal course of business'\,':
 
 \begin{itemize}
 \tightlist
@@ -279,7 +310,6 @@ Reuse existing data collected during ``normal course of business'':
 \item
   private
 \end{itemize}
-
 \end{frame}
 
 \hypertarget{examples-of-real-time-data}{%
@@ -287,113 +317,91 @@ Reuse existing data collected during ``normal course of business'':
 
 \begin{frame}{Visits to retail and recreation places collapsed}
 \protect\hypertarget{visits-to-retail-and-recreation-places-collapsed}{}
-
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{exhibit/fig/gmr-retail.pdf}
 \caption{Data from Hungarian cell phone users (Google Mobility Report
 2020)}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{Many workplaces are shuttered}
 \protect\hypertarget{many-workplaces-are-shuttered}{}
-
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{exhibit/fig/gmr-work.pdf}
 \caption{Data from Hungarian cell phone users (Google Mobility Report
 2020)}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{People are staying at home}
 \protect\hypertarget{people-are-staying-at-home}{}
-
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth,height=\textheight]{exhibit/fig/gmr-home.pdf}
 \caption{Data from Hungarian cell phone users (Google Mobility Report
 2020)}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{Examples of real-time data (1)}
 \protect\hypertarget{examples-of-real-time-data-1}{}
-
 \begin{block}{Medical}
-
+\protect\hypertarget{medical}{}
 Enormous amount of clinical, epi, virology data sharing
-
 \end{block}
 
 \begin{block}{Stock returns}
-
+\protect\hypertarget{stock-returns}{}
 Stock prices react to news almost instantaneously. But: noisy, only for
 traded stocks.
-
 \end{block}
 
 \begin{block}{Financial transactions}
-
+\protect\hypertarget{financial-transactions}{}
 Credit cards. Bank transactions.
-
 \end{block}
-
 \end{frame}
 
 \begin{frame}{Examples of real-time data (2)}
 \protect\hypertarget{examples-of-real-time-data-2}{}
-
 \begin{block}{Tracking mobility, spatial effects}
-
+\protect\hypertarget{tracking-mobility-spatial-effects}{}
 Cell phone tracking. Visiting POIs. Contact tracing. Air travel. Real
 estate pricing.
-
 \end{block}
 
 \begin{block}{Economic activity on platforms}
-
+\protect\hypertarget{economic-activity-on-platforms}{}
 Restaurant closures (Yelp). Ride sharing. Airbnb. Online work.
 E-commerce.
-
 \end{block}
-
 \end{frame}
 
 \begin{frame}{Other data sources}
 \protect\hypertarget{other-data-sources}{}
-
 \begin{block}{Other data to track infections}
-
+\protect\hypertarget{other-data-to-track-infections}{}
 Virus concentration in sewage.
-
 \end{block}
 
 \begin{block}{Other data to track the economy}
-
+\protect\hypertarget{other-data-to-track-the-economy}{}
 Electricity consumption. Job ads. Trademark applications.
-
 \end{block}
 
 \begin{block}{Other data to track social outcomes}
-
+\protect\hypertarget{other-data-to-track-social-outcomes}{}
 Religiousity. Schools and learning. Fertility. Nostalgia.
-
 \end{block}
-
 \end{frame}
 
-\hypertarget{why-private-data-alone-is-not-sufficient}{%
-\section{Why private data alone is not
-sufficient}\label{why-private-data-alone-is-not-sufficient}}
+\hypertarget{challenges-of-private-data}{%
+\section{Challenges of private data}\label{challenges-of-private-data}}
 
-\begin{frame}{Why private data alone is not sufficient}
-\protect\hypertarget{why-private-data-alone-is-not-sufficient-1}{}
-
+\begin{frame}{Challenges of private data}
+\protect\hypertarget{challenges-of-private-data-1}{}
 \begin{enumerate}
 \tightlist
 \item
@@ -405,22 +413,29 @@ sufficient}\label{why-private-data-alone-is-not-sufficient}}
 \item
   Law and ethics
 \end{enumerate}
-
 \end{frame}
 
 \hypertarget{statistics}{%
 \section{Statistics}\label{statistics}}
 
+\begin{frame}{A short history of (frequentist) statistics (Salsburg
+2002)}
+\protect\hypertarget{a-short-history-of-frequentist-statistics-salsburg-2002}{}
+\includegraphics{exhibit/lady-tasting-tea.jpg}
+\end{frame}
+
+\begin{frame}{The evolution of statistics (Efron and Hastie)}
+\protect\hypertarget{the-evolution-of-statistics-efron-and-hastie}{}
+\includegraphics{exhibit/efron-hastie.jpg}
+\end{frame}
+
 \begin{frame}{Why statistics matters}
 \protect\hypertarget{why-statistics-matters}{}
-
 Statistics provides rules for generalizing from (limited) data.
-
 \end{frame}
 
 \begin{frame}{Stories vs statistics}
 \protect\hypertarget{stories-vs-statistics}{}
-
 Suppose you want to predict the outcome of U.S. presidential elections
 in Pennsylvania. What are the benefits of a statistical prediction
 relative to talking to friends and watching TV pundits?
@@ -428,30 +443,26 @@ relative to talking to friends and watching TV pundits?
 \begin{enumerate}
 \tightlist
 \item
-  \(n=1\) vs \(n=\text{many}\). (``The plural of anecdote is data.''
+  \(n=1\) vs \(n=\text{many}\). (``The plural of anecdote is data.'\,'
   /Raymond Wolfinger)
 \item
   Stories subject to biases.
 \item
   Biases are unknown and hard to account for.
 \end{enumerate}
-
 \end{frame}
 
 \begin{frame}{Sample vs population}
 \protect\hypertarget{sample-vs-population}{}
-
 Suppose you ask 1,000 Pennsylvania voters. \[
 \hat p = \frac {\# \text{Republican}}{1000}
 \] \[
 \text{s.e.}(\hat p) = \sqrt{\frac {\hat p (1-\hat p)}{1000}} \approx 0.016
 \] if \(\hat p\approx 0.5\).
-
 \end{frame}
 
 \begin{frame}{Rules of generalizing from sample}
 \protect\hypertarget{rules-of-generalizing-from-sample}{}
-
 Suppose
 
 \begin{enumerate}
@@ -473,7 +484,6 @@ Suppose
 \item
   Irrespective of size of population.
 \end{itemize}
-
 \end{frame}
 
 \hypertarget{selection-bias}{%
@@ -481,7 +491,6 @@ Suppose
 
 \begin{frame}{Selection bias}
 \protect\hypertarget{selection-bias-1}{}
-
 If sample is not representative, may suffer from \textbf{selection
 bias}.
 
@@ -492,12 +501,10 @@ bias}.
 \item
   nonrandom response rate
 \end{enumerate}
-
 \end{frame}
 
 \begin{frame}{Getting a representative sample}
 \protect\hypertarget{getting-a-representative-sample}{}
-
 \includegraphics{exhibit/fig/selection-bias.png}
 
 Selection may occur at each of these steps.
@@ -511,26 +518,20 @@ Selection may occur at each of these steps.
 \item
   some voters hide their preferences
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}{A tactic to improve response rates}
 \protect\hypertarget{a-tactic-to-improve-response-rates}{}
-
 \includegraphics{exhibit/fig/coppock-2017.pdf}
-
 \end{frame}
 
 \begin{frame}{Sample vs big data}
 \protect\hypertarget{sample-vs-big-data}{}
-
 Why take a sample when we can study the population directly?
-
 \end{frame}
 
 \begin{frame}{Electoral forecasts}
 \protect\hypertarget{electoral-forecasts}{}
-
 \begin{itemize}
 \tightlist
 \item
@@ -540,23 +541,19 @@ Why take a sample when we can study the population directly?
 \end{itemize}
 
 Both are helpful but have very different properties.
-
 \end{frame}
 
 \begin{frame}{The blue shift}
 \protect\hypertarget{the-blue-shift}{}
-
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth,height=0.8\textheight]{exhibit/fig/blue-shift.png}
 \caption{FiveThirtyEight 2020}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{Lessons from statistics}
 \protect\hypertarget{lessons-from-statistics}{}
-
 \begin{itemize}
 \tightlist
 \item
@@ -566,7 +563,6 @@ Both are helpful but have very different properties.
 \item
   Models and domain expertise matter
 \end{itemize}
-
 \end{frame}
 
 \hypertarget{economics}{%
@@ -574,7 +570,6 @@ Both are helpful but have very different properties.
 
 \begin{frame}{Why economics matters}
 \protect\hypertarget{why-economics-matters}{}
-
 \begin{enumerate}
 \tightlist
 \item
@@ -584,45 +579,37 @@ Both are helpful but have very different properties.
 \item
   Scarce resources are worth more.
 \end{enumerate}
-
 \end{frame}
 
 \begin{frame}{The Susceptible-Infectious-Recovered model}
 \protect\hypertarget{the-susceptible-infectious-recovered-model}{}
-
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth,height=0.8\textheight]{exhibit/fig/SIR_trajectory.png}
 \caption{Wefatherley 2018}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{Flattening the curve}
 \protect\hypertarget{flattening-the-curve}{}
-
 \begin{figure}
 \centering
 \includegraphics{exhibit/fig/flatten1.png}
 \caption{RCraig09 2020}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{Flattening the curve}
 \protect\hypertarget{flattening-the-curve-1}{}
-
 \begin{figure}
 \centering
 \includegraphics{exhibit/fig/flatten2.png}
 \caption{RCraig09 2020}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{People respond to incentives}
 \protect\hypertarget{people-respond-to-incentives}{}
-
 \begin{itemize}
 \tightlist
 \item
@@ -638,12 +625,10 @@ Both are helpful but have very different properties.
   There is voluntary social distancing, as well as non-compliance with
   policy measures.
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Systems matter}
 \protect\hypertarget{systems-matter}{}
-
 The SIR model is highly nonlinear. My getting sick depends on behavior
 of others.
 
@@ -656,23 +641,19 @@ of others.
 \item
   non-intuitive
 \end{itemize}
-
 \end{frame}
 
 \begin{frame}{Peaks of epidemics are notoriously hard to forecast}
 \protect\hypertarget{peaks-of-epidemics-are-notoriously-hard-to-forecast}{}
-
 \begin{figure}
 \centering
 \includegraphics[width=\textwidth,height=0.8\textheight]{exhibit/fig/nonlinear.jpg}
 \caption{Chowell 2017}
 \end{figure}
-
 \end{frame}
 
 \begin{frame}{Lessons from economics}
 \protect\hypertarget{lessons-from-economics}{}
-
 \begin{itemize}
 \tightlist
 \item
@@ -681,7 +662,6 @@ of others.
 \item
   Hard to forecast non-linear system without theory.
 \end{itemize}
-
 \end{frame}
 
 \hypertarget{politics-law-and-ethics}{%
@@ -689,7 +669,6 @@ of others.
 
 \begin{frame}{Politics, law and ethics}
 \protect\hypertarget{politics-law-and-ethics-1}{}
-
 \begin{enumerate}
 \tightlist
 \item
@@ -705,39 +684,32 @@ of others.
 \item
   Privacy and surveillance
 \end{enumerate}
-
 \end{frame}
 
 \begin{frame}{Is ride sharing killing people?}
 \protect\hypertarget{is-ride-sharing-killing-people}{}
-
 Barrios, Hochberg and Yi (2018): Uber and Lyft increased traffic and
 congestion. Associated with 2--3\% increase in fatalities.
 
 Got no data from Uber! (unlike other researchers)
-
 \end{frame}
 
 \begin{frame}{Your phone knows everything about you}
 \protect\hypertarget{your-phone-knows-everything-about-you}{}
-
 Thomson and Warzel (2019): Twelve Million Phones, One Dataset, Zero
 Privacy (New York Times)
 
 Tracking individuals in location data dumps can (i) identify them, (ii)
 reveal highly sensitive information.
-
 \end{frame}
 
 \begin{frame}{Mapping U.S. bases}
 \protect\hypertarget{mapping-u.s.-bases}{}
-
 \begin{figure}
 \centering
 \includegraphics{exhibit/fig/strava.jpeg}
 \caption{Strava 2017}
 \end{figure}
-
 \end{frame}
 
 \hypertarget{conclusion-and-discussion}{%
@@ -745,7 +717,6 @@ reveal highly sensitive information.
 
 \begin{frame}{Conclusion and discussion}
 \protect\hypertarget{conclusion-and-discussion-1}{}
-
 \begin{enumerate}
 \tightlist
 \item
@@ -757,7 +728,6 @@ reveal highly sensitive information.
   Big data will never \emph{substitute} domain expertise, human
   judgement, ethical and political accountability.
 \end{enumerate}
-
 \end{frame}
 
 \end{document}

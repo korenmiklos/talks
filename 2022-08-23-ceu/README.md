@@ -6,10 +6,29 @@ author:
 aspectratio: 54
 ---
 
+# Introduction
+## Can you carbon date me?
+![](exhibit/zipdrive.jpg)
+
+## My tools
+```
+economics,1994-
+econometrics,1996-
+stata,1997-
+python,2003-
+julia,2017-
+```
+
+## Outline
+1. When time really matters
+2. Examples of real-time data
+3. Challenges of private data
+
+
 # When time really matters
 ## When time really matters
 - November 2019: outbreak in Wuhan
-- December 27, 2019: new coronarivurs
+- December 27, 2019: new coronarivus
 - December 31, 2019: WHO informed
 - January 30, 2020: WHO declares ``public health emergency''
 - March 11, 2020: WHO declares pandemic
@@ -89,14 +108,21 @@ Electricity consumption. Job ads. Trademark applications.
 Religiousity. Schools and learning. Fertility. Nostalgia.
 
 
-# Why private data alone is not sufficient
-## Why private data alone is not sufficient
+# Challenges of private data
+## Challenges of private data
 1. Statistics
 2. Economics
 3. Politics
 4. Law and ethics
 
 # Statistics
+
+## A short history of (frequentist) statistics (Salsburg 2002)
+![](exhibit/lady-tasting-tea.jpg)
+
+## The evolution of statistics (Efron and Hastie)
+![](exhibit/efron-hastie.jpg)
+
 ## Why statistics matters
 Statistics provides rules for generalizing from (limited) data. 
 
