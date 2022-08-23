@@ -59,6 +59,14 @@ julia,2017-
 ## About 250,000 Covid-related articles
 ![Google Scholar 2021](exhibit/fig/google-scholar.png)
 
+## Our model-informed prediction based on past data (Koren and Pető 2020)
+
+https://datawrapper.dwcdn.net/NNmIa/2/
+
+## ...turned out to be quite accurate
+
+![](exhibit/fig5.png)
+
 ## Timely data collection
 How to avoid the 2-3-month lag of official statistical releases? (Plus several months of peer review.)
 
