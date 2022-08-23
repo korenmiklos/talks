@@ -4,7 +4,7 @@
 %
 \documentclass[
   ignorenonframetext,
-  aspectratio=54,
+  aspectratio=1610,
 ]{beamer}
 \usepackage{pgfpages}
 \setbeamertemplate{caption}[numbered]
@@ -178,8 +178,8 @@
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-\begin{frame}{Can you carbon date me?}
-\protect\hypertarget{can-you-carbon-date-me}{}
+\begin{frame}{My first investment into econometrics}
+\protect\hypertarget{my-first-investment-into-econometrics}{}
 \includegraphics{exhibit/zipdrive.jpg}
 \end{frame}
 
@@ -204,6 +204,8 @@ julia,2017-
   Examples of real-time data
 \item
   Challenges of private data
+\item
+  What can economists do?
 \end{enumerate}
 \end{frame}
 
@@ -407,16 +409,26 @@ Religiousity. Schools and learning. Fertility. Nostalgia.
 \item
   Statistics
 \item
-  Economics
-\item
-  Politics
-\item
-  Law and ethics
+  Accountability
 \end{enumerate}
 \end{frame}
 
 \hypertarget{statistics}{%
 \section{Statistics}\label{statistics}}
+
+\begin{frame}{Data Science}
+\protect\hypertarget{data-science}{}
+``procedures for analyzing data, techniques for interpreting the results
+of such procedures, ways of planning the gathering of data to make its
+analysis easier, more precise or more accurate, and all the machinery
+and results of (mathematical) statistics which apply to analyzing
+data.'' (Tukey, \uncover<2>{1962})
+\end{frame}
+
+\begin{frame}{Why statistics matters}
+\protect\hypertarget{why-statistics-matters}{}
+Statistics provides rules for generalizing from (limited) data.
+\end{frame}
 
 \begin{frame}{A short history of (frequentist) statistics (Salsburg
 2002)}
@@ -427,11 +439,6 @@ Religiousity. Schools and learning. Fertility. Nostalgia.
 \begin{frame}{The evolution of statistics (Efron and Hastie)}
 \protect\hypertarget{the-evolution-of-statistics-efron-and-hastie}{}
 \includegraphics{exhibit/efron-hastie.jpg}
-\end{frame}
-
-\begin{frame}{Why statistics matters}
-\protect\hypertarget{why-statistics-matters}{}
-Statistics provides rules for generalizing from (limited) data.
 \end{frame}
 
 \begin{frame}{Stories vs statistics}
@@ -520,14 +527,9 @@ Selection may occur at each of these steps.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{A tactic to improve response rates}
-\protect\hypertarget{a-tactic-to-improve-response-rates}{}
-\includegraphics{exhibit/fig/coppock-2017.pdf}
-\end{frame}
-
 \begin{frame}{Sample vs big data}
 \protect\hypertarget{sample-vs-big-data}{}
-Why take a sample when we can study the population directly?
+Selection bias surely does not matter if we observe (almost) everyone?!
 \end{frame}
 
 \begin{frame}{Electoral forecasts}
@@ -554,22 +556,96 @@ Both are helpful but have very different properties.
 
 \begin{frame}{Lessons from statistics}
 \protect\hypertarget{lessons-from-statistics}{}
-\begin{itemize}
-\tightlist
-\item
-  Human judgement is necessary for good data analysis
-\item
-  Understand selection bias
-\item
-  Models and domain expertise matter
-\end{itemize}
+\begin{quote}
+\textbf{It is better to have a small unbiased sample than a large biased
+one.}
+\end{quote}
+
+Can you think of sources of selection bias in private data?
 \end{frame}
 
-\hypertarget{economics}{%
-\section{Economics}\label{economics}}
+\hypertarget{accountability}{%
+\section{Accountability}\label{accountability}}
 
-\begin{frame}{Why economics matters}
-\protect\hypertarget{why-economics-matters}{}
+\begin{frame}{Accountability}
+\protect\hypertarget{accountability-1}{}
+\begin{enumerate}
+\tightlist
+\item
+  Conflict of interest to share information
+
+  \begin{itemize}
+  \tightlist
+  \item
+    governments
+  \item
+    corporations
+  \end{itemize}
+\item
+  Privacy and surveillance
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Uber uses data and economists as PR props}
+\protect\hypertarget{uber-uses-data-and-economists-as-pr-props}{}
+``Ride-hailing apps have created jobs for Paris's poorer youth, but a
+regulatory clampdown looms,'' the {[}FT{]} article said. Thesmar was
+quoted in the piece saying that Uber was a ``social gamechanger''.
+
+``We see low risk here because we can work with Landier on framing the
+study and we also decide what data we share with him.'' (senior Uber
+staffer quoted in Lawrence 2022)
+\end{frame}
+
+\begin{frame}{Is ride sharing killing people?}
+\protect\hypertarget{is-ride-sharing-killing-people}{}
+Barrios, Hochberg and Yi (2018): Uber and Lyft increased traffic and
+congestion. Associated with 2--3\% increase in fatalities.
+
+Got no data from Uber!
+\end{frame}
+
+\begin{frame}{A case study in accountability}
+\protect\hypertarget{a-case-study-in-accountability}{}
+Simonsohn, Simmons, Nelson and anonymous (2021) show that Shu, Mazar,
+Gino, Ariely and Bazerman (2012 PNAS) is based on \textbf{fraudulent}
+data.
+
+\includegraphics{exhibit/ariely.png}
+\end{frame}
+
+\begin{frame}{The data as (purportedly) shared with the private company}
+\protect\hypertarget{the-data-as-purportedly-shared-with-the-private-company}{}
+\includegraphics{exhibit/1-First-introduction-to-data.png}
+\end{frame}
+
+\begin{frame}{Distribution of miles driven in a year}
+\protect\hypertarget{distribution-of-miles-driven-in-a-year}{}
+\includegraphics{exhibit/F1-Uniform-change-2021-07-03.png}
+\end{frame}
+
+\begin{frame}{No rounding in end-of-year reported mileage}
+\protect\hypertarget{no-rounding-in-end-of-year-reported-mileage}{}
+\includegraphics{exhibit/F4-Last-1-digit-2021-07-05.png}
+\end{frame}
+
+\begin{frame}{Most observations seem to be duplicated}
+\protect\hypertarget{most-observations-seem-to-be-duplicated}{}
+\includegraphics{exhibit/3-sort-by-car-4-2021-07-07.png}
+\end{frame}
+
+\begin{frame}{The chain of data provenance}
+\protect\hypertarget{the-chain-of-data-provenance}{}
+insurance company \(\to\) Ariely \(\to\) Mazar \(\to\) PNAS
+\end{frame}
+
+\hypertarget{what-can-economists-do}{%
+\section{What can economists do?}\label{what-can-economists-do}}
+
+\begin{frame}{What can economists do?}
+\protect\hypertarget{what-can-economists-do-1}{}
+Three tenets of economics:
+
 \begin{enumerate}
 \tightlist
 \item
@@ -662,54 +738,6 @@ of others.
 \item
   Hard to forecast non-linear system without theory.
 \end{itemize}
-\end{frame}
-
-\hypertarget{politics-law-and-ethics}{%
-\section{Politics, law and ethics}\label{politics-law-and-ethics}}
-
-\begin{frame}{Politics, law and ethics}
-\protect\hypertarget{politics-law-and-ethics-1}{}
-\begin{enumerate}
-\tightlist
-\item
-  Conflict of interest to share information
-
-  \begin{itemize}
-  \tightlist
-  \item
-    governments
-  \item
-    corporations
-  \end{itemize}
-\item
-  Privacy and surveillance
-\end{enumerate}
-\end{frame}
-
-\begin{frame}{Is ride sharing killing people?}
-\protect\hypertarget{is-ride-sharing-killing-people}{}
-Barrios, Hochberg and Yi (2018): Uber and Lyft increased traffic and
-congestion. Associated with 2--3\% increase in fatalities.
-
-Got no data from Uber! (unlike other researchers)
-\end{frame}
-
-\begin{frame}{Your phone knows everything about you}
-\protect\hypertarget{your-phone-knows-everything-about-you}{}
-Thomson and Warzel (2019): Twelve Million Phones, One Dataset, Zero
-Privacy (New York Times)
-
-Tracking individuals in location data dumps can (i) identify them, (ii)
-reveal highly sensitive information.
-\end{frame}
-
-\begin{frame}{Mapping U.S. bases}
-\protect\hypertarget{mapping-u.s.-bases}{}
-\begin{figure}
-\centering
-\includegraphics{exhibit/fig/strava.jpeg}
-\caption{Strava 2017}
-\end{figure}
 \end{frame}
 
 \hypertarget{conclusion-and-discussion}{%
