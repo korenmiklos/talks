@@ -1,0 +1,4 @@
+,Alpha Co,Beta Ltd,total
+Alice,,,6
+Bob,,,3
+total,6,3,9

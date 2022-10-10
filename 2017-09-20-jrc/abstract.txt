@@ -1,0 +1,6 @@
+Title: The distributional impact of international trade
+Abstract: 
+
+There is an almost universal consensus among economists that countries gain when they open up to international trade. We have also developed a thorough quantitative understanding of the gains from trade. However, trade always redistributes income. Some industries, some firms and some workers will gain, while others will lose. This is again a robust finding across many theories, although the qualitative consensus may not be as apparent as in the case of gains from trade. Moreover, a quantitative assessment of the redistributive effects of trade is still inadequate. 
+
+It is important to note that the redistribution effects of globalization are not secondary to the aggregate gain from trade. Often it is exactly the redistribution that brings about the overall gain. Given the amount of resources in the economy, an export sector cannot expand without an import sector shrinking. Similarly, large productive firms cannot grow without the small unproductive shrinking or exiting. For too long we have assumed these reallocations to be frictionless: workers fired in shrinking sectors and firms will instantaneously get rehired in expanding sectors and firms. This talk discusses the theoretical tools and measurements that show that this is not the case.

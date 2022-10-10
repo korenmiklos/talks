@@ -1,0 +1,55 @@
+% ./preamble.tex
+
+= Summary =
+== Motivation ==
+- Firms differ greatly in productivity. Understanding the sources of this dispersion is important for aggregate productivity, as well as inequality across firms and workers.
+- Two robust facts about productivity differences:
+  1. Better manageed firms are more productive.
+  2. Firms in dense agglomerations are more productive.
+
+== Questions ==
+- What are the mechanisms? 
+- Can policy use them to improve aggretage outcomes?
+- What are the equilibrium effects?
+- Quantitative measurement?
+
+== Contribution ==
+- I propose a class of models
+
+== Five studies ==
+=== Alignment ===
+1. An alignment model of managers
+2. Estimating a wage equation with multi-dimensional latent heterogeneity
+=== Proximity ===
+3. Disruption in business travel and the international activity of firms
+4. The spatial span of control of multi-unit firms
+5. Where do managers spend their time?
+
+= Alignment =
+== The alignment model of managers ==
+There are $M$ exogenous market segments, each with a Cobb--Douglas production function:
+\[
+Y_{ij} = \sum_{m=1}^M 
+  p_{m} a_{im} k_{jm} 
+    \equiv \mathbf a_i'\mathbf P \mathbf k_j
+    = \norm {\mathbf a_i}\norm{\mathbf P \mathbf k_j} \cos \theta_{ij}
+\]
+with $p_{m}=P_{m}^{1/(\nu+\alpha)}$, $a_{im}=A_{im}^{\nu/(\nu+\alpha)}$, $k_{jm} = K_{jm}^{\alpha/(\nu+\alpha)}$. 
+Productivity is higher with
+  - more ''skilled'' managers: $\norm {\mathbf a_i}$ high
+  - more ''aligned'' managers: angle $\theta_{ij}$ low
+
+== Why $m>1$? ==
+- Skills are multi-dimensional.
+- Managers are not perfectly sorted: CEO pay only partly explained by firm size.
+- Not all firms adopt good management practices.
+- Manager-firm assignment exhibits specific complementarities.
+  - Market-specific trade knowledge (export, import) is persistent across firm assignments of managers.
+  - Firms with foreign managers are more likely to export (even conditional on foreign ownership).
+
+== Contributions ==
+- Tractable general equilibrium model of how managers contribute to productivity.
+  - Counterfactuals account for equilibrium feedback.
+- Study how trade, FDI and immigration liberalization affect manager assignment, aggregate producticity and the firm size distribution.
+  - Strong complementarities between policies.
+- Estimates for 25 years of European integration.

@@ -3,13 +3,32 @@ title: "When Time Really Matters: Analyzing Data in the Time of COVID"
 date: "https://economics.ceu.edu"
 author: 
  - Miklós Koren (@korenmiklos) 
-aspectratio: 54
+aspectratio: 1610
 ---
+
+# Introduction
+## My first investment into econometrics
+![](exhibit/zipdrive.jpg)
+
+## My tools
+```
+economics,1994-
+econometrics,1996-
+stata,1997-
+python,2003-
+julia,2017-
+```
+
+## Outline
+1. When time really matters
+2. Examples of real-time data
+3. Challenges of private data
+4. What can economists do?
 
 # When time really matters
 ## When time really matters
 - November 2019: outbreak in Wuhan
-- December 27, 2019: new coronarivurs
+- December 27, 2019: new coronarivus
 - December 31, 2019: WHO informed
 - January 30, 2020: WHO declares ``public health emergency''
 - March 11, 2020: WHO declares pandemic
@@ -39,6 +58,14 @@ aspectratio: 54
 
 ## About 250,000 Covid-related articles
 ![Google Scholar 2021](exhibit/fig/google-scholar.png)
+
+## Our model-informed prediction based on past data (Koren and Pető 2020)
+
+https://datawrapper.dwcdn.net/NNmIa/2/
+
+## ...turned out to be quite accurate
+
+![](exhibit/fig5.png)
 
 ## Timely data collection
 How to avoid the 2-3-month lag of official statistical releases? (Plus several months of peer review.)
@@ -89,16 +116,24 @@ Electricity consumption. Job ads. Trademark applications.
 Religiousity. Schools and learning. Fertility. Nostalgia.
 
 
-# Why private data alone is not sufficient
-## Why private data alone is not sufficient
+# Challenges of private data
+## Challenges of private data
 1. Statistics
-2. Economics
-3. Politics
-4. Law and ethics
+2. Accountability
 
 # Statistics
+
+## Data Science
+``procedures for analyzing data, techniques for interpreting the results of such procedures, ways of planning the gathering of data to make its analysis easier, more precise or more accurate, and all the machinery and results of (mathematical) statistics which apply to analyzing data." (Tukey, \uncover<2>{1962})
+
 ## Why statistics matters
 Statistics provides rules for generalizing from (limited) data. 
+
+## A short history of (frequentist) statistics (Salsburg 2002)
+![](exhibit/lady-tasting-tea.jpg)
+
+## The evolution of statistics (Efron and Hastie)
+![](exhibit/efron-hastie.jpg)
 
 ## Stories vs statistics
 Suppose you want to predict the outcome of U.S. presidential elections in Pennsylvania. What are the benefits of a statistical prediction relative to talking to friends and watching TV pundits?
@@ -146,11 +181,8 @@ Selection may occur at each of these steps.
 - people do not respond
 - some voters hide their preferences
 
-## A tactic to improve response rates
-![](exhibit/fig/coppock-2017.pdf)
-
 ## Sample vs big data
-Why take a sample when we can study the population directly?
+Selection bias surely does not matter if we observe (almost) everyone?!
 
 ## Electoral forecasts
 * based on random sample
@@ -162,12 +194,52 @@ Both are helpful but have very different properties.
 ![FiveThirtyEight 2020](exhibit/fig/blue-shift.png){height=80%}
 
 ## Lessons from statistics
-- Human judgement is necessary for good data analysis
-- Understand selection bias
-- Models and domain expertise matter
+> **It is better to have a small unbiased sample than a large biased one.**
 
-# Economics
-## Why economics matters
+Can you think of sources of selection bias in private data?
+
+
+# Accountability
+## Accountability
+1. Conflict of interest to share information
+	- governments
+	- corporations
+2. Privacy and surveillance
+
+## Uber uses data and economists as PR props
+“Ride-hailing apps have created jobs for Paris’s poorer youth, but a regulatory clampdown looms,” the [FT] article said. Thesmar was quoted in the piece saying that Uber was a “social gamechanger”.
+
+“We see low risk here because we can work with Landier on framing the study and we also decide what data we share with him.” (senior Uber staffer quoted in Lawrence 2022)
+
+## Is ride sharing killing people?
+Barrios, Hochberg and Yi (2018): Uber and Lyft increased traffic and congestion. Associated with 2--3% increase in fatalities.
+
+Got no data from Uber!
+
+## A case study in accountability
+Simonsohn, Simmons, Nelson and anonymous (2021) show that Shu, Mazar, Gino, Ariely and Bazerman (2012 PNAS) is based on **fraudulent** data.
+
+![](exhibit/ariely.png)
+
+## The data as (purportedly) shared with the private company
+![](exhibit/1-First-introduction-to-data.png)
+
+## Distribution of miles driven in a year
+![](exhibit/F1-Uniform-change-2021-07-03.png)
+
+## No rounding in end-of-year reported mileage
+![](exhibit/F4-Last-1-digit-2021-07-05.png)
+
+## Most observations seem to be duplicated
+![](exhibit/3-sort-by-car-4-2021-07-07.png)
+
+## The chain of data provenance
+insurance company $\to$ Ariely $\to$ Mazar $\to$ PNAS
+
+# What can economists do?
+## What can economists do?
+Three tenets of economics:
+
 1. People respond to incentives.
 2. Systems matter.
 3. Scarce resources are worth more.
@@ -199,26 +271,6 @@ The SIR model is highly nonlinear. My getting sick depends on behavior of others
 ## Lessons from economics
 - Even big data not sufficient to describe *future* behavior. Understand incentives and externalities.
 - Hard to forecast non-linear system without theory.
-
-# Politics, law and ethics
-## Politics, law and ethics
-1. Conflict of interest to share information
-	- governments
-	- corporations
-2. Privacy and surveillance
-
-## Is ride sharing killing people?
-Barrios, Hochberg and Yi (2018): Uber and Lyft increased traffic and congestion. Associated with 2--3% increase in fatalities.
-
-Got no data from Uber! (unlike other researchers)
-
-## Your phone knows everything about you
-Thomson and Warzel (2019): Twelve Million Phones, One Dataset, Zero Privacy (New York Times)
-
-Tracking individuals in location data dumps can (i) identify them, (ii) reveal highly sensitive information.
-
-## Mapping U.S. bases
-![Strava 2017](exhibit/fig/strava.jpeg)
 
 # Conclusion and discussion
 ## Conclusion and discussion

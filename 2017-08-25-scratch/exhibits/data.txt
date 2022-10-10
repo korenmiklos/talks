@@ -1,0 +1,5 @@
+sales_rep,buyer,number_of_contracts
+Alice,Alpha Co,5
+Alice,Beta Ltd,1
+Bob,Alpha Co,1
+Bob,Beta Ltd,2

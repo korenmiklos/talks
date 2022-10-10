@@ -1,0 +1,214 @@
+% ./preamble.tex
+
+= Motivation =
+
+== Three trends about trade and inequality ==
+1. Global trade over GDP is higher now than ever.
+2. Share of low-wage countries in exports has increased.
+3. Within-country income inequality is on the rise.
+
+== ==
+\widefigure{openness-1830}{We are in the second wave of globalization (Federico and Tena-Junguito, 2017)}
+%\longfigure{low-wage}{Trade share of low-wage countries has been increasing (Federico and Tena-Junguito, 2017)}
+\longfigure{china-share}{Share of Chinese imports have increased sharply}
+%\longfigure{global-inequality}{}
+\longfigure{highschool-premium}{High-school and college wage premia have increased (Goldin and Katz, 2008)}
+\longfigure{top10-share}{Share of top 10\% in U.S.~market income (Bourguignon, 2015)}
+
+== Debates on trade policy ==
+=== By 2008 ===
+...
+=== After 2008 ===
+- How does competition from low-wage countries affect US and EU workers?
+- What will be the effect of Brexit?
+- Should NAFTA be scrapped?
+- Who supports TTIP?
+
+== Outline ==
+1. A bird's eye view on trade
+2. Why distribution matters
+3. How can theory guide us?
+4. Open questions
+
+= A bird's eye view on trade =
+== Each country gains from trade ==
+``If a foreign country can supply us with a commodity cheaper than we ourselves can make it, better buy it of them with some part of the produce of our own industry, employed in a way in which we have some advantage." (Smith, 1776)
+
+==  ==
+\widefigure{PPF1}{Technology and endowment define the production possibilities set}
+\widefigure{PPF2}{Market exchange expands these possibilities}
+
+== The technology analogy ==
+In the standard trade model, opening up to trade is ''identical'' to discovering a new technology, exchanging exports for imports.
+%% rhetorical device: who would oppose a new technology?
+%% again, careful about redistribution
+
+
+== How large are these aggregate gains? ==
+In absence of randomized control trials for trade policy, we can rely on natural experiments, in which trading opportunities changed suddenly, while tastes and technologies remained the same.
+1. Jeffersonian self embargo of U.S. trade (1808-09)
+2. Meiji restoration in Japan (1859-75)
+3. Closure of the Suez Canal (1967-75)
+4. The age of aviation (1960-95)
+
+== Aggregate loss from halving trade ==
+\begin{tabular}{llc}
+Period & Geography 	& Percentage GDP loss \\
+		&			& from halving trade	\\
+\hline
+1808--09 & USA & 2--3\% \\
+1854--75 & Japan & 3--5\% \\
+1967--75 & Europe--Asia & 10--16\% \\
+1960--95 & World & 25--35\% \\
+\end{tabular}
+
+\bigskip
+{\footnotesize Based on 
+Irwin (2005),
+Bernhofen and Brown (2004, 2005),
+Feyrer (2009a, b).}
+
+
+= Why distribution matters =
+\widefigure{google-books}{Interest in inequality is increasing (Google Books)}
+
+== Attitudes towards trade ==
+``How much do you agree or disagree with the following statement: (Respondent’s country) should limit the import of foreign products in order to protect its national economy?"
+
+- Mayda and Rodrik (2005): 55\% agree or strongly agree.
+- Meaningful correlations across countries and respondents.
+
+== ==
+%\longfigure{attitude-policy}{People like trade more in more open countries (Mayda and Rodrik, 2005)}
+\longfigure{attitude-education}{More educated repondents are more pro-trade in rich countries (Mayda and Rodrik, 2005)}
+
+== New data is crucial to study distributional effects ==
+- Firm-level data from balance sheets, earnings statements, customs records or
+surveys have become increasingly available in a number of countries.
+- The emergence of linked employer-employee datasets (LEEDs) enables studying worker-level outcomes, such as wages
+and employment probabilities.
+	- Primary source: reuse of administrative data such as social security records. 
+...
+- But: data collection is ''fragmented'' across countries and access for researchers is ''ad hoc''.
+
+
+= How can theory guide us? =
+
+== Redistributive effects are not new ==
+``If corn can be imported cheaper than it can be grown on this rather better land, rent will again fall and profits rise, and another and better description of land will now be cultivated for profits only." (Ricardo, 1815)
+...
+\bigskip
+``Australia has a small population and an abundant supply of land, much of it not very
+fertile. Land is consequently cheap and wages high, in relation to most other countries.
+[...] Thus trade increases
+the price of land in Australia and lowers it in Europe, while tending to keep wages down
+in Australia and up in Europe." (Ohlin, 1924)
+
+== Basic mechanism ==
+- Trade changes relative prices of sectors.
+- Lower prices put competitive pressure of sectors, regions, firms, workers.
+- Their income may shrink as a result.
+
+% == ==
+% \longfigure{D_MR_12}{More efficient firms earn disproportionately higher profits (Melitz and Ottaviano, 2008)}
+% \longfigure{Profits_oper_trade}{Firm profits become more unequal after trade opening (Melitz and Ottaviano, 2008)}
+
+
+
+
+== A recipe for analyzing distributional effects ==
+1. Identify groups differentially affected by the policy change.
+2. Measure how costly it is to switch groups.
+3. Look for complementary changes. 
+%% relative vs absolute effect
+
+== Distributional effects of importing on worker income ==
+\begin{tabular}{llll}
+Grouping & Exposure & Evidence  \\
+\hline
+Sector & Sectoral tariff rates & Canada, USA, EU (large),\\
+ && Colombia (small) \\
+Region & Import competing sectors & India, USA (large) \\
+Worker/firm & Offshoring & Denmark (small), Indonesia (large) \\
+\end{tabular}
+
+\bigskip
+{\footnotesize Based on 
+Trefler (2004),
+Pierce and Schott (2015),
+Attanasio, Goldberg and Pavcnik (2004),
+Goldberg and Pavcnik (2005),
+Topalova (2010),
+Autor, Dorn, Hanson and Song (2014),
+Hakobyan and McLaren (2016),
+Hummels, Jorgensen, Munch ans Xiang (2014),
+Kasahara, Liand and Rodrigue (2015).}
+
+== Distributional effects of \emph{exporting} on income ==
+\begin{tabular}{llll}
+Grouping & Exposure & Evidence  \\
+\hline
+Region & Liberalized export sectors & Vietnam (large)\\
+Firm & Productive \emph{v} unproductive & Chile + many others (small) \\
+Worker/firm & Exporting \emph{v} non-exporting & Argentina, Mexico, Denmark (small)  \\
+\end{tabular}
+
+\bigskip
+{\footnotesize Based on 
+McCaig (2011),
+Pavcnik (2002),
+Verhoogen (2008),
+Brambilla, Lederman and Porto (2012).}
+
+
+== Costs of switching are large ==
+- Very large costs of switching industry in the U.S.: equivalent to 4--13 years of wage income (Artuç, Chaudhuri, and McLaren, 2010).
+- Smaller, but diverse switching costs in Brazil, but worker reallocation can take 9--30 years (Dix-Carneiro, 2014).
+- Regional labor-market effects of trade liberalization peak after 20 years in Brazil (Dix-Carniero and Kovak, 2015).
+
+== Complementary effects ==
+- As firms offshore, they become more competitive and can expand in scale (Grossman and Rossi-Hansberg, 2008).
+- This can (partly) offset the negative effect on employment and wages.
+
+% == ==
+% \longfigure{imported-inputs-5}{Demand for domestic intermediate inputs is not too sensitive to tariffs (Halpern, Koren and Szeidl, 2015)}
+
+== Chinese imports are beneficial for US \emph{firms} ==
+- Even if some establishments shrink in response to Chinese imports, firms ''as a whole'' increase (Magyari, 2017)
+	- manufacturing employment
+	- complementary services
+	- production wages
+
+= Open questions =
+== Open questions ==
+1. Complementarity between trade and technology
+2. New research designs based on new data
+
+== Complementarity between trade and technology ==
+- Most studies focus on the competitive effect of trade: prices adjust, firms expand/shrink, worker income adjusts.
+- In these explanations, trade liberalization and technical progress are alternative competitive forces. 
+- New approaches suggest complementarities between the two:
+	- trading as an activity, quality needed to export (Hallak and Sivadasan, 2013, Boler, Moxnes and Ulltveit-Moe, 2015)
+	- using imported technology (Koren and Csillag, 2017, Halpern, Hornok, Koren and Szeidl, 2017)
+
+== New research designs based on new data ==
+- To study the heterogeneous effects of policy, micro data is needed on firms and workers.
+- These are often collected outside traditional statistical agencies:
+	- administrative data (social security, VAT filings)
+	- business data (financials, transactions data, location tracking)
+- Useful to analyze
+	- full impact of policy (earnings, job loss, transfers, job transitions)
+	- international linkages
+	- long-run effects
+
+== Needed ==
+=== A Manifesto for Economic Research in Europe (COEURE, 2016) ===
+1. Facilitate data access for researchers
+2. Improve data design and data harmonisation
+3. Support economic data infrastructure in Europe
+
+= Conclusion =
+== Conclusion ==
+1. Trade ''always'' redistributes income.
+2. Recent advances in measurement made it possible to identify losers.
+3. Improved data access is needed to quantify the losses.
