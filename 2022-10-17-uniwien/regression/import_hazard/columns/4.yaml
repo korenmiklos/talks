@@ -1,0 +1,55 @@
+id: 4
+label: Tariff\\interactions
+coefficients:
+ - id: cum_tariffeu_X_lag_lnL
+   estimate: .0362496
+   standard_error: .0042656
+   t_statistic: 8.498189
+   p_value: 2.29e-17
+ - id: cum_tariffeu_X_firm_age
+   estimate: -.0008348
+   standard_error: .0003845
+   t_statistic: -2.171213
+   p_value: .0299459
+ - id: lnK
+   estimate: .0206361
+   standard_error: .0017219
+   t_statistic: 11.98441
+   p_value: 8.47e-33
+ - id: foreign
+   estimate: .2656703
+   standard_error: .0096241
+   t_statistic: 27.6048
+   p_value: 6.2e-160
+ - id: firm_age
+   estimate: -.0003247
+   standard_error: .0004117
+   t_statistic: -.7887249
+   p_value: .4302975
+ - id: firm_age2
+   estimate: 8.44e-06
+   standard_error: 6.66e-06
+   t_statistic: 1.267696
+   p_value: .2049455
+ - id: lag_lnK
+   estimate: .020433
+   standard_error: .0018999
+   t_statistic: 10.75504
+   p_value: 8.74e-27
+ - id: lag_lnL
+   estimate: -.0027544
+   standard_error: .0034353
+   t_statistic: -.8018084
+   p_value: .4226889
+ - id: _cons
+   estimate: -.3088728
+   standard_error: .0178184
+   t_statistic: -17.33452
+   p_value: 4.77e-66
+extra_rows:
+ - id: R2
+   value: .2871917400035864
+ - id: observations
+   value: 176494
+ - id: first_stage_F
+   value: 36.84969024856999

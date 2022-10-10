@@ -1,0 +1,7 @@
+--- > 
+ The dependent variable is the log monthly earning of the worker in the given year.
+ All specifications control for occupation and year fixed effects.
+ Worker controls include indicators for gender and schooling and a quadratic function of worker age.
+ Firm controls include log book value of machinery, an indicator whether the firm is foreign owned and quadratic functions of log employment and firm age.
+ Standard errors, clustered by firm, are reported in parantheses.
+ Coefficients significantly different from zero at 1, 5 and 10 percent are marked by ***, ** and *, respectively.

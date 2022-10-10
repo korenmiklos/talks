@@ -1,0 +1,18 @@
+-   id: treatment
+    label: Importer firm-occupation (dummy)
+    type: coefficient
+-   id: skilled
+    label: High school diploma\\{}\hspace*{1em}(dummy)
+    type: coefficient
+-   id: tr2sk
+    label: High school diploma at\\{}\hspace*{1em}importer firm-occupation (dummy)
+    type: coefficient
+-   id: R2
+    type: extra_row
+    label: $R^2$
+-   id: observations
+    type: extra_row
+    label: Number of observations
+-   id: first_stage_F
+    label: F-test for 1st stage
+    type: extra_row

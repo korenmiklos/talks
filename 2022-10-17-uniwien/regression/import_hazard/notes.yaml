@@ -1,0 +1,8 @@
+--- > 
+ The dependent variable is an indicator for importer status.
+ All regressions estimate a linear probability model for the hazard of starting to import.
+ Firm controls include quadratic functions of firm age.
+ Columns 1 and 2 are estimated on a firm-year panel and control for year fixed effects. 
+ Columns 3 and 4 are esimtated on a firm-occupation-year panel and control for occupation-year fixed effects.
+ Standard errors, clustered by firm, are reported in parantheses.
+ Coefficients significantly different from zero at 1, 5 and 10 percent are marked by ***, ** and *, respectively.

@@ -1,0 +1,50 @@
+id: 41
+label: treatment
+coefficients:
+ - id: ln_bartik
+   estimate: .0204187
+   standard_error: .0032249
+   t_statistic: 6.331635
+   p_value: 2.98e-10
+ - id: sk_ln_bartik
+   estimate: .0021952
+   standard_error: .0025563
+   t_statistic: .85874
+   p_value: .3905861
+ - id: sk_ln_Gbartik
+   estimate: -.0028109
+   standard_error: .0026869
+   t_statistic: -1.046143
+   p_value: .2956206
+ - id: skilled
+   estimate: .0278387
+   standard_error: .0298196
+   t_statistic: .9335716
+   p_value: .3506368
+ - id: gender
+   estimate: -.0280725
+   standard_error: .0109694
+   t_statistic: -2.55916
+   p_value: .010565
+ - id: age
+   estimate: .0000827
+   standard_error: .0009938
+   t_statistic: .0832558
+   p_value: .9336564
+ - id: age2
+   estimate: -.0006465
+   standard_error: .0013089
+   t_statistic: -.4939447
+   p_value: .6213991
+ - id: _cons
+   estimate: .3175221
+   standard_error: .0468959
+   t_statistic: 6.770783
+   p_value: 1.67e-11
+extra_rows:
+ - id: R2
+   value: .78484267234036
+ - id: observations
+   value: 80504
+ - id: first_stage_F
+   value: 14.76612824733334

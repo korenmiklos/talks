@@ -1,0 +1,1587 @@
+id: 3
+label: Firm controls
+coefficients:
+ - id: treatment
+   estimate: .0420881
+   standard_error: .0071798
+   t_statistic: 5.861997
+   p_value: 4.83e-09
+ - id: gender
+   estimate: .0589094
+   standard_error: .005846
+   t_statistic: 10.07685
+   p_value: 1.11e-23
+ - id: skilled
+   estimate: .0407645
+   standard_error: .002989
+   t_statistic: 13.63831
+   p_value: 1.08e-41
+ - id: age
+   estimate: .010728
+   standard_error: .0008639
+   t_statistic: 12.41849
+   p_value: 5.93e-35
+ - id: age2
+   estimate: -.0102818
+   standard_error: .0010922
+   t_statistic: -9.414106
+   p_value: 6.79e-21
+ - id: 5371b.feor
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 5373.feor
+   estimate: .2444577
+   standard_error: .0401233
+   t_statistic: 6.092662
+   p_value: 1.18e-09
+ - id: 6211.feor
+   estimate: -.1528683
+   standard_error: .1616449
+   t_statistic: -.9457042
+   p_value: .34434
+ - id: 6411.feor
+   estimate: .3338989
+   standard_error: .3900563
+   t_statistic: .8560273
+   p_value: .3920191
+ - id: 6412.feor
+   estimate: .1361861
+   standard_error: .0502085
+   t_statistic: 2.712412
+   p_value: .0066998
+ - id: 7111.feor
+   estimate: .3420178
+   standard_error: .0391299
+   t_statistic: 8.74058
+   p_value: 3.02e-18
+ - id: 7112.feor
+   estimate: .1157008
+   standard_error: .0572252
+   t_statistic: 2.02185
+   p_value: .043239
+ - id: 7121.feor
+   estimate: .4655499
+   standard_error: .0393145
+   t_statistic: 11.84167
+   p_value: 5.68e-32
+ - id: 7211.feor
+   estimate: .011108
+   standard_error: .0403927
+   t_statistic: .2750006
+   p_value: .7833259
+ - id: 7221.feor
+   estimate: -.0026248
+   standard_error: .0434183
+   t_statistic: -.0604534
+   p_value: .9517967
+ - id: 7230.feor
+   estimate: .0833697
+   standard_error: .0489046
+   t_statistic: 1.704743
+   p_value: .0882975
+ - id: 7311.feor
+   estimate: -.0162096
+   standard_error: .0421782
+   t_statistic: -.3843125
+   p_value: .7007613
+ - id: 7321.feor
+   estimate: -.1259954
+   standard_error: .0407742
+   t_statistic: -3.090079
+   p_value: .0020108
+ - id: 7324.feor
+   estimate: -.032208
+   standard_error: .0480056
+   t_statistic: -.6709217
+   p_value: .5022979
+ - id: 7335.feor
+   estimate: -.0460336
+   standard_error: .044732
+   t_statistic: -1.029097
+   p_value: .3034781
+ - id: 7341.feor
+   estimate: -.029447
+   standard_error: .0398548
+   t_statistic: -.738859
+   p_value: .4600234
+ - id: 7351.feor
+   estimate: .2388911
+   standard_error: .0596557
+   t_statistic: 4.004499
+   p_value: .0000629
+ - id: 7354.feor
+   estimate: .1036657
+   standard_error: .0511625
+   t_statistic: 2.026204
+   p_value: .042791
+ - id: 7411.feor
+   estimate: .2341837
+   standard_error: .0402848
+   t_statistic: 5.813198
+   p_value: 6.47e-09
+ - id: 7421.feor
+   estimate: .1260967
+   standard_error: .0379822
+   t_statistic: 3.319893
+   p_value: .0009062
+ - id: 7431.feor
+   estimate: .0006295
+   standard_error: .038497
+   t_statistic: .0163507
+   p_value: .9869552
+ - id: 7514.feor
+   estimate: .0102402
+   standard_error: .040932
+   t_statistic: .250176
+   p_value: .8024603
+ - id: 7523.feor
+   estimate: .0747612
+   standard_error: .0419607
+   t_statistic: 1.781697
+   p_value: .0748526
+ - id: 7524.feor
+   estimate: .1332826
+   standard_error: .0627908
+   t_statistic: 2.122644
+   p_value: .0338272
+ - id: 7525.feor
+   estimate: .0988882
+   standard_error: .044264
+   t_statistic: 2.234053
+   p_value: .0255187
+ - id: 7527.feor
+   estimate: .0688388
+   standard_error: .0401925
+   t_statistic: 1.712727
+   p_value: .0868178
+ - id: 7530.feor
+   estimate: .017317
+   standard_error: .036667
+   t_statistic: .4722787
+   p_value: .6367462
+ - id: 7623.feor
+   estimate: .0330652
+   standard_error: .0287937
+   t_statistic: 1.148351
+   p_value: .2508725
+ - id: 7641.feor
+   estimate: .6025338
+   standard_error: .0676922
+   t_statistic: 8.901079
+   p_value: 7.34e-19
+ - id: 8131.feor
+   estimate: .2099492
+   standard_error: .0420106
+   t_statistic: 4.997527
+   p_value: 5.98e-07
+ - id: 8133.feor
+   estimate: .2177929
+   standard_error: .0367094
+   t_statistic: 5.932888
+   p_value: 3.15e-09
+ - id: 8149.feor
+   estimate: .1267794
+   standard_error: .040702
+   t_statistic: 3.11482
+   p_value: .0018498
+ - id: 8199.feor
+   estimate: .0460324
+   standard_error: .0349287
+   t_statistic: 1.317899
+   p_value: .1875912
+ - id: 8219.feor
+   estimate: .2105901
+   standard_error: .0621286
+   t_statistic: 3.389583
+   p_value: .0007048
+ - id: 8221.feor
+   estimate: .3172943
+   standard_error: .0433891
+   t_statistic: 7.312769
+   p_value: 2.98e-13
+ - id: 8222.feor
+   estimate: .1339334
+   standard_error: .049787
+   t_statistic: 2.690127
+   p_value: .0071635
+ - id: 8223.feor
+   estimate: .2851471
+   standard_error: .0588103
+   t_statistic: 4.848592
+   p_value: 1.28e-06
+ - id: 8224.feor
+   estimate: .3451246
+   standard_error: .0964135
+   t_statistic: 3.579629
+   p_value: .000347
+ - id: 8229.feor
+   estimate: .1723262
+   standard_error: .0443838
+   t_statistic: 3.882634
+   p_value: .0001045
+ - id: 8231.feor
+   estimate: .1691657
+   standard_error: .0762423
+   t_statistic: 2.218791
+   p_value: .0265407
+ - id: 8232.feor
+   estimate: .2220853
+   standard_error: .0960232
+   t_statistic: 2.312831
+   p_value: .0207678
+ - id: 8240.feor
+   estimate: .0495838
+   standard_error: .0474628
+   t_statistic: 1.044687
+   p_value: .2962125
+ - id: 8293.feor
+   estimate: .0427161
+   standard_error: .0499114
+   t_statistic: .8558393
+   p_value: .3921231
+ - id: 8299.feor
+   estimate: .1105235
+   standard_error: .0445416
+   t_statistic: 2.481357
+   p_value: .0131173
+ - id: 8319.feor
+   estimate: .0128549
+   standard_error: .0660795
+   t_statistic: .1945371
+   p_value: .8457624
+ - id: 8321.feor
+   estimate: .1555844
+   standard_error: .0507946
+   t_statistic: 3.063012
+   p_value: .0022016
+ - id: 8329.feor
+   estimate: .0790914
+   standard_error: .0521911
+   t_statistic: 1.515418
+   p_value: .1297227
+ - id: 8341.feor
+   estimate: .1388353
+   standard_error: .0563519
+   t_statistic: 2.46372
+   p_value: .01378
+ - id: 8349.feor
+   estimate: .1347118
+   standard_error: .0534306
+   t_statistic: 2.52125
+   p_value: .0117213
+ - id: occ1_1992_SKILL1
+   estimate: 1.05876
+   standard_error: .1227626
+   t_statistic: 8.624449
+   p_value: 8.27e-18
+ - id: occ2_1992_SKILL1
+   estimate: .8779162
+   standard_error: .1502748
+   t_statistic: 5.842071
+   p_value: 5.44e-09
+ - id: occ3_1992_SKILL1
+   estimate: 1.015184
+   standard_error: .1736008
+   t_statistic: 5.847805
+   p_value: 5.26e-09
+ - id: occ5_1992_SKILL1
+   estimate: .5871547
+   standard_error: .1149457
+   t_statistic: 5.108105
+   p_value: 3.36e-07
+ - id: occ6_1992_SKILL1
+   estimate: 1.03045
+   standard_error: .0771885
+   t_statistic: 13.34978
+   p_value: 4.80e-40
+ - id: occ1_1993_SKILL1
+   estimate: .930067
+   standard_error: .1110776
+   t_statistic: 8.373126
+   p_value: 7.01e-17
+ - id: occ2_1993_SKILL1
+   estimate: 1.265505
+   standard_error: .1333341
+   t_statistic: 9.49123
+   p_value: 3.29e-21
+ - id: occ3_1993_SKILL1
+   estimate: .8570171
+   standard_error: .1829631
+   t_statistic: 4.684098
+   p_value: 2.88e-06
+ - id: occ5_1993_SKILL1
+   estimate: .6765034
+   standard_error: .1184053
+   t_statistic: 5.713454
+   p_value: 1.16e-08
+ - id: occ6_1993_SKILL1
+   estimate: .9863134
+   standard_error: .0720761
+   t_statistic: 13.68433
+   p_value: 5.87e-42
+ - id: occ1_1994_SKILL1
+   estimate: .7998482
+   standard_error: .1024333
+   t_statistic: 7.808481
+   p_value: 6.86e-15
+ - id: occ2_1994_SKILL1
+   estimate: .8837333
+   standard_error: .1004432
+   t_statistic: 8.798336
+   p_value: 1.82e-18
+ - id: occ3_1994_SKILL1
+   estimate: .6054843
+   standard_error: .181046
+   t_statistic: 3.344367
+   p_value: .0008301
+ - id: occ5_1994_SKILL1
+   estimate: .4793491
+   standard_error: .1028611
+   t_statistic: 4.660161
+   p_value: 3.23e-06
+ - id: occ6_1994_SKILL1
+   estimate: .8017164
+   standard_error: .059028
+   t_statistic: 13.58196
+   p_value: 2.28e-41
+ - id: occ1_1995_SKILL1
+   estimate: .6918475
+   standard_error: .1066492
+   t_statistic: 6.487134
+   p_value: 9.50e-11
+ - id: occ2_1995_SKILL1
+   estimate: .7282101
+   standard_error: .1140109
+   t_statistic: 6.387194
+   p_value: 1.82e-10
+ - id: occ3_1995_SKILL1
+   estimate: .6593502
+   standard_error: .1619654
+   t_statistic: 4.070932
+   p_value: .0000475
+ - id: occ5_1995_SKILL1
+   estimate: .4280123
+   standard_error: .1098816
+   t_statistic: 3.895212
+   p_value: .0000992
+ - id: occ6_1995_SKILL1
+   estimate: .7758424
+   standard_error: .0656401
+   t_statistic: 11.81964
+   p_value: 7.34e-32
+ - id: occ1_1996_SKILL1
+   estimate: .7425686
+   standard_error: .103159
+   t_statistic: 7.198289
+   p_value: 6.90e-13
+ - id: occ2_1996_SKILL1
+   estimate: .9548923
+   standard_error: .1173572
+   t_statistic: 8.136631
+   p_value: 4.96e-16
+ - id: occ3_1996_SKILL1
+   estimate: .9151009
+   standard_error: .1574833
+   t_statistic: 5.81078
+   p_value: 6.56e-09
+ - id: occ5_1996_SKILL1
+   estimate: .5687799
+   standard_error: .1048895
+   t_statistic: 5.422658
+   p_value: 6.12e-08
+ - id: occ6_1996_SKILL1
+   estimate: .89274
+   standard_error: .0571794
+   t_statistic: 15.61296
+   p_value: 7.88e-54
+ - id: occ1_1997_SKILL1
+   estimate: .826723
+   standard_error: .1091137
+   t_statistic: 7.57671
+   p_value: 4.12e-14
+ - id: occ2_1997_SKILL1
+   estimate: .835277
+   standard_error: .1240799
+   t_statistic: 6.731769
+   p_value: 1.84e-11
+ - id: occ3_1997_SKILL1
+   estimate: .7322446
+   standard_error: .1688666
+   t_statistic: 4.33623
+   p_value: .0000147
+ - id: occ5_1997_SKILL1
+   estimate: .624924
+   standard_error: .1206353
+   t_statistic: 5.180275
+   p_value: 2.29e-07
+ - id: occ6_1997_SKILL1
+   estimate: .8599377
+   standard_error: .0948677
+   t_statistic: 9.064596
+   p_value: 1.70e-19
+ - id: occ1_1998_SKILL1
+   estimate: .7870875
+   standard_error: .1081109
+   t_statistic: 7.280368
+   p_value: 3.79e-13
+ - id: occ2_1998_SKILL1
+   estimate: .8933331
+   standard_error: .1300551
+   t_statistic: 6.868883
+   p_value: 7.17e-12
+ - id: occ3_1998_SKILL1
+   estimate: .8624356
+   standard_error: .1564716
+   t_statistic: 5.511772
+   p_value: 3.71e-08
+ - id: occ5_1998_SKILL1
+   estimate: .5999554
+   standard_error: .1149288
+   t_statistic: 5.220235
+   p_value: 1.85e-07
+ - id: occ6_1998_SKILL1
+   estimate: .8719556
+   standard_error: .062029
+   t_statistic: 14.05723
+   p_value: 3.85e-44
+ - id: occ1_1999_SKILL1
+   estimate: .7203109
+   standard_error: .0914692
+   t_statistic: 7.874903
+   p_value: 4.06e-15
+ - id: occ2_1999_SKILL1
+   estimate: .7987865
+   standard_error: .1212105
+   t_statistic: 6.590077
+   p_value: 4.80e-11
+ - id: occ3_1999_SKILL1
+   estimate: .632997
+   standard_error: .1577634
+   t_statistic: 4.012318
+   p_value: .0000609
+ - id: occ5_1999_SKILL1
+   estimate: .4978128
+   standard_error: .1134985
+   t_statistic: 4.386076
+   p_value: .0000118
+ - id: occ6_1999_SKILL1
+   estimate: .8043925
+   standard_error: .0608788
+   t_statistic: 13.21302
+   p_value: 2.82e-39
+ - id: occ1_2000_SKILL1
+   estimate: .6956383
+   standard_error: .0982454
+   t_statistic: 7.08062
+   p_value: 1.61e-12
+ - id: occ2_2000_SKILL1
+   estimate: .5946371
+   standard_error: .1171705
+   t_statistic: 5.074971
+   p_value: 4.00e-07
+ - id: occ3_2000_SKILL1
+   estimate: .3622921
+   standard_error: .1491671
+   t_statistic: 2.428767
+   p_value: .0151814
+ - id: occ5_2000_SKILL1
+   estimate: .4178108
+   standard_error: .1052912
+   t_statistic: 3.968147
+   p_value: .0000733
+ - id: occ6_2000_SKILL1
+   estimate: .7568689
+   standard_error: .0592453
+   t_statistic: 12.77517
+   p_value: 7.30e-37
+ - id: occ1_2001_SKILL1
+   estimate: .6564615
+   standard_error: .1101076
+   t_statistic: 5.962002
+   p_value: 2.64e-09
+ - id: occ2_2001_SKILL1
+   estimate: .6090465
+   standard_error: .1300142
+   t_statistic: 4.684463
+   p_value: 2.87e-06
+ - id: occ3_2001_SKILL1
+   estimate: .3855183
+   standard_error: .1785574
+   t_statistic: 2.159072
+   p_value: .0308867
+ - id: occ5_2001_SKILL1
+   estimate: .4536114
+   standard_error: .1063314
+   t_statistic: 4.266015
+   p_value: .0000202
+ - id: occ6_2001_SKILL1
+   estimate: .7669391
+   standard_error: .0685253
+   t_statistic: 11.19206
+   p_value: 8.96e-29
+ - id: occ1_2002_SKILL1
+   estimate: .589223
+   standard_error: .1040679
+   t_statistic: 5.661909
+   p_value: 1.57e-08
+ - id: occ2_2002_SKILL1
+   estimate: .3481323
+   standard_error: .1270194
+   t_statistic: 2.740781
+   p_value: .0061487
+ - id: occ3_2002_SKILL1
+   estimate: .1667428
+   standard_error: .1569485
+   t_statistic: 1.062404
+   p_value: .2880977
+ - id: occ5_2002_SKILL1
+   estimate: .3305125
+   standard_error: .0979569
+   t_statistic: 3.374059
+   p_value: .0007457
+ - id: occ6_2002_SKILL1
+   estimate: .5505234
+   standard_error: .0531981
+   t_statistic: 10.34855
+   p_value: 7.09e-25
+ - id: occ1_2003_SKILL1
+   estimate: .5403176
+   standard_error: .1196664
+   t_statistic: 4.5152
+   p_value: 6.45e-06
+ - id: occ2_2003_SKILL1
+   estimate: .4660728
+   standard_error: .1301525
+   t_statistic: 3.580975
+   p_value: .0003452
+ - id: occ3_2003_SKILL1
+   estimate: .4944697
+   standard_error: .1361705
+   t_statistic: 3.631254
+   p_value: .0002846
+ - id: occ5_2003_SKILL1
+   estimate: .2687961
+   standard_error: .1084582
+   t_statistic: 2.478337
+   p_value: .0132287
+ - id: occ6_2003_SKILL1
+   estimate: .5664246
+   standard_error: .0591873
+   t_statistic: 9.570042
+   p_value: 1.56e-21
+ - id: o.occ1_2004_SKILL1
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ2_2004_SKILL1
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ3_2004_SKILL1
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ5_2004_SKILL1
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ6_2004_SKILL1
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: occ1_1992_SKILL2
+   estimate: -1.580154
+   standard_error: 1.467218
+   t_statistic: -1.076973
+   p_value: .2815385
+ - id: occ2_1992_SKILL2
+   estimate: .9362832
+   standard_error: 1.611712
+   t_statistic: .5809246
+   p_value: .5613145
+ - id: occ3_1992_SKILL2
+   estimate: -.9835078
+   standard_error: 1.905656
+   t_statistic: -.5160993
+   p_value: .6058053
+ - id: occ5_1992_SKILL2
+   estimate: .2183837
+   standard_error: 1.042853
+   t_statistic: .2094099
+   p_value: .8341358
+ - id: occ6_1992_SKILL2
+   estimate: -1.019435
+   standard_error: .4456076
+   t_statistic: -2.287742
+   p_value: .0221895
+ - id: occ1_1993_SKILL2
+   estimate: -.9897945
+   standard_error: 1.159611
+   t_statistic: -.8535576
+   p_value: .3933865
+ - id: occ2_1993_SKILL2
+   estimate: -4.029035
+   standard_error: 1.620898
+   t_statistic: -2.485681
+   p_value: .0129592
+ - id: occ3_1993_SKILL2
+   estimate: .4738241
+   standard_error: 2.186766
+   t_statistic: .216678
+   p_value: .8284671
+ - id: occ5_1993_SKILL2
+   estimate: .8011773
+   standard_error: 1.096476
+   t_statistic: .7306839
+   p_value: .4650027
+ - id: occ6_1993_SKILL2
+   estimate: -.5190621
+   standard_error: .4382846
+   t_statistic: -1.184304
+   p_value: .2363428
+ - id: occ1_1994_SKILL2
+   estimate: -.6504779
+   standard_error: .8382576
+   t_statistic: -.7759881
+   p_value: .4377886
+ - id: occ2_1994_SKILL2
+   estimate: -.1443595
+   standard_error: 1.14628
+   t_statistic: -.1259374
+   p_value: .899786
+ - id: occ3_1994_SKILL2
+   estimate: 2.696292
+   standard_error: 2.023689
+   t_statistic: 1.332365
+   p_value: .1827942
+ - id: occ5_1994_SKILL2
+   estimate: 1.452399
+   standard_error: 1.079274
+   t_statistic: 1.345718
+   p_value: .1784476
+ - id: occ6_1994_SKILL2
+   estimate: .1188822
+   standard_error: .4137326
+   t_statistic: .2873406
+   p_value: .7738621
+ - id: occ1_1995_SKILL2
+   estimate: .2578774
+   standard_error: .9033812
+   t_statistic: .285458
+   p_value: .7753038
+ - id: occ2_1995_SKILL2
+   estimate: .2782051
+   standard_error: 1.201263
+   t_statistic: .2315938
+   p_value: .816862
+ - id: occ3_1995_SKILL2
+   estimate: .1390176
+   standard_error: 1.708978
+   t_statistic: .0813455
+   p_value: .9351701
+ - id: occ5_1995_SKILL2
+   estimate: .8138702
+   standard_error: 1.056496
+   t_statistic: .7703489
+   p_value: .4411252
+ - id: occ6_1995_SKILL2
+   estimate: .1183402
+   standard_error: .4189863
+   t_statistic: .2824441
+   p_value: .7776134
+ - id: occ1_1996_SKILL2
+   estimate: -.2718931
+   standard_error: 1.014274
+   t_statistic: -.2680667
+   p_value: .7886578
+ - id: occ2_1996_SKILL2
+   estimate: -2.333099
+   standard_error: 1.438754
+   t_statistic: -1.621611
+   p_value: .1049427
+ - id: occ3_1996_SKILL2
+   estimate: -3.211212
+   standard_error: 2.307884
+   t_statistic: -1.39141
+   p_value: .1641561
+ - id: occ5_1996_SKILL2
+   estimate: .3060416
+   standard_error: 1.044016
+   t_statistic: .2931388
+   p_value: .7694269
+ - id: occ6_1996_SKILL2
+   estimate: -.4532658
+   standard_error: .395588
+   t_statistic: -1.145803
+   p_value: .2519255
+ - id: occ1_1997_SKILL2
+   estimate: -1.462517
+   standard_error: 1.087568
+   t_statistic: -1.344759
+   p_value: .1787572
+ - id: occ2_1997_SKILL2
+   estimate: .1337534
+   standard_error: 1.35958
+   t_statistic: .0983785
+   p_value: .9216353
+ - id: occ3_1997_SKILL2
+   estimate: -1.679231
+   standard_error: 1.95301
+   t_statistic: -.8598169
+   p_value: .3899266
+ - id: occ5_1997_SKILL2
+   estimate: .2394733
+   standard_error: 1.158953
+   t_statistic: .206629
+   p_value: .8363071
+ - id: occ6_1997_SKILL2
+   estimate: -.2732088
+   standard_error: .5464113
+   t_statistic: -.5000058
+   p_value: .6170906
+ - id: occ1_1998_SKILL2
+   estimate: -.2504943
+   standard_error: .8508614
+   t_statistic: -.2944009
+   p_value: .7684625
+ - id: occ2_1998_SKILL2
+   estimate: -1.710491
+   standard_error: 1.574117
+   t_statistic: -1.086635
+   p_value: .2772446
+ - id: occ3_1998_SKILL2
+   estimate: -2.936705
+   standard_error: 1.976439
+   t_statistic: -1.485856
+   p_value: .1373731
+ - id: occ5_1998_SKILL2
+   estimate: -.0655839
+   standard_error: 1.114757
+   t_statistic: -.0588324
+   p_value: .9530877
+ - id: occ6_1998_SKILL2
+   estimate: -.7316723
+   standard_error: .3921245
+   t_statistic: -1.865918
+   p_value: .0621047
+ - id: occ1_1999_SKILL2
+   estimate: -.2376666
+   standard_error: .8593001
+   t_statistic: -.2765817
+   p_value: .7821115
+ - id: occ2_1999_SKILL2
+   estimate: -.9486774
+   standard_error: 1.453519
+   t_statistic: -.6526764
+   p_value: .5139916
+ - id: occ3_1999_SKILL2
+   estimate: -1.132886
+   standard_error: 1.720769
+   t_statistic: -.6583602
+   p_value: .5103336
+ - id: occ5_1999_SKILL2
+   estimate: .8789902
+   standard_error: 1.123205
+   t_statistic: .7825732
+   p_value: .4339107
+ - id: occ6_1999_SKILL2
+   estimate: -.6562152
+   standard_error: .4433474
+   t_statistic: -1.480137
+   p_value: .1388925
+ - id: occ1_2000_SKILL2
+   estimate: -.2650877
+   standard_error: .7876778
+   t_statistic: -.3365432
+   p_value: .7364738
+ - id: occ2_2000_SKILL2
+   estimate: .7538339
+   standard_error: 1.589532
+   t_statistic: .4742491
+   p_value: .6353407
+ - id: occ3_2000_SKILL2
+   estimate: 2.919487
+   standard_error: 2.175871
+   t_statistic: 1.341755
+   p_value: .1797294
+ - id: occ5_2000_SKILL2
+   estimate: 1.623639
+   standard_error: .9385348
+   t_statistic: 1.729972
+   p_value: .08369
+ - id: occ6_2000_SKILL2
+   estimate: -.4565615
+   standard_error: .373716
+   t_statistic: -1.22168
+   p_value: .2218796
+ - id: occ1_2001_SKILL2
+   estimate: -.3073464
+   standard_error: .7709918
+   t_statistic: -.3986377
+   p_value: .6901753
+ - id: occ2_2001_SKILL2
+   estimate: -.2127542
+   standard_error: 1.767145
+   t_statistic: -.1203943
+   p_value: .9041751
+ - id: occ3_2001_SKILL2
+   estimate: 3.482749
+   standard_error: 2.604533
+   t_statistic: 1.337188
+   p_value: .1812154
+ - id: occ5_2001_SKILL2
+   estimate: .5875485
+   standard_error: .8868405
+   t_statistic: .6625188
+   p_value: .5076659
+ - id: occ6_2001_SKILL2
+   estimate: -.8009047
+   standard_error: .4013018
+   t_statistic: -1.995766
+   p_value: .0460074
+ - id: occ1_2002_SKILL2
+   estimate: 1.193284
+   standard_error: 1.153288
+   t_statistic: 1.03468
+   p_value: .3008626
+ - id: occ2_2002_SKILL2
+   estimate: 1.14452
+   standard_error: 1.455573
+   t_statistic: .7863023
+   p_value: .4317235
+ - id: occ3_2002_SKILL2
+   estimate: 4.264341
+   standard_error: 1.666641
+   t_statistic: 2.558644
+   p_value: .010534
+ - id: occ5_2002_SKILL2
+   estimate: .5484722
+   standard_error: .8823281
+   t_statistic: .6216194
+   p_value: .5342174
+ - id: occ6_2002_SKILL2
+   estimate: -.0167435
+   standard_error: .2959996
+   t_statistic: -.0565658
+   p_value: .954893
+ - id: occ1_2003_SKILL2
+   estimate: .9839412
+   standard_error: .9320002
+   t_statistic: 1.055731
+   p_value: .2911366
+ - id: occ2_2003_SKILL2
+   estimate: -.535697
+   standard_error: 1.40135
+   t_statistic: -.3822721
+   p_value: .702274
+ - id: occ3_2003_SKILL2
+   estimate: 2.126863
+   standard_error: 2.028141
+   t_statistic: 1.048676
+   p_value: .2943721
+ - id: occ5_2003_SKILL2
+   estimate: .1933852
+   standard_error: 1.061543
+   t_statistic: .1821738
+   p_value: .8554529
+ - id: occ6_2003_SKILL2
+   estimate: -.2673803
+   standard_error: .3334692
+   t_statistic: -.8018143
+   p_value: .4226942
+ - id: o.occ1_2004_SKILL2
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ2_2004_SKILL2
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ3_2004_SKILL2
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ5_2004_SKILL2
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ6_2004_SKILL2
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: occ1_1992_SKILL3
+   estimate: 3.327417
+   standard_error: 4.323618
+   t_statistic: .7695909
+   p_value: .4415749
+ - id: occ2_1992_SKILL3
+   estimate: -4.342375
+   standard_error: 4.599301
+   t_statistic: -.944138
+   p_value: .3451396
+ - id: occ3_1992_SKILL3
+   estimate: .212469
+   standard_error: 5.751887
+   t_statistic: .036939
+   p_value: .9705349
+ - id: occ5_1992_SKILL3
+   estimate: .0779379
+   standard_error: 3.126105
+   t_statistic: .0249313
+   p_value: .9801106
+ - id: occ6_1992_SKILL3
+   estimate: 1.610612
+   standard_error: 1.256787
+   t_statistic: 1.281531
+   p_value: .2000599
+ - id: occ1_1993_SKILL3
+   estimate: 2.837807
+   standard_error: 3.352246
+   t_statistic: .846539
+   p_value: .3972881
+ - id: occ2_1993_SKILL3
+   estimate: 10.64831
+   standard_error: 5.008993
+   t_statistic: 2.125839
+   p_value: .0335601
+ - id: occ3_1993_SKILL3
+   estimate: -3.465407
+   standard_error: 6.516886
+   t_statistic: -.5317581
+   p_value: .5949145
+ - id: occ5_1993_SKILL3
+   estimate: -3.522659
+   standard_error: 3.161741
+   t_statistic: -1.114151
+   p_value: .2652617
+ - id: occ6_1993_SKILL3
+   estimate: .3798248
+   standard_error: 1.188886
+   t_statistic: .3194796
+   p_value: .7493747
+ - id: occ1_1994_SKILL3
+   estimate: 1.700533
+   standard_error: 2.350421
+   t_statistic: .7235014
+   p_value: .4694019
+ - id: occ2_1994_SKILL3
+   estimate: -1.280336
+   standard_error: 3.45045
+   t_statistic: -.3710636
+   p_value: .7106041
+ - id: occ3_1994_SKILL3
+   estimate: -9.482892
+   standard_error: 6.034701
+   t_statistic: -1.571394
+   p_value: .1161474
+ - id: occ5_1994_SKILL3
+   estimate: -5.165191
+   standard_error: 3.362999
+   t_statistic: -1.535888
+   p_value: .1246219
+ - id: occ6_1994_SKILL3
+   estimate: -1.0235
+   standard_error: 1.148147
+   t_statistic: -.8914367
+   p_value: .372733
+ - id: occ1_1995_SKILL3
+   estimate: -1.625955
+   standard_error: 2.751511
+   t_statistic: -.5909316
+   p_value: .55459
+ - id: occ2_1995_SKILL3
+   estimate: -1.840869
+   standard_error: 3.424292
+   t_statistic: -.5375912
+   p_value: .5908806
+ - id: occ3_1995_SKILL3
+   estimate: -1.410662
+   standard_error: 5.385775
+   t_statistic: -.2619236
+   p_value: .7933899
+ - id: occ5_1995_SKILL3
+   estimate: -2.623584
+   standard_error: 3.247361
+   t_statistic: -.8079125
+   p_value: .4191751
+ - id: occ6_1995_SKILL3
+   estimate: -1.083507
+   standard_error: 1.130487
+   t_statistic: -.9584422
+   p_value: .337881
+ - id: occ1_1996_SKILL3
+   estimate: .8401025
+   standard_error: 3.051266
+   t_statistic: .2753292
+   p_value: .7830734
+ - id: occ2_1996_SKILL3
+   estimate: 5.629387
+   standard_error: 4.149121
+   t_statistic: 1.356766
+   p_value: .17491
+ - id: occ3_1996_SKILL3
+   estimate: 9.173313
+   standard_error: 7.314011
+   t_statistic: 1.254211
+   p_value: .2098174
+ - id: occ5_1996_SKILL3
+   estimate: -1.673925
+   standard_error: 3.186048
+   t_statistic: -.5253924
+   p_value: .5993311
+ - id: occ6_1996_SKILL3
+   estimate: .3619039
+   standard_error: 1.117081
+   t_statistic: .3239728
+   p_value: .7459706
+ - id: occ1_1997_SKILL3
+   estimate: 3.960874
+   standard_error: 3.052044
+   t_statistic: 1.297777
+   p_value: .194417
+ - id: occ2_1997_SKILL3
+   estimate: -2.125144
+   standard_error: 3.806462
+   t_statistic: -.558299
+   p_value: .5766624
+ - id: occ3_1997_SKILL3
+   estimate: 5.415218
+   standard_error: 5.980614
+   t_statistic: .9054619
+   p_value: .3652595
+ - id: occ5_1997_SKILL3
+   estimate: -1.342795
+   standard_error: 3.642811
+   t_statistic: -.368615
+   p_value: .7124286
+ - id: occ6_1997_SKILL3
+   estimate: -.0990402
+   standard_error: 1.450437
+   t_statistic: -.068283
+   p_value: .9455627
+ - id: occ1_1998_SKILL3
+   estimate: .4644029
+   standard_error: 2.468534
+   t_statistic: .188129
+   p_value: .8507823
+ - id: occ2_1998_SKILL3
+   estimate: 4.14797
+   standard_error: 4.650499
+   t_statistic: .8919408
+   p_value: .3724628
+ - id: occ3_1998_SKILL3
+   estimate: 7.447869
+   standard_error: 6.219665
+   t_statistic: 1.197471
+   p_value: .2311734
+ - id: occ5_1998_SKILL3
+   estimate: -.1078607
+   standard_error: 3.298736
+   t_statistic: -.0326976
+   p_value: .9739169
+ - id: occ6_1998_SKILL3
+   estimate: 1.168731
+   standard_error: 1.091507
+   t_statistic: 1.07075
+   p_value: .2843275
+ - id: occ1_1999_SKILL3
+   estimate: .4463662
+   standard_error: 2.598189
+   t_statistic: .171799
+   p_value: .8636017
+ - id: occ2_1999_SKILL3
+   estimate: 1.940326
+   standard_error: 4.275014
+   t_statistic: .453876
+   p_value: .6499355
+ - id: occ3_1999_SKILL3
+   estimate: 2.99764
+   standard_error: 5.263102
+   t_statistic: .5695577
+   p_value: .5690004
+ - id: occ5_1999_SKILL3
+   estimate: -3.299734
+   standard_error: 3.408353
+   t_statistic: -.9681315
+   p_value: .3330203
+ - id: occ6_1999_SKILL3
+   estimate: .8125781
+   standard_error: 1.208617
+   t_statistic: .6723203
+   p_value: .5014074
+ - id: occ1_2000_SKILL3
+   estimate: .8465765
+   standard_error: 2.250607
+   t_statistic: .3761547
+   p_value: .706816
+ - id: occ2_2000_SKILL3
+   estimate: -3.130885
+   standard_error: 4.766862
+   t_statistic: -.6568021
+   p_value: .511335
+ - id: occ3_2000_SKILL3
+   estimate: -8.189015
+   standard_error: 6.202121
+   t_statistic: -1.320357
+   p_value: .1867695
+ - id: occ5_2000_SKILL3
+   estimate: -5.765181
+   standard_error: 2.858754
+   t_statistic: -2.016676
+   p_value: .0437767
+ - id: occ6_2000_SKILL3
+   estimate: .3779542
+   standard_error: 1.022918
+   t_statistic: .3694863
+   p_value: .7117792
+ - id: occ1_2001_SKILL3
+   estimate: .9912722
+   standard_error: 2.218746
+   t_statistic: .4467714
+   p_value: .6550573
+ - id: occ2_2001_SKILL3
+   estimate: .0724334
+   standard_error: 5.494768
+   t_statistic: .0131822
+   p_value: .9894829
+ - id: occ3_2001_SKILL3
+   estimate: -10.41375
+   standard_error: 7.598622
+   t_statistic: -1.370479
+   p_value: .1705921
+ - id: occ5_2001_SKILL3
+   estimate: -2.320359
+   standard_error: 2.625582
+   t_statistic: -.8837503
+   p_value: .3768687
+ - id: occ6_2001_SKILL3
+   estimate: 1.05898
+   standard_error: 1.060819
+   t_statistic: .9982664
+   p_value: .3181931
+ - id: occ1_2002_SKILL3
+   estimate: -4.398444
+   standard_error: 3.373126
+   t_statistic: -1.303966
+   p_value: .1922983
+ - id: occ2_2002_SKILL3
+   estimate: -2.59588
+   standard_error: 4.250742
+   t_statistic: -.6106886
+   p_value: .5414304
+ - id: occ3_2002_SKILL3
+   estimate: -12.24888
+   standard_error: 5.054033
+   t_statistic: -2.423586
+   p_value: .0153994
+ - id: occ5_2002_SKILL3
+   estimate: -1.669117
+   standard_error: 2.662794
+   t_statistic: -.6268291
+   p_value: .5307967
+ - id: occ6_2002_SKILL3
+   estimate: -.3557547
+   standard_error: .842746
+   t_statistic: -.4221376
+   p_value: .6729407
+ - id: occ1_2003_SKILL3
+   estimate: -3.150761
+   standard_error: 2.751174
+   t_statistic: -1.145242
+   p_value: .2521575
+ - id: occ2_2003_SKILL3
+   estimate: 1.806196
+   standard_error: 4.119289
+   t_statistic: .4384727
+   p_value: .6610605
+ - id: occ3_2003_SKILL3
+   estimate: -6.977135
+   standard_error: 6.317107
+   t_statistic: -1.104483
+   p_value: .269431
+ - id: occ5_2003_SKILL3
+   estimate: .5243322
+   standard_error: 3.05066
+   t_statistic: .171875
+   p_value: .863542
+ - id: occ6_2003_SKILL3
+   estimate: .3723646
+   standard_error: .8899499
+   t_statistic: .4184107
+   p_value: .6756628
+ - id: o.occ1_2004_SKILL3
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ2_2004_SKILL3
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ3_2004_SKILL3
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ5_2004_SKILL3
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ6_2004_SKILL3
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: occ1_1992_SKILL4
+   estimate: .0249063
+   standard_error: 7.784199
+   t_statistic: .0031996
+   p_value: .9974472
+ - id: occ2_1992_SKILL4
+   estimate: 11.20932
+   standard_error: 8.094579
+   t_statistic: 1.384794
+   p_value: .1661703
+ - id: occ3_1992_SKILL4
+   estimate: 10.33353
+   standard_error: 11.38919
+   t_statistic: .90731
+   p_value: .3642817
+ - id: occ5_1992_SKILL4
+   estimate: -1.210465
+   standard_error: 5.965452
+   t_statistic: -.2029125
+   p_value: .8392107
+ - id: occ6_1992_SKILL4
+   estimate: 3.257637
+   standard_error: 2.58336
+   t_statistic: 1.261008
+   p_value: .2073583
+ - id: occ1_1993_SKILL4
+   estimate: -2.831787
+   standard_error: 6.273025
+   t_statistic: -.4514228
+   p_value: .6517022
+ - id: occ2_1993_SKILL4
+   estimate: -14.15668
+   standard_error: 11.529
+   t_statistic: -1.227919
+   p_value: .2195286
+ - id: occ3_1993_SKILL4
+   estimate: 15.08006
+   standard_error: 12.18345
+   t_statistic: 1.23775
+   p_value: .2158604
+ - id: occ5_1993_SKILL4
+   estimate: 11.53397
+   standard_error: 5.867459
+   t_statistic: 1.965752
+   p_value: .0493764
+ - id: occ6_1993_SKILL4
+   estimate: 3.860828
+   standard_error: 2.228997
+   t_statistic: 1.732092
+   p_value: .083312
+ - id: occ1_1994_SKILL4
+   estimate: -.6919695
+   standard_error: 4.067907
+   t_statistic: -.1701046
+   p_value: .864934
+ - id: occ2_1994_SKILL4
+   estimate: 8.992835
+   standard_error: 6.57454
+   t_statistic: 1.367827
+   p_value: .1714207
+ - id: occ3_1994_SKILL4
+   estimate: 23.50369
+   standard_error: 12.09129
+   t_statistic: 1.943852
+   p_value: .051963
+ - id: occ5_1994_SKILL4
+   estimate: 13.51131
+   standard_error: 6.990674
+   t_statistic: 1.932763
+   p_value: .0533155
+ - id: occ6_1994_SKILL4
+   estimate: 5.810929
+   standard_error: 2.051925
+   t_statistic: 2.83194
+   p_value: .0046431
+ - id: occ1_1995_SKILL4
+   estimate: 8.091458
+   standard_error: 5.621049
+   t_statistic: 1.439492
+   p_value: .1500666
+ - id: occ2_1995_SKILL4
+   estimate: 7.969116
+   standard_error: 6.117331
+   t_statistic: 1.302711
+   p_value: .1927266
+ - id: occ3_1995_SKILL4
+   estimate: 9.236292
+   standard_error: 11.39487
+   t_statistic: .8105659
+   p_value: .4176492
+ - id: occ5_1995_SKILL4
+   estimate: 6.047252
+   standard_error: 6.419825
+   t_statistic: .9419653
+   p_value: .3462508
+ - id: occ6_1995_SKILL4
+   estimate: 5.276554
+   standard_error: 1.93524
+   t_statistic: 2.726563
+   p_value: .0064196
+ - id: occ1_1996_SKILL4
+   estimate: 1.020155
+   standard_error: 5.679047
+   t_statistic: .1796349
+   p_value: .8574457
+ - id: occ2_1996_SKILL4
+   estimate: -3.889787
+   standard_error: 7.14076
+   t_statistic: -.5447302
+   p_value: .5859607
+ - id: occ3_1996_SKILL4
+   estimate: -13.43514
+   standard_error: 14.17233
+   t_statistic: -.947984
+   p_value: .3431783
+ - id: occ5_1996_SKILL4
+   estimate: 5.205637
+   standard_error: 6.230571
+   t_statistic: .8354992
+   p_value: .4034721
+ - id: occ6_1996_SKILL4
+   estimate: 3.083807
+   standard_error: 2.140747
+   t_statistic: 1.440529
+   p_value: .1497734
+ - id: occ1_1997_SKILL4
+   estimate: -4.900874
+   standard_error: 5.019911
+   t_statistic: -.9762869
+   p_value: .3289643
+ - id: occ2_1997_SKILL4
+   estimate: 10.54896
+   standard_error: 6.326427
+   t_statistic: 1.667443
+   p_value: .0954819
+ - id: occ3_1997_SKILL4
+   estimate: -9.16237
+   standard_error: 10.79405
+   t_statistic: -.8488348
+   p_value: .3960093
+ - id: occ5_1997_SKILL4
+   estimate: 5.07937
+   standard_error: 8.402742
+   t_statistic: .6044896
+   p_value: .5455425
+ - id: occ6_1997_SKILL4
+   estimate: 4.414954
+   standard_error: 2.243665
+   t_statistic: 1.967742
+   p_value: .0491467
+ - id: occ1_1998_SKILL4
+   estimate: 1.64548
+   standard_error: 4.775465
+   t_statistic: .3445695
+   p_value: .7304309
+ - id: occ2_1998_SKILL4
+   estimate: -3.672658
+   standard_error: 8.1105
+   t_statistic: -.4528275
+   p_value: .6506904
+ - id: occ3_1998_SKILL4
+   estimate: -10.19403
+   standard_error: 12.93446
+   t_statistic: -.7881297
+   p_value: .430654
+ - id: occ5_1998_SKILL4
+   estimate: 1.877302
+   standard_error: 6.953989
+   t_statistic: .2699605
+   p_value: .7872005
+ - id: occ6_1998_SKILL4
+   estimate: 2.200332
+   standard_error: 2.034917
+   t_statistic: 1.081288
+   p_value: .2796152
+ - id: occ1_1999_SKILL4
+   estimate: 1.772881
+   standard_error: 4.853499
+   t_statistic: .365279
+   p_value: .7149169
+ - id: occ2_1999_SKILL4
+   estimate: 2.652873
+   standard_error: 7.234907
+   t_statistic: .3666769
+   p_value: .7138738
+ - id: occ3_1999_SKILL4
+   estimate: -3.43122
+   standard_error: 10.24669
+   t_statistic: -.3348614
+   p_value: .7377421
+ - id: occ5_1999_SKILL4
+   estimate: 9.825157
+   standard_error: 6.856724
+   t_statistic: 1.432923
+   p_value: .1519354
+ - id: occ6_1999_SKILL4
+   estimate: 4.007721
+   standard_error: 2.079685
+   t_statistic: 1.927081
+   p_value: .0540198
+ - id: occ1_2000_SKILL4
+   estimate: -.7735664
+   standard_error: 4.002431
+   t_statistic: -.1932741
+   p_value: .8467512
+ - id: occ2_2000_SKILL4
+   estimate: 11.23514
+   standard_error: 8.333054
+   t_statistic: 1.348263
+   p_value: .1776282
+ - id: occ3_2000_SKILL4
+   estimate: 13.32993
+   standard_error: 9.663399
+   t_statistic: 1.379425
+   p_value: .1678187
+ - id: occ5_2000_SKILL4
+   estimate: 15.25634
+   standard_error: 5.957005
+   t_statistic: 2.561075
+   p_value: .0104607
+ - id: occ6_2000_SKILL4
+   estimate: 4.661196
+   standard_error: 1.924407
+   t_statistic: 2.422147
+   p_value: .0154605
+ - id: occ1_2001_SKILL4
+   estimate: -.2824976
+   standard_error: 4.323873
+   t_statistic: -.0653344
+   p_value: .9479101
+ - id: occ2_2001_SKILL4
+   estimate: 5.737775
+   standard_error: 10.24515
+   t_statistic: .5600477
+   p_value: .5754692
+ - id: occ3_2001_SKILL4
+   estimate: 16.88732
+   standard_error: 12.08156
+   t_statistic: 1.397777
+   p_value: .162235
+ - id: occ5_2001_SKILL4
+   estimate: 6.827968
+   standard_error: 5.405881
+   t_statistic: 1.263063
+   p_value: .2066189
+ - id: occ6_2001_SKILL4
+   estimate: 4.225605
+   standard_error: 1.928248
+   t_statistic: 2.191422
+   p_value: .0284621
+ - id: occ1_2002_SKILL4
+   estimate: 11.21846
+   standard_error: 5.983574
+   t_statistic: 1.874876
+   p_value: .0608615
+ - id: occ2_2002_SKILL4
+   estimate: 5.593475
+   standard_error: 7.727876
+   t_statistic: .7238049
+   p_value: .4692156
+ - id: occ3_2002_SKILL4
+   estimate: 20.22376
+   standard_error: 9.949196
+   t_statistic: 2.032703
+   p_value: .0421293
+ - id: occ5_2002_SKILL4
+   estimate: 4.844655
+   standard_error: 5.535931
+   t_statistic: .8751291
+   p_value: .381541
+ - id: occ6_2002_SKILL4
+   estimate: 4.129484
+   standard_error: 1.82984
+   t_statistic: 2.256745
+   p_value: .0240622
+ - id: occ1_2003_SKILL4
+   estimate: 7.585755
+   standard_error: 5.342111
+   t_statistic: 1.419992
+   p_value: .1556654
+ - id: occ2_2003_SKILL4
+   estimate: -.4264433
+   standard_error: 7.398648
+   t_statistic: -.057638
+   p_value: .954039
+ - id: occ3_2003_SKILL4
+   estimate: 14.75995
+   standard_error: 11.26778
+   t_statistic: 1.309925
+   p_value: .1902745
+ - id: occ5_2003_SKILL4
+   estimate: -3.402803
+   standard_error: 5.475202
+   t_statistic: -.6214937
+   p_value: .5343
+ - id: occ6_2003_SKILL4
+   estimate: 2.551341
+   standard_error: 1.597137
+   t_statistic: 1.597446
+   p_value: .1102224
+ - id: o.occ1_2004_SKILL4
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ2_2004_SKILL4
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ3_2004_SKILL4
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ5_2004_SKILL4
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.occ6_2004_SKILL4
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: _cons
+   estimate: 8.995573
+   standard_error: .0416797
+   t_statistic: 215.8263
+   p_value: 0
+extra_rows:
+ - id: R2
+   value: .8158453911892571
+ - id: observations
+   value: 153110
+ - id: worker_control
+   value: Baseline+\\spline of skill
+ - id: firm_control
+   value: Firm-year\\FEs

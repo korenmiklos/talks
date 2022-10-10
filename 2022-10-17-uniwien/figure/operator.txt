@@ -1,0 +1,14 @@
+sequenceDiagram
+participant Worker
+participant Machine
+participant Output
+
+Worker-->Machine: Start machine
+activate Machine
+activate Output
+Machine-->Worker: Machine stops
+deactivate Machine
+deactivate Output
+activate Worker
+Worker-->Machine: Problem solved
+deactivate Worker

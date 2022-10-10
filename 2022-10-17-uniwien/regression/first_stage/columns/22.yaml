@@ -1,0 +1,193 @@
+id: 22
+label: tr2sk
+coefficients:
+ - id: 0b.skilled
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 1.skilled
+   estimate: .2976734
+   standard_error: .0610098
+   t_statistic: 4.87911
+   p_value: 1.09e-06
+ - id: 0b.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 1.bartik_pct
+   estimate: -.0154245
+   standard_error: .0087101
+   t_statistic: -1.770888
+   p_value: .076628
+ - id: 2.bartik_pct
+   estimate: -.0196865
+   standard_error: .0100354
+   t_statistic: -1.961694
+   p_value: .0498422
+ - id: 3.bartik_pct
+   estimate: -.0326357
+   standard_error: .0111585
+   t_statistic: -2.924739
+   p_value: .0034598
+ - id: 4.bartik_pct
+   estimate: -.034035
+   standard_error: .0119635
+   t_statistic: -2.844891
+   p_value: .0044571
+ - id: 5.bartik_pct
+   estimate: -.0463603
+   standard_error: .0131126
+   t_statistic: -3.535548
+   p_value: .0004099
+ - id: 6.bartik_pct
+   estimate: -.0481611
+   standard_error: .0140972
+   t_statistic: -3.41636
+   p_value: .0006387
+ - id: 7.bartik_pct
+   estimate: -.0583962
+   standard_error: .0149668
+   t_statistic: -3.901715
+   p_value: .0000965
+ - id: 8.bartik_pct
+   estimate: -.0624116
+   standard_error: .0163982
+   t_statistic: -3.806014
+   p_value: .0001426
+ - id: 9.bartik_pct
+   estimate: -.0847848
+   standard_error: .0193071
+   t_statistic: -4.391385
+   p_value: .0000114
+ - id: 0b.skilled#0b.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 0b.skilled#1o.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 0b.skilled#2o.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 0b.skilled#3o.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 0b.skilled#4o.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 0b.skilled#5o.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 0b.skilled#6o.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 0b.skilled#7o.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 0b.skilled#8o.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 0b.skilled#9o.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 1o.skilled#0b.bartik_pct
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: 1.skilled#1.bartik_pct
+   estimate: .0795847
+   standard_error: .0714786
+   t_statistic: 1.113406
+   p_value: .2655766
+ - id: 1.skilled#2.bartik_pct
+   estimate: -.0315372
+   standard_error: .0678364
+   t_statistic: -.4649013
+   p_value: .6420183
+ - id: 1.skilled#3.bartik_pct
+   estimate: .0167042
+   standard_error: .0692003
+   t_statistic: .2413894
+   p_value: .8092612
+ - id: 1.skilled#4.bartik_pct
+   estimate: .0074992
+   standard_error: .0660697
+   t_statistic: .1135041
+   p_value: .9096346
+ - id: 1.skilled#5.bartik_pct
+   estimate: .1301563
+   standard_error: .0673054
+   t_statistic: 1.933817
+   p_value: .0531806
+ - id: 1.skilled#6.bartik_pct
+   estimate: .1400573
+   standard_error: .066345
+   t_statistic: 2.111043
+   p_value: .0348081
+ - id: 1.skilled#7.bartik_pct
+   estimate: .2176419
+   standard_error: .0656804
+   t_statistic: 3.313652
+   p_value: .0009261
+ - id: 1.skilled#8.bartik_pct
+   estimate: .3604263
+   standard_error: .0652528
+   t_statistic: 5.523534
+   p_value: 3.46e-08
+ - id: 1.skilled#9.bartik_pct
+   estimate: .5309898
+   standard_error: .0649651
+   t_statistic: 8.173462
+   p_value: 3.59e-16
+ - id: o.skilled
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: gender
+   estimate: .0038319
+   standard_error: .0023601
+   t_statistic: 1.62361
+   p_value: .1045093
+ - id: age
+   estimate: .0000237
+   standard_error: .0003887
+   t_statistic: .0609264
+   p_value: .9514198
+ - id: age2
+   estimate: .000133
+   standard_error: .000503
+   t_statistic: .2643826
+   p_value: .7914938
+ - id: _cons
+   estimate: .0473722
+   standard_error: .0171857
+   t_statistic: 2.756492
+   p_value: .0058594
+extra_rows:
+ - id: R2
+   value: .756594964079049
+ - id: observations
+   value: 183714

@@ -1,0 +1,9 @@
+id,type,label
+presw89,coefficient,Log residual wage in 1989
+age,coefficient,Age
+age2,coefficient,Age squared 
+tenure,coefficient,Tenure (years)
+observations,extra_row,Number of observations
+R2p,extra_row,Pseudo-$R^2$
+stdev,extra_row,Standard deviation of the residual wage
+meandep,extra_row,Mean dependent variable

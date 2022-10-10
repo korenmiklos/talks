@@ -1,0 +1,30 @@
+-   id: treatment
+    label: Worker exposed to\\{}\hspace*{1em}imported machine (dummy)
+    type: coefficient
+-   id: Gtreatment
+    label: Firm is an importer\\{}\hspace*{1em}(dummy)
+    type: coefficient
+-   id: foreign
+    label: Firm is foreign owned\\{}\hspace*{1em}(dummy)
+    type: coefficient
+-   id: lnK
+    label: Book value of machinery\\{}\hspace*{1em}(log)
+    type: coefficient
+-   id: R2
+    type: extra_row
+    label: $R^2$
+-   id: observations
+    type: extra_row
+    label: Number of observations
+-   id: worker_control
+    label: Worker controls
+    type: extra_row
+-   id: firm_control
+    label: Firm controls
+    type: extra_row
+-   id: instruments
+    label: Instruments
+    type: extra_row
+-   id: first_stage_F
+    label: F-test for 1st stage
+    type: extra_row

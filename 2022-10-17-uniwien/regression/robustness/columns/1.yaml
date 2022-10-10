@@ -1,0 +1,42 @@
+id: 1
+label: Weighted
+coefficients:
+ - id: treatment
+   estimate: .0403406
+   standard_error: .0055754
+   t_statistic: 7.23549
+   p_value: 5.19e-13
+ - id: skilled
+   estimate: .0784451
+   standard_error: .0059667
+   t_statistic: 13.14711
+   p_value: 5.72e-39
+ - id: gender
+   estimate: .1762365
+   standard_error: .0067538
+   t_statistic: 26.0944
+   p_value: 1.2e-142
+ - id: age
+   estimate: .0255139
+   standard_error: .0010212
+   t_statistic: 24.98343
+   p_value: 1.9e-131
+ - id: age2
+   estimate: -.0267061
+   standard_error: .0013248
+   t_statistic: -20.15868
+   p_value: 1.23e-87
+ - id: _cons
+   estimate: 9.012762
+   standard_error: .0205625
+   t_statistic: 438.3096
+   p_value: 0
+extra_rows:
+ - id: R2
+   value: .7739864276146641
+ - id: observations
+   value: 184048
+ - id: worker_control
+   value: Baseline
+ - id: firm_control
+   value: Baseline

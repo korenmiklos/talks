@@ -1,0 +1,24 @@
+-   id: treatment
+    label: Worker exposed to\\{}\hspace*{1em}imported machine (dummy)
+    type: coefficient
+-   id: wtreatment
+    label: Worker exposed to\\{}\hspace*{1em}imported machine $\times1/n_{fot}$
+    type: coefficient
+-   id: specific_Q_1
+    label: Specific import per worker\\{}\hspace*{1em}(1st quartile)
+    type: coefficient
+-   id: specific_Q_2
+    label: Specific import per worker\\{}\hspace*{1em}(2nd quartile)
+    type: coefficient
+-   id: specific_Q_3
+    label: Specific import per worker\\{}\hspace*{1em}(3rd quartile)
+    type: coefficient
+-   id: specific_Q_4
+    label: Specific import per worker\\{}\hspace*{1em}(4th quartile)
+    type: coefficient
+-   id: R2
+    type: extra_row
+    label: $R^2$
+-   id: observations
+    type: extra_row
+    label: Number of observations

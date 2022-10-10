@@ -1,0 +1,10 @@
+id,type,label
+lnL,coefficient,Log number of weavers 
+newtype,coefficient,New machine
+resw89,coefficient,Log residual wage (as of 1989) of workers at the machine type
+newtype_X_resw89,coefficient,New machine $\times$ log residual wage 
+observations,extra_row,Number of observations
+R2,extra_row,$R^2$
+beta_p25,extra_row,Effect of the new machine at 25th percentile of the 1989 residual wage
+beta_p50,extra_row,Effect of the new machine at 50th percentile of the 1989 residual wage
+beta_p75,extra_row,Effect of the new machine at 75th percentile of the 1989 residual wage

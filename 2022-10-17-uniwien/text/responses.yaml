@@ -1,0 +1,11 @@
+thanks: We thank you for your constructive comments. We feel we could address all of them, and the paper improved substantially as a result. We list the major changes in our letter to the editor, and answer to your comments point by point below.
+vintage:    |
+    Similar concerns have been raised by all four referees. This prompted us to do a completely new analysis of domestic and foreign capital vintages. We infer the vintage of capital from a combination of net investment flows and machine imports. The basic assumption is that all purchases are of new machines, whereas all asset sales involve the oldest possible vintage. We report in Table 2 descriptives about estimated vintages of the capital stock, and in Table 9, how these are correlated with wages. Imports are associated with higher wages even conditional on vintage. 
+
+    A related concern is that firms with different vintages of capital might behave differently. We expect firms with older vintages to upgrade their machines sooner. This is indeed what we found in the data. Across firms with similar capital stock and employment, those that invested two or more years ago are more likely to start importing. 
+trends:     |
+    We devote Section III to a more thorough and more systematic description of trends in Hungary during our sample period. We describe the evolution of wage inequality among machine operators, the trends in occupation-level imports, and the timing of firm imports. The main pattern is that both the return to skill and the within-occupation inequality has increased.
+capital:    |
+    In response to your suggestion, all specifications now include the overall value of the capital stock as a firm control. So we are comparing firms with the same quantity, but potentially different quality of capital. As you hypothesized, the quantity of capital is strongly correlated with wages. Indeed, controlling for the value of equipment, we no longer see significant differences between imports from high- and low-R\&D countries. We have hence dropped this result.
+
+    Table 9 reports how the wage premium changes with various firm controls. Importantly, even after including firm-year fixed effects, the wage premium of importers is significantly positive.

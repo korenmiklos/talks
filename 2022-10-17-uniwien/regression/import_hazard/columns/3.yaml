@@ -1,0 +1,43 @@
+id: 3
+label: Occupation\\level
+coefficients:
+ - id: lnK
+   estimate: .0143154
+   standard_error: .000937
+   t_statistic: 15.27838
+   p_value: 6.88e-52
+ - id: foreign
+   estimate: .0416847
+   standard_error: .0023554
+   t_statistic: 17.69737
+   p_value: 1.22e-68
+ - id: o.firm_age
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: o.firm_age2
+   estimate: 0
+   standard_error: .
+   t_statistic: .
+   p_value: .
+ - id: lag_lnK
+   estimate: -.0082058
+   standard_error: .0009951
+   t_statistic: -8.246457
+   p_value: 1.92e-16
+ - id: lag_lnL
+   estimate: -.0014415
+   standard_error: .0006795
+   t_statistic: -2.121397
+   p_value: .0339224
+ - id: _cons
+   estimate: -.041203
+   standard_error: .0032128
+   t_statistic: -12.82482
+   p_value: 3.03e-37
+extra_rows:
+ - id: R2
+   value: .0547817533053946
+ - id: observations
+   value: 137080

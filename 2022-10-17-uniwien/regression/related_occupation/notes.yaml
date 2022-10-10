@@ -1,0 +1,9 @@
+--- > 
+ The dependent variable is the log monthly earning of the worker in the given year.
+ All specifications control for occupation and year fixed effects.
+ Worker controls include indicators for gender and schooling and a quadratic function of worker age.
+ Firm controls include quadratic functions of log employment and firm age.
+ In column 4, worker exposure to imported machine is instrumented with the predicted probability to import for the given occupation and the firm as a whole.
+ Observations are weighted by $1/n_{fot}$, the inverse of the number of workers in a firm-occupation-year cell.
+ Standard errors, clustered by firm, are reported in parantheses.
+ Coefficients significantly different from zero at 1, 5 and 10 percent are marked by ***, ** and *, respectively.

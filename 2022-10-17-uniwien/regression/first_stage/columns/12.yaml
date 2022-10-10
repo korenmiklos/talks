@@ -1,0 +1,70 @@
+id: 12
+label: Gtreatment
+coefficients:
+ - id: ln_bartik
+   estimate: .0000199
+   standard_error: .0004675
+   t_statistic: .0424749
+   p_value: .966124
+ - id: ln_Gbartik
+   estimate: -.0283541
+   standard_error: .0335304
+   t_statistic: -.8456239
+   p_value: .3978552
+ - id: skilled
+   estimate: -.0045791
+   standard_error: .0017124
+   t_statistic: -2.674038
+   p_value: .0075502
+ - id: gender
+   estimate: -.0048667
+   standard_error: .0024547
+   t_statistic: -1.982598
+   p_value: .0475375
+ - id: age
+   estimate: .00033
+   standard_error: .0004552
+   t_statistic: .7250659
+   p_value: .4684892
+ - id: age2
+   estimate: -.0001444
+   standard_error: .0005914
+   t_statistic: -.2442575
+   p_value: .8070544
+ - id: lnK
+   estimate: .0194312
+   standard_error: .0069291
+   t_statistic: 2.80429
+   p_value: .0050873
+ - id: lnL
+   estimate: -.0093147
+   standard_error: .0135056
+   t_statistic: -.6896923
+   p_value: .490461
+ - id: foreign
+   estimate: -.0230182
+   standard_error: .0150321
+   t_statistic: -1.53127
+   p_value: .1258475
+ - id: firm_age
+   estimate: .0054097
+   standard_error: .0010544
+   t_statistic: 5.130704
+   p_value: 3.14e-07
+ - id: firm_age2
+   estimate: -.0000614
+   standard_error: .0000199
+   t_statistic: -3.08541
+   p_value: .0020582
+ - id: _cons
+   estimate: 1.028705
+   standard_error: .5428871
+   t_statistic: 1.894878
+   p_value: .0582405
+extra_rows:
+ - id: R2
+   value: .8752469067100372
+ - id: observations
+   value: 83718
+ - id: first_stage_F
+   value: .3576954495035315

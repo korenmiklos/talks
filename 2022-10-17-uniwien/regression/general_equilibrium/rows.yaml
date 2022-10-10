@@ -1,0 +1,27 @@
+-   id: treatment
+    label: Worker exposed to\\{}\hspace*{1em}imported machine (dummy)
+    type: coefficient
+-   id: Gtreatment
+    label: Firm is an importer\\{}\hspace*{1em}(dummy)
+    type: coefficient
+-   id: mean_treatment_N
+    label: Fraction of workers\\{}\hspace*{1em}importing
+    type: coefficient
+-   id: skilled
+    label: Worker completed\\{}\hspace*{1em}high school (dummy)
+    type: coefficient
+-   id: X
+    label: Fraction importing \\{}\hspace*{1em}$\times$ high school
+    type: coefficient
+-   id: _ItreXmean__1
+    label: Fraction importing \\{}\hspace*{1em}$\times$ importer
+    type: coefficient
+-   id: _IranXmean__1
+    label: Fraction importing \\{}\hspace*{1em}$\times$ skilled nonimporter
+    type: coefficient
+-   id: R2
+    type: extra_row
+    label: $R^2$
+-   id: observations
+    type: extra_row
+    label: Number of observations
