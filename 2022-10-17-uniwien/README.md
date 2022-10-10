@@ -23,9 +23,17 @@ aspectratio: 1610
 
 > "The weaver in 1902, however, achieved that output using *eighteen* power-driven looms while the weaver of 1802 used a single handloom." (Bessen, 2012)
 
-> "On technical performance, there was a small but significant quality gap in favour  of the imported [rather than Indian] machine." (Sutton, 2001)
+> "On technical performance, there was a small but significant quality gap in favour of the imported [rather than Indian] machine." (Sutton, 2001)
 
-# Machines and workers
+
+## Outline
+1. An engineering model of machines and machinists
+2. A case study of a weaving mill
+3. Imported machines and wages in Hungary, 1992-2003
+4. Discussion and conclusion
+
+
+# An engineering model of machines and machinists
 ## Standard model
 $$
 Y = K^\alpha L^{1-\alpha}
@@ -59,13 +67,6 @@ Machine busy for $\theta$, idle for $1/h$.
 Expected fraction of time working : $\theta h / (1 + \theta h) \equiv x$. 
 
 Worker busy $(1-x)$ fraction of the time.
-
-## Outline
-1. "Engineering" model of machines and machinists
-2. Case study of a weaving mill
-3. Imported machines and wages in Hungary, 1992-2003
-4. Discussion and conclusion
-
 
 # Appendix
 
