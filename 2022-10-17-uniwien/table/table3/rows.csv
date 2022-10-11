@@ -1,7 +1,0 @@
-id,type,label
-newtype,coefficient,New machine
-age,coefficient,Age
-age2,coefficient,Age squared 
-observations,extra_row,Number of observations
-workers,extra_row,Number of workers
-R2,extra_row,$R^2$

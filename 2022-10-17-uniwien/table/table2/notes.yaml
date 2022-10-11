@@ -1,6 +1,0 @@
-"Dependent variable: 1 if the worker is assigned to a new machine, and 0 otherwise. 
-Sample: person-years for continuing workers employed in the plant in 1989. Estimation: Probit.
-The residual wage was measured by regressing log payments by results in 1989 on 
-age, age squared and type of machine fixed effects.
-Standard errors (in parentheses) are calculated from a 200-repetition bootstrap. Coefficients significantly different 
-from zero at 1, 5 and 10 percent are marked by ***, ** and *, respectively. "

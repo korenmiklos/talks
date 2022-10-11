@@ -1,6 +1,0 @@
---- > 
- The dependent variable is an indicator for importer status.
- All regressions estimated by ordinary least squares and control for firm-year and occupation-year fixed effects.
- Worker controls include indicators for gender and schooling and a quadratic function of worker age.
- Standard errors, clustered by firm, and calculated from a 200 repetition bootstrap, are reported in parantheses.
- Coefficients significantly different from zero at 1, 5 and 10 percent are marked by ***, ** and *, respectively.

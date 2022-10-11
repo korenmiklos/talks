@@ -1,0 +1,78 @@
+      
+\begin{tabular}{lcccc} \hline \hline
+ & (1) & (2) & (3) & (4) \\
+		& \begin{tabular}[x]{@{}c@{}}Baseline\end{tabular}
+		& \begin{tabular}[x]{@{}c@{}}Skill controls\end{tabular}
+		& \begin{tabular}[x]{@{}c@{}}Firm controls\end{tabular}
+		& \begin{tabular}[x]{@{}c@{}}IV\end{tabular}   \\ \hline
+ & & & &   \\
+	\begin{tabular}[x]{l}Worker exposed to\\{}\hspace*{1em}imported machine (dummy)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.061${}^*$${}^*$${}^*$
+			 \\ (0.012)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.048${}^*$${}^*$${}^*$
+			 \\ (0.010)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.042${}^*$${}^*$${}^*$
+			 \\ (0.007)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.410${}^*$${}^*$${}^*$
+			 \\ (0.090)\end{tabular} \\
+	\begin{tabular}[x]{l}Firm is an importer\\{}\hspace*{1em}(dummy)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.024${}^*$
+			 \\ (0.013)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.021${}^*$${}^*$
+			 \\ (0.010)\end{tabular}
+			&
+			&  \begin{tabular}[x]{@{}c@{}}-0.326${}^*$
+			 \\ (0.175)\end{tabular} \\
+	\begin{tabular}[x]{l}Firm is foreign owned\\{}\hspace*{1em}(dummy)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.146${}^*$${}^*$${}^*$
+			 \\ (0.015)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.113${}^*$${}^*$${}^*$
+			 \\ (0.012)\end{tabular}
+			&
+			&  \begin{tabular}[x]{@{}c@{}}0.120${}^*$${}^*$${}^*$
+			 \\ (0.023)\end{tabular} \\
+	\begin{tabular}[x]{l}Book value of machinery\\{}\hspace*{1em}(log)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.065${}^*$${}^*$${}^*$
+			 \\ (0.009)\end{tabular}
+			&  \begin{tabular}[x]{@{}c@{}}0.048${}^*$${}^*$${}^*$
+			 \\ (0.007)\end{tabular}
+			&
+			&  \begin{tabular}[x]{@{}c@{}}0.066${}^*$${}^*$${}^*$
+			 \\ (0.010)\end{tabular} \\
+\\
+	$R^2$ 
+				& 0.477 
+				& 0.595 
+				& 0.816 
+				& 0.418 \\
+	Number of observations 
+				& 153,110 
+				& 153,110 
+				& 153,110 
+				& 153,110 \\
+	Worker controls
+				& \begin{tabular}[x]{@{}c@{}}Baseline\end{tabular}
+				& \begin{tabular}[x]{@{}c@{}}Baseline+\\spline of skill\end{tabular}
+				& \begin{tabular}[x]{@{}c@{}}Baseline+\\spline of skill\end{tabular}
+				& \begin{tabular}[x]{@{}c@{}}Baseline\end{tabular} \\
+	Firm controls
+				& \begin{tabular}[x]{@{}c@{}}Baseline\end{tabular}
+				& \begin{tabular}[x]{@{}c@{}}Baseline\end{tabular}
+				& \begin{tabular}[x]{@{}c@{}}Firm-year\\FEs\end{tabular}
+				& \begin{tabular}[x]{@{}c@{}}Baseline\end{tabular} \\
+	Instruments
+			&
+			&
+			&
+				& \begin{tabular}[x]{@{}c@{}}Predicted\\import\\probability\end{tabular} \\
+	F-test for 1st stage
+			&
+			&
+			& 
+				& 62.26 \\
+\hline \hline
+\end{tabular}
+\begin{tablenotes}
+\item \footnotesize Notes: The dependent variable is the log monthly earning of the worker in the given year. All specifications control for occupation and year fixed effects. Worker controls include indicators for gender and schooling and a quadratic function of worker age. Firm controls include quadratic functions of log employment and firm age. In column 4, worker exposure to imported machine is instrumented with the predicted probability to import for the given occupation and the firm as a whole. Observations are weighted by $1/n_{fot}$, the inverse of the number of workers in a firm-occupation-year cell. Standard errors, clustered by firm, are reported in parantheses. Coefficients significantly different from zero at 1, 5 and 10 percent are marked by ***, ** and *, respectively.
+
+\end{tablenotes} 
