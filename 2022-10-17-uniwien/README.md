@@ -13,18 +13,27 @@ aspectratio: 1610
 1. Wage inequality in past decades
 2. Technological revolutions
 
+
+## Inequality and technology
+- Wage inequality increasing in U.S. (Katz, Loveman & Blanchflower 1995, Autor, Katz & Kearney 2008), the U.K. and Japan (Katz et al. 1995), Germany (Dustmann, Ludsteck & Scho ̈nberg 2009), Poland (Rutkowski 1996, Rutkowski 1997), the Czech Republic, Hungary, Romania and Slovenia (Rutkowski 1997)
+
+## Possible explanation: technological revolution
+- steam engines (Katz & Margo 2014, Franck & Galor 2015), electrification (Goldin & Katz 2008, Chapter 3), mass production and its dissolution (Piore & Sabel 1984), automation (Autor, Levy & Murnane 2003, Autor 2015, Acemoglu & Restrepo 2017) and industrial robots (Acemoglu & Restrepo 2019, Dixon, Hong & Wu 2019, Koch, Manuylov & Smolka 2019, Graetz & Michaels 2018, Findeisen, Dauth, Suedekum & Woessner 2018).
+
+## Two limitations
+1. Only part of the inequality can be explained by wage premia between well identified groups. Similar workers have also had diverging wage trends.
+2. Sweeping technical change is relevant to only some countries in some time periods. For most countries and most time periods, gradual improvement in the quality of otherwise similar capital goods is the dominant form of technical change.
+
+## This paper
+How does **incremental** improvement of machine quality affect **similar** workers?
+
 ## Weaver productivity across countries and over time
 
 ### Clark, 1987
-"In 1910 one New  England cotton  textile  operative performed as much work as  1.5  British,  2.3 German,  and nearly 6 Greek,  Japanese,  Indian, or Chinese  workers."
+"In 1910 one New England cotton  textile  operative performed as much work as  1.5  British,  2.3 German,  and nearly 6 Greek,  Japanese,  Indian, or Chinese  workers."
 
 ### Bessen, 2012
-"A typical weaver in the United States in 1902 produced over *50 times* as many yards of cloth in an hour of weaving as did a weaver a century earlier producing a comparable cloth."
-
-## Not all of it is _quantity_ of capital
-
-### Bessen, 2012
-"The weaver in 1902, however, achieved that output using *eighteen* power-driven looms while the weaver of 1802 used a single handloom."
+"A typical weaver in the United States in 1902 produced over *50 times* as many yards of cloth in an hour of weaving as did a weaver a century earlier producing a comparable cloth. [...] The weaver in 1902, however, achieved that output using *eighteen* power-driven looms while the weaver of 1802 used a single handloom."
 
 ### Sutton, 2001
 "On technical performance, there was a small but significant quality gap in favour of the imported [rather than Indian] machine."
@@ -32,16 +41,19 @@ aspectratio: 1610
 
 ## Outline
 1. An engineering model of machines and machinists
-2. A case study of a weaving mill
-3. Imported machines and wages in Hungary, 1992-2003
-4. Discussion and conclusion
+2. Equilibrium assignment of machines and machinists
+3. A case study of a weaving mill
+4. Imported machines and wages in Hungary, 1992-2003
+5. Discussion and conclusion
 
 
 # An engineering model of machines and machinists
 ## Standard model
 $$
-Y = AK^\alpha L^{1-\alpha}
+Y = A F(K, L)
 $$
+
+What is the shape of $F$?
 
 ## How do machines and people work together?
 Tool model
@@ -49,6 +61,8 @@ Tool model
 
 Operator model
 : A power loom produces in an autonomous fashion (worker idle), until a problem arises. The operator fixes it (machine idle) to get it back to work as fast as possible.
+
+This paper: while the tool model assumes Leontief production, the operator model leads to non-trivial patterns of complementarity.
 
 ## Tool model
 ![](figure/tool.png)
@@ -80,22 +94,60 @@ $$
 ## Markov chain for machine uptime
 Kolmogorov equation:
 $$
-\dot\pi_1(t) = -\frac 1{\theta}\pi_1(t) + h\pi_0(t).
+\dot x(t) = -\frac 1{\theta}x(t) + h[1-x(t)].
 $$
 
 ## Ergodic distribution
 $$
-\frac1T\int_{t=0}^T \pi_1(t)dt \approx \pi_1^*.
+\frac1T\int_{t=0}^T x(t)dt \approx x^*.
 $$
-The steady-state probability is the solution to $-\frac 1{\theta_m}\pi_1(t) + h_i\pi_0(t)=0$,
+The steady-state probability is the solution to $-\frac 1{\theta}x(t) + h[1-x(t)]=0$,
 $$
-\pi_1^* = \frac{\theta_m h_i}{1+\theta_m h_i}.
+x^* = \frac{\theta h}{1+\theta h}.
 $$
 
 ## Expected output
 A worker type $h$ operating $k$ units of a machine type $\theta$ produces, in expectation,
 \begin{equation}\label{eq:output:1}
-	F(A,k,\theta,h)=A k \frac{\theta h}{1+\theta h}
+	F(A,k,\theta,h)=A k \frac{\theta h}{1+\theta h} = Akx
+\end{equation}
+
+
+## Are worker skill and machine quality complementary?
+### For sufficiently autonomous machines, they are **substitutes**
+$$
+\frac   {\partial^2 F(A,k,\theta,h)}
+    {\partial \theta \partial h} < 0
+$$
+iff
+$$
+\frac{\theta h}{1+\theta h} > 0.5.
+$$
+
+## Are worker skill and machine quality complementary?
+### But this takes a **fixed number** of machines per worker 
+Pattern may be different if $k$ can also adjust (Eeckhout and Kircher 2018).
+
+Recall that worker is idle $x$ fraction of the time. She can operate $1/(1-x) = 1+\theta h$ machines.
+
+At optimal *quantity* of machines
+$$
+F(A,1+\theta h,\theta,h) = A\theta h,
+$$
+machine quality and worker skill are **complementary**.
+
+# Equilibrium assignment of machines and machinists
+
+## Equilibrium assignment of machines and machinists
+- Workers have upward-sloping labor supply curve at each employer (Card et al 2018). (Can be microfounded by a search model.)
+- Marginal product of labor:
+$$
+\lambda(h) = 
+(A_m -\mu_m)\theta_m h - \mu_m.
+$$
+- Wages are a weighted average of marginal product and outside option $b$,
+\begin{equation}
+w_{ijm} = \beta (A_m -\mu_m)\theta_m h_i - \beta\mu_m + (1-\beta)b,
 \end{equation}
 
 ## Machine assignment and wage setting by worker skill
