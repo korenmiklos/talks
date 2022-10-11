@@ -108,6 +108,41 @@ A worker type $h$ operating $k$ units of a machine type $\theta$ produces, in ex
 \input{figure/sorting2.tex}
 \end{figure}
 
+# A case study of a weaving mill
+
+## The number of old and new machines, 1988--1997
+![](figure/number-of-machines.pdf)
+
+## Differences between new and old machines---Regression estimates, 1991--1997
+  \begin{table}[h!]
+\begin{threeparttable}
+\centering
+\input{table/table1.tex}
+\end{threeparttable}
+\end{table}
+
+## Wage distribution before and after the adoption of new looms
+\begin{figure}[h!]\centering
+\includegraphics[width=\linewidth]{weaver-case-study/wage_inequality.pdf}
+\end{figure}
+
+## Wage gain from moving from an old to a new machine
+\begin{table}[h!]
+\begin{threeparttable}
+\centering
+\input{table/table3.tex}
+\end{threeparttable}
+\end{table}
+
+## The effect of machine type and worker quality on log output per machine
+\begin{table}[h!]
+\begin{threeparttable}
+\centering
+\input{table/table4.tex}
+\end{threeparttable}
+\end{table}
+
+
 # Appendix
 
 ## Worker wages
