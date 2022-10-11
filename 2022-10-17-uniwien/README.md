@@ -40,7 +40,7 @@ aspectratio: 1610
 # An engineering model of machines and machinists
 ## Standard model
 $$
-Y = K^\alpha L^{1-\alpha}
+Y = AK^\alpha L^{1-\alpha}
 $$
 
 ## How do machines and people work together?
@@ -142,6 +142,91 @@ A worker type $h$ operating $k$ units of a machine type $\theta$ produces, in ex
 \end{threeparttable}
 \end{table}
 
+# Imported machines and wages in Hungary
+
+## The estimation sample over time
+\begin{table}[h!]
+\begin{threeparttable}
+\input{table/sample_trends.tex}
+\end{threeparttable}
+\end{table}
+
+## Average machinery tariffs
+\begin{table}[h!]
+\begin{threeparttable}
+\input{table/tariff_trends.tex}
+\end{threeparttable}
+\end{table}
+
+## Occupations with faster tariff cuts adopt imported machines faster
+![](figure/import_tariff_correlation.pdf)
+
+## Wage inequality over time
+\begin{table}[h!]
+\begin{threeparttable}
+\input{table/inequality_trends.tex}
+\end{threeparttable}
+\end{table}
+
+## Actual and counterfactual wage change by wage percentile
+\begin{figure}[h!]\centering
+\includegraphics[width=0.7\linewidth]{figure/wage_growth.pdf}
+\end{figure}
+
+## Among high-wage workers, early importers are overrepresented
+![](figure/wage_density.pdf)
+
+## Estimable equation
+\begin{equation}\tag{\ref{eq:estimable}}
+\ln w_{ij} \approx \ln(1-\beta)b +
+\frac{\beta}{(1-\beta)b}
+\left[
+\tilde A_0\theta_0 h_i - \mu_0
++\chi_{ij} (\tilde A_1\theta_1-\tilde A_0\theta_0) (h_i-h_j^*)
+\right].
+\end{equation}
+We map this to the available data as follows.
+\begin{equation}\label{eq:estimable2}
+\ln w_{ijot} = \alpha_{ot} + \nu_{jt}+
+\gamma_h h_i
++\gamma_{\chi}\chi_{jot}
++\gamma_{\chi h}\chi_{jot}h_i
++u_{ijot}
+.
+\end{equation}
+
+## Creating a Bartik instrument
+\begin{equation}
+	\hat K_{jot} = 
+	\frac
+		{n_{jot} + n_{jo,t+1}}
+		{\sum_{l} (n_{jlt} + n_{jl,t+1})}
+	\times
+		K_{jt}.
+\end{equation}
+
+\begin{equation}
+	\hat M_{jot} = 
+	\frac
+		{\hat K_{jot_0}}
+		{\sum_{l} \hat K_{lot_0}}
+	\times
+		M_{ot}.
+\end{equation}
+
+## The effect of import exposure on wages
+\begin{table}[h!]
+\begin{threeparttable}
+\input{regression/OLS/table.tex}
+\end{threeparttable}
+\end{table}
+
+## Robustness to various firm controls
+\begin{table}[h!]
+\begin{threeparttable}
+\input{regression/firm_controls/table.tex}
+\end{threeparttable}
+\end{table}
 
 # Appendix
 
