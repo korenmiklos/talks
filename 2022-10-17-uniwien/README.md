@@ -15,15 +15,19 @@ aspectratio: 1610
 
 ## Weaver productivity across countries and over time
 
-> "In 1910 one New  England cotton  textile  operative performed as much work as  1.5  British,  2.3 German,  and nearly 6 Greek,  Japanese,  Indian, or Chinese  workers." (Clark, 1987)
+### Clark, 1987
+"In 1910 one New  England cotton  textile  operative performed as much work as  1.5  British,  2.3 German,  and nearly 6 Greek,  Japanese,  Indian, or Chinese  workers."
 
-> "A typical weaver in the United States in 1902 produced over *50 times* as many yards of cloth in an hour of weaving as did a weaver a century earlier producing a comparable cloth." (Bessen, 2012)
+### Bessen, 2012
+"A typical weaver in the United States in 1902 produced over *50 times* as many yards of cloth in an hour of weaving as did a weaver a century earlier producing a comparable cloth."
 
 ## Not all of it is _quantity_ of capital
 
-> "The weaver in 1902, however, achieved that output using *eighteen* power-driven looms while the weaver of 1802 used a single handloom." (Bessen, 2012)
+### Bessen, 2012
+"The weaver in 1902, however, achieved that output using *eighteen* power-driven looms while the weaver of 1802 used a single handloom."
 
-> "On technical performance, there was a small but significant quality gap in favour of the imported [rather than Indian] machine." (Sutton, 2001)
+### Sutton, 2001
+"On technical performance, there was a small but significant quality gap in favour of the imported [rather than Indian] machine."
 
 
 ## Outline
@@ -46,9 +50,6 @@ Tool model
 Operator model
 : A power loom produces in an autonomous fashion (worker idle), until a problem arises. The operator fixes it (machine idle) to get it back to work as fast as possible.
 
-
-This paper studies the *operator model*.
-
 ## Tool model
 ![](figure/tool.png)
 
@@ -67,6 +68,45 @@ Machine busy for $\theta$, idle for $1/h$.
 Expected fraction of time working : $\theta h / (1 + \theta h) \equiv x$. 
 
 Worker busy $(1-x)$ fraction of the time.
+
+## Production function
+$$
+dY = \begin{cases}
+A dt    & \text{if machine running, $s=1$}\\
+0       & \text{if not, $s=0$}
+\end{cases}
+$$
+
+## Markov chain for machine uptime
+Kolmogorov equation:
+$$
+\dot\pi_1(t) = -\frac 1{\theta}\pi_1(t) + h\pi_0(t).
+$$
+
+## Ergodic distribution
+$$
+\frac1T\int_{t=0}^T \pi_1(t)dt \approx \pi_1^*.
+$$
+The steady-state probability is the solution to $-\frac 1{\theta_m}\pi_1(t) + h_i\pi_0(t)=0$,
+$$
+\pi_1^* = \frac{\theta_m h_i}{1+\theta_m h_i}.
+$$
+
+## Expected output
+A worker type $h$ operating $k$ units of a machine type $\theta$ produces, in expectation,
+\begin{equation}\label{eq:output:1}
+	F(A,k,\theta,h)=A k \frac{\theta h}{1+\theta h}
+\end{equation}
+
+## Machine assignment and wage setting by worker skill
+\begin{figure}[h!]\centering
+\input{figure/sorting1.tex}
+\end{figure}
+
+## Technology upgrading by worker skill
+\begin{figure}[h!]\centering
+\input{figure/sorting2.tex}
+\end{figure}
 
 # Appendix
 
@@ -89,7 +129,7 @@ $$
 $$
 
 ## Output per worker hour
-![](output_per_hour.png)
+![](figure/output_per_hour.png)
 
 ## Return to machine quality
 $$
@@ -98,7 +138,7 @@ x(1-x)(1+w)
 $$
 
 ## Return to machine quality
-![](return_to_theta.png)
+![](figure/return_to_theta.png)
 
 ## Value of a machine
 $$
@@ -107,7 +147,7 @@ x(1 + w) - w
 $$
 
 ## Value of a machine
-![](value_of_machine.png)
+![](figure/value_of_machine.png)
 
 # Innovation
 ## Two types of innovation
