@@ -103,6 +103,7 @@ Machine breaks down with Poisson arrival $1/\theta$.
 
 Worker fixes it with Poisson arrival $h$.
 
+Markov chain:
 $$
 \begin{pmatrix}
 d\pi_1 \\
@@ -127,7 +128,7 @@ worker skill
 
 ## Ergodic distribution of machine runtime
 $$
-\frac1T\int_{t=0}^T \pi_1(t)dt \approx x^*.
+\frac1T\int_{t=0}^T \pi_1(t)dt \approx \pi_1^*.
 $$
 The steady-state probability is the solution to $-\frac 1{\theta}\pi_1(t) + h[1-\pi_1(t)]=0$,
 $$
@@ -137,13 +138,13 @@ $$
 ## Expected output
 A worker type $h$ on a machine type $(A,\theta)$ produces, in expectation,
 \begin{equation}\label{eq:output:1}
-	F(A,\theta,h) = A \pi_1
+	F(A,\theta,h) = A \pi_1 =
     A \frac{\theta h}{1+\theta h}.
 \end{equation}
 
 
 ## Are worker skill and machine quality complementary?
-### For sufficiently autonomous machines, they are **substitutes**
+For sufficiently autonomous machines, they are **substitutes**
 $$
 \frac   {\partial^2 F(A,\theta,h)}
     {\partial \theta \partial h} < 0
@@ -153,24 +154,26 @@ $$
 \frac{\theta h}{1+\theta h} > 0.5.
 $$
 
+> Intuition: why bother with a good operator on a machine that does not stop frequently?
 
 ## Are worker skill and machine quality complementary?
-### But this takes a **fixed number** of machines per worker 
-Pattern may be different if $k$ can also adjust (Eeckhout and Kircher 2018).
-
-Recall that worker is idle $\pi_1$ fraction of the time. She can operate $1/(1-\pi_1) = 1+\theta h$ machines.
-
-At optimal *quantity* of machines
+-  But this takes a **fixed number** of machines per worker 
+- Pattern may be different if $k$ can also adjust (Eeckhout and Kircher 2018).
+- Recall that worker is idle $\pi_1$ fraction of the time. She can operate $1/(1-\pi_1) = 1+\theta h$ machines.
+- At optimal *quantity* of machines
 $$
 (1+\theta h)F(A,\theta,h) = A\theta h,
 $$
 machine quality and worker skill are **complementary**.
 
+> Intuition: 
+> 1. Good workers can operate more machines (quality-quantity substitution).
+> 2. Good machines have a higher shadow cost of downtime.
 
 # Equilibrium assignment of machines and machinists
 
 ## Equilibrium assignment of machines and machinists
-- There are two types of machines with $A_1\theta_1 > A_0\theta_0$.
+- There are two types of machines with $A_1\theta_1 > A_0\theta_0$ (for now).
 - Available in quantity $K_1$ and $K_0$.
 - Continuum of worker skills in inelastic supply, $h\in \mathbb R^+$ with continuous distribution $G(h)$.
 - Frictionless capital and labor markets (for now).
@@ -178,12 +181,27 @@ machine quality and worker skill are **complementary**.
 ## Equilibrium
 
 ## Monge-Kantorovich duality
+$$
+w(h) +(1+\theta_m h)R_m \ge 
+A_m \theta_m h 
+$$
+for all $h$ and $m$, and $=$ if $h$ uses positive amounts of $m$
+
 
 ## Assortative matching
+- All skills above some $h^*$ work type-1 machines.
 - Equilibrium wage rate:
 $$
-w(h) = 
-(A_m -R_m)\theta_m h - R_m.
+w(h) =
+\begin{cases}
+(A_1-R_1)\theta_1 h - R_1 & \text{if }h > h^*\\
+(A_0-R_0)\theta_0 h - R_0 & \text{otherwise}
+\end{cases}
+$$
+- Equilibrium rental rate such that 
+$$
+\int_0^{h^*}
+(1 + \theta_0 h)dG(h) = K_0
 $$
 
 ## Machine assignment and wage setting by worker skill
@@ -191,27 +209,34 @@ $$
 \input{figure/sorting1.tex}
 \end{figure}
 
-## Frictional labor markets
-- Marginal product of labor:
-$$
-\lambda(h) = 
-(A_m -\mu_m)\theta_m h - \mu_m.
-$$
-- Workers have upward-sloping labor supply curve at each employer (Card et al 2018). (Can be microfounded by a search model.)
-- Wages are a weighted average of marginal product and outside option $b$,
-\begin{equation}
-w_{ijm} = \beta (A_m -\mu_m)\theta_m h_i - \beta\mu_m + (1-\beta)b,
-\end{equation}
-
-
 # Comparative statics
 
-## Technology upgrading by worker skill
+## When more good machines become available, skilled workers benefit
 \begin{figure}[h!]\centering
 \input{figure/sorting2.tex}
 \end{figure}
 
+## Predictions
+### Cross sectional patterns
+1. Conditional on machine productivity, wages increase in worker skill,
+2. higher skilled workers are (weakly) more likely to use a good machine,
+3. workers using a good machine earn higher wages,
+4. the returns to skill are higher on good machines.
+
+## Technology upgrading
+### When $R_1/R_0$ declines,
+1. a larger fraction of operators within the firm uses a good machine,
+2.  workers switching to a good machine receive a wage increase,
+3.  the wage of all existing good machine users increases,
+4.  the returns to skill increase.
+
+
 # A case study of a weaving mill
+
+## Data
+Hungarian cotton weaving mill. Soviet and Czechoslovakian (STB and UTAS) weaving machines, older Swiss-made (shuttle Rüti) looms in 1988. Starting in 1989, purchase modern looms from Switzerland (Rüti F and G) and Japan (Toyota).
+
+Data: machines installed (type, properties, output, downtime). Workers on the floor (age, piece wage, machine assignment).
 
 ## The number of old and new machines, 1988--1997
 ![](figure/number-of-machines.pdf)
@@ -246,8 +271,35 @@ w_{ijm} = \beta (A_m -\mu_m)\theta_m h_i - \beta\mu_m + (1-\beta)b,
 \end{table}
 
 # Imported machines and wages in Hungary
+## Imported machines and wages in Hungary
+Show that
+1. Better workers are more likely to get an imported machine.
+2. Wages are higher on imported machines.
+3. The returns to skill are higher on imported machines.
 
-## The estimation sample over time
+## Data
+1. Linked employer-employee data (Bértarifa)
+2. Customs statistics
+
+## Sample
+
+## Machine operator occupations
+\begin{table}[h!]
+\begin{threeparttable}
+\input{table/occupations.tex}
+\end{threeparttable}
+\end{table}
+
+## Wage inequality over time
+\begin{table}[h!]
+\begin{threeparttable}
+\input{table/inequality_trends.tex}
+\end{threeparttable}
+\end{table}
+
+# Imported machines became more prevalent
+
+## Imported machines became more prevalent
 \begin{table}[h!]
 \begin{threeparttable}
 \input{table/sample_trends.tex}
@@ -264,31 +316,11 @@ w_{ijm} = \beta (A_m -\mu_m)\theta_m h_i - \beta\mu_m + (1-\beta)b,
 ## Occupations with faster tariff cuts adopt imported machines faster
 ![](figure/import_tariff_correlation.pdf)
 
-## Wage inequality over time
-\begin{table}[h!]
-\begin{threeparttable}
-\input{table/inequality_trends.tex}
-\end{threeparttable}
-\end{table}
-
-## Actual and counterfactual wage change by wage percentile
-\begin{figure}[h!]\centering
-\includegraphics[width=0.7\linewidth]{figure/wage_growth.pdf}
-\end{figure}
-
 ## Among high-wage workers, early importers are overrepresented
 ![](figure/wage_density.pdf)
 
+# Estimation
 ## Estimable equation
-\begin{equation}\tag{\ref{eq:estimable}}
-\ln w_{ij} \approx \ln(1-\beta)b +
-\frac{\beta}{(1-\beta)b}
-\left[
-\tilde A_0\theta_0 h_i - \mu_0
-+\chi_{ij} (\tilde A_1\theta_1-\tilde A_0\theta_0) (h_i-h_j^*)
-\right].
-\end{equation}
-We map this to the available data as follows.
 \begin{equation}\label{eq:estimable2}
 \ln w_{ijot} = \alpha_{ot} + \nu_{jt}+
 \gamma_h h_i
@@ -331,6 +363,11 @@ We map this to the available data as follows.
 \end{threeparttable}
 \end{table}
 
+## Actual and counterfactual wage change by wage percentile
+\begin{figure}[h!]\centering
+\includegraphics[width=0.7\linewidth]{figure/wage_growth.pdf}
+\end{figure}
+
 # Appendix
 
 # Complementarity and the quality-quantity trade-off
@@ -345,76 +382,27 @@ F_{\theta h} \ge \frac
     {F_{KL}.}
 $$
 
-## Worker wages
-Workers earn $w$ in agriculture. Large $L$ number of workers, few $K$ machines.
+# Frictional labor markets
+## Frictional labor markets
+- Marginal product of labor:
+$$
+\lambda(h) = 
+(A_m -\mu_m)\theta_m h - \mu_m.
+$$
+- Workers have upward-sloping labor supply curve at each employer (Card et al 2018). (Can be microfounded by a search model.)
+- Wages are a weighted average of marginal product and outside option $b$,
+\begin{equation}
+w_{ijm} = \beta (A_m -\mu_m)\theta_m h_i - \beta\mu_m + (1-\beta)b,
+\end{equation}
 
-## Net output over agriculture
-$$
-x - w(1-x) = x(1+w) - w
-$$
+# Robustness
+## Alternative ways of capturing import exposure
+\begin{table}[h!]
+\begin{threeparttable}
+\input{regression/robustness/table.tex}
+\end{threeparttable}
+\end{table}
 
-## Equilibrium
-$$
-K(1-x) \le L
-$$
-
-## Output per worker hour
-$$
-\frac {xK_i}{L_i} = \frac {x}{1-x}
-$$
-
-## Output per worker hour
-![](figure/output_per_hour.png)
-
-## Return to machine quality
-$$
-\frac{\partial Q}{\partial \theta} = 
-x(1-x)(1+w)
-$$
-
-## Return to machine quality
-![](figure/return_to_theta.png)
-
-## Value of a machine
-$$
-Q_i - w L_i = 
-x(1 + w) - w
-$$
-
-## Value of a machine
-![](figure/value_of_machine.png)
-
-# Innovation
-## Two types of innovation
-1. Improve quality $\theta$
-2. Build more machines $K$
-
-Suppose both cost the same amount of final goods.
-
-## Three epochs of innovation
-1. Artisanal period. Labor is slack, wages are determined in agriculture. Improving machine quality has higher return. $x(1-x)(1+w) > x(1+w)-w$. $x$ continues to increase.
-2. Mass production. Value of a machine is high enough to produce more. $K/L$ increases with constant $x$.
-3. Automation. After all $L$ has been absorbed from agriculture, wages start to rise. The returns to labor-saving machine quality improvement now exceed the value of an old machine. $x$ keeps increasing.
-
-## Plus one
-4. Singularity (never reached). As $x\to1$, the ratio of machine time to worker time grows without bound. Nobody works, all work is done by robots. But to reach this state from a very large degree of automation (say, $x=0.999$), labor has to capture almost all of the output, otherwise there is no incentive to innovate further.
-
-## Artisanal period
-$$
-\frac w{1+w} \le x \le \sqrt{\frac w{1+w}}
-$$
-
-
-# Production function
-## Production function
-$$
-    Q_{it} = \Omega_{it} (\lambda K_{it}^F + K_{it}^D)^{\alpha} L_{it}^{\beta} M_{it}^\gamma
-$$
-with $\lambda>1$
-$$
-    q_{it} \approx \omega_{it} + \alpha k_{it} + \beta l_{it} + \gamma m_{it}
-    + \alpha(\lambda-1) \frac{K_{it}^F}{K_{it}}
-$$
 
 # Patterns of capital imports
 ## Data
@@ -447,8 +435,6 @@ $$
 
 ## Material intensity around import peaks
 ![](figure/ES_import_ln_M_L.pdf)
-
-
 
 ## Investment rate distribution
 ![](figure/IR_dist_tot.pdf)
