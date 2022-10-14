@@ -34,12 +34,16 @@ aspectratio: 1610
 2. Technical revolutions are rare (in time, across countries).
 
 ## Another explanation: capital-skill complementarity
+Krusell et al (2000): lower relative price of capital goods can quantitatively explain the rise in the skill premium.
 
+## Model fits well after 20 more years
+![](figure/maliar-etal-2022.pdf)
 
 ## This paper
 
-1. A novel theoretical mechanism of capital-quality-skill complementarity: **incremental** improvement of machine quality differentially affect workers with **similar** skills.
+1. A novel theoretical mechanism of capital-*quality*-skill complementarity: *incremental* improvement of machine quality differentially affect workers with *similar* skills.
 2. Direct micro evidence for this mechanism from Hungarian industry 1988--2003.
+3. Access to better machines can explain about half of the increase in within-occupation wage inequality in this period.
 
 ## Weaver productivity across countries and over time
 
@@ -84,20 +88,9 @@ This paper: while the tool model assumes Leontief production, the operator model
 ## Operator model
 ![](figure/operator.png)
 
-## Two measures of quality
-machine quality
-: Expected autonomous uptime $\theta$
-
-worker skill
-: Speed of fixing problems $h$
-
-Machine busy for $\theta$, idle for $1/h$. 
-
-Expected fraction of time working : $\theta h / (1 + \theta h) \equiv x$. 
-
-Worker busy $(1-x)$ fraction of the time.
 
 ## Production function
+A machine produces $A$ units per time:
 $$
 dY = \begin{cases}
 A dt    & \text{if machine running, $s=1$}\\
@@ -105,32 +98,54 @@ A dt    & \text{if machine running, $s=1$}\\
 \end{cases}
 $$
 
-## Markov chain for machine uptime
-Kolmogorov equation:
+## The need for human intervention
+Machine breaks down with Poisson arrival $1/\theta$.
+
+Worker fixes it with Poisson arrival $h$.
+
 $$
-\dot x(t) = -\frac 1{\theta}x(t) + h[1-x(t)].
+\begin{pmatrix}
+d\pi_1 \\
+d\pi_0
+\end{pmatrix} =
+\begin{bmatrix}
+-1/\theta & h\\
+1/\theta & -h
+\end{bmatrix}
+\begin{pmatrix}
+\pi_1 \\
+\pi_0
+\end{pmatrix} dt
 $$
 
-## Ergodic distribution
+## Two measures of quality
+machine quality
+: Expected autonomous uptime $\theta$
+
+worker skill
+: Speed of fixing problems $h$
+
+## Ergodic distribution of machine runtime
 $$
-\frac1T\int_{t=0}^T x(t)dt \approx x^*.
+\frac1T\int_{t=0}^T \pi_1(t)dt \approx x^*.
 $$
-The steady-state probability is the solution to $-\frac 1{\theta}x(t) + h[1-x(t)]=0$,
+The steady-state probability is the solution to $-\frac 1{\theta}\pi_1(t) + h[1-\pi_1(t)]=0$,
 $$
-x^* = \frac{\theta h}{1+\theta h}.
+\pi_1^* = \frac{\theta h}{1+\theta h}.
 $$
 
 ## Expected output
-A worker type $h$ operating $k$ units of a machine type $\theta$ produces, in expectation,
+A worker type $h$ on a machine type $(A,\theta)$ produces, in expectation,
 \begin{equation}\label{eq:output:1}
-	F(A,k,\theta,h)=A k \frac{\theta h}{1+\theta h} = Akx
+	F(A,\theta,h) = A \pi_1
+    A \frac{\theta h}{1+\theta h}.
 \end{equation}
 
 
 ## Are worker skill and machine quality complementary?
 ### For sufficiently autonomous machines, they are **substitutes**
 $$
-\frac   {\partial^2 F(A,k,\theta,h)}
+\frac   {\partial^2 F(A,\theta,h)}
     {\partial \theta \partial h} < 0
 $$
 iff
@@ -138,36 +153,58 @@ $$
 \frac{\theta h}{1+\theta h} > 0.5.
 $$
 
+
 ## Are worker skill and machine quality complementary?
 ### But this takes a **fixed number** of machines per worker 
 Pattern may be different if $k$ can also adjust (Eeckhout and Kircher 2018).
 
-Recall that worker is idle $x$ fraction of the time. She can operate $1/(1-x) = 1+\theta h$ machines.
+Recall that worker is idle $\pi_1$ fraction of the time. She can operate $1/(1-\pi_1) = 1+\theta h$ machines.
 
 At optimal *quantity* of machines
 $$
-F(A,1+\theta h,\theta,h) = A\theta h,
+(1+\theta h)F(A,\theta,h) = A\theta h,
 $$
 machine quality and worker skill are **complementary**.
+
 
 # Equilibrium assignment of machines and machinists
 
 ## Equilibrium assignment of machines and machinists
-- Workers have upward-sloping labor supply curve at each employer (Card et al 2018). (Can be microfounded by a search model.)
-- Marginal product of labor:
+- There are two types of machines with $A_1\theta_1 > A_0\theta_0$.
+- Available in quantity $K_1$ and $K_0$.
+- Continuum of worker skills in inelastic supply, $h\in \mathbb R^+$ with continuous distribution $G(h)$.
+- Frictionless capital and labor markets (for now).
+
+## Equilibrium
+
+## Monge-Kantorovich duality
+
+## Assortative matching
+- Equilibrium wage rate:
 $$
-\lambda(h) = 
-(A_m -\mu_m)\theta_m h - \mu_m.
+w(h) = 
+(A_m -R_m)\theta_m h - R_m.
 $$
-- Wages are a weighted average of marginal product and outside option $b$,
-\begin{equation}
-w_{ijm} = \beta (A_m -\mu_m)\theta_m h_i - \beta\mu_m + (1-\beta)b,
-\end{equation}
 
 ## Machine assignment and wage setting by worker skill
 \begin{figure}[h!]\centering
 \input{figure/sorting1.tex}
 \end{figure}
+
+## Frictional labor markets
+- Marginal product of labor:
+$$
+\lambda(h) = 
+(A_m -\mu_m)\theta_m h - \mu_m.
+$$
+- Workers have upward-sloping labor supply curve at each employer (Card et al 2018). (Can be microfounded by a search model.)
+- Wages are a weighted average of marginal product and outside option $b$,
+\begin{equation}
+w_{ijm} = \beta (A_m -\mu_m)\theta_m h_i - \beta\mu_m + (1-\beta)b,
+\end{equation}
+
+
+# Comparative statics
 
 ## Technology upgrading by worker skill
 \begin{figure}[h!]\centering
