@@ -9,23 +9,37 @@ aspectratio: 1610
 
 # Motivation
 
-## Motivation
-1. Wage inequality in past decades
-2. Technological revolutions
+## Inequality and polarization in the U.S.
+![](table/autor-etal-2008.pdf)
 
+## Inequality and polarization in Germany
+![](table/dustmann-etal-2009.pdf)
 
-## Inequality and technology
-- Wage inequality increasing in U.S. (Katz, Loveman & Blanchflower 1995, Autor, Katz & Kearney 2008), the U.K. and Japan (Katz et al. 1995), Germany (Dustmann, Ludsteck & Scho ̈nberg 2009), Poland (Rutkowski 1996, Rutkowski 1997), the Czech Republic, Hungary, Romania and Slovenia (Rutkowski 1997)
+## Wage inequality has increased in many countries
+- U.S. (Katz, Loveman & Blanchflower 1995, Autor, Katz & Kearney 2008)
+- U.K. and Japan (Katz et al. 1995)
+- Germany (Dustmann, Ludsteck & Schönberg 2009), Poland (Rutkowski 1996, Rutkowski 1997)
+- Czech Republic, Hungary, Romania and Slovenia (Rutkowski 1997)
 
-## Possible explanation: technological revolution
-- steam engines (Katz & Margo 2014, Franck & Galor 2015), electrification (Goldin & Katz 2008, Chapter 3), mass production and its dissolution (Piore & Sabel 1984), automation (Autor, Levy & Murnane 2003, Autor 2015, Acemoglu & Restrepo 2017) and industrial robots (Acemoglu & Restrepo 2019, Dixon, Hong & Wu 2019, Koch, Manuylov & Smolka 2019, Graetz & Michaels 2018, Findeisen, Dauth, Suedekum & Woessner 2018).
+## Is technology to blame?
+### Emergence of radically new technologies favors some groups over others
+- steam engines (Katz & Margo 2014, Franck & Galor 2015)
+- electrification (Goldin & Katz 2008, Chapter 3)
+- mass production and its dissolution (Piore & Sabel 1984)
+- automation (Autor, Levy & Murnane 2003, Autor 2015, Acemoglu & Restrepo 2017) 
+- industrial robots (Acemoglu & Restrepo 2019, Dixon, Hong & Wu 2019, Koch, Manuylov & Smolka 2019, Graetz & Michaels 2018, Findeisen, Dauth, Suedekum & Woessner 2018)
 
-## Two limitations
-1. Only part of the inequality can be explained by wage premia between well identified groups. Similar workers have also had diverging wage trends.
-2. Sweeping technical change is relevant to only some countries in some time periods. For most countries and most time periods, gradual improvement in the quality of otherwise similar capital goods is the dominant form of technical change.
+## Two challenges to this explanation
+1. Inequality increase in pervasive, even within well-defined skill and occupation groups.
+2. Technical revolutions are rare (in time, across countries).
+
+## Another explanation: capital-skill complementarity
+
 
 ## This paper
-How does **incremental** improvement of machine quality affect **similar** workers?
+
+1. A novel theoretical mechanism of capital-quality-skill complementarity: **incremental** improvement of machine quality differentially affect workers with **similar** skills.
+2. Direct micro evidence for this mechanism from Hungarian industry 1988--2003.
 
 ## Weaver productivity across countries and over time
 
@@ -40,14 +54,14 @@ How does **incremental** improvement of machine quality affect **similar** worke
 
 
 ## Outline
-1. An engineering model of machines and machinists
+1. An engineering production function
 2. Equilibrium assignment of machines and machinists
 3. A case study of a weaving mill
 4. Imported machines and wages in Hungary, 1992-2003
 5. Discussion and conclusion
 
 
-# An engineering model of machines and machinists
+# An engineering production function
 ## Standard model
 $$
 Y = A F(K, L)
@@ -74,7 +88,7 @@ This paper: while the tool model assumes Leontief production, the operator model
 machine quality
 : Expected autonomous uptime $\theta$
 
-worker quality
+worker skill
 : Speed of fixing problems $h$
 
 Machine busy for $\theta$, idle for $1/h$. 
@@ -281,6 +295,18 @@ We map this to the available data as follows.
 \end{table}
 
 # Appendix
+
+# Complementarity and the quality-quantity trade-off
+Eeckhout and Kircher (2018) study
+$$
+F(\theta, h, K, L).
+$$
+There is positive assortative matching iff
+$$
+F_{\theta h} \ge \frac
+    {F_{\theta L} F_{hK} }
+    {F_{KL}.}
+$$
 
 ## Worker wages
 Workers earn $w$ in agriculture. Large $L$ number of workers, few $K$ machines.
