@@ -10,24 +10,24 @@ aspectratio: 1610
 # Motivation
 
 ## Inequality and polarization in the U.S.
-![](table/autor-etal-2008.pdf)
+![](table/autor-etal-2008.pdf){ height=100% align=center }
 
 ## Inequality and polarization in Germany
-![](table/dustmann-etal-2009.pdf)
+![](table/dustmann-etal-2009.pdf){ height=100% align=center }
 
 ## Wage inequality has increased in many countries
-- U.S. (Katz, Loveman & Blanchflower 1995, Autor, Katz & Kearney 2008)
-- U.K. and Japan (Katz et al. 1995)
-- Germany (Dustmann, Ludsteck & Schönberg 2009), Poland (Rutkowski 1996, Rutkowski 1997)
-- Czech Republic, Hungary, Romania and Slovenia (Rutkowski 1997)
+- U.S. \smallcite{Katz, Loveman \& Blanchflower 1995, Autor, Katz \& Kearney 2008}
+- U.K. and Japan \smallcite{Katz et al. 1995}
+- Germany \smallcite{Dustmann, Ludsteck \& Schönberg 2009), Poland (Rutkowski 1996, Rutkowski 1997}
+- Czech Republic, Hungary, Romania and Slovenia \smallcite{Rutkowski 1997}
 
 ## Is technology to blame?
 ### Emergence of radically new technologies favors some groups over others
-- steam engines (Katz & Margo 2014, Franck & Galor 2015)
-- electrification (Goldin & Katz 2008, Chapter 3)
-- mass production and its dissolution (Piore & Sabel 1984)
-- automation (Autor, Levy & Murnane 2003, Autor 2015, Acemoglu & Restrepo 2017) 
-- industrial robots (Acemoglu & Restrepo 2019, Dixon, Hong & Wu 2019, Koch, Manuylov & Smolka 2019, Graetz & Michaels 2018, Findeisen, Dauth, Suedekum & Woessner 2018)
+- steam engines \smallcite{Katz \& Margo 2014, Franck \& Galor 2015}
+- electrification \smallcite{Goldin \& Katz 2008, Chapter 3}
+- mass production and its dissolution \smallcite{Piore \& Sabel 1984}
+- automation \smallcite{Autor, Levy \& Murnane 2003, Autor 2015, Acemoglu \& Restrepo 2017} 
+- industrial robots \smallcite{Acemoglu \& Restrepo 2019, Dixon, Hong \& Wu 2019, Koch, Manuylov \& Smolka 2019, Graetz \& Michaels 2018, Findeisen, Dauth, Suedekum \& Woessner 2018}
 
 ## Two challenges to this explanation
 1. Inequality increase in pervasive, even within well-defined skill and occupation groups.
@@ -37,7 +37,7 @@ aspectratio: 1610
 Krusell et al (2000): lower relative price of capital goods can quantitatively explain the rise in the skill premium.
 
 ## Model fits well after 20 more years
-![](figure/maliar-etal-2022.pdf)
+![](figure/maliar-etal-2022.pdf){ height=100% align=center }
 
 ## This paper
 
