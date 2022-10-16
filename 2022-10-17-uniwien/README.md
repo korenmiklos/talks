@@ -179,14 +179,27 @@ machine quality and worker skill are **complementary**.
 - Frictionless capital and labor markets (for now).
 
 ## Equilibrium
+Assignment function $k_m(h): \{0,1\}\times H \to \mathbb R^+$ capturing machine $m$ per worker $h$
 
-## Monge-Kantorovich duality
+Wage function $w(h): H \to \mathbb R^+$
+
+Rental rate of capital: $R_1$ and $R_0$ such that
+
+1. $$w(h) + k_m(h) R_m \ge k_m(h) A_m \theta_m h$$ for $m=0,1$ and $h\in H$ with equality if $k_m(h)>0$ (non-positive profits)
+2. $$\int_h k_m(h)dG(h) \le K_m$$ for $m=0,1$ with equality if $R_m>0$ (machine markets clear)
+3. $$\sum_{m=0}^1 k_m(h) \frac {1}{1+\theta_m h} \le 1$$ for all $h\in H$ with equality if $w(h)$ (labor markets clear) 
+
+
+## Solution
+### Monge-Kantorovich duality
 $$
 w(h) +(1+\theta_m h)R_m \ge 
 A_m \theta_m h 
 $$
-for all $h$ and $m$, and $=$ if $h$ uses positive amounts of $m$
+for all $h$ and $m$, and $=$ if $k_m(h)>0$
 
+1. Each worker is only assigned to one type of machine: $k_0(h)\cdot k_1(h) = 0$.
+2. Machine quantity uses all available worker time: $k_m(h) = 1+\theta_m h$ if $m$ is assigned to $h$
 
 ## Assortative matching
 - All skills above some $h^*$ work type-1 machines.
@@ -203,11 +216,29 @@ $$
 \int_0^{h^*}
 (1 + \theta_0 h)dG(h) = K_0
 $$
+$$
+\int_{h^*}^\infty
+(1 + \theta_1 h)dG(h) = K_1
+$$
 
 ## Machine assignment and wage setting by worker skill
 \begin{figure}[h!]\centering
 \input{figure/sorting1.tex}
 \end{figure}
+
+## A Pareto example
+Suppose $G(h) = L [1-(h/h_0)^{-\alpha}]$.
+
+Demand for good machines
+$$
+L\left(\frac {h^*}
+    {h_0}
+\right)^{-\alpha}
+\left(
+    1 + \frac{\alpha}{\alpha-1} \theta_1 h^* 
+\right)
+ = K_1
+$$
 
 # Comparative statics
 
@@ -273,13 +304,19 @@ Data: machines installed (type, properties, output, downtime). Workers on the fl
 # Imported machines and wages in Hungary
 ## Imported machines and wages in Hungary
 Show that
+
 1. Better workers are more likely to get an imported machine.
 2. Wages are higher on imported machines.
 3. The returns to skill are higher on imported machines.
 
 ## Data
 1. Linked employer-employee data (Bértarifa)
-2. Customs statistics
+    - limit to machine operator occupations in industry (narrow skills)
+    - drop firms with $<20$ employees
+    - repeated random sample of 6 percent (not a panel)
+2. Hungarian Customs Statistics, 1992--2003
+    - all _direct_ exporter and importer
+    - detailed by product (HS6): specific machines
 
 ## Sample
 
@@ -313,8 +350,6 @@ Show that
 \end{threeparttable}
 \end{table}
 
-## Occupations with faster tariff cuts adopt imported machines faster
-![](figure/import_tariff_correlation.pdf)
 
 ## Among high-wage workers, early importers are overrepresented
 ![](figure/wage_density.pdf)
@@ -329,6 +364,13 @@ Show that
 +u_{ijot}
 .
 \end{equation}
+
+
+## Interim Agreement with EEA (1991) phased out tariffs
+![](figure/tariff-phaseout.pdf)
+
+## Occupations with faster tariff cuts adopt imported machines faster
+![](figure/import_tariff_correlation.pdf)
 
 ## Creating a Bartik instrument
 \begin{equation}
@@ -466,13 +508,6 @@ $$
 
 # Identification
 
-## Interim Agreement with EEA (1991) phased out tariffs
-![](figure/tariff-phaseout.pdf)
-
-## Faster phaseout results in faster imports (Koren, Csillag and Köllő, 2019)
-![](figure/import_tariff_correlation.pdf)
-
-
 ## When do firms import?
 - Lumpy imported investment suggests fixed cost of importing (also see Halpern, Koren and Szeidl, 2015)
 - Import if $p^F_t/p^D_t < f(L_{it})$.
@@ -506,12 +541,6 @@ $$
 - Two ways to measure complementarity (Brynjolfsson and Milgrom, 2013):
     - performance: $f_{xy} > 0$
     - behavior: $\partial x/\partial y > 0$
-
-## Positive cross derivative of output (Koren, Csillag and Köllő, 2019)
-![](figure/fxy.pdf)
-
-## Assortative assignment (Koren, Csillag and Köllő, 2019)
-![](figure/PAM.pdf)
 
 ## Imported machines are more material intensive
 ![](figure/MperL.pdf)
