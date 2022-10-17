@@ -9,10 +9,10 @@ aspectratio: 1610
 
 # Motivation
 
-## Inequality and polarization in the U.S.
-![](table/autor-etal-2008.pdf){ height=100% align=center }
+## Inequality and polarization in the U.S. (Autor et al 2008)
+![](table/autor-etal-2008.pdf){ height=90% align=center }
 
-## Inequality and polarization in Germany
+## Inequality and polarization in Germany (Dustmann et al 2009)
 ![](table/dustmann-etal-2009.pdf){ height=100% align=center }
 
 ## Wage inequality has increased in many countries
@@ -30,13 +30,13 @@ aspectratio: 1610
 - industrial robots \smallcite{Acemoglu \& Restrepo 2019, Dixon, Hong \& Wu 2019, Koch, Manuylov \& Smolka 2019, Graetz \& Michaels 2018, Findeisen, Dauth, Suedekum \& Woessner 2018}
 
 ## Two challenges to this explanation
-1. Inequality increase in pervasive, even within well-defined skill and occupation groups.
+1. Inequality increase is pervasive, even within narrow skill and occupation groups.
 2. Technical revolutions are rare (in time, across countries).
 
 ## Another explanation: capital-skill complementarity
 Krusell et al (2000): lower relative price of capital goods can quantitatively explain the rise in the skill premium.
 
-## Model fits well after 20 more years
+## Model fits well after 20 more years (Maliar et al 2022)
 ![](figure/maliar-etal-2022.pdf){ height=100% align=center }
 
 ## This paper
@@ -45,15 +45,15 @@ Krusell et al (2000): lower relative price of capital goods can quantitatively e
 2. Direct micro evidence for this mechanism from Hungarian industry 1988--2003.
 3. Access to better machines can explain about half of the increase in within-occupation wage inequality in this period.
 
-## Weaver productivity across countries and over time
+## Machine-worker productivity across countries and over time
 
-### Clark, 1987
+### Clark 1987
 "In 1910 one New England cotton  textile  operative performed as much work as  1.5  British,  2.3 German,  and nearly 6 Greek,  Japanese,  Indian, or Chinese  workers."
 
-### Bessen, 2012
+### Bessen 2012
 "A typical weaver in the United States in 1902 produced over *50 times* as many yards of cloth in an hour of weaving as did a weaver a century earlier producing a comparable cloth. [...] The weaver in 1902, however, achieved that output using *eighteen* power-driven looms while the weaver of 1802 used a single handloom."
 
-### Sutton, 2001
+### Sutton 2001
 "On technical performance, there was a small but significant quality gap in favour of the imported [rather than Indian] machine."
 
 
@@ -62,7 +62,7 @@ Krusell et al (2000): lower relative price of capital goods can quantitatively e
 2. Equilibrium assignment of machines and machinists
 3. A case study of a weaving mill
 4. Imported machines and wages in Hungary, 1992-2003
-5. Discussion and conclusion
+5. Conclusion
 
 
 # An engineering production function
@@ -80,7 +80,7 @@ Tool model
 Operator model
 : A power loom produces in an autonomous fashion (worker idle), until a problem arises. The operator fixes it (machine idle) to get it back to work as fast as possible.
 
-This paper: while the tool model assumes Leontief production, the operator model leads to non-trivial patterns of complementarity.
+> This paper: while the tool model assumes Leontief production, the operator model leads to non-trivial patterns of complementarity.
 
 ## Tool model
 ![](figure/tool.png)
@@ -137,10 +137,10 @@ $$
 
 ## Expected output
 A worker type $h$ on a machine type $(A,\theta)$ produces, in expectation,
-\begin{equation}\label{eq:output:1}
+$$
 	F(A,\theta,h) = A \pi_1 =
     A \frac{\theta h}{1+\theta h}.
-\end{equation}
+$$
 
 
 ## Are worker skill and machine quality complementary?
@@ -157,18 +157,19 @@ $$
 > Intuition: why bother with a good operator on a machine that does not stop frequently?
 
 ## Are worker skill and machine quality complementary?
--  But this takes a **fixed number** of machines per worker 
-- Pattern may be different if $k$ can also adjust (Eeckhout and Kircher 2018).
-- Recall that worker is idle $\pi_1$ fraction of the time. She can operate $1/(1-\pi_1) = 1+\theta h$ machines.
-- At optimal *quantity* of machines
+But this takes a **fixed number** of machines per worker. Pattern may be different if $k$ can also adjust (Eeckhout and Kircher 2018).
+
+Recall that worker is idle $\pi_1$ fraction of the time. She can operate $1/(1-\pi_1) = 1+\theta h$ machines.
+
+At optimal *quantity* of machines
 $$
 (1+\theta h)F(A,\theta,h) = A\theta h,
 $$
 machine quality and worker skill are **complementary**.
 
-> Intuition: 
-> 1. Good workers can operate more machines (quality-quantity substitution).
-> 2. Good machines have a higher shadow cost of downtime.
+
+1. Good workers can operate more machines (quality-quantity substitution).
+2. Good machines have a higher shadow cost of downtime.
 
 # Equilibrium assignment of machines and machinists
 
@@ -229,7 +230,7 @@ $$
 ## A Pareto example
 Suppose $G(h) = L [1-(h/h_0)^{-\alpha}]$.
 
-Demand for good machines
+Market clearing for good machines
 $$
 L\left(\frac {h^*}
     {h_0}
@@ -239,6 +240,7 @@ L\left(\frac {h^*}
 \right)
  = K_1
 $$
+pins down $h^*$.
 
 # Comparative statics
 
@@ -247,15 +249,14 @@ $$
 \input{figure/sorting2.tex}
 \end{figure}
 
-## Predictions
-### Cross sectional patterns
+## Cross sectional predictions
 1. Conditional on machine productivity, wages increase in worker skill,
 2. higher skilled workers are (weakly) more likely to use a good machine,
 3. workers using a good machine earn higher wages,
 4. the returns to skill are higher on good machines.
 
 ## Technology upgrading
-### When $R_1/R_0$ declines,
+When $K_1/K_0$ increases,
 1. a larger fraction of operators within the firm uses a good machine,
 2.  workers switching to a good machine receive a wage increase,
 3.  the wage of all existing good machine users increases,
@@ -268,6 +269,14 @@ $$
 Hungarian cotton weaving mill. Soviet and Czechoslovakian (STB and UTAS) weaving machines, older Swiss-made (shuttle Rüti) looms in 1988. Starting in 1989, purchase modern looms from Switzerland (Rüti F and G) and Japan (Toyota).
 
 Data: machines installed (type, properties, output, downtime). Workers on the floor (age, piece wage, machine assignment).
+
+## Show that
+
+1. New machines have shorter downtimes.
+1. Better workers are more likely to get a new machine.
+2. Wages are higher on new machines.
+3. The returns to skill are higher on new machines.
+
 
 ## The number of old and new machines, 1988--1997
 ![](figure/number-of-machines.pdf)
@@ -302,8 +311,7 @@ Data: machines installed (type, properties, output, downtime). Workers on the fl
 \end{table}
 
 # Imported machines and wages in Hungary
-## Imported machines and wages in Hungary
-Show that
+## Show that
 
 1. Better workers are more likely to get an imported machine.
 2. Wages are higher on imported machines.
@@ -315,10 +323,10 @@ Show that
     - drop firms with $<20$ employees
     - repeated random sample of 6 percent (not a panel)
 2. Hungarian Customs Statistics, 1992--2003
-    - all _direct_ exporter and importer
+    - all _direct_ exports and imports
     - detailed by product (HS6): specific machines
 
-## Sample
+Compare operators of imported machine to other operators at the same firm.
 
 ## Machine operator occupations
 \begin{table}[h!]
@@ -343,53 +351,41 @@ Show that
 \end{threeparttable}
 \end{table}
 
-## Average machinery tariffs
-\begin{table}[h!]
-\begin{threeparttable}
-\input{table/tariff_trends.tex}
-\end{threeparttable}
-\end{table}
-
-
-## Among high-wage workers, early importers are overrepresented
-![](figure/wage_density.pdf)
-
-# Estimation
-## Estimable equation
-\begin{equation}\label{eq:estimable2}
-\ln w_{ijot} = \alpha_{ot} + \nu_{jt}+
-\gamma_h h_i
-+\gamma_{\chi}\chi_{jot}
-+\gamma_{\chi h}\chi_{jot}h_i
-+u_{ijot}
-.
-\end{equation}
-
-
 ## Interim Agreement with EEA (1991) phased out tariffs
 ![](figure/tariff-phaseout.pdf)
 
-## Occupations with faster tariff cuts adopt imported machines faster
-![](figure/import_tariff_correlation.pdf)
 
-## Creating a Bartik instrument
-\begin{equation}
-	\hat K_{jot} = 
-	\frac
-		{n_{jot} + n_{jo,t+1}}
-		{\sum_{l} (n_{jlt} + n_{jl,t+1})}
-	\times
-		K_{jt}.
-\end{equation}
+## High-wage workers are more likely to import
+![](figure/wage_inequality.pdf){ width=100% }
 
-\begin{equation}
-	\hat M_{jot} = 
-	\frac
-		{\hat K_{jot_0}}
-		{\sum_{l} \hat K_{lot_0}}
-	\times
-		M_{ot}.
-\end{equation}
+# Estimation
+## Estimable equation
+$$
+\ln w_{ijot} = \alpha_{ot} + \nu_{jt}+
+\gamma_h h_i
++\gamma_{m}m_{jot}
++\gamma_{m h}m_{jot}h_i
++u_{ijot}
+$$
+
+$\alpha_{ot}$
+: occupation-year fixed effects capture machine prices and worker outside options
+
+$\nu_{jt}$
+: firm-year fixed effects capture differences in firm productivity and organization
+
+$h_i$
+: worker $i$ completed high school (dummy)
+
+$m_{jot}$
+: occupation $o$ at firm $j$ has an imported machine by time $t$ (dummy)
+
+We expect $\gamma_m>0$ and $\gamma_{mh}>0$.
+
+## Identification
+High-wage workers are more likely to receive new machines even within the same firm.
+
+Instrument firm-occupation machine import with a Bartik instrument: aggregate Hungarian imports interacted by firm's share in that occupation.
 
 ## The effect of import exposure on wages
 \begin{table}[h!]
@@ -398,17 +394,19 @@ Show that
 \end{threeparttable}
 \end{table}
 
-## Robustness to various firm controls
-\begin{table}[h!]
-\begin{threeparttable}
-\input{regression/firm_controls/table.tex}
-\end{threeparttable}
-\end{table}
-
 ## Actual and counterfactual wage change by wage percentile
 \begin{figure}[h!]\centering
 \includegraphics[width=0.7\linewidth]{figure/wage_growth.pdf}
 \end{figure}
+
+# Conclusion
+## Conclusion
+1. New production function to model quality-skill complementarity: relevant for small changes in quality and small differences in skill.
+2. Data confirms, within narrow occupations:
+    1. Assignment of better workers to better machines
+    2. Higher wages on better machines
+    3. Higher returns to skill on better machines
+3. Mechanism has the potential to quantitatively explain a large fraction of the increase in wage inequality
 
 # Appendix
 
@@ -445,6 +443,12 @@ w_{ijm} = \beta (A_m -\mu_m)\theta_m h_i - \beta\mu_m + (1-\beta)b,
 \end{threeparttable}
 \end{table}
 
+## Robustness to various firm controls
+\begin{table}[h!]
+\begin{threeparttable}
+\input{regression/firm_controls/table.tex}
+\end{threeparttable}
+\end{table}
 
 # Patterns of capital imports
 ## Data
