@@ -1,0 +1,1 @@
+Figures in this folder may be subject to copyright. Please do not use without asking permission from original authors first.
