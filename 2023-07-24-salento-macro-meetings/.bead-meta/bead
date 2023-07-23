@@ -1,8 +1,8 @@
 {
     "inputs": {
         "labor-share": {
-            "content_id": "93b21fa76ac3b10b42d1285e0f35978459bed0759fa9bd9399e284479262fc8939281ff6f59527364042f750ad4222b4749b7bd23e1871334cf825fd6bf1aab5",
-            "freeze_time": "20230720T092853500388+0200",
+            "content_id": "c73c682e167942f38786db823c7361365eee4ef087b69bb4c6df42e9717f9c9614869cbafdc9a30d0c3e63ad79105eda84d8ab62f39db8d1a5d77984b3bc7c03",
+            "freeze_time": "20230723T100110558261+0200",
             "kind": "39436027ca6c90fa26aa986a49ba63d4-1928629c-cd77-4bd9-88a3-9225ff9b4b93"
         }
     },
