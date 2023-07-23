@@ -10,7 +10,6 @@ foreach X in value_added LS {
 }
 
 table year [aw = value_added], statistic(mean LS)
-
 keep if year == 2000
 merge 1:1 originalid using "output/beta.dta", keep(match) nogen
 
@@ -19,3 +18,6 @@ egen size_portfolio = cut(value_added), group(5)
 table beta_portfolio [aw = value_added], statistic(mean LS)
 table size_portfolio [aw = value_added], statistic(mean LS)
 table beta_portfolio size_portfolio [aw = value_added], statistic(mean LS)
+
+table beta_portfolio [aw = value_added] if fo3 == 0, statistic(mean LS)
+table beta_portfolio [aw = value_added] if fo3 == 1, statistic(mean LS)
