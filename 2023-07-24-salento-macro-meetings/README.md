@@ -1,15 +1,15 @@
 ---
 author: Miklós Koren
-title: Discussion of "International Diversification, Reallocation, and the Labor Share"
+title: Discussion of "International Diversification, Reallocation, and the Labor Share" by David, Ranciere and Zeke
 date: July 24, 2023
 aspectratio: 1610
 lang: en
 ---
 
-## One-page summary
+## One-slide summary
 1. Aggregate labor share has declined in the US and other developed countries. But firm-level labor share is increasing.
-2. Model with risk-adjusted production decisions: quantity and price of firm-specific risk drives labor share.
-    - Predicts within-firm increases and reallocation towards low-share firms.
+2. Model with risk-averse firm owners: quantity and price of firm-specific risk drives labor share.
+    - Predicts within-firm increases and reallocation towards low-labor-share firms.
 4. Additional predictions confirmed in Compustat data: 
     - Risky firms have lower labor share.
     - Firms with foreign equity are more responsive to risk.
@@ -28,21 +28,31 @@ $$
 \max_L \text E[\Lambda [AF(K,L) - wL]]
 $$
 
+# Intuition
 ## Intuition
 Firm is a *leveraged* portfolio with a risky asset $Q$ and a safe liability $L$.
 
-Optimal leverage depends on risk-return tradeoff: higher risk means lower leverage.
-
-Leverage ratio is the "labor share." 
-
 Key assumption: labor is less risky than capital.
 
-## Are public firms representative of the economy?
-Publicly traded firms have a very different risk trajectories from private firms (Comin and Philippon 2006 vs Davis et al 2007).
+Optimal leverage depends on risk-return tradeoff: higher risk means lower leverage.
 
-## Volatility trends for public and private firms
+## Glossary
+
+### labor
+inputs decided before uncertainty is resolved
+
+### labor share
+leverage ratio
+
+### low-labor-share firm
+high excess-return portfolio
+
+# Are public firms representative of the economy?
+
+## Volatility trends differ for public and private firms (Comin and Philippon 2006 vs Davis et al 2007)
 ![Davis et al 2007 (Figure 2.5)](fig/fig2-5.pdf)
 
+# Can we replicate the results in Hungary?
 ## Data from Hungary
 Universe of corporations, 1989-2019: 870k businesses, of which 99% are private.
 
@@ -59,12 +69,6 @@ Firm beta: 2-year growth rate of log sales on log aggregate growth (unlike in pa
 | 2                        | 0.523     |
 | 3                        | 0.457     |
 | 4                        | 0.456     |
-
-## Foreign-owned firms have lower labor share
-| Majority owner | Mean labor share |
-|-------------------------------------------------------|--------|
-| Domestic                                                     | 0.589  |
-| Foreign                                                     | 0.440  |
 
 ## Bigger firms have lower labor share
 | Size portfolio | Mean labor share   |
@@ -85,6 +89,15 @@ Firm beta: 2-year growth rate of log sales on log aggregate growth (unlike in pa
 | 3                        | 0.775            | 0.723            | 0.663            | 0.574            | 0.449            |
 | 4                        | 0.787            | 0.720            | 0.661            | 0.580            | 0.441            |
 
+# Conclusion
+## Conclusion
+Great to bring in asset pricing and portfolio choice in production problems.
+
+Helps reinterpret real metrics (markup, labor share) as financial (risk premium, leverage).
+
+But: finance and risk of private firms very different from those of public firms.
+
 ## Smaller points
-- What if markets are incomplete? $\Lambda_{it}$ rather than $\Lambda_t$
-- Cattaneo et al (2023) "On Binscatter": cannot do covariate adjustment before binscatter
+What if markets are incomplete? $\Lambda_{it}$ rather than $\Lambda_t$
+
+Cattaneo et al (2023) "On Binscatter": cannot do covariate adjustment before binscatter
