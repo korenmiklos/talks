@@ -119,12 +119,6 @@
 \usepackage{booktabs}
 \usepackage{threeparttable}
 
-% Redefine the section command
-\let\oldsection\section
-\renewcommand{\section}{
-  \addtocounter{framenumber}{-1} % Decrement frame counter
-  \oldsection
-}
 % colors: white text on 90% black background
 \setbeamercolor{normal text}{fg=black,bg=white}
 
