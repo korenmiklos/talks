@@ -1,0 +1,18 @@
+		(1)
+VARIABLES	LABELS	ln_pi
+		
+firm_size	(firstnm) firm_size	-6.872***
+		(1.982)
+1.dnum	(firstnm) degree = 1, economics	4.032***
+		(0.368)
+2.dnum	(firstnm) degree = 2, engineering	3.676***
+		(0.492)
+3.dnum	(firstnm) degree = 3, other	2.041***
+		(0.455)
+Constant	Constant	-14.92***
+		(2.106)
+		
+Observations		87
+R-squared		0.553
+Robust standard errors in parentheses		
+*** p<0.01, ** p<0.05, * p<0.1		
