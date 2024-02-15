@@ -122,23 +122,47 @@ Long-standing question in economics: how does competition affect innovation?
 
 Model the special features of the OSS market.
 
-## Market
-Two-sided market with $U$ users and $D$ developers. Each user meets $n$ developers at random.
+## Market for software quality
+::: columns
 
-Users have a use case
-$$
-X \sim U(0, 1)
-$$
+:::: column
+- Two-sided market with $U$ users and $D$ developers. Each user meets $n$ developers at random.
+- Users have a use case $X$.
+- Developers write code and tests. Software quality is random $Z$.
+- Software only works if $Z > X$.
 
-Developers write code and tests. Software quality is random with 
-$$
-Z \sim U(\underset{\text{tests}}{\mathstrut\underline z}, \underset{\text{code}}{\mathstrut\bar z})
-$$
+::::
 
-Software only works if
-$$
-Z > X
-$$
+:::: column
+\begin{tikzpicture}[scale=4]
+    % Draw axes
+    \draw[->] (0,0) -- (1.2,0) node[right] {$Z$};
+    \draw[->] (0,0) -- (0,1.2) node[above] {$X$};
+    
+    % Draw boundaries at 1
+    \draw (1,0) -- (1,1);
+    \draw (0,1) -- (1,1);
+    
+    % Draw interval [\underline{z}, \bar{z}]
+    \fill[gray!50] (0.3,0) rectangle (0.7,1);
+    \draw (0.3,0) -- (0.3,1);
+    \draw (0.7,0) -- (0.7,1);
+    
+    % Label \underline{z} and \bar{z}
+    \draw (0.3,0) node[below] {$\underline{z}$};
+    \draw (0.7,0) node[below] {$\bar{z}$};
+    
+    % Draw 45-degree dotted line
+    \draw[dotted] (0,0) -- (1,1);
+    
+    % Draw use case X = x_0
+    \draw[red, thick] (0,0.5) -- (0.5,0.5); % Left of the 45-degree line
+    \draw[red, ultra thick] (0.5,0.5) -- (1,0.5) node[right] {$X = x_0$}; % Right of the 45-degree line (thicker)
+\end{tikzpicture}
+::::
+
+:::
+
 
 ## Competition
 Developers compete for users in quality. No price competition.
