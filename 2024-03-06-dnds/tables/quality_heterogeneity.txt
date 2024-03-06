@@ -1,0 +1,18 @@
+		(1)	(2)	(3)
+VARIABLES	LABELS	Number of commits (log)	Number of commits (log)	Number of commits (log)
+				
+quality_is_library	Shared on a platform (dummy)	0.0731***	0.0457***	0.0281***
+		(0.00789)	(0.0108)	(0.0107)
+quality_has_downstream	Has downstream projects		0.0370***	0.0314***
+			(0.0100)	(0.00998)
+quality_star_5	Has 5 or more stars (dummy)			0.116***
+				(0.00775)
+o.ln_n_contributors	Number of contributors (log) = o,	-	-	-
+				
+Constant	Constant	3.055***	3.054***	2.889***
+		(0.0112)	(0.0113)	(0.0163)
+				
+Observations		172,495	172,495	172,495
+R-squared		0.680	0.680	0.681
+Robust standard errors in parentheses				
+*** p<0.01, ** p<0.05, * p<0.1				
