@@ -1,0 +1,107 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{2}{c}{quality2\_count\_dependents\_all}\\
+   in\_org                          & 0              & 1 \\   
+   Model:                           & (1)            & (2)\\  
+   \midrule
+   \emph{Variables}\\
+   Constant                         & 8.819$^{***}$  & 8.335$^{***}$\\   
+                                    & (0.0002)       & (0.0004)\\   
+   ln\_count\_developers            & 0.6391$^{***}$ & 1.223$^{***}$\\   
+                                    & (0.0002)       & (0.0004)\\   
+   ln\_countries\_per\_developer    & 1.702$^{***}$  & 1.491$^{***}$\\   
+                                    & (0.0004)       & (0.0007)\\   
+   ln\_cities\_per\_country         & 1.529$^{***}$  & 0.5648$^{***}$\\   
+                                    & (0.0004)       & (0.0008)\\   
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                     & 11,737         & 4,075\\  
+   Squared Correlation              & 0.01063        & 0.01338\\  
+   Pseudo R$^2$                     & 0.05366        & 0.05326\\  
+   BIC                              & 680,029,426.2  & 240,423,554.6\\  
+   \midrule \midrule
+   \multicolumn{3}{l}{\emph{IID standard-errors in parentheses}}\\
+   \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+
+
+\begingroup
+\centering
+\begin{tabular}{lccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{3}{c}{quality2\_count\_dependents\_all}\\
+   in\_org                                             & Full sample     & 0               & 1 \\   
+   Model:                                              & (1)             & (2)             & (3)\\  
+   \midrule
+   \emph{Variables}\\
+   Constant                                            & 7.019$^{***}$   & 7.019$^{***}$   & 5.904$^{***}$\\   
+                                                       & (0.0014)        & (0.0014)        & (0.0025)\\   
+   ln\_count\_developers                               & 1.111$^{***}$   & 1.111$^{***}$   & 1.611$^{***}$\\   
+                                                       & (0.0011)        & (0.0011)        & (0.0019)\\   
+   in\_org                                             & -1.115$^{***}$  &                 &   \\   
+                                                       & (0.0029)        &                 &   \\   
+   ln\_countries\_per\_developer                       & 1.476$^{***}$   & 1.476$^{***}$   & 1.496$^{***}$\\   
+                                                       & (0.0013)        & (0.0013)        & (0.0027)\\   
+   ln\_cities\_per\_country                            & 0.7264$^{***}$  & 0.7264$^{***}$  & 0.7708$^{***}$\\   
+                                                       & (0.0016)        & (0.0016)        & (0.0031)\\   
+   ln\_sum\_commits                                    & -0.2092$^{***}$ & -0.2092$^{***}$ & -0.0885$^{***}$\\   
+                                                       & (0.0003)        & (0.0003)        & (0.0005)\\   
+   ln\_count\_developers $\times$ in\_org              & 0.4992$^{***}$  &                 &   \\   
+                                                       & (0.0022)        &                 &   \\   
+   in\_org $\times$ ln\_countries\_per\_developer      & 0.0202$^{***}$  &                 &   \\   
+                                                       & (0.0030)        &                 &   \\   
+   in\_org $\times$ ln\_cities\_per\_country           & 0.0445$^{***}$  &                 &   \\   
+                                                       & (0.0035)        &                 &   \\   
+   in\_org $\times$ ln\_sum\_commits                   & 0.1207$^{***}$  &                 &   \\   
+                                                       & (0.0006)        &                 &   \\   
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                                        & 10,572          & 7,723           & 2,849\\  
+   Squared Correlation                                 & 0.01931         & 0.01860         & 0.02174\\  
+   Pseudo R$^2$                                        & 0.07190         & 0.07001         & 0.07726\\  
+   BIC                                                 & 41,330,339.2    & 30,709,877.7    & 10,620,453.5\\  
+   \midrule \midrule
+   \multicolumn{4}{l}{\emph{IID standard-errors in parentheses}}\\
+   \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+
+
+\begingroup
+\centering
+\begin{tabular}{lcc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{2}{c}{quality2\_count\_dependents\_all}\\
+   in\_org                          & 0               & 1 \\   
+   Model:                           & (1)             & (2)\\  
+   \midrule
+   \emph{Variables}\\
+   Constant                         & 7.019$^{***}$   & 5.904$^{***}$\\   
+                                    & (0.0014)        & (0.0025)\\   
+   ln\_count\_developers            & 1.111$^{***}$   & 1.611$^{***}$\\   
+                                    & (0.0011)        & (0.0019)\\   
+   ln\_countries\_per\_developer    & 1.476$^{***}$   & 1.496$^{***}$\\   
+                                    & (0.0013)        & (0.0027)\\   
+   ln\_cities\_per\_country         & 0.7264$^{***}$  & 0.7708$^{***}$\\   
+                                    & (0.0016)        & (0.0031)\\   
+   ln\_sum\_commits                 & -0.2092$^{***}$ & -0.0885$^{***}$\\   
+                                    & (0.0003)        & (0.0005)\\   
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                     & 7,723           & 2,849\\  
+   Squared Correlation              & 0.01860         & 0.02174\\  
+   Pseudo R$^2$                     & 0.07001         & 0.07726\\  
+   BIC                              & 30,709,877.7    & 10,620,453.5\\  
+   \midrule \midrule
+   \multicolumn{3}{l}{\emph{IID standard-errors in parentheses}}\\
+   \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

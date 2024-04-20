@@ -1,0 +1,42 @@
+
+\begingroup
+\centering
+\begin{tabular}{lccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{3}{c}{quality2\_count\_dependents\_all}\\
+   Model:                      & (1)            & (2)             & (3)\\  
+   \midrule
+   \emph{Variables}\\
+   Constant                    & 6.029$^{***}$  & 6.291$^{***}$   & 6.109$^{***}$\\   
+                               & (0.0007)       & (0.0066)        & (0.0066)\\   
+   ln\_count\_cities           & 0.9583$^{***}$ & 1.169$^{***}$   &   \\   
+                               & (0.0007)       & (0.0012)        &   \\   
+   ln\_max\_city\_size         &                & 0.0321$^{***}$  & 0.0292$^{***}$\\   
+                               &                & (0.0003)        & (0.0003)\\   
+   age                         &                & 0.3505$^{***}$  & 0.3453$^{***}$\\   
+                               &                & (0.0003)        & (0.0003)\\   
+   ln\_count\_developers       &                & -0.3972$^{***}$ & -0.3153$^{***}$\\   
+                               &                & (0.0014)        & (0.0014)\\   
+   ln\_sum\_commits            &                & -0.8321$^{***}$ & -0.6926$^{***}$\\   
+                               &                & (0.0055)        & (0.0055)\\   
+   ln\_sum\_commits square     &                & 0.1633$^{***}$  & 0.1323$^{***}$\\   
+                               &                & (0.0015)        & (0.0015)\\   
+   ln\_sum\_commits cube       &                & -0.0122$^{***}$ & -0.0102$^{***}$\\   
+                               &                & (0.0001)        & (0.0001)\\   
+   ln\_cities\_per\_country    &                &                 & 0.6480$^{***}$\\   
+                               &                &                 & (0.0014)\\   
+   ln\_count\_countries        &                &                 & 1.341$^{***}$\\   
+                               &                &                 & (0.0012)\\   
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                & 10,572         & 10,572          & 10,572\\  
+   Squared Correlation         & 0.00992        & 0.02801         & 0.03216\\  
+   Pseudo R$^2$                & 0.04139        & 0.09815         & 0.11033\\  
+   BIC                         & 42,689,021.0   & 40,161,457.7    & 39,618,849.5\\  
+   \midrule \midrule
+   \multicolumn{4}{l}{\emph{IID standard-errors in parentheses}}\\
+   \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

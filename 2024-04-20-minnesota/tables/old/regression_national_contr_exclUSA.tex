@@ -1,0 +1,29 @@
+
+\begingroup
+\centering
+\small
+\begin{tabular}{lcccc}
+   \toprule
+                            & (1)           & (2)           & (3)           & (4)\\  
+   \midrule 
+   log(distance)            & -0.51$^{***}$ & -0.50$^{***}$ & -0.16$^{***}$ &   \\   
+                            & (0.06)        & (0.06)        & (0.03)        &   \\   
+   Same country             & 4.07$^{***}$  & 3.75$^{***}$  &               & 5.30$^{***}$\\   
+                            & (0.30)        & (0.32)        &               & (0.27)\\   
+   Common language          &               & 0.41$^{**}$   & 0.15$^{***}$  & 0.53$^{***}$\\   
+                            &               & (0.20)        & (0.02)        & (0.16)\\   
+   Common Business hours    &               &               &               & 0.07$^{**}$\\   
+                            &               &               &               & (0.03)\\   
+   \midrule 
+   Origin\_Country FE       & Yes           & Yes           & Yes           & Yes\\  
+   Destination\_Country FE  & Yes           & Yes           & Yes           & Yes\\  
+   \midrule 
+   Observations             & 26,568        & 26,568        & 15,050        & 26,568\\  
+   Pseudo R$^2$             & 0.98612       & 0.98627       & 0.88175       & 0.98415\\  
+   \bottomrule
+   \multicolumn{5}{l}{\emph{Clustered (Origin\_Country \& Destination\_Country) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

@@ -1,0 +1,15 @@
+		(1)	(2)
+VARIABLES	LABELS	n_user_pairs	n_user_pairs
+			
+ln_distance	Distance (log km)	-0.0772***	-0.102***
+		(0.0183)	(0.00611)
+is_same_country	Same country (dummy)	0.145***	0.527***
+		(0.0418)	(0.0250)
+is_same_city	Same city (dummy)	0.550***	0.118***
+		(0.199)	(0.0344)
+Constant	Constant	-2.822***	-2.517***
+		(0.158)	(0.0538)
+			
+Observations		457,809	449,722
+Robust standard errors in parentheses			
+*** p<0.01, ** p<0.05, * p<0.1			

@@ -1,0 +1,35 @@
+
+\begingroup
+\centering
+\small
+\begin{tabular}{lcccc}
+   \toprule
+                            & (1)          & (2)           & (3)           & (4)\\  
+   \midrule 
+   Same country             & 1.08$^{***}$ &               &               &   \\   
+                            & (0.32)       &               &               &   \\   
+   tz0\_below500            &              & -1.36$^{***}$ & -1.26$^{***}$ &   \\   
+                            &              & (0.25)        & (0.23)        &   \\   
+   tz1\_below500            &              & -1.25$^{***}$ & -0.98$^{***}$ & 0.21$^{**}$\\   
+                            &              & (0.20)        & (0.20)        & (0.08)\\   
+   tz3\_over500             &              & -1.28$^{***}$ & -1.05$^{***}$ & 0.10\\   
+                            &              & (0.28)        & (0.25)        & (0.07)\\   
+   tz3\_6\_over500          &              & -1.02$^{***}$ & -0.78$^{***}$ & 0.10\\   
+                            &              & (0.28)        & (0.26)        & (0.09)\\   
+   tz7\_over500             &              & -1.15$^{***}$ & -0.91$^{***}$ & 0.14\\   
+                            &              & (0.29)        & (0.27)        & (0.10)\\   
+   Common language          &              &               & 0.31$^{***}$  & 0.09$^{**}$\\   
+                            &              &               & (0.08)        & (0.04)\\   
+   \midrule 
+   Origin\_Country FE       & Yes          & Yes           & Yes           & Yes\\  
+   Destination\_Country FE  & Yes          & Yes           & Yes           & Yes\\  
+   \midrule 
+   Observations             & 15,510       & 15,510        & 15,510        & 14,420\\  
+   Pseudo R$^2$             & 0.98375      & 0.98443       & 0.98496       & 0.99339\\  
+   \bottomrule
+   \multicolumn{5}{l}{\emph{Clustered (Origin\_Country \& Destination\_Country) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

@@ -1,0 +1,45 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{2}{c}{value.y}\\
+                       & Below 500       & Below 100 \\   
+   Model:              & (1)             & (2)\\  
+   \midrule
+   \emph{Variables}\\
+   log(dist)           & -0.0780$^{***}$ & -0.0766$^{***}$\\   
+                       & (0.0060)        & (0.0050)\\   
+   same\_city          & 0.8872$^{***}$  & 1.224$^{***}$\\   
+                       & (0.0565)        & (0.0593)\\   
+   agglo               & 0.8623$^{***}$  & 0.9321$^{***}$\\   
+                       & (0.0880)        & (0.0723)\\   
+   same\_country       & 0.2406$^{***}$  & 0.2200$^{***}$\\   
+                       & (0.0202)        & (0.0171)\\   
+   common\_language    & 0.0870$^{***}$  & 0.0741$^{***}$\\   
+                       & (0.0132)        & (0.0102)\\   
+   tz\_gap\_mid        & 0.0770$^{***}$  & 0.0700$^{***}$\\   
+                       & (0.0112)        & (0.0100)\\   
+   tz\_gap\_large      & 0.0658$^{***}$  & 0.0658$^{***}$\\   
+                       & (0.0139)        & (0.0115)\\   
+   restricted\_travel  & 0.0800$^{***}$  & 0.0698$^{***}$\\   
+                       & (0.0174)        & (0.0164)\\   
+   hard\_travel        & -0.0877$^{***}$ & -0.0445$^{**}$\\   
+                       & (0.0338)        & (0.0188)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   city\_destination   & Yes             & Yes\\  
+   city\_origin        & Yes             & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations        & 4,968,172       & 4,964,385\\  
+   Squared Correlation & 0.93616         & 0.90186\\  
+   Pseudo R$^2$        & 0.87389         & 0.82727\\  
+   BIC                 & 3,038,982.6     & 2,950,152.8\\  
+   \midrule \midrule
+   \multicolumn{3}{l}{\emph{Clustered (city\_destination \& city\_origin) standard-errors in parentheses}}\\
+   \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

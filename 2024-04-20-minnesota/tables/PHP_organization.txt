@@ -1,0 +1,15 @@
+		(1)
+VARIABLES	LABELS	Outside organizations
+		
+ln_distance	Distance (log km)	-0.555***
+		(0.0105)
+same_country	Same country (dummy)	-0.422***
+		(0.0320)
+same_city	Same city (dummy)	-0.707***
+		(0.171)
+Constant	Constant	-9.077***
+		(0.0887)
+		
+Observations		3,751,969
+Robust standard errors in parentheses		
+*** p<0.01, ** p<0.05, * p<0.1		

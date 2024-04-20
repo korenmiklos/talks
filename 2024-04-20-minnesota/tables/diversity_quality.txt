@@ -1,0 +1,23 @@
+		(1)	(2)	(3)	(4)
+VARIABLES	LABELS	n_stars	n_stars	n_downstream	n_downstream
+					
+avg_ln_distance	avg_ln_distance	0.198***		0.299***	
+		(0.0114)		(0.0558)	
+ln_n_cities	ln_n_cities	0.311***		1.817***	
+		(0.0780)		(0.344)	
+ln_n_countries	ln_n_countries	0.364***		0.577***	
+		(0.0447)		(0.199)	
+ln_n_developers	ln_n_developers	0.537***	1.020***	-1.428***	0.683***
+		(0.0797)	(0.0134)	(0.320)	(0.0409)
+share_organization	share_organization		-1.769***		0.101
+			(0.0446)		(0.147)
+share_different_cities	share_different_cities		0.944***		4.144***
+			(0.0534)		(0.768)
+share_different_countries	share_different_countries		0.731***		1.217***
+			(0.0406)		(0.184)
+o.in_libraries	in_libraries = o,			-	-
+					
+					
+Observations		181,336	181,336	75,673	75,673
+Robust standard errors in parentheses					
+*** p<0.01, ** p<0.05, * p<0.1					

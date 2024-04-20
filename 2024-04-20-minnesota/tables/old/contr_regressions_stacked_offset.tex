@@ -1,0 +1,47 @@
+
+\begingroup
+\centering
+\begin{tabular}{lccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{3}{c}{contr\_value}\\
+   same\_org                         & Full sample     & 0               & 1 \\   
+   Model:                            & (1)             & (2)             & (3)\\  
+   \midrule
+   \emph{Variables}\\
+   dist\_cat $=$ Samecity(0-1)       & -1.131$^{***}$  & -1.367$^{***}$  & -0.4237$^{***}$\\   
+                                     & (0.1067)        & (0.1126)        & (0.1105)\\   
+   dist\_cat $=$ Agglo(1-50)         & -0.3255$^{***}$ & -0.4426$^{***}$ & 0.2258$^{***}$\\   
+                                     & (0.0511)        & (0.0510)        & (0.0845)\\   
+   dist\_cat $=$ Region(50-200)      & -0.3495$^{***}$ & -0.4356$^{***}$ & 0.1562$^{*}$\\   
+                                     & (0.0817)        & (0.0859)        & (0.0938)\\   
+   dist\_cat $=$ Shorttrip(200-700)  & -0.0399         & -0.0439         & $-9.78\times 10^{-5}$\\    
+                                     & (0.0304)        & (0.0313)        & (0.0555)\\   
+   cities\_in\_same\_country         & -0.2578$^{***}$ & -0.3172$^{***}$ & 0.3187$^{***}$\\   
+                                     & (0.0485)        & (0.0468)        & (0.0871)\\   
+   common\_language                  & -0.1278$^{***}$ & -0.1539$^{***}$ & 0.1892$^{***}$\\   
+                                     & (0.0474)        & (0.0486)        & (0.0548)\\   
+   tz\_gap\_mid                      & -0.0284         & -0.0295         & -0.0073\\   
+                                     & (0.0241)        & (0.0243)        & (0.0482)\\   
+   tz\_gap\_large                    & 0.0835$^{***}$  & 0.0847$^{***}$  & 0.0569\\   
+                                     & (0.0270)        & (0.0272)        & (0.0633)\\   
+   restricted\_travel                & -0.0025         & -0.0045         & -0.0218\\   
+                                     & (0.0524)        & (0.0528)        & (0.0820)\\   
+   visa\_travel                      & 0.0226          & 0.0698          & -0.4052$^{***}$\\   
+                                     & (0.0611)        & (0.0539)        & (0.1087)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   city\_destination                 & Yes             & Yes             & Yes\\  
+   city\_origin                      & Yes             & Yes             & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                      & 278,062         & 138,791         & 129,006\\  
+   Squared Correlation               & 0.52081         & 0.82621         & 0.83828\\  
+   Pseudo R$^2$                      & 0.60054         & 0.77947         & 0.67778\\  
+   BIC                               & 3,456,555.7     & 1,352,355.6     & 334,057.6\\  
+   \midrule \midrule
+   \multicolumn{4}{l}{\emph{Clustered (city\_destination \& city\_origin) standard-errors in parentheses}}\\
+   \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

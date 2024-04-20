@@ -1,0 +1,31 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variables: & \multicolumn{3}{c}{N Dependents (NPM)} & N commits\\
+   Model:             & (1)            & (2)            & (3)            & (4)\\  
+   \midrule
+   \emph{Variables}\\
+   Constant           & 1.148$^{***}$  & -0.0641        & -1.746$^{***}$ & 5.090$^{***}$\\   
+                      & (0.0857)       & (0.1140)       & (0.1507)       & (0.0854)\\   
+   Count of cities    & 0.2306$^{***}$ & 0.1906$^{***}$ & 0.2818$^{***}$ & -0.1087$^{***}$\\   
+                      & (0.0491)       & (0.0488)       & (0.0509)       & (0.0358)\\   
+   Count of countries & 0.3057$^{***}$ & 0.3243$^{***}$ & 0.2904$^{***}$ & 0.0355\\   
+                      & (0.0637)       & (0.0634)       & (0.0637)       & (0.0583)\\   
+   ln\_sum\_commits   &                &                & 0.3330$^{***}$ &   \\   
+                      &                &                & (0.0202)       &   \\   
+   Age, N\_Dev        & Yes            & Yes            & Yes            & Yes\\  
+   Coders             & No             & Yes            & Yes            & Yes\\  
+   Commits            & No             & No             & Yes            & --\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Pseudo R$^2$       & 0.11532        & 0.15056        & 0.18345        & 0.26074\\  
+   Observations       & 36,491         & 36,491         & 36,491         & 36,491\\  
+   \midrule \midrule
+   \multicolumn{5}{l}{\emph{Heteroskedasticity-robust standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

@@ -1,0 +1,13 @@
+		(1)	(2)	(3)	(4)
+VARIABLES	LABELS	commits	comments	editors	organizations
+					
+ln_distance	Distance (log km)	-0.143***	-0.107***	-0.277***	-0.183***
+		(0.0129)	(0.0139)	(0.0178)	(0.0313)
+same_country	Same country (dummy)	0.519***	0.584***	1.058***	0.706***
+		(0.0528)	(0.107)	(0.0894)	(0.135)
+same_city	Same city (dummy)	0.846***	0.433***	0.856***	0.350**
+		(0.0863)	(0.0587)	(0.0924)	(0.154)
+					
+Observations		498,472	781,201	139,464	408,094
+Robust standard errors in parentheses					
+*** p<0.01, ** p<0.05, * p<0.1					

@@ -1,0 +1,40 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variables: & \multicolumn{3}{c}{quality2\_count\_dependents\_all} & quality1\_count\_dependents\_npm\\
+   Model:                                              & (1)            & (2)            & (3)             & (4)\\  
+   \midrule
+   \emph{Variables}\\
+   Constant                                            & 8.499$^{***}$  & 8.748$^{***}$  & 8.819$^{***}$   & 3.176$^{***}$\\   
+                                                       & (0.0002)       & (0.0002)       & (0.0002)        & (0.0017)\\   
+   ln\_count\_cities                                   & 0.6906$^{***}$ &                &                 &   \\   
+                                                       & (0.0001)       &                &                 &   \\   
+   ln\_count\_developers                               &                & 0.7332$^{***}$ & 0.6391$^{***}$  & 1.722$^{***}$\\   
+                                                       &                & (0.0001)       & (0.0002)        & (0.0011)\\   
+   ln\_cities\_per\_country                            &                & 1.326$^{***}$  & 1.529$^{***}$   & 1.790$^{***}$\\   
+                                                       &                & (0.0004)       & (0.0004)        & (0.0038)\\   
+   ln\_countries\_per\_developer                       &                & 1.664$^{***}$  & 1.702$^{***}$   & 2.526$^{***}$\\   
+                                                       &                & (0.0003)       & (0.0004)        & (0.0033)\\   
+   in\_org                                             &                &                & -0.4839$^{***}$ &   \\   
+                                                       &                &                & (0.0005)        &   \\   
+   ln\_count\_developers $\times$ in\_org              &                &                & 0.5835$^{***}$  &   \\   
+                                                       &                &                & (0.0004)        &   \\   
+   in\_org $\times$ ln\_countries\_per\_developer      &                &                & -0.2117$^{***}$ &   \\   
+                                                       &                &                & (0.0008)        &   \\   
+   in\_org $\times$ ln\_cities\_per\_country           &                &                & -0.9638$^{***}$ &   \\   
+                                                       &                &                & (0.0009)        &   \\   
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                                        & 15,812         & 15,812         & 15,812          & 15,812\\  
+   Squared Correlation                                 & 0.00746        & 0.01056        & 0.01135         & 0.03321\\  
+   Pseudo R$^2$                                        & 0.03537        & 0.05010        & 0.05355         & 0.19981\\  
+   BIC                                                 & 938,137,430.1  & 923,817,913.5  & 920,452,987.3   & 10,838,840.6\\  
+   \midrule \midrule
+   \multicolumn{5}{l}{\emph{IID standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

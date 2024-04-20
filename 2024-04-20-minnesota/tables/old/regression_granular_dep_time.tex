@@ -1,0 +1,37 @@
+
+\begingroup
+\centering
+\small
+\begin{tabular}{lcccc}
+   \toprule
+                               & (1)          & (2)           & (3)           & (4)\\  
+   \midrule 
+   Same country                & 0.83$^{***}$ &               &               &   \\   
+                               & (0.16)       &               &               &   \\   
+   tz0\_below500               &              & -1.01$^{***}$ & -0.94$^{***}$ &   \\   
+                               &              & (0.14)        & (0.12)        &   \\   
+   tz1\_below500               &              & -1.00$^{***}$ & -0.78$^{***}$ & 0.11\\   
+                               &              & (0.14)        & (0.13)        & (0.07)\\   
+   tz0\_over500                &              & -0.89$^{***}$ & -0.76$^{***}$ & 0.07\\   
+                               &              & (0.16)        & (0.13)        & (0.05)\\   
+   tz1\_3\_over500             &              & -1.00$^{***}$ & -0.78$^{***}$ & 0.10$^{*}$\\   
+                               &              & (0.16)        & (0.13)        & (0.06)\\   
+   tz3\_6\_over500             &              & -0.76$^{***}$ & -0.57$^{***}$ & 0.09\\   
+                               &              & (0.13)        & (0.11)        & (0.06)\\   
+   tz7\_over500                &              & -0.95$^{***}$ & -0.75$^{***}$ & 0.09\\   
+                               &              & (0.16)        & (0.13)        & (0.07)\\   
+   Common language             &              &               & 0.26$^{***}$  & 0.09$^{***}$\\   
+                               &              &               & (0.06)        & (0.03)\\   
+   \midrule 
+   Origin\_Country FE          & Yes          & Yes           & Yes           & Yes\\  
+   Destination\_Repository FE  & Yes          & Yes           & Yes           & Yes\\  
+   \midrule 
+   Observations                & 7,077,290    & 7,077,290     & 7,077,290     & 6,263,340\\  
+   Pseudo R$^2$                & 0.72139      & 0.72199       & 0.72237       & 0.69526\\  
+   \bottomrule
+   \multicolumn{5}{l}{\emph{Clustered (Origin\_Country \& Destination\_Repository) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

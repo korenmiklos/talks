@@ -1,0 +1,23 @@
+		(1)	(2)	(3)	(4)
+VARIABLES	LABELS	n_user_pairs	n_user_pairs	n_user_pairs	n_user_pairs
+					
+5.dist_cat	dist_cat = 5, <=5 km			2.400***	1.296***
+				(0.240)	(0.183)
+50.dist_cat	dist_cat = 50, 5-50 km			1.832***	1.022***
+				(0.369)	(0.111)
+200.dist_cat	dist_cat = 200, 50-200 km			0.945***	0.579***
+				(0.177)	(0.0960)
+1000.dist_cat	dist_cat = 1000, >700 km			0.0813	-0.192**
+				(0.142)	(0.0947)
+different_country	different_country			-0.865***	-1.090***
+				(0.0851)	(0.0855)
+ln_distance	Distance (log km)	-0.194***	-0.183***		
+		(0.0356)	(0.0313)		
+same_country	Same country (dummy)	0.822***	0.706***		
+		(0.0971)	(0.135)		
+same_city	Same city (dummy)	1.092***	0.350**		
+		(0.107)	(0.154)		
+					
+Observations		408,178	408,094	408,178	408,094
+Robust standard errors in parentheses					
+*** p<0.01, ** p<0.05, * p<0.1					

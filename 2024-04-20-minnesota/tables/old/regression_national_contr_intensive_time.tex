@@ -1,0 +1,37 @@
+
+\begingroup
+\centering
+\small
+\begin{tabular}{lcccc}
+   \toprule
+                            & (1)          & (2)           & (3)           & (4)\\  
+   \midrule 
+   Same country             & 5.88$^{***}$ &               &               &   \\   
+                            & (0.39)       &               &               &   \\   
+   tz0\_below500            &              & -5.79$^{***}$ & -5.19$^{***}$ &   \\   
+                            &              & (0.35)        & (0.44)        &   \\   
+   tz1\_below500            &              & -6.49$^{***}$ & -5.79$^{***}$ & -0.60$^{**}$\\   
+                            &              & (0.32)        & (0.47)        & (0.28)\\   
+   tz0\_over500             &              & -5.70$^{***}$ & -4.74$^{***}$ & -0.16\\   
+                            &              & (0.44)        & (0.30)        & (0.27)\\   
+   tz1\_3\_over500          &              & -5.92$^{***}$ & -4.77$^{***}$ & 0.20\\   
+                            &              & (0.34)        & (0.31)        & (0.55)\\   
+   tz3\_6\_over500          &              & -5.49$^{***}$ & -4.49$^{***}$ & -0.43\\   
+                            &              & (0.46)        & (0.40)        & (0.30)\\   
+   tz7\_over500             &              & -6.28$^{***}$ & -5.29$^{***}$ & -0.51\\   
+                            &              & (0.38)        & (0.31)        & (0.32)\\   
+   Common language          &              &               & 1.29$^{***}$  & 0.14\\   
+                            &              &               & (0.24)        & (0.23)\\   
+   \midrule 
+   Origin\_Country FE       & Yes          & Yes           & Yes           & Yes\\  
+   Destination\_Country FE  & Yes          & Yes           & Yes           & Yes\\  
+   \midrule 
+   Observations             & 27,384       & 27,384        & 27,384        & 16,265\\  
+   Pseudo R$^2$             & 0.98334      & 0.98241       & 0.98408       & 0.91756\\  
+   \bottomrule
+   \multicolumn{5}{l}{\emph{Clustered (Origin\_Country \& Destination\_Country) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+
