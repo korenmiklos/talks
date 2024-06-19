@@ -1,0 +1,35 @@
+
+\begingroup
+\centering
+\begin{tabular}{lccccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{5}{c}{n\_downstream}\\
+   Model:                                          & (1)            & (2)            & (3)            & (4)             & (5)\\  
+   \midrule
+   \emph{Variables}\\
+   two\_cities                                     & 2.931$^{***}$  & 1.054$^{***}$  & 3.592$^{***}$  & 3.574$^{***}$   & 3.021$^{***}$\\   
+                                                   & (0.5615)       & (0.0573)       & (0.2557)       & (0.2515)        & (0.2393)\\   
+   log(stars\_lead)                                & 0.7114$^{***}$ &                & 0.5921$^{***}$ & 0.3798$^{***}$  & 0.3777$^{***}$\\   
+                                                   & (0.0166)       &                & (0.0063)       & (0.0045)        & (0.0041)\\   
+   log(stars\_follow)                              &                & 0.4864$^{***}$ & -0.0159$^{*}$  & -0.4765$^{***}$ & -0.4946$^{***}$\\   
+                                                   &                & (0.0065)       & (0.0097)       & (0.0434)        & (0.0441)\\   
+   log(stars\_lead) $\times$ log(stars\_follow)    &                &                &                & 0.0852$^{***}$  & 0.0868$^{***}$\\   
+                                                   &                &                &                & (0.0054)        & (0.0054)\\   
+   avg\_ln\_distance                               &                &                &                &                 & 0.0923$^{***}$\\   
+                                                   &                &                &                &                 & (0.0020)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   lc                                              & Yes            & Yes            & Yes            & Yes             & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                                    & 17,906         & 17,339         & 3,348          & 3,348           & 3,348\\  
+   Squared Correlation                             & 0.00698        & 0.00193        & 0.00411        & 0.00296         & 0.00296\\  
+   Pseudo R$^2$                                    & 0.28276        & 0.20349        & 0.27769        & 0.28605         & 0.28762\\  
+   BIC                                             & 18,132,925.8   & 28,951,230.5   & 6,312,018.6    & 6,238,919.1     & 6,225,220.7\\  
+   \midrule \midrule
+   \multicolumn{6}{l}{\emph{Clustered (lc) standard-errors in parentheses}}\\
+   \multicolumn{6}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

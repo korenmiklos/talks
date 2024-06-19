@@ -1,0 +1,39 @@
+
+\begingroup
+\centering
+\begin{tabular}{lccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{3}{c}{N Dependents (NPM)}\\
+   Model:                                                & (1)            & (2)            & (3)\\  
+   \midrule
+   \emph{Variables}\\
+   Constant                                              & 1.745$^{***}$  & 1.148$^{***}$  & 1.673$^{***}$\\   
+                                                         & (0.0548)       & (0.0857)       & (0.0674)\\   
+   Count of cities                                       & 0.4075$^{***}$ & 0.2306$^{***}$ &   \\   
+                                                         & (0.0403)       & (0.0491)       &   \\   
+   Count of countries                                    & 0.3431$^{***}$ & 0.3057$^{***}$ &   \\   
+                                                         & (0.0628)       & (0.0637)       &   \\   
+   City cat $\times$ CI2 $\times$ 2cities                &                &                & 0.3851$^{***}$\\   
+                                                         &                &                & (0.0813)\\   
+   City cat $\times$ CI3 $\times$ 3cities                &                &                & 0.4925$^{***}$\\   
+                                                         &                &                & (0.1242)\\   
+   City cat $\times$ CI4 $\times$ manycities(4+)         &                &                & 0.6543$^{***}$\\   
+                                                         &                &                & (0.1642)\\   
+   Country cat $\times$ CO2 $\times$ 2countries          &                &                & 0.2461$^{***}$\\   
+                                                         &                &                & (0.0813)\\   
+   Country cat $\times$ CO3 $\times$ manycountries(3+)   &                &                & 0.6269$^{***}$\\   
+                                                         &                &                & (0.1462)\\   
+   Age, N\_Dev                                           & No             & Yes            & Yes\\  
+   Commits                                               & No             & No             & No\\  
+   Coders                                                & No             & No             & No\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Pseudo R$^2$                                          & 0.05100        & 0.11532        & 0.11586\\  
+   Observations                                          & 36,491         & 36,491         & 36,491\\  
+   \midrule \midrule
+   \multicolumn{4}{l}{\emph{Heteroskedasticity-robust standard-errors in parentheses}}\\
+   \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+
