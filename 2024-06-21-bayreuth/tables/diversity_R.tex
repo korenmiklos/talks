@@ -1,0 +1,28 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variables: & n\_commits      & n\_days         & n\_stars       & n\_downstream\\   
+   Model:               & (1)             & (2)             & (3)            & (4)\\  
+   \midrule
+   \emph{Variables}\\
+   Average distance (km, log)    & 0.0399$^{***}$  & 0.0217$^{***}$  & 0.2252$^{***}$ & 0.3326$^{***}$\\   
+                        & (0.0042)        & (0.0011)        & (0.0113)       & (0.0522)\\   
+   No.~cities (log)        & -0.1557$^{***}$ & -0.1528$^{***}$ & 0.3228$^{***}$ & 1.830$^{***}$\\   
+                        & (0.0303)        & (0.0072)        & (0.0805)       & (0.3505)\\   
+   No.~countries (log)     & -0.2569$^{***}$ & -0.2199$^{***}$ & 0.4845$^{***}$ & 0.9514$^{***}$\\   
+                        & (0.0233)        & (0.0047)        & (0.0473)       & (0.2028)\\   
+   No.~developers (log)    & 1.235$^{***}$   & 1.100$^{***}$   & 0.5690$^{***}$ & -1.506$^{***}$\\   
+                        & (0.0295)        & (0.0067)        & (0.0843)       & (0.3246)\\   
+   \midrule
+   \emph{Fit statistics}\\
+   Observations         & 267,086         & 267,086         & 267,086        & 267,086\\  
+   Pseudo R$^2$         & 0.24991         & 0.40519         & 0.42086        & 0.23597\\  
+   \midrule \midrule
+   \multicolumn{5}{l}{\emph{Clustered (project\_id) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

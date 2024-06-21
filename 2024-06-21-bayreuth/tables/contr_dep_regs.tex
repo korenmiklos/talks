@@ -1,0 +1,36 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcc}
+   \tabularnewline \midrule \midrule
+   Dependent Variables:                  & contr\_n\_links   & dep\_value\\   
+   Model:                                & (1)               & (2)\\  
+   \midrule
+   \emph{Variables}\\
+   dist\_cat $=$ Samecity(0-1)           & 2.018$^{***}$     & 0.0754$^{***}$\\   
+                                         & (0.0858)          & (0.0138)\\   
+   dist\_cat $=$ Agglo(1-50)             & 0.7344$^{***}$    & 0.0805$^{***}$\\   
+                                         & (0.0873)          & (0.0127)\\   
+   dist\_cat $=$ Region(50-200)          & 0.2039$^{***}$    & 0.0254$^{***}$\\   
+                                         & (0.0307)          & (0.0095)\\   
+   dist\_cat $=$ Shorttrip(200-700)      & 0.0416$^{***}$    & 0.0045\\   
+                                         & (0.0101)          & (0.0036)\\   
+   different\_country\_same\_language    & -0.1581$^{***}$   & -0.0222$^{***}$\\   
+                                         & (0.0184)          & (0.0082)\\   
+   different\_country\_diff\_language    & -0.2476$^{***}$   & -0.0499$^{***}$\\   
+                                         & (0.0322)          & (0.0115)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   city\_destination                     & Yes               & Yes\\  
+   city\_origin                          & Yes               & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Pseudo R$^2$                          & 0.86084           & 0.98866\\  
+   Observations                          & 3,478,716         & 3,202,202\\  
+   \midrule \midrule
+   \multicolumn{3}{l}{\emph{Clustered (city\_destination \& city\_origin) standard-errors in parentheses}}\\
+   \multicolumn{3}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

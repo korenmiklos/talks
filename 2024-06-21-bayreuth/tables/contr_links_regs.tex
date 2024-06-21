@@ -1,0 +1,76 @@
+
+\begingroup
+\centering
+\begin{tabular}{lccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{3}{c}{contr\_n\_links}\\
+   Model:                                & (1)             & (2)             & (3)\\  
+   \midrule
+   \emph{Variables}\\
+   ln\_dist                              & -0.1650$^{***}$ &                 &   \\   
+                                         & (0.0083)        &                 &   \\   
+   same\_org                             & 5.609$^{***}$   & 5.556$^{***}$   &   \\   
+                                         & (0.0871)        & (0.0855)        &   \\   
+   dist\_cat $=$ Samecity(0-1)           &                 & 1.746$^{***}$   & 2.018$^{***}$\\   
+                                         &                 & (0.0772)        & (0.0858)\\   
+   dist\_cat $=$ Agglo(1-50)             &                 & 0.6351$^{***}$  & 0.7344$^{***}$\\   
+                                         &                 & (0.0724)        & (0.0873)\\   
+   dist\_cat $=$ Region(50-200)          &                 & 0.1905$^{***}$  & 0.2039$^{***}$\\   
+                                         &                 & (0.0319)        & (0.0307)\\   
+   dist\_cat $=$ Shorttrip(200-700)      &                 & 0.0245$^{*}$    & 0.0416$^{***}$\\   
+                                         &                 & (0.0127)        & (0.0101)\\   
+   different\_country\_same\_language    &                 & -0.1749$^{***}$ & -0.1581$^{***}$\\   
+                                         &                 & (0.0215)        & (0.0184)\\   
+   different\_country\_diff\_language    &                 & -0.2856$^{***}$ & -0.2476$^{***}$\\   
+                                         &                 & (0.0369)        & (0.0322)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   city\_destination                     & Yes             & Yes             & Yes\\  
+   city\_origin                          & Yes             & Yes             & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Pseudo R$^2$                          & 0.84163         & 0.84385         & 0.86084\\  
+   Observations                          & 3,634,243       & 3,636,122       & 3,478,716\\  
+   \midrule \midrule
+   \multicolumn{4}{l}{\emph{Clustered (city\_destination \& city\_origin) standard-errors in parentheses}}\\
+   \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+
+
+\begingroup
+\centering
+\begin{tabular}{lccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{3}{c}{contr\_n\_links}\\
+   Model:                            & (1)             & (2)            & (3)\\  
+   \midrule
+   \emph{Variables}\\
+   ln\_dist                          & -0.1650$^{***}$ &                &   \\   
+                                     & (0.0083)        &                &   \\   
+   same\_org                         & 5.609$^{***}$   & 5.556$^{***}$  &   \\   
+                                     & (0.0871)        & (0.0855)       &   \\   
+   dist\_cat $=$ Samecity(0-1)       &                 & 1.746$^{***}$  & 2.018$^{***}$\\   
+                                     &                 & (0.0772)       & (0.0858)\\   
+   dist\_cat $=$ Agglo(1-50)         &                 & 0.6351$^{***}$ & 0.7344$^{***}$\\   
+                                     &                 & (0.0724)       & (0.0873)\\   
+   dist\_cat $=$ Region(50-200)      &                 & 0.1905$^{***}$ & 0.2039$^{***}$\\   
+                                     &                 & (0.0319)       & (0.0307)\\   
+   dist\_cat $=$ Shorttrip(200-700)  &                 & 0.0245$^{*}$   & 0.0416$^{***}$\\   
+                                     &                 & (0.0127)       & (0.0101)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   city\_destination                 & Yes             & Yes            & Yes\\  
+   city\_origin                      & Yes             & Yes            & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Pseudo R$^2$                      & 0.84163         & 0.84385        & 0.86084\\  
+   Observations                      & 3,634,243       & 3,636,122      & 3,478,716\\  
+   \midrule \midrule
+   \multicolumn{4}{l}{\emph{Clustered (city\_destination \& city\_origin) standard-errors in parentheses}}\\
+   \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

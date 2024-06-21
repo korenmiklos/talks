@@ -1,0 +1,30 @@
+
+\begingroup
+\centering
+\begin{tabular}{lccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{3}{c}{n\_projects}\\
+   Model:              & (1)             & (2)           & (3)\\  
+   \midrule
+   \emph{Variables}\\
+   ln\_distance        & -0.2252$^{***}$ &               & -0.7524$^{***}$\\   
+                       & (0.0295)        &               & (0.0284)\\   
+   same\_city          &                 & 2.806$^{***}$ & -7.179$^{***}$\\   
+                       &                 & (0.4147)      & (0.1572)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   city\_name.x        & Yes             & Yes           & Yes\\  
+   city\_name.y        & Yes             & Yes           & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations        & 5,124,497       & 5,124,497     & 5,124,497\\  
+   Squared Correlation & 0.04750         & 0.04580       & 0.05384\\  
+   Pseudo R$^2$        & 0.61673         & 0.60152       & 0.63587\\  
+   BIC                 & 947,601.8       & 982,431.9     & 903,794.5\\  
+   \midrule \midrule
+   \multicolumn{4}{l}{\emph{Clustered (city\_name.x \& city\_name.y) standard-errors in parentheses}}\\
+   \multicolumn{4}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

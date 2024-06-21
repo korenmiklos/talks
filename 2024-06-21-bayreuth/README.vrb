@@ -1,0 +1,14 @@
+\frametitle{Open Source vocabulary}
+\protect\hypertarget{open-source-vocabulary}{}
+\texttt{Project}: A software project offering solution to a use case,
+a.k.a. library, package.
+
+\texttt{Repository}: A storage for one project (what we observe)
+
+\texttt{Commit}: The smallest unit of contribution
+
+\texttt{Git}: Distributed version control system for software projects
+
+\texttt{GitHub}: A platform to collaboratively work on software projects
+
+\texttt{Dependency}: An imported project that provides a functionality
