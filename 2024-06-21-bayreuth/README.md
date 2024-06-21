@@ -1,9 +1,9 @@
 ---
 author: 
     - Gábor Békés (CEU, HUN-REN KRTK, and CEPR)
-    - Julian Hinz (Bielefeld University and Kiel Institute for the World Economy})
-    - Miklós Koren (CEU, HUN-REN KRTK, CEPR and CESifo})
-    - Aaron Lohmann ({\footnotesize Bielefeld University and Kiel Institute for the World Economy})
+    - Julian Hinz (Bielefeld University and Kiel Institute for the World Economy)
+    - Miklós Koren (CEU, HUN-REN KRTK, CEPR and CESifo)
+    - Aaron Lohmann (Bielefeld University and Kiel Institute for the World Economy)
 title: "Success and geography: Evidence from open-source software"
 date: June 21, 2024^[This work was funded by the European Union under the Horizon Europe grant 101061123. Views and opinions expressed are, however, those of the author(s) only and do not necessarily reflect those of the European Union or the European Commission. Neither the European Union nor the granting authority can be held responsible for them.]
 date-format: long
