@@ -2,7 +2,6 @@
 title: "Kezdi.jl: Bridging Stata and Julia for economists"
 author: "Miklós Koren"
 date: JuliaCon 2024
-aspectratio: 1610
 ---
 ##
 \centering
@@ -46,11 +45,13 @@ df.log_distance = log(df.distance)
 
 ## What commands do economists use?
 
-# Tradeoffs in user interface
+# Tradeoffs in user interface design
 
-## $k$ standards $\to k+1$ standards
+## 
+![](assets/standards.png)
 
-## I don't think if you at all
+##
+![](assets/MadMen.png)
 
 ## What do users want?
 1. convenience
@@ -60,12 +61,12 @@ df.log_distance = log(df.distance)
 - Rust: static typing, memory safe
 - ChatGPT: convenient, may or may not be correct
 
-### Good example: row-level `if`
+## Good example: row-level `if`
 ```stata
 replace distance = 5 if distance < 5
 ```
 
-### Bad example: implicit variable abbreviation:
+## Bad example: implicit variable abbreviation:
 ```stata
 summarize gdp_per_capita
 regress gdp population
@@ -74,6 +75,8 @@ regress gdp population
 # Features of Kezdi.jl
 
 ## Command syntax is $\approx$exactly like in Stata
+::: {.columns}
+:::: {.column width="34%"}
 ```julia
 @use "trade.dta"
 @replace distance = 5 @if distance < 5
@@ -81,12 +84,15 @@ regress gdp population
 @generate log_distance = log(distance)
 @regress log_trade log_distance, robust
 ```
-
+::::
+:::: {.column width="66%"}
 ### Notes
 1. Commands are macros
 2. Variable names refer to column names in the *default* DataFrame
 3. Function calls are vectorized automatically
 4. Options are given with `, option`
+::::
+:::
 
 ## Every command can operate on a subset of rows
 ```julia
