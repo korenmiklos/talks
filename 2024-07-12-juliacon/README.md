@@ -4,6 +4,10 @@ author: "Miklós Koren"
 date: JuliaCon 2024
 aspectratio: 1610
 ---
+##
+\centering
+![](assets/logo-long.png)
+
 ## Who am I?
 Economist + wannabe software developer
 
@@ -13,7 +17,7 @@ Economist + wannabe software developer
 | Python   | 2003  |
 | Julia    | 2015  |
 
-Data Editor at the *[Review of Econonmic Studies](https://www.restud.com/)*
+Data Editor at the *[Review of Economic Studies](https://www.restud.com/)*
 
 # What do economists do?
 
@@ -26,8 +30,21 @@ Data Editor at the *[Review of Econonmic Studies](https://www.restud.com/)*
 ## What is Stata?
 
 ### Best of Stata
+```stata
+use "trade.dta"
+replace distance = 5 if distance < 5
+generate log_trade = log(trade)
+generate log_distance = log(distance)
+regress log_trade log_distance, robust
+```
 
-### Statistics
+### Vs
+```python
+df[df.distance < 5].distance = 5
+df.log_distance = log(df.distance)
+```
+
+## What commands do economists use?
 
 # Tradeoffs in user interface
 
@@ -56,13 +73,45 @@ regress gdp population
 
 # Features of Kezdi.jl
 
-## Command syntax
+## Command syntax is $\approx$exactly like in Stata
+```julia
+@use "trade.dta"
+@replace distance = 5 @if distance < 5
+@generate log_trade = log(trade)
+@generate log_distance = log(distance)
+@regress log_trade log_distance, robust
+```
 
-::: 
+### Notes
+1. Commands are macros
+2. Variable names refer to column names in the *default* DataFrame
+3. Function calls are vectorized automatically
+4. Options are given with `, option`
 
-## Row-level `if`
+## Every command can operate on a subset of rows
+```julia
+@keep @if !ismissing(distance)
+@replace distance = 5 @if distance < 5
+@regress log_trade log_distance @if exporter_country != importer_country, robust
+```
+
+### Notes
 
 ## Handling missing values
+Given a DataFrame
+```julia
+ Row │ x
+   1 │       1
+   2 │       2
+   3 │ missing
+   4 │       4
+```
+can you guess the output of
+```julia
+@collapse mean_x = mean(x)
+@keep @if x < 3
+```
+
 
 ## Proper data structures
 
