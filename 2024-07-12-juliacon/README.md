@@ -17,7 +17,7 @@ Data Editor at the *[Review of Econonmic Studies](https://www.restud.com/)*
 
 # What do economists do?
 
-## Evidence from ??? replication packages
+## Evidence from 357 replication packages
 
 ## They don't use Julia
 
@@ -57,6 +57,8 @@ regress gdp population
 # Features of Kezdi.jl
 
 ## Command syntax
+
+::: 
 
 ## Row-level `if`
 
