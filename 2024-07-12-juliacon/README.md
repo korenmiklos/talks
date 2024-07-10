@@ -96,7 +96,7 @@ df.log_distance = log(df.distance)
 2. correctness
 
 ## The Production Possibilities Frontier
-![](assets/ppf.svg)
+![](figures/ppf.svg)
 
 - Rust: static typing, memory safe
 - ChatGPT: convenient, may or may not be correct
