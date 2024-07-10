@@ -8,7 +8,7 @@ date: JuliaCon 2024
 ![](assets/logo-long.png)
 
 ## Who am I?
-Economist + wannabe software developer
+Economist (CEU) + software developer (Coded Thinking)
 
 | Language | Since |
 |----------|-------|

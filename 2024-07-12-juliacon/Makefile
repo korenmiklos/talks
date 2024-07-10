@@ -1,5 +1,7 @@
 URL := https://data.europa.eu/api/hub/store/data/ted-contract-award-notices-2023.zip
 
+README.html: README.md
+	pandoc $< -t revealjs -s -o $@ --css=assets/style.css
 data/ted-contract-award-notices-2023.csv:
 	unzip -p ~/Downloads/ted-contract-award-notices-2023.zip > $@
 ~/Downloads/ted-contract-award-notices-2023.zip:
