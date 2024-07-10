@@ -2,21 +2,52 @@
 title: "Kezdi.jl: Bridging Stata and Julia for economists"
 author: "Miklós Koren"
 date: JuliaCon 2024
+header-includes: |
+  <style>
+    .title-slide {
+      position: relative;
+      text-align: center;
+    }
+    .title-slide .logo {
+      display: block;
+      margin: 0 auto;
+      width: 100px; /* Adjust as needed */
+      height: auto;
+      margin-bottom: 20px; /* Space between logo and title */
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var titleSlide = document.querySelector('.reveal .slides section:first-child');
+      if (titleSlide) {
+        var logo = document.createElement('img');
+        logo.src = 'assets/logo.svg';
+        logo.className = 'logo';
+        titleSlide.insertBefore(logo, titleSlide.firstChild);
+      }
+    });
+  </script>
 ---
-##
-\centering
-![](assets/logo-long.png)
 
 ## Who am I?
-Economist (CEU) + software developer (Coded Thinking)
+::: {.columns}
+::: {.column}
+| Job | Place |
+|-----|-------|
+| Economist | ceu.edu |
+| Data editor | restud.com |
+| Software Developer | thnk.ng |
 
+:::
+::: {.column}
 | Language | Since |
 |----------|-------|
 | Stata    | 1997  |
 | Python   | 2003  |
 | Julia    | 2015  |
+:::
+:::
 
-Data Editor at the *[Review of Economic Studies](https://www.restud.com/)*
 
 # What do economists do?
 
@@ -27,21 +58,28 @@ Data Editor at the *[Review of Economic Studies](https://www.restud.com/)*
 ## They use multiple languages
 
 ## What is Stata?
-
-### Best of Stata
+::: {.columns}
+::: {.column}
+### Stata
 ```stata
 use "trade.dta"
-replace distance = 5 if distance < 5
+replace distance = 5 ↩
+    if distance < 5
 generate log_trade = log(trade)
-generate log_distance = log(distance)
-regress log_trade log_distance, robust
+generate log_distance = ↩
+    log(distance)
+regress log_trade log_distance, ↩
+    robust
 ```
-
-### Vs
+:::
+::: {.column}
+### vs
 ```python
 df[df.distance < 5].distance = 5
 df.log_distance = log(df.distance)
 ```
+:::
+:::
 
 ## What commands do economists use?
 
@@ -58,6 +96,8 @@ df.log_distance = log(df.distance)
 2. correctness
 
 ## The Production Possibilities Frontier
+![](assets/ppf.svg)
+
 - Rust: static typing, memory safe
 - ChatGPT: convenient, may or may not be correct
 
@@ -128,4 +168,4 @@ can you guess the output of
 ### Programming convenience
 ### Statistics
 
-## Acknowledgements
+# Acknowledgements

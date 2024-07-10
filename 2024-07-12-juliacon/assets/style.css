@@ -16,10 +16,10 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 :root {
   --r-background-color: #fff;
   --r-main-font: Px Grotesk, Helvetica, sans-serif;
-  --r-main-font-size: 42px;
+  --r-main-font-size: 36px;
   --r-main-color: #232324;
-  --r-block-margin: 20px;
-  --r-heading-margin: 0 0 20px 0;
+  --r-block-margin: 10px;
+  --r-heading-margin: 0 0 10px 0;
   --r-heading-font: Px Grotesk, Helvetica, sans-serif;
   --r-heading-color: #e61e25;
   --r-heading-line-height: 1.2;
@@ -157,7 +157,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 }
 
 .reveal ul {
-  list-style-type: disc;
+  list-style-type: square;
 }
 
 .reveal ul ul {
@@ -165,7 +165,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 }
 
 .reveal ul ul ul {
-  list-style-type: circle;
+  list-style-type: square;
 }
 
 .reveal ul ul,
@@ -187,7 +187,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal blockquote {
   display: block;
   position: relative;
-  width: 70%;
+  width: 100%;
   margin: var(--r-block-margin) auto;
   padding: 5px;
   font-style: italic;
@@ -207,7 +207,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal pre {
   display: block;
   position: relative;
-  width: 90%;
+  width: 100%;
   margin: var(--r-block-margin) auto;
   text-align: left;
   font-size: 0.55em;
@@ -355,4 +355,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   .backgrounds {
     background-color: var(--r-background-color);
   }
+}
+.reveal .columns {
+  display: flex;
+}
+
+.reveal .column {
+  flex: 1;
+  padding: 0.5em;
 }

@@ -1,6 +1,7 @@
 URL := https://data.europa.eu/api/hub/store/data/ted-contract-award-notices-2023.zip
+ASSETS := $(wildcard assets/*)
 
-README.html: README.md assets/style.css
+README.html: README.md $(ASSETS)
 	pandoc $< -t revealjs -s -o $@ --css=assets/style.css
 data/ted-contract-award-notices-2023.csv:
 	unzip -p ~/Downloads/ted-contract-award-notices-2023.zip > $@
