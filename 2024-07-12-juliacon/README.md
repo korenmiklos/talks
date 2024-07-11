@@ -73,13 +73,12 @@ header-includes: |
 ### Stata
 ```stata
 use "trade.dta"
-replace distance = 5 ↩
-    if distance < 5
+
+replace distance = 5 if distance < 5
 generate log_trade = log(trade)
-generate log_distance = ↩
-    log(distance)
-regress log_trade log_distance, ↩
-    robust
+generate log_distance = log(distance)
+
+regress log_trade log_distance, robust
 ```
 :::
 ::: {.column}
@@ -91,16 +90,13 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
 df = pd.read_stata("trade.dta")
-df.loc[df['distance'] < 5, 
-    'distance'] = 5
-df['log_trade'] = df['trade'].
-    apply(math.log)
+df.loc[df['distance'] < 5, 'distance'] = 5
+df['log_trade'] = df['trade'].apply(math.log)
 df['log_distance'] = df['distance'].
-apply(math.log)
+    apply(math.log)
 
 model = smf.ols('log_trade ~ log_distance', 
-    data=df).
-    fit(cov_type='HC3')
+    data=df).fit(cov_type='HC3')
 print(model.summary())
 ```
 :::
@@ -108,7 +104,7 @@ print(model.summary())
 
 ## What commands do economists use?
 
-# What do users want?
+# Tradeoffs in user interface design
 
 ## 
 ![](assets/standards.png)

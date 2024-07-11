@@ -16,7 +16,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 :root {
   --r-background-color: #fff;
   --r-main-font: Px Grotesk, Helvetica, sans-serif;
-  --r-main-font-size: 24px;
+  --r-main-font-size: 28px;
   --r-main-color: #232324;
   --r-block-margin: 10px;
   --r-heading-margin: 0 0 10px 0;

@@ -214,13 +214,12 @@
 <h3 id="stata">Stata</h3>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode stata"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> <span class="st">&quot;trade.dta&quot;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">replace</span> distance = 5 ↩</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">if</span> distance &lt; 5</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">replace</span> distance = 5 <span class="kw">if</span> distance &lt; 5</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">generate</span> log_trade = <span class="fu">log</span>(trade)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">generate</span> log_distance = ↩</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">log</span>(distance)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> log_trade log_distance, ↩</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">robust</span></span></code></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">generate</span> log_distance = <span class="fu">log</span>(distance)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> log_trade log_distance, <span class="kw">robust</span></span></code></pre></div>
 </div><div class="column">
 <h3 id="vs">vs</h3>
 <div class="sourceCode" id="cb2"><pre
@@ -230,17 +229,14 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_stata(<span class="st">&quot;trade.dta&quot;</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">&#39;distance&#39;</span>] <span class="op">&lt;</span> <span class="dv">5</span>, </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;distance&#39;</span>] <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;log_trade&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;trade&#39;</span>].</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">&#39;distance&#39;</span>] <span class="op">&lt;</span> <span class="dv">5</span>, <span class="st">&#39;distance&#39;</span>] <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;log_trade&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;trade&#39;</span>].<span class="bu">apply</span>(math.log)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;log_distance&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;distance&#39;</span>].</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">apply</span>(math.log)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;log_distance&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;distance&#39;</span>].</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">apply</span>(math.log)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">&#39;log_trade ~ log_distance&#39;</span>, </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df).</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    fit(cov_type<span class="op">=</span><span class="st">&#39;HC3&#39;</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code></pre></div>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">&#39;log_trade ~ log_distance&#39;</span>, </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df).fit(cov_type<span class="op">=</span><span class="st">&#39;HC3&#39;</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code></pre></div>
 </div>
 </div>
 </section>
@@ -248,8 +244,9 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 <h2>What commands do economists use?</h2>
 </section></section>
 <section>
-<section id="what-do-users-want" class="title-slide slide level1">
-<h1>What do users want?</h1>
+<section id="tradeoffs-in-user-interface-design"
+class="title-slide slide level1">
+<h1>Tradeoffs in user interface design</h1>
 
 </section>
 <section id="section-1" class="slide level2">
@@ -260,7 +257,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 <h2></h2>
 <p><img data-src="assets/MadMen.png" /></p>
 </section>
-<section id="what-do-users-want-1" class="slide level2">
+<section id="what-do-users-want" class="slide level2">
 <h2>What do users want?</h2>
 <ol type="1">
 <li>convenience</li>
