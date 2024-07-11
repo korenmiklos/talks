@@ -245,10 +245,6 @@ class="title-slide slide level1">
 <section id="section-1" class="slide level2">
 <h2></h2>
 <p><img data-src="assets/standards.png" /></p>
-<div class="slide-footer">
-<pre><code>Image credit: &lt;a href=&quot;https://example.com&quot;&gt;example.com&lt;/a&gt;
-Link to slides: &lt;a href=&quot;https://example.com/slides&quot;&gt;example.com/slides&lt;/a&gt;</code></pre>
-</div>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
@@ -272,20 +268,39 @@ class="slide level2">
 </section>
 <section id="good-example-row-level-if" class="slide level2">
 <h2>Good example: row-level <code>if</code></h2>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode stata"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">replace</span> distance = 5 <span class="kw">if</span> distance &lt; 5</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode stata"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">replace</span> distance = 5 <span class="kw">if</span> distance &lt; 5</span></code></pre></div>
 </section>
 <section id="bad-example-implicit-variable-abbreviation"
 class="slide level2">
 <h2>Bad example: implicit variable abbreviation:</h2>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode stata"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">summarize</span> gdp_per_capita</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> gdp population</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode stata"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">summarize</span> gdp_per_capita</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> gdp population</span></code></pre></div>
 </section></section>
 <section>
 <section id="features-of-kezdi.jl" class="title-slide slide level1">
 <h1>Features of Kezdi.jl</h1>
 
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pkg<span class="op">&gt;</span> add Kezdi</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>   Resolving package versions<span class="op">...</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>   Installed Kezdi ─ v0<span class="fl">.4.6</span></span></code></pre></div>
+<p><a href="https://codedthinking.github.io/Kezdi.jl/stable/"><img
+data-src="https://img.shields.io/badge/docs-stable-blue.svg"
+alt="Stable" /></a> <a
+href="https://codedthinking.github.io/Kezdi.jl/dev/"><img
+data-src="https://img.shields.io/badge/docs-dev-blue.svg"
+alt="Dev" /></a> <a
+href="https://github.com/codedthinking/Kezdi.jl/actions/workflows/CI.yml?query=branch%3Amain"><img
+data-src="https://github.com/codedthinking/Kezdi.jl/actions/workflows/CI.yml/badge.svg?branch=main"
+alt="Build Status" /></a> <a
+href="https://codecov.io/gh/codedthinking/Kezdi.jl"><img
+data-src="https://codecov.io/gh/codedthinking/Kezdi.jl/branch/main/graph/badge.svg"
+alt="Coverage" /></a></p>
 </section>
 <section id="command-syntax-is-approxexactly-like-in-stata"
 class="slide level2">
@@ -382,7 +397,7 @@ class="sourceCode julia"><code class="sourceCode julia"><span id="cb10-1"><a hre
 <section id="handling-missing-values" class="slide level2">
 <h2>Handling missing values</h2>
 <div class="columns">
-<div class="column">
+<div class="column-wide">
 <p>Given the DataFrame on the right, can you guess the output of</p>
 <div class="sourceCode" id="cb11"><pre
 class="sourceCode julia"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@collapse</span> sum_x <span class="op">=</span> <span class="fu">sum</span>(x)</span></code></pre></div>
@@ -394,7 +409,7 @@ class="sourceCode julia"><code class="sourceCode julia"><span id="cb12-1"><a hre
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>─────┼───────</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │     <span class="fl">7</span></span></code></pre></div>
 </div>
-</div><div class="column">
+</div><div class="column-narrow">
 <div class="sourceCode" id="cb13"><pre
 class="sourceCode julia"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fl">4</span><span class="op">×</span><span class="fl">1</span> DataFrame</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a> Row │ x</span>
@@ -410,7 +425,7 @@ class="sourceCode julia"><code class="sourceCode julia"><span id="cb13-1"><a hre
 <section id="handling-missing-values-1" class="slide level2">
 <h2>Handling missing values</h2>
 <div class="columns">
-<div class="column">
+<div class="column-wide">
 <p>Given the DataFrame on the right, can you guess the output of</p>
 <div class="sourceCode" id="cb14"><pre
 class="sourceCode julia"><code class="sourceCode julia"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@keep</span> <span class="pp">@if</span> x <span class="op">&lt;</span> <span class="fl">3</span></span></code></pre></div>
@@ -423,7 +438,7 @@ class="sourceCode julia"><code class="sourceCode julia"><span id="cb15-1"><a hre
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │      <span class="fl">1</span></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>   <span class="fl">2</span> │      <span class="fl">2</span></span></code></pre></div>
 </div>
-</div><div class="column">
+</div><div class="column-narrow">
 <div class="sourceCode" id="cb16"><pre
 class="sourceCode julia"><code class="sourceCode julia"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fl">4</span><span class="op">×</span><span class="fl">1</span> DataFrame</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a> Row │ x</span>
@@ -439,39 +454,85 @@ class="sourceCode julia"><code class="sourceCode julia"><span id="cb16-1"><a hre
 <section id="proper-data-structures" class="slide level2">
 <h2>Proper data structures</h2>
 <div class="columns">
-<div class="column">
+<div class="column-wide">
 <div class="sourceCode" id="cb17"><pre
-class="sourceCode julia"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@generate</span> list <span class="op">=</span> <span class="fu">split</span>(text)</span></code></pre></div>
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@generate</span> n_terms <span class="op">=</span> <span class="fu">length</span>.(<span class="fu">split</span>(text, <span class="st">&quot;,&quot;</span>))</span></code></pre></div>
 <div class="fragment">
 <div class="sourceCode" id="cb18"><pre
 class="sourceCode julia"><code class="sourceCode julia"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fl">3</span><span class="op">×</span><span class="fl">2</span> DataFrame</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> Row │ text    list</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>     │ <span class="dt">String</span>  Array<span class="op">…</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>─────┼──────────────────────────────────</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │ a,b     <span class="dt">SubString</span>{<span class="dt">String</span>}[<span class="st">&quot;a,b&quot;</span>]</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>   <span class="fl">2</span> │ c,d     <span class="dt">SubString</span>{<span class="dt">String</span>}[<span class="st">&quot;c,d&quot;</span>]</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span> │ <span class="cn">e</span>,f     <span class="dt">SubString</span>{<span class="dt">String</span>}[<span class="st">&quot;e,f&quot;</span>]</span></code></pre></div>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a> Row │ text    n_terms</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>     │ <span class="dt">String</span>  <span class="dt">Int64</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>─────┼─────────────────</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │ a,b           <span class="fl">2</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>   <span class="fl">2</span> │ c,d,<span class="cn">e</span>         <span class="fl">3</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span> │ f             <span class="fl">1</span></span></code></pre></div>
 </div>
-</div><div class="column">
+</div><div class="column-narrow">
 <div class="sourceCode" id="cb19"><pre
 class="sourceCode julia"><code class="sourceCode julia"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fl">3</span><span class="op">×</span><span class="fl">1</span> DataFrame</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a> Row │ text</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>     │ <span class="dt">String</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>─────┼────────</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │ a,b</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>   <span class="fl">2</span> │ c,d</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span> │ <span class="cn">e</span>,f</span></code></pre></div>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>   <span class="fl">2</span> │ c,d,<span class="cn">e</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span> │ f</span></code></pre></div>
 </div>
 </div>
 </section>
 <section id="user-defined-functions" class="slide level2">
 <h2>User-defined functions</h2>
+<div class="columns">
+<div class="column-wide">
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count_terms</span>(text) <span class="op">=</span> <span class="fu">length</span>(<span class="fu">split</span>(text, <span class="st">&quot;,&quot;</span>))</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">count_terms</span>(x) <span class="op">=</span> <span class="fu">sum</span>(<span class="fu">count_terms</span>.(x))</span></code></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="pp">@generate</span> n_terms <span class="op">=</span> <span class="fu">count_terms</span>.(text)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fl">3</span><span class="op">×</span><span class="fl">2</span> DataFrame</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a> Row │ text    n_terms</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>     │ <span class="dt">String</span>  <span class="dt">Int64</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>─────┼─────────────────</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │ a,b           <span class="fl">2</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>   <span class="fl">2</span> │ c,d,<span class="cn">e</span>         <span class="fl">3</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span> │ f             <span class="fl">1</span></span></code></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>julia<span class="op">&gt;</span> <span class="pp">@collapse</span> sum_terms <span class="op">=</span> <span class="fu">DNV</span>(<span class="fu">count_terms</span>(text))</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fl">1</span><span class="op">×</span><span class="fl">1</span> DataFrame</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a> Row │ sum_terms</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>     │ <span class="dt">Int64</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>─────┼───────────</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │         <span class="fl">6</span></span></code></pre></div>
+</div>
+</div><div class="column-narrow">
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fl">3</span><span class="op">×</span><span class="fl">1</span> DataFrame</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a> Row │ text</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>     │ <span class="dt">String</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>─────┼────────</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │ a,b</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>   <span class="fl">2</span> │ c,d,<span class="cn">e</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span> │ f</span></code></pre></div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="roadmap" class="title-slide slide level1">
+<h1>Roadmap</h1>
+
 </section>
-<section id="roadmap" class="slide level2">
-<h2>Roadmap</h2>
-<h3 id="data-wrangling">Data wrangling</h3>
-<h3 id="programming-convenience">Programming convenience</h3>
-<h3 id="statistics">Statistics</h3>
+<section id="statistics" class="slide level2">
+<h2>Statistics</h2>
+</section>
+<section id="data-wrangling" class="slide level2">
+<h2>Data wrangling</h2>
+</section>
+<section id="programming-convenience" class="slide level2">
+<h2>Programming convenience</h2>
 </section></section>
 <section id="acknowledgements" class="title-slide slide level1">
 <h1>Acknowledgements</h1>

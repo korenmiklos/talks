@@ -102,11 +102,6 @@ print(model.summary())
 ## 
 ![](assets/standards.png)
 
-<div class="slide-footer">
-    Image credit: <a href="https://example.com">example.com</a>
-    Link to slides: <a href="https://example.com/slides">example.com/slides</a>
-</div>
-
 ##
 ![](assets/MadMen.png)
 
@@ -132,6 +127,18 @@ regress gdp population
 ```
 
 # Features of Kezdi.jl
+##
+```julia
+pkg> add Kezdi
+   Resolving package versions...
+   Installed Kezdi ─ v0.4.6
+```
+
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://codedthinking.github.io/Kezdi.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://codedthinking.github.io/Kezdi.jl/dev/)
+[![Build Status](https://github.com/codedthinking/Kezdi.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/codedthinking/Kezdi.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/codedthinking/Kezdi.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/codedthinking/Kezdi.jl)
+
 
 ## Command syntax is $\approx$exactly like in Stata
 ::: {.columns}
@@ -223,7 +230,7 @@ Use the former for interactive exploration in the REPL,<br> the latter for scrip
 
 ## Handling missing values
 ::: {.columns}
-:::: {.column}
+:::: {.column-wide}
 Given the DataFrame on the right, can you guess the output of
 ```julia
 @collapse sum_x = sum(x)
@@ -238,7 +245,7 @@ Given the DataFrame on the right, can you guess the output of
 ```
 ::::
 ::::
-:::: {.column}
+:::: {.column-narrow}
 ```julia
 4×1 DataFrame
  Row │ x
@@ -254,7 +261,7 @@ Given the DataFrame on the right, can you guess the output of
 
 ## Handling missing values
 ::: {.columns}
-:::: {.column}
+:::: {.column-wide}
 Given the DataFrame on the right, can you guess the output of
 ```julia
 @keep @if x < 3
@@ -270,7 +277,7 @@ Given the DataFrame on the right, can you guess the output of
 ```
 ::::
 ::::
-:::: {.column}
+:::: {.column-narrow}
 ```julia
 4×1 DataFrame
  Row │ x
@@ -287,23 +294,23 @@ Given the DataFrame on the right, can you guess the output of
 
 ## Proper data structures
 ::: {.columns}
-:::: {.column}
+:::: {.column-wide}
 ```julia
-@generate n_terms = length.(split.(text))
+@generate n_terms = length.(split(text, ","))
 ```
 :::: {.fragment}
 ```julia
 3×2 DataFrame
- Row │ text    list
-     │ String  Array…
-─────┼──────────────────────────────────
-   1 │ a,b     SubString{String}["a,b"]
-   2 │ c,d     SubString{String}["c,d"]
-   3 │ e,f     SubString{String}["e,f"]
+ Row │ text    n_terms
+     │ String  Int64
+─────┼─────────────────
+   1 │ a,b           2
+   2 │ c,d,e         3
+   3 │ f             1
 ```
 ::::
 ::::
-:::: {.column}
+:::: {.column-narrow}
 ```julia
 3×1 DataFrame
  Row │ text
@@ -318,10 +325,55 @@ Given the DataFrame on the right, can you guess the output of
 
 
 ## User-defined functions
+::: {.columns}
+:::: {.column-wide}
+```julia
+count_terms(text) = length(split(text, ","))
+count_terms(x) = sum(count_terms.(x))
+```
+:::: {.fragment}
+```julia
+julia> @generate n_terms = count_terms.(text)
 
-## Roadmap
-### Data wrangling
-### Programming convenience
-### Statistics
+3×2 DataFrame
+ Row │ text    n_terms
+     │ String  Int64
+─────┼─────────────────
+   1 │ a,b           2
+   2 │ c,d,e         3
+   3 │ f             1
+```
+::::
+:::: {.fragment}
+```julia
+julia> @collapse sum_terms = DNV(count_terms(text))
+
+1×1 DataFrame
+ Row │ sum_terms
+     │ Int64
+─────┼───────────
+   1 │         6
+```
+::::
+::::
+:::: {.column-narrow}
+```julia
+3×1 DataFrame
+ Row │ text
+     │ String
+─────┼────────
+   1 │ a,b
+   2 │ c,d,e
+   3 │ f
+```
+::::
+:::
+
+
+
+# Roadmap
+## Statistics
+## Data wrangling
+## Programming convenience
 
 # Acknowledgements
