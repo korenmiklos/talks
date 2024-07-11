@@ -27,20 +27,13 @@ header-includes: |
         logo.className = 'logo';
         titleSlide.insertBefore(logo, titleSlide.firstChild);
       };
-      var slides = document.querySelectorAll('.reveal .slides section');
-      slides.forEach(function(slide) {
-        var footer = document.createElement('div');
-        footer.className = 'footer';
-        footer.innerHTML = '<a href="https://left-link.com" target="_blank">Left Link</a><a href="https://right-link.com" target="_blank" style="margin-left:auto;">Right Link</a>';
-        slide.appendChild(footer);
-      });
     });
   </script>
 ---
 
 ## Who am I?
 ::: {.columns}
-::: {.column}
+::: {.column width="60%"}
 | **Who** | **Where** |
 |-----|-------|
 | Economist | ceu.edu |
@@ -48,7 +41,7 @@ header-includes: |
 | Software Developer | thnk.ng |
 :::
 
-::: {.column}
+::: {.fragment .column width="40%"}
 | **Language** | **Since** |
 |----------|-------|
 | Stata®    | 1997  |
@@ -109,6 +102,11 @@ print(model.summary())
 ## 
 ![](assets/standards.png)
 
+<div class="slide-footer">
+    Image credit: <a href="https://example.com">example.com</a>
+    Link to slides: <a href="https://example.com/slides">example.com/slides</a>
+</div>
+
 ##
 ![](assets/MadMen.png)
 
@@ -165,38 +163,159 @@ regress log_trade log_distance, robust
 
 :::{.fragment}
 ### Note
-1. Every command is a macro. So is row-level `@if`.
-2. Variable names refer to column names in the *default* DataFrame
-3. Function calls are vectorized automatically
-4. Options are given with `, option`
+1. Every command is a macro. So is row-level `@if`. Options are given with `, option`
+3. Variable names refer to column names in the *default* DataFrame
+4. Function calls are vectorized automatically
 :::
 
+## More idiomatic version of the same code
+::: {.columns}
+:::: {.column}
+```julia
+@use "trade.dta"
+
+@replace distance = 5 @if distance < 5
+@generate log_trade = log(trade)
+@generate log_distance = log(distance)
+
+@regress log_trade log_distance, robust
+```
+::::
+:::: {.column}
+```julia
+df = @use "trade.dta"
+
+results = @with df begin 
+  @replace distance = 5 @if distance < 5
+  @regress log(trade) log(distance), robust
+end
+```
+::::
+:::
+
+:::{.fragment}
+### Note
+Use the former for interactive exploration in the REPL,<br> the latter for scripts.
+:::
+
+
 ## Every command can operate on a subset of rows
+::: {.columns}
+:::: {.column}
 ```julia
 @keep @if !ismissing(distance)
 @replace distance = 5 @if distance < 5
-@regress log_trade log_distance @if exporter_country != importer_country, robust
+@regress log(trade) log(distance)↩
+  @if distance > 100, robust
+@collapse mean_distance = mean(distance)↩
+  @if distance < 100
 ```
-
-### Notes
+::::
+:::: {.column}
+:::{.fragment}
+### Note
+1. Useful for quick data exploration
+2. In `@if`, `missing` is `false` 
+3. `@replace x = 4.99 @if x == 5` changes `eltype` 
+::::
+:::
+:::
 
 ## Handling missing values
-Given a DataFrame
+::: {.columns}
+:::: {.column}
+Given the DataFrame on the right, can you guess the output of
 ```julia
+@collapse sum_x = sum(x)
+```
+:::: {.fragment}
+```julia
+1×1 DataFrame
+ Row │ sum_x
+     │ Int64
+─────┼───────
+   1 │     7
+```
+::::
+::::
+:::: {.column}
+```julia
+4×1 DataFrame
  Row │ x
+     │ Int64?
+─────┼─────────
    1 │       1
    2 │       2
    3 │ missing
    4 │       4
 ```
-can you guess the output of
+::::
+:::
+
+## Handling missing values
+::: {.columns}
+:::: {.column}
+Given the DataFrame on the right, can you guess the output of
 ```julia
-@collapse mean_x = mean(x)
 @keep @if x < 3
 ```
+:::: {.fragment}
+```julia
+2×1 SubDataFrame
+ Row │ x
+     │ Int64?
+─────┼────────
+   1 │      1
+   2 │      2
+```
+::::
+::::
+:::: {.column}
+```julia
+4×1 DataFrame
+ Row │ x
+     │ Int64?
+─────┼─────────
+   1 │       1
+   2 │       2
+   3 │ missing
+   4 │       4
+```
+::::
+:::
 
 
 ## Proper data structures
+::: {.columns}
+:::: {.column}
+```julia
+@generate n_terms = length.(split.(text))
+```
+:::: {.fragment}
+```julia
+3×2 DataFrame
+ Row │ text    list
+     │ String  Array…
+─────┼──────────────────────────────────
+   1 │ a,b     SubString{String}["a,b"]
+   2 │ c,d     SubString{String}["c,d"]
+   3 │ e,f     SubString{String}["e,f"]
+```
+::::
+::::
+:::: {.column}
+```julia
+3×1 DataFrame
+ Row │ text
+     │ String
+─────┼────────
+   1 │ a,b
+   2 │ c,d,e
+   3 │ f
+```
+::::
+:::
+
 
 ## User-defined functions
 

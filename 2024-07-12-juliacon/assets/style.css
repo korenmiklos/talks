@@ -210,7 +210,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   width: 100%;
   margin: var(--r-block-margin) auto;
   text-align: left;
-  font-size: 0.55em;
+  font-size: 0.65em;
   font-family: var(--r-code-font);
   line-height: 1.2em;
   word-wrap: break-word;
@@ -363,4 +363,34 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal .column {
   flex: 1;
   padding: 0.5em;
+}
+
+.reveal .slide-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+  color: #777;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.1); /* Optional: Adds a slight background to the footer */
+}
+
+.reveal .slide-footer a {
+  color: #777;
+  text-decoration: none;
+}
+
+.reveal .slide-footer a:hover {
+  text-decoration: underline;
+}
+
+.reveal .slide-footer .left-footer {
+  text-align: left;
+}
+
+.reveal .slide-footer .right-footer {
+  text-align: right;
 }
