@@ -106,25 +106,25 @@ print(model.summary())
 ![](assets/MadMen.png)
 
 ## What do users want?
-1. convenience
-2. correctness
 
 ## The Production Possibilities Frontier
-![](figures/ppf.svg)
+![](figures/ppf-1.svg)
 
-- Rust: static typing, memory safe
-- ChatGPT: convenient, may or may not be correct
+## The Production Possibilities Frontier
+![](figures/ppf-2.svg)
 
-## Good example: row-level `if`
-```stata
-replace distance = 5 if distance < 5
-```
+## The Production Possibilities Frontier
+![](figures/ppf-3.svg)
 
-## Bad example: implicit variable abbreviation:
-```stata
-summarize gdp_per_capita
-regress gdp population
-```
+## The Production Possibilities Frontier
+![](figures/ppf-4.svg)
+
+## The Production Possibilities Frontier
+![](figures/ppf-5.svg)
+
+## The Production Possibilities Frontier
+![](figures/ppf-6.svg)
+
 
 # Features of Kezdi.jl
 ##
@@ -372,8 +372,66 @@ julia> @collapse sum_terms = DNV(count_terms(text))
 
 
 # Roadmap
-## Statistics
-## Data wrangling
+## Roadmap
+### Statistics
+- Current dependency is FixedEffectModels.jl (@matthieugomez)
+- We will add support for nonlinear models (GLM.jl) with many fixed effects (GLFixedEffectModels.jl)
+- Checks against Stata edge cases (multicollinearity, missing values)
+- RegressionTables.jl
+- Wald testing
+
+### Data wrangling
+- Obvious next steps: `@merge`, `@append`, `@reshape`
+- Variable name handling
+- Performance improvements (**help needed**): CSV.jl, StatFiles.jl
+
 ## Programming convenience
+- Set risk tolerance for users (Preferences.jl?)
+- Allow for variable to be passed into `@with`
+```julia
+@with scalars(min_dist) df begin
+  @replace distance = min_dist @if distance < min_dist
+  for y = 2000:2020
+    @regress log(trade) log(distance) @if year == y, robust
+  end
+end
+```
 
 # Acknowledgements
+## Inspiration
+::: {.columns}
+:::: {.column}
+### Tidier.jl
+![](https://raw.githubusercontent.com/TidierOrg/Tidier.jl/main/docs/src/assets/Tidier_jl_logo.png){ width=30% }
+
+Tidyverse $\to$ Julia
+::::
+:::: {.column}
+### Douglass.jl
+Stata $\to$ Julia
+::::
+:::
+
+## Acknowledgements
+| **Who** | **What** |
+|-----|-------|
+| @bkamins | DataFrames.jl |
+| @matthieugomez | FixedEffectModels.jl |
+| @davidanthoff | StatFiles.jl |
+| @nalimilan | FreqTables.jl |
+
+## Why Kezdi?
+::: {.columns}
+:::: {.column}
+### Gábor Kézdi (1971-2021)
+![](assets/kezdigabor.jpg)
+
+kezdigabor.life
+::::
+:::: {.column}
+### 
+![](assets/gabors-data-analysis.png)
+
+gabors-data-analysis.com
+::::
+:::

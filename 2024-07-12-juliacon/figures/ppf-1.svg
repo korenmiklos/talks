@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="600"
+   height="400"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="ppf-1.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3">
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+    <linearGradient
+       id="a"
+       x1="16"
+       y1="2"
+       x2="16"
+       y2="30"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.4534932,0,0,2.4534932,199.09302,-59.906987)">
+      <stop
+         offset="0"
+         stop-color="#8aa7c0"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#3c6e8f"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.0468801"
+     inkscape:cx="253.1331"
+     inkscape:cy="159.99922"
+     inkscape:window-width="1304"
+     inkscape:window-height="782"
+     inkscape:window-x="0"
+     inkscape:window-y="37"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3" />
+  <!-- Background -->
+  <rect
+     width="100%"
+     height="100%"
+     fill="white"
+     id="rect1" />
+  <!-- Axes -->
+  <line
+     x1="50"
+     y1="350"
+     x2="550"
+     y2="350"
+     stroke="black"
+     id="line1"
+     style="stroke-width:2;stroke-dasharray:none;marker-mid:;stroke-dashoffset:0;marker-end:url(#ConcaveTriangle)" />
+  <line
+     x1="50"
+     y1="350"
+     x2="50"
+     y2="50"
+     stroke="black"
+     id="line2"
+     style="stroke-width:2;stroke-dasharray:none;marker-end:url(#ConcaveTriangle)" />
+  <!-- X axis label -->
+  <text
+     x="298.99277"
+     y="382.01447"
+     font-family="'Px Grotesk'"
+     font-size="28px"
+     text-anchor="middle"
+     id="convenience">convenience</text>
+  <!-- Y axis label -->
+  <text
+     x="-198.30508"
+     y="35.322304"
+     font-family="'Px Grotesk'"
+     font-size="28px"
+     text-anchor="middle"
+     transform="rotate(-90)"
+     id="correctness">correctness</text>
+  <!-- PPF curve -->
+</svg>
