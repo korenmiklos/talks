@@ -12,6 +12,25 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs3">
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
     <linearGradient
        id="a"
        x1="16"
@@ -39,9 +58,9 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.83447856"
-     inkscape:cx="487.13055"
-     inkscape:cy="236.67475"
+     inkscape:zoom="1.5681883"
+     inkscape:cx="320.43345"
+     inkscape:cy="187.47748"
      inkscape:window-width="1360"
      inkscape:window-height="782"
      inkscape:window-x="0"
@@ -124,7 +143,7 @@
      y2="350"
      stroke="black"
      id="line1"
-     style="stroke-width:2;stroke-dasharray:none" />
+     style="stroke-width:2;stroke-dasharray:none;marker-mid:;stroke-dashoffset:0;marker-end:url(#ConcaveTriangle)" />
   <line
      x1="50"
      y1="350"
@@ -132,7 +151,7 @@
      y2="50"
      stroke="black"
      id="line2"
-     style="stroke-width:2;stroke-dasharray:none" />
+     style="stroke-width:2;stroke-dasharray:none;marker-end:url(#ConcaveTriangle)" />
   <!-- X axis label -->
   <text
      x="298.99277"

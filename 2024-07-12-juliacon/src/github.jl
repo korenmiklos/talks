@@ -1,5 +1,19 @@
-using Kezdi
+using Kezdi, Plots
 
+# define functions
+marginals(df) = @with df begin
+    @collapse Stata = sum(Stata) MATLAB = sum(MATLAB) R = sum(R) Python = sum(Python) Fortran = sum(Fortran) C = sum(C) Julia = sum(Julia)
+    @list
+end
+
+horizontal(df) = bar(names(df), collect(df[1, :]), permute=(:x, :y), legend=false, ylabel="Count", title="Usage of programming languages")
+
+# init
+gr()
+plot_font = "Px Grotesk"
+default(fontfamily=plot_font,
+        linewidth=2, framestyle=:box, label=nothing, grid=false)
+# read data
 df = CSV.read("data/gh-list.csv", DataFrame)
 df.Cpp = df.var"C++"
 df.Csharp = df.var"C#"
@@ -23,13 +37,10 @@ println("Number of languages used")
     @tabulate n_lang
 end
 
-marginals(df) = @with df begin
-    @collapse Stata = sum(Stata) MATLAB = sum(MATLAB) R = sum(R) Python = sum(Python) Fortran = sum(Fortran) Julia = sum(Julia)
-    @list
-end
-
 println("Which languages are used at least once?")
-marginals(dummies)
+m = marginals(dummies)
+p = horizontal(m)
+savefig(p, "figures/languages.pdf")
 
 println("Which are used alone?")
 marginals(@with dummies @keep @if n_lang == 1)

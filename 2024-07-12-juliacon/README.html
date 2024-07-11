@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Miklós Koren">
-  <title>Kezdi.jl: Bridging Stata and Julia for economists</title>
+  <meta name="author" content="Geri A. Kiss">
+  <title>A data analysis package for economists</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -117,7 +118,14 @@
         logo.src = 'assets/logo.svg';
         logo.className = 'logo';
         titleSlide.insertBefore(logo, titleSlide.firstChild);
-      }
+      };
+      var slides = document.querySelectorAll('.reveal .slides section');
+      slides.forEach(function(slide) {
+        var footer = document.createElement('div');
+        footer.className = 'footer';
+        footer.innerHTML = '<a href="https://left-link.com" target="_blank">Left Link</a><a href="https://right-link.com" target="_blank" style="margin-left:auto;">Right Link</a>';
+        slide.appendChild(footer);
+      });
     });
   </script>
 </head>
@@ -126,9 +134,9 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Kezdi.jl: Bridging Stata and Julia for
-economists</h1>
+  <h1 class="title">A data analysis package for economists</h1>
   <p class="author">Miklós Koren</p>
+  <p class="author">Geri A. Kiss</p>
   <p class="date">JuliaCon 2024</p>
 </section>
 
@@ -139,8 +147,8 @@ economists</h1>
 <table>
 <thead>
 <tr class="header">
-<th>Job</th>
-<th>Place</th>
+<th><strong>Who</strong></th>
+<th><strong>Where</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -162,13 +170,13 @@ economists</h1>
 <table>
 <thead>
 <tr class="header">
-<th>Language</th>
-<th>Since</th>
+<th><strong>Language</strong></th>
+<th><strong>Since</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Stata</td>
+<td>Stata®</td>
 <td>1997</td>
 </tr>
 <tr class="even">
@@ -189,9 +197,9 @@ economists</h1>
 <h1>What do economists do?</h1>
 
 </section>
-<section id="evidence-from-357-replication-packages"
-class="slide level2">
-<h2>Evidence from 357 replication packages</h2>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><img data-src="figures/language_usage_chart.svg" /></p>
 </section>
 <section id="they-dont-use-julia" class="slide level2">
 <h2>They don’t use Julia</h2>
@@ -216,8 +224,23 @@ class="sourceCode stata"><code class="sourceCode stata"><span id="cb1-1"><a href
 </div><div class="column">
 <h3 id="vs">vs</h3>
 <div class="sourceCode" id="cb2"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df[df.distance <span class="op">&lt;</span> <span class="dv">5</span>].distance <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.log_distance <span class="op">=</span> log(df.distance)</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_stata(<span class="st">&quot;trade.dta&quot;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>df.loc[df[<span class="st">&#39;distance&#39;</span>] <span class="op">&lt;</span> <span class="dv">5</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;distance&#39;</span>] <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;log_trade&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;trade&#39;</span>].</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">apply</span>(math.log)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;log_distance&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;distance&#39;</span>].</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">apply</span>(math.log)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">&#39;log_trade ~ log_distance&#39;</span>, </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>df).</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    fit(cov_type<span class="op">=</span><span class="st">&#39;HC3&#39;</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(model.summary())</span></code></pre></div>
 </div>
 </div>
 </section>
@@ -225,20 +248,19 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 <h2>What commands do economists use?</h2>
 </section></section>
 <section>
-<section id="tradeoffs-in-user-interface-design"
-class="title-slide slide level1">
-<h1>Tradeoffs in user interface design</h1>
+<section id="what-do-users-want" class="title-slide slide level1">
+<h1>What do users want?</h1>
 
-</section>
-<section id="section" class="slide level2">
-<h2></h2>
-<p><img data-src="assets/standards.png" /></p>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
+<p><img data-src="assets/standards.png" /></p>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
 <p><img data-src="assets/MadMen.png" /></p>
 </section>
-<section id="what-do-users-want" class="slide level2">
+<section id="what-do-users-want-1" class="slide level2">
 <h2>What do users want?</h2>
 <ol type="1">
 <li>convenience</li>

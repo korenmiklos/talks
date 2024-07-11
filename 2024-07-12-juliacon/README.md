@@ -1,6 +1,8 @@
 ---
-title: "Kezdi.jl: Bridging Stata and Julia for economists"
-author: "Miklós Koren"
+title: "A data analysis package for economists"
+author: 
+    - Miklós Koren
+    - Geri A. Kiss
 date: JuliaCon 2024
 header-includes: |
   <style>
@@ -24,7 +26,14 @@ header-includes: |
         logo.src = 'assets/logo.svg';
         logo.className = 'logo';
         titleSlide.insertBefore(logo, titleSlide.firstChild);
-      }
+      };
+      var slides = document.querySelectorAll('.reveal .slides section');
+      slides.forEach(function(slide) {
+        var footer = document.createElement('div');
+        footer.className = 'footer';
+        footer.innerHTML = '<a href="https://left-link.com" target="_blank">Left Link</a><a href="https://right-link.com" target="_blank" style="margin-left:auto;">Right Link</a>';
+        slide.appendChild(footer);
+      });
     });
   </script>
 ---
@@ -32,17 +41,17 @@ header-includes: |
 ## Who am I?
 ::: {.columns}
 ::: {.column}
-| Job | Place |
+| **Who** | **Where** |
 |-----|-------|
 | Economist | ceu.edu |
 | Data editor | restud.com |
 | Software Developer | thnk.ng |
-
 :::
+
 ::: {.column}
-| Language | Since |
+| **Language** | **Since** |
 |----------|-------|
-| Stata    | 1997  |
+| Stata®    | 1997  |
 | Python   | 2003  |
 | Julia    | 2015  |
 :::
@@ -51,7 +60,8 @@ header-includes: |
 
 # What do economists do?
 
-## Evidence from 357 replication packages
+##
+![](figures/language_usage_chart.svg)
 
 ## They don't use Julia
 
@@ -75,15 +85,30 @@ regress log_trade log_distance, ↩
 ::: {.column}
 ### vs
 ```python
-df[df.distance < 5].distance = 5
-df.log_distance = log(df.distance)
+import pandas as pd
+import math
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+df = pd.read_stata("trade.dta")
+df.loc[df['distance'] < 5, 
+    'distance'] = 5
+df['log_trade'] = df['trade'].
+    apply(math.log)
+df['log_distance'] = df['distance'].
+apply(math.log)
+
+model = smf.ols('log_trade ~ log_distance', 
+    data=df).
+    fit(cov_type='HC3')
+print(model.summary())
 ```
 :::
 :::
 
 ## What commands do economists use?
 
-# Tradeoffs in user interface design
+# What do users want?
 
 ## 
 ![](assets/standards.png)
