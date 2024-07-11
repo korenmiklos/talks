@@ -137,22 +137,38 @@ regress gdp population
 
 ## Command syntax is $\approx$exactly like in Stata
 ::: {.columns}
-:::: {.column width="34%"}
+:::: {.column}
+### Stata
+```stata
+use "trade.dta"
+
+replace distance = 5 if distance < 5
+generate log_trade = log(trade)
+generate log_distance = log(distance)
+
+regress log_trade log_distance, robust
+```
+::::
+:::: {.column}
+### Kezdi.jl
 ```julia
 @use "trade.dta"
+
 @replace distance = 5 @if distance < 5
 @generate log_trade = log(trade)
 @generate log_distance = log(distance)
+
 @regress log_trade log_distance, robust
 ```
 ::::
-:::: {.column width="66%"}
-### Notes
-1. Commands are macros
+:::
+
+:::{.fragment}
+### Note
+1. Every command is a macro. So is row-level `@if`.
 2. Variable names refer to column names in the *default* DataFrame
 3. Function calls are vectorized automatically
 4. Options are given with `, option`
-::::
 :::
 
 ## Every command can operate on a subset of rows

@@ -295,47 +295,61 @@ class="slide level2">
 <h2>Command syntax is <span class="math inline">≈</span>exactly like in
 Stata</h2>
 <div class="columns">
-<div class="column" style="width:34%;">
+<div class="column">
+<h3 id="stata-1">Stata</h3>
 <div class="sourceCode" id="cb5"><pre
-class="sourceCode julia"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@use</span> <span class="st">&quot;trade.dta&quot;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@replace</span> distance <span class="op">=</span> <span class="fl">5</span> <span class="pp">@if</span> distance <span class="op">&lt;</span> <span class="fl">5</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@generate</span> log_trade <span class="op">=</span> <span class="fu">log</span>(trade)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@generate</span> log_distance <span class="op">=</span> <span class="fu">log</span>(distance)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@regress</span> log_trade log_distance, robust</span></code></pre></div>
-</div><div class="column" style="width:66%;">
-<h3 id="notes">Notes</h3>
+class="sourceCode stata"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> <span class="st">&quot;trade.dta&quot;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">replace</span> distance = 5 <span class="kw">if</span> distance &lt; 5</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">generate</span> log_trade = <span class="fu">log</span>(trade)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">generate</span> log_distance = <span class="fu">log</span>(distance)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">regress</span> log_trade log_distance, <span class="kw">robust</span></span></code></pre></div>
+</div><div class="column">
+<h3 id="kezdi.jl">Kezdi.jl</h3>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@use</span> <span class="st">&quot;trade.dta&quot;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@replace</span> distance <span class="op">=</span> <span class="fl">5</span> <span class="pp">@if</span> distance <span class="op">&lt;</span> <span class="fl">5</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="pp">@generate</span> log_trade <span class="op">=</span> <span class="fu">log</span>(trade)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="pp">@generate</span> log_distance <span class="op">=</span> <span class="fu">log</span>(distance)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="pp">@regress</span> log_trade log_distance, robust</span></code></pre></div>
+</div>
+</div>
+<div class="fragment">
+<h3 id="note">Note</h3>
 <ol type="1">
-<li>Commands are macros</li>
+<li>Every command is a macro. So is row-level <code>@if</code>.</li>
 <li>Variable names refer to column names in the <em>default</em>
 DataFrame</li>
 <li>Function calls are vectorized automatically</li>
 <li>Options are given with <code>, option</code></li>
 </ol>
 </div>
-</div>
 </section>
 <section id="every-command-can-operate-on-a-subset-of-rows"
 class="slide level2">
 <h2>Every command can operate on a subset of rows</h2>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode julia"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@keep</span> <span class="pp">@if</span> !<span class="fu">ismissing</span>(distance)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@replace</span> distance <span class="op">=</span> <span class="fl">5</span> <span class="pp">@if</span> distance <span class="op">&lt;</span> <span class="fl">5</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@regress</span> log_trade log_distance <span class="pp">@if</span> exporter_country <span class="op">!=</span> importer_country, robust</span></code></pre></div>
-<h3 id="notes-1">Notes</h3>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@keep</span> <span class="pp">@if</span> !<span class="fu">ismissing</span>(distance)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@replace</span> distance <span class="op">=</span> <span class="fl">5</span> <span class="pp">@if</span> distance <span class="op">&lt;</span> <span class="fl">5</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="pp">@regress</span> log_trade log_distance <span class="pp">@if</span> exporter_country <span class="op">!=</span> importer_country, robust</span></code></pre></div>
+<h3 id="notes">Notes</h3>
 </section>
 <section id="handling-missing-values" class="slide level2">
 <h2>Handling missing values</h2>
 <p>Given a DataFrame</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode julia"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a> Row │ x</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │       <span class="fl">1</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>   <span class="fl">2</span> │       <span class="fl">2</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span> │ <span class="cn">missing</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>   <span class="fl">4</span> │       <span class="fl">4</span></span></code></pre></div>
-<p>can you guess the output of</p>
 <div class="sourceCode" id="cb8"><pre
-class="sourceCode julia"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@collapse</span> mean_x <span class="op">=</span> <span class="fu">mean</span>(x)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@keep</span> <span class="pp">@if</span> x <span class="op">&lt;</span> <span class="fl">3</span></span></code></pre></div>
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a> Row │ x</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>   <span class="fl">1</span> │       <span class="fl">1</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>   <span class="fl">2</span> │       <span class="fl">2</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>   <span class="fl">3</span> │ <span class="cn">missing</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>   <span class="fl">4</span> │       <span class="fl">4</span></span></code></pre></div>
+<p>can you guess the output of</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode julia"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">@collapse</span> mean_x <span class="op">=</span> <span class="fu">mean</span>(x)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="pp">@keep</span> <span class="pp">@if</span> x <span class="op">&lt;</span> <span class="fl">3</span></span></code></pre></div>
 </section>
 <section id="proper-data-structures" class="slide level2">
 <h2>Proper data structures</h2>
