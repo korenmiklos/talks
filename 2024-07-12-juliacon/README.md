@@ -140,19 +140,6 @@ print(model.summary())
 
 
 # Features of Kezdi.jl
-##
-```julia
-pkg> add Kezdi
-   Resolving package versions...
-   Installed Kezdi ─ v0.4.6
-```
-
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://codedthinking.github.io/Kezdi.jl/stable/)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://codedthinking.github.io/Kezdi.jl/dev/)
-[![Build Status](https://github.com/codedthinking/Kezdi.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/codedthinking/Kezdi.jl/actions/workflows/CI.yml?query=branch%3Amain)
-[![Coverage](https://codecov.io/gh/codedthinking/Kezdi.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/codedthinking/Kezdi.jl)
-
-
 ## Command syntax is $\approx$exactly like in Stata
 ::: {.columns}
 :::: {.column}
@@ -241,6 +228,7 @@ Use the former for interactive exploration in the REPL,<br> the latter for scrip
 :::
 :::
 
+## Handling missing values
 ## Handling missing values
 ::: {.columns}
 :::: {.column-wide}
@@ -385,25 +373,37 @@ julia> @collapse sum_terms = DNV(count_terms(text))
 
 
 # Roadmap
+##
+```julia
+pkg> add Kezdi
+   Resolving package versions...
+   Installed Kezdi ─ v0.4.6
+```
+
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://codedthinking.github.io/Kezdi.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://codedthinking.github.io/Kezdi.jl/dev/)
+[![Build Status](https://github.com/codedthinking/Kezdi.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/codedthinking/Kezdi.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Coverage](https://codecov.io/gh/codedthinking/Kezdi.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/codedthinking/Kezdi.jl)
+
 ## Roadmap
 ### Statistics
 - Current dependency is FixedEffectModels.jl (@matthieugomez)
 - We will add support for nonlinear models (GLM.jl) with many fixed effects (GLFixedEffectModels.jl)
 - Checks against Stata edge cases (multicollinearity, missing values)
-- RegressionTables.jl
+- RegressionTables.jl or SummaryTables.jl for output formatting
 - Wald testing
 
 ### Data wrangling
 - Obvious next steps: `@merge`, `@append`, `@reshape`
 - Annotating variable names and values: `@label`, `@encode`
 - Variable name handling
-- Performance improvements (**help needed**): CSV.jl, StatFiles.jl
+- Performance improvements (**help needed**): CSV.jl/CSVFiles.jl, StatFiles.jl
 
 ## Programming convenience
 - Set risk tolerance for users (Preferences.jl?)
 - Allow for variable to be passed into `@with`
 ```julia
-@with scalars(min_dist) df begin
+@with scalars(min_dist, y) df begin
   @replace distance = min_dist @if distance < min_dist
   for y = 2000:2020
     @regress log(trade) log(distance) @if year == y, robust
@@ -452,7 +452,7 @@ gabors-data-analysis.com
 ::::
 :::
 
-## Thanks
+## Feedback and contributions welcome
 @korenmiklos
 
 @gergeleyattilakiss
