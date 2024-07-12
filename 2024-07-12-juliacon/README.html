@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Miklós Koren">
-  <meta name="author" content="Geri A. Kiss">
+  <meta name="author" content="Miklós Koren (@korenmiklos)">
+  <meta name="author" content="Gergely Attila Kiss (@gergelyattilakiss)">
   <title>A data analysis package for economists</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -128,33 +128,35 @@
 
 <section id="title-slide">
   <h1 class="title">A data analysis package for economists</h1>
-  <p class="author">Miklós Koren</p>
-  <p class="author">Geri A. Kiss</p>
+  <p class="author">Miklós Koren (<span class="citation"
+data-cites="korenmiklos">@korenmiklos</span>)</p>
+  <p class="author">Gergely Attila Kiss (<span class="citation"
+data-cites="gergelyattilakiss">@gergelyattilakiss</span>)</p>
   <p class="date">JuliaCon 2024</p>
 </section>
 
 <section id="who-am-i" class="slide level2">
 <h2>Who am I?</h2>
+<h3
+id="help-economists-adopt-computing-best-practices-to-maximize-their-scientific-impact">Help
+economists adopt computing best practices to maximize their scientific
+impact</h3>
 <div class="columns">
 <div class="column" style="width:60%;">
 <table>
 <thead>
 <tr class="header">
-<th><strong>Who</strong></th>
-<th><strong>Where</strong></th>
+<th>Economist</th>
+<th>ceu.edu</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Economist</td>
-<td>ceu.edu</td>
-</tr>
-<tr class="even">
 <td>Data editor</td>
 <td>restud.com</td>
 </tr>
-<tr class="odd">
-<td>Software Developer</td>
+<tr class="even">
+<td>Developer</td>
 <td>thnk.ng</td>
 </tr>
 </tbody>
@@ -163,20 +165,16 @@
 <table>
 <thead>
 <tr class="header">
-<th><strong>Language</strong></th>
-<th><strong>Since</strong></th>
+<th>Stata®</th>
+<th>1997</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Stata®</td>
-<td>1997</td>
-</tr>
-<tr class="even">
 <td>Python</td>
 <td>2003</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Julia</td>
 <td>2015</td>
 </tr>
@@ -194,8 +192,8 @@
 <h2>They don’t use Julia</h2>
 <p><img data-src="figures/languages.svg" /></p>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="aspirations" class="slide level2">
+<h2>Aspirations</h2>
 <p><img data-src="figures/languages-MATLAB.svg" /></p>
 </section>
 <section id="what-is-stata" class="slide level2">
@@ -231,8 +229,59 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 </div>
 </div>
 </section>
-<section id="what-commands-do-economists-use" class="slide level2">
-<h2>What commands do economists use?</h2>
+<section id="top-20-stata-commands" class="slide level2">
+<h2>Top 20 Stata commands</h2>
+<table>
+<thead>
+<tr class="header">
+<th>generate</th>
+<th>sort</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>use</td>
+<td>foreach</td>
+</tr>
+<tr class="even">
+<td>replace</td>
+<td>merge</td>
+</tr>
+<tr class="odd">
+<td>drop</td>
+<td>forvalues</td>
+</tr>
+<tr class="even">
+<td>keep</td>
+<td>label</td>
+</tr>
+<tr class="odd">
+<td>egen</td>
+<td>global</td>
+</tr>
+<tr class="even">
+<td>local</td>
+<td>bysort</td>
+</tr>
+<tr class="odd">
+<td>save</td>
+<td>if</td>
+</tr>
+<tr class="even">
+<td>summarize</td>
+<td>display</td>
+</tr>
+<tr class="odd">
+<td>rename</td>
+<td>matrix</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-vast-majority-of-commands-are-for-data-manipulation"
+class="slide level2">
+<h2>The vast majority of commands are for data manipulation</h2>
+<p><img data-src="figures/command_types.svg" /></p>
 </section></section>
 <section>
 <section id="tradeoffs-in-user-interface-design"
@@ -240,11 +289,11 @@ class="title-slide slide level1">
 <h1>Tradeoffs in user interface design</h1>
 
 </section>
-<section id="section-1" class="slide level2">
+<section id="section" class="slide level2">
 <h2></h2>
 <p><img data-src="assets/standards.png" /></p>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <p><img data-src="assets/MadMen.png" /></p>
 </section>
@@ -286,7 +335,7 @@ class="slide level2">
 <h1>Features of Kezdi.jl</h1>
 
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode julia"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pkg<span class="op">&gt;</span> add Kezdi</span>
@@ -545,6 +594,8 @@ values)</li>
 <ul>
 <li>Obvious next steps: <code>@merge</code>, <code>@append</code>,
 <code>@reshape</code></li>
+<li>Annotating variable names and values: <code>@label</code>,
+<code>@encode</code></li>
 <li>Variable name handling</li>
 <li>Performance improvements (<strong>help needed</strong>): CSV.jl,
 StatFiles.jl</li>
@@ -580,6 +631,7 @@ style="width:30.0%" /></p>
 <p>Tidyverse <span class="math inline">→</span> Julia</p>
 </div><div class="column">
 <h3 id="douglass.jl">Douglass.jl</h3>
+<p>Johannes Boehm</p>
 <p>Stata <span class="math inline">→</span> Julia</p>
 </div>
 </div>
@@ -620,14 +672,22 @@ data-cites="davidanthoff">@davidanthoff</span></td>
 <div class="columns">
 <div class="column">
 <h3 id="gábor-kézdi-1971-2021">Gábor Kézdi (1971-2021)</h3>
-<p><img data-src="assets/kezdigabor.jpg" /></p>
+<p><img data-src="assets/kezdi.jpg" /></p>
 <p>kezdigabor.life</p>
 </div><div class="column">
-<h3 id="section-4"></h3>
+<h3 id="section-3"></h3>
 <p><img data-src="assets/gabors-data-analysis.png" /></p>
 <p>gabors-data-analysis.com</p>
 </div>
 </div>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks</h2>
+<p><span class="citation"
+data-cites="korenmiklos">@korenmiklos</span></p>
+<p><span class="citation"
+data-cites="gergeleyattilakiss">@gergeleyattilakiss</span></p>
+<p>thnk.ng/kezdi.jl</p>
 </section></section>
     </div>
   </div>

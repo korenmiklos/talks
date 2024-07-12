@@ -59,6 +59,25 @@
          height="1600"
          id="rect1" />
     </clipPath>
+    <marker
+       style="overflow:visible"
+       id="ConcaveTriangle-0"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Concave triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path7-5" />
+    </marker>
   </defs>
   <path
      clip-path="url(#clip390)"
@@ -523,8 +542,13 @@
      id="circle55" />
   <path
      style="fill:none;stroke:#000000;stroke-width:8;stroke-opacity:1;marker-end:url(#ConcaveTriangle)"
-     d="M 1532.4624,1074.7579 C 1569.7569,813.6968 1268.0109,556.02618 1159.518,474.6565 1051.0251,393.28678 796.7448,240.71864 457.70446,200.0338"
+     d="M 1532.4624,1074.7579 C 1569.7569,813.6968 1268.0109,556.02618 1159.518,474.6565 1051.0251,393.28678 800.1352,261.06106 461.09486,220.37622"
      id="path55"
+     sodipodi:nodetypes="csc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:8;stroke-opacity:1;marker-end:url(#ConcaveTriangle-0)"
+     d="M 2187.9406,1277.5603 C 2232.0159,870.71187 1811.6059,613.04126 1536.9832,443.52108 1320.0358,309.60288 804.65605,202.80242 465.61565,162.11758"
+     id="path55-6"
      sodipodi:nodetypes="csc" />
   <text
      xml:space="preserve"
@@ -538,4 +562,16 @@
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Px Grotesk', sans-serif;-inkscape-font-specification:'Px Grotesk, sans-serif Bold';stroke-width:8"
        x="1238.9316"
        y="-272.67035">MacroModelling.jl</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:64px;font-family:'Px Grotesk', sans-serif;-inkscape-font-specification:'Px Grotesk, sans-serif Bold';text-anchor:middle;fill:#000000;fill-opacity:1"
+     x="1767.0284"
+     y="-601.41028"
+     id="text55-4"
+     transform="rotate(40)"><tspan
+       sodipodi:role="line"
+       id="tspan55-3"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Px Grotesk', sans-serif;-inkscape-font-specification:'Px Grotesk, sans-serif Bold';stroke-width:8"
+       x="1767.0284"
+       y="-601.41028">Kezdi.jl</tspan></text>
 </svg>

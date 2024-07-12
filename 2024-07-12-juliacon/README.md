@@ -1,8 +1,8 @@
 ---
 title: "A data analysis package for economists"
 author: 
-    - Miklós Koren
-    - Geri A. Kiss
+  - Miklós Koren (@korenmiklos)
+  - Gergely Attila Kiss (@gergelyattilakiss)
 date: JuliaCon 2024
 header-includes: |
   <style>
@@ -32,19 +32,18 @@ header-includes: |
 ---
 
 ## Who am I?
+### Help economists adopt computing best practices to maximize their scientific impact
 ::: {.columns}
 ::: {.column width="60%"}
-| **Who** | **Where** |
-|-----|-------|
 | Economist | ceu.edu |
+|-----|-------|
 | Data editor | restud.com |
-| Software Developer | thnk.ng |
+| Developer | thnk.ng |
 :::
 
 ::: {.fragment .column width="40%"}
-| **Language** | **Since** |
-|----------|-------|
 | Stata®    | 1997  |
+|----------|-------|
 | Python   | 2003  |
 | Julia    | 2015  |
 :::
@@ -56,7 +55,7 @@ header-includes: |
 ## They don't use Julia
 ![](figures/languages.svg)
 
-## 
+## Aspirations
 ![](figures/languages-MATLAB.svg)
 
 ## What is Stata?
@@ -94,7 +93,22 @@ print(model.summary())
 :::
 :::
 
-## What commands do economists use?
+## Top 20 Stata commands
+
+| generate  | sort      |
+|-----------|-----------|
+| use       | foreach   |
+| replace   | merge     |
+| drop      | forvalues |
+| keep      | label     |
+| egen      | global    |
+| local     | bysort    |
+| save      | if        |
+| summarize | display   |
+| rename    | matrix    |
+
+## The vast majority of commands are for data manipulation
+![](figures/command_types.svg)
 
 # Tradeoffs in user interface design
 
@@ -381,6 +395,7 @@ julia> @collapse sum_terms = DNV(count_terms(text))
 
 ### Data wrangling
 - Obvious next steps: `@merge`, `@append`, `@reshape`
+- Annotating variable names and values: `@label`, `@encode`
 - Variable name handling
 - Performance improvements (**help needed**): CSV.jl, StatFiles.jl
 
@@ -407,6 +422,8 @@ Tidyverse $\to$ Julia
 ::::
 :::: {.column}
 ### Douglass.jl
+Johannes Boehm
+
 Stata $\to$ Julia
 ::::
 :::
@@ -423,7 +440,7 @@ Stata $\to$ Julia
 ::: {.columns}
 :::: {.column}
 ### Gábor Kézdi (1971-2021)
-![](assets/kezdigabor.jpg)
+![](assets/kezdi.jpg)
 
 kezdigabor.life
 ::::
@@ -434,3 +451,10 @@ kezdigabor.life
 gabors-data-analysis.com
 ::::
 :::
+
+## Thanks
+@korenmiklos
+
+@gergeleyattilakiss
+
+thnk.ng/kezdi.jl
