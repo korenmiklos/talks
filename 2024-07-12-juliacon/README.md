@@ -53,12 +53,11 @@ header-includes: |
 
 # What do economists do?
 
-##
-![](figures/language_usage_chart.svg)
-
 ## They don't use Julia
+![](figures/languages.svg)
 
-## They use multiple languages
+## 
+![](figures/languages-MATLAB.svg)
 
 ## What is Stata?
 ::: {.columns}
