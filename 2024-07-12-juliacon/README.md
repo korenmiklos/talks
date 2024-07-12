@@ -93,20 +93,6 @@ print(model.summary())
 :::
 :::
 
-## Top 20 Stata commands
-
-| generate  | sort      |
-|-----------|-----------|
-| use       | foreach   |
-| replace   | merge     |
-| drop      | forvalues |
-| keep      | label     |
-| egen      | global    |
-| local     | bysort    |
-| save      | if        |
-| summarize | display   |
-| rename    | matrix    |
-
 ## The vast majority of commands are for data manipulation
 ![](figures/command_types.svg)
 
@@ -122,12 +108,6 @@ print(model.summary())
 
 ## The Production Possibilities Frontier
 ![](figures/ppf-1.svg)
-
-## The Production Possibilities Frontier
-![](figures/ppf-2.svg)
-
-## The Production Possibilities Frontier
-![](figures/ppf-3.svg)
 
 ## The Production Possibilities Frontier
 ![](figures/ppf-4.svg)
@@ -377,7 +357,7 @@ julia> @collapse sum_terms = DNV(count_terms(text))
 ```julia
 pkg> add Kezdi
    Resolving package versions...
-   Installed Kezdi ─ v0.4.6
+   Installed Kezdi ─ v0.4.7
 ```
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://codedthinking.github.io/Kezdi.jl/stable/)
@@ -452,6 +432,7 @@ gabors-data-analysis.com
 ::::
 :::
 
+# Feedback and contributions welcome
 ## Feedback and contributions welcome
 @korenmiklos
 
