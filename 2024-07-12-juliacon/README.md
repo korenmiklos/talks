@@ -4,31 +4,10 @@ author:
   - Miklós Koren (@korenmiklos)
   - Gergely Attila Kiss (@gergelyattilakiss)
 date: JuliaCon 2024
-header-includes: |
-  <style>
-    .title-slide {
-      position: relative;
-      text-align: center;
-    }
-    .title-slide .logo {
-      display: block;
-      margin: 0 auto;
-      width: 100px; /* Adjust as needed */
-      height: auto;
-      margin-bottom: 20px; /* Space between logo and title */
-    }
-  </style>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var titleSlide = document.querySelector('.reveal .slides section:first-child');
-      if (titleSlide) {
-        var logo = document.createElement('img');
-        logo.src = 'assets/logo.svg';
-        logo.className = 'logo';
-        titleSlide.insertBefore(logo, titleSlide.firstChild);
-      };
-    });
-  </script>
+format:
+  julia-html: default
+  julia-revealjs:
+    scrollable: true
 ---
 
 ## Who am I?
