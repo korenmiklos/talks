@@ -112,12 +112,6 @@ print(model.summary())
 ## The Production Possibilities Frontier
 ![](figures/ppf-4.svg)
 
-## The Production Possibilities Frontier
-![](figures/ppf-5.svg)
-
-## The Production Possibilities Frontier
-![](figures/ppf-6.svg)
-
 
 # Features of Kezdi.jl
 ## Command syntax is $\approx$exactly like in Stata
