@@ -6,7 +6,7 @@ aspectratio: 1610
 lang: en
 ---
 
-## My ERC credentials
+## My ERC history
 
 ### Proposals
 
@@ -17,16 +17,20 @@ Two successful and three unsuccessful proposals.
 On ERC Starting Grant panel 2020 and 2022. Expert reviewer for several proposals in other years.
 
 ## The process
-### B1: five-page summary
-- Reviewed by 3-4 generalists.
+### B1: five-page synopsis
+- Reviewed by 3-4 generalists on evaluation panel.
 - Evaluated in panel discussion.
 - 25-30% success rate.
 
-### B2: 15-page proposal
+### B2: 14-page proposal
 - **Only read if B1 has passed.**
-- Reviewed by, *in addition*, 3-4 specialists.
+- Reviewed by, *in addition*, 3-4 specialist external reviewers.
 - Evaluated in panel discussion after reviews and interview.
 - 40-50% success rate.
+
+### Interview
+- Present your proposal (online) in front of the panel.
+- Answer questions, typically from 3-4 panel members, also reflecting external reviews.
 
 ## What you can do
 1. Craft an exciting and coherent research plan.
