@@ -1,0 +1,37 @@
+
+\begingroup
+\centering
+\begin{tabular}{lccccccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{7}{c}{n\_downstream}\\
+   Model:                                                      & (1)           & (2)           & (3)            & (4)           & (5)            & (6)             & (7)\\  
+   \midrule
+   \emph{Variables}\\
+   two\_cities                                                 & 2.554$^{***}$ & 1.789$^{***}$ & 0.0605$^{**}$  & 1.737$^{***}$ & 1.702$^{***}$  & 1.677$^{***}$   & -0.8440$^{***}$\\   
+                                                               & (0.0322)      & (0.0262)      & (0.0271)       & (0.0568)      & (0.0558)       & (0.0624)        & (0.0951)\\   
+   n\_countries                                                &               & 1.314$^{***}$ & 0.4702$^{***}$ &               &                &                 &   \\   
+                                                               &               & (0.0442)      & (0.0428)       &               &                &                 &   \\   
+   avg\_ln\_distance                                           &               &               & 0.3840$^{***}$ &               &                &                 & 0.4023$^{***}$\\   
+                                                               &               &               & (0.0079)       &               &                &                 & (0.0255)\\   
+   log(lead\_sum\_other)                                       &               &               &                & 1.377$^{***}$ & 1.075$^{***}$  & 2.589$^{***}$   & 2.465$^{***}$\\   
+                                                               &               &               &                & (0.0502)      & (0.0419)       & (0.4211)        & (0.4253)\\   
+   log(follow\_sum\_other)                                     &               &               &                &               & 0.5891$^{***}$ & 2.227$^{***}$   & 2.039$^{***}$\\   
+                                                               &               &               &                &               & (0.0211)       & (0.4309)        & (0.4342)\\   
+   log(lead\_sum\_other) $\times$ log(follow\_sum\_other)      &               &               &                &               &                & -0.2528$^{***}$ & -0.2315$^{***}$\\   
+                                                               &               &               &                &               &                & (0.0603)        & (0.0606)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   lc                                                          & Yes           & Yes           & Yes            & Yes           & Yes            & Yes             & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                                                & 145,369       & 145,369       & 145,369        & 128,364       & 128,364        & 128,364         & 128,364\\  
+   Squared Correlation                                         & 0.00142       & 0.00221       & 0.00233        & 0.00675       & 0.00744        & 0.00902         & 0.01235\\  
+   Pseudo R$^2$                                                & 0.14506       & 0.17353       & 0.18752        & 0.30945       & 0.33954        & 0.34468         & 0.36593\\  
+   BIC                                                         & 267,997,137.8 & 259,074,291.6 & 254,689,660.3  & 140,527,046.2 & 134,404,412.8  & 133,358,745.7   & 129,033,501.1\\  
+   \midrule \midrule
+   \multicolumn{8}{l}{\emph{Clustered (lc) standard-errors in parentheses}}\\
+   \multicolumn{8}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+

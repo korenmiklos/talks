@@ -1,0 +1,31 @@
+
+\begingroup
+\centering
+\begin{tabular}{lcccc}
+   \tabularnewline \midrule \midrule
+   Dependent Variable: & \multicolumn{4}{c}{n\_downstream}\\
+   Model:                                                      & (1)           & (2)           & (3)            & (4)\\  
+   \midrule
+   \emph{Variables}\\
+   log(lead\_sum\_other)                                       & 1.443$^{***}$ &               & 1.119$^{***}$  & 2.774$^{***}$\\   
+                                                               & (0.0537)      &               & (0.0450)       & (0.4515)\\   
+   log(follow\_sum\_other)                                     &               & 1.030$^{***}$ & 0.6059$^{***}$ & 2.402$^{***}$\\   
+                                                               &               & (0.0355)      & (0.0206)       & (0.4605)\\   
+   log(lead\_sum\_other) $\times$ log(follow\_sum\_other)      &               &               &                & -0.2767$^{***}$\\   
+                                                               &               &               &                & (0.0646)\\   
+   \midrule
+   \emph{Fixed-effects}\\
+   lc                                                          & Yes           & Yes           & Yes            & Yes\\  
+   \midrule
+   \emph{Fit statistics}\\
+   Observations                                                & 128,364       & 128,364       & 128,364        & 128,364\\  
+   Squared Correlation                                         & 0.00580       & 0.00290       & 0.00629        & 0.00773\\  
+   Pseudo R$^2$                                                & 0.29091       & 0.23334       & 0.32185        & 0.32761\\  
+   BIC                                                         & 144,300,108.2 & 156,016,849.2 & 138,005,565.7  & 136,832,586.2\\  
+   \midrule \midrule
+   \multicolumn{5}{l}{\emph{Clustered (lc) standard-errors in parentheses}}\\
+   \multicolumn{5}{l}{\emph{Signif. Codes: ***: 0.01, **: 0.05, *: 0.1}}\\
+\end{tabular}
+\par\endgroup
+
+
