@@ -388,4 +388,4 @@ Estimate this with Poisson maximum likelihood.
 3. Spatial diversity is associated with higher quality of work.
 
 ## Get in touch
-@GaborBekes, @JulianHinz, @korenmiklos
+@GaborBekes, @JulianHinz, @korenmiklos, @lohmann_econ
