@@ -49,8 +49,34 @@ background-image: img/pasture.jpg
 ##
 ![](img/movies3.jpg)
 
+# CO2 emissions have not decoupled from economic growth
+##
+![](img/pollution1900.png)
 
----
+##
+![](img/pollution1972.png)
+
+##
+![](img/pollution2020.png)
+
+# No evidence of decoupling desirable outcomes, either
+##
+![](img/life1900.png)
+
+##
+![](img/life1972.png)
+
+##
+![](img/life2020.png)
+
+# A case of a global, catastrophic event
+
+Covid response:
+- stay at home
+- wear a mask
+- get vaccinated
+
+
 # Credits
 
 Photos by <a href="https://unsplash.com/@illiyapresents?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Illiya Vjestica</a>, <a href="https://unsplash.com/@cesiraalvarado?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Cesira Alvarado</a>, <a href="https://unsplash.com/@pray4bokeh?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Bruno Guerrero</a>, and  <a href="https://unsplash.com/@mahrous_houses?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Mahrous Houses</a> on <a href="https://unsplash.com/photos/black-flat-screen-tv-turned-on-near-brown-brick-wall-GHX68AmE1gQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
