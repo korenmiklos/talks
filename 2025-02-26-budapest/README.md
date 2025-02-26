@@ -78,3 +78,19 @@ GDP per worker over time
 
 # Ongoing research
 
+## Expatriate and Local CEOs: The Role of General Skills (Koren and Telegdy)
+![](fig/01-expat.png)
+
+## Are Good Managers Scarce? Evidence from Hungarian Transition (Koren and Orbán)
+![](fig/02-babyboom.png)
+
+## Communist Era Managers in Modern Times: A Comparison of Management Skills Across Generations (Kiss and Koren)
+![](fig/05-wms.png)
+
+## The Value of International Experience: Managerial Talent and Firm Performance (de Pirro, Koren, Laki)
+![](fig/03-foreign-experience.png)
+
+## Demography of Entrepreneurs: Entry, Exit, and Population Aging (Koren, Orbán, Tóth)
+![](fig/03-demographics.png)
+
+# https://macromanagers.eu
