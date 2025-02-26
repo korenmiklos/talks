@@ -63,3 +63,6 @@ GDP per worker over time
 
 ## But foreign firms grow faster
 ![](fig/fig4b.png)
+
+# Ongoing research
+
