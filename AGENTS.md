@@ -2,6 +2,128 @@
 
 This document provides comprehensive rules and patterns for creating academic presentation slides from manuscript text and research outputs (tables and figures). It codifies the conventions used across presentations in this repository to enable consistent, high-quality slide creation by both humans and AI agents.
 
+## Automated Slide Creation from GitHub Repository
+
+### Command Format
+When the user writes:
+```
+create slides from <github-url> for <place> at <date>
+```
+
+### Workflow Steps
+
+1. **Ask for presentation duration FIRST**
+   - Query: "How long should the presentation be (in minutes)?"
+   - Plan for approximately 1 slide per minute
+   - Adjust content depth based on duration:
+     - 5-10 minutes: Key findings only
+     - 15-20 minutes: Standard seminar
+     - 30-45 minutes: Full research presentation
+     - 60+ minutes: Detailed workshop/job talk
+
+2. **Create folder structure**
+   - Parse date to ISO format (YYYY-MM-DD)
+   - Clean venue name (lowercase, hyphens for spaces)
+   - Create folder: `YYYY-MM-DD-venue/`
+   - Create subfolders: `figures/`, `tables/`, `images/`
+
+3. **Clone and explore repository**
+   ```bash
+   git clone <github-url> /tmp/repo_temp
+   cd /tmp/repo_temp
+   ```
+   
+4. **Locate and read manuscript**
+   - Check these locations in order:
+     - `text/**/*.tex`, `text/**/*.md`, `text/**/*.typ`
+     - `output/**/*.tex`, `output/**/*.md`, `output/**/*.pdf`
+     - `paper/**/*.tex`, `manuscript/**/*.tex`
+     - Root directory `*.tex`, `*.md`
+   - Extract: title, authors, abstract, sections
+
+5. **Collect research outputs**
+   - Tables: Look for `output/**/*.tex`, `tables/**/*.tex`
+   - Figures: Look for `output/**/*.pdf`, `output/**/*.png`, `figures/*`
+   - Copy relevant files to presentation folder
+
+6. **Generate slide structure**
+   Based on presentation length:
+   - **5-10 min**: Motivation, Research Question, Data, Main Result, Conclusion
+   - **15-20 min**: Add Literature, Methods, 2-3 Results slides
+   - **30-45 min**: Full structure with robustness, mechanisms
+   - **60+ min**: Include appendix slides, detailed model
+
+7. **Write README.md**
+   - Create YAML header with extracted metadata
+   - Follow semantic templates based on duration
+   - Apply language style rules (terse, active, declarative)
+   - Link copied figures/tables with relative paths
+
+8. **Test build with Makefile**
+   ```bash
+   make
+   # Verify that PDF is generated without errors
+   # Check that all figures/tables render correctly
+   # Ensure PDF file size is reasonable (<10MB)
+   ```
+
+9. **Commit entire presentation folder**
+   ```bash
+   git add YYYY-MM-DD-venue/
+   git commit -m "Add presentation for [venue] on [date]"
+   ```
+   - Important: Commit the entire subfolder including:
+     - README.md (source)
+     - README.pdf (generated output)
+     - All figures/ and tables/ (frozen versions)
+   - This ensures presentation is self-contained and reproducible
+
+10. **Clean up temporary files**
+    ```bash
+    rm -rf /tmp/repo_temp
+    ```
+
+### Example Implementation
+
+When user writes: `create slides from https://github.com/user/paper for berlin at 2025-03-29`
+
+1. Ask: "How long should the presentation be (in minutes)?"
+2. User responds: "20 minutes"
+3. Create folder: `2025-03-29-berlin/`
+4. Clone repo, find manuscript in `text/paper.tex`
+5. Find 3 tables in `output/`, 5 figures in `output/`
+6. Generate 20-slide presentation following 20-minute template
+7. Write to `2025-03-29-berlin/README.md`
+8. Test build: `make` to generate PDF
+9. Verify PDF renders correctly with all figures/tables
+10. Commit entire `2025-03-29-berlin/` folder with all assets
+11. Clean up temporary files
+
+### Content Selection by Duration
+
+| Duration | Slides | Content Focus |
+|----------|--------|---------------|
+| 5 min    | 5-6    | Problem, method, main result |
+| 10 min   | 10-12  | + data description, policy implications |
+| 20 min   | 18-22  | + literature, 2-3 results, mechanisms |
+| 30 min   | 28-32  | + model details, robustness |
+| 45 min   | 40-50  | + heterogeneity, extensions |
+| 60 min   | 55-65  | Full paper with appendix |
+
+### Automatic Content Prioritization
+
+For shorter presentations, prioritize:
+1. Most significant result (largest effect size or smallest p-value)
+2. Main identification strategy figure/table
+3. Most policy-relevant finding
+4. Clearest mechanism evidence
+
+Skip these for short talks:
+- Detailed literature review
+- Multiple robustness checks
+- Technical derivations
+- Minor extensions
+
 ## Software Requirements
 
 ### Core Tools
@@ -505,3 +627,47 @@ X → [intermediate] → Y
 ```
 
 This comprehensive guide ensures consistent, professional slide creation across all presentations in the repository.
+
+## Automated Workflow Example
+
+### Sample Session
+```
+User: create slides from https://github.com/korenmiklos/expat-analysis for cambridge at 2025-04-15
+Assistant: How long should the presentation be (in minutes)?
+User: 30 minutes
+Assistant: Creating 30-minute presentation for Cambridge on April 15, 2025...
+
+[Creates folder 2025-04-15-cambridge/]
+[Clones repository]
+[Finds manuscript in text/expat-paper.tex]
+[Copies 4 tables and 6 figures to presentation folder]
+[Generates 30 slides following research presentation template]
+[Writes README.md with proper YAML header and content]
+[Cleans up temporary files]
+
+Created presentation in 2025-04-15-cambridge/README.md with 30 slides.
+
+Testing build...
+[Runs make to generate PDF]
+[Verifies all figures and tables render correctly]
+PDF generated successfully: 2025-04-15-cambridge/README.pdf (3.2MB)
+
+Committing presentation folder...
+[git add 2025-04-15-cambridge/]
+[git commit -m "Add Cambridge presentation for April 15, 2025"]
+
+Presentation ready! The entire folder has been committed with all assets frozen.
+```
+
+### Key Implementation Notes
+
+1. **Always ask for duration first** - This determines the entire structure
+2. **Use ISO date format** - YYYY-MM-DD for folder names
+3. **Clean venue names** - lowercase, replace spaces with hyphens
+4. **Copy don't link** - Copy figures/tables to presentation folder for portability
+5. **Test before committing** - Run `make` to ensure PDF builds without errors
+6. **Commit everything** - Include source (README.md), output (README.pdf), and all assets (figures/, tables/)
+7. **Freeze versions** - Committing copies ensures presentation remains reproducible even if source repo changes
+8. **Clean up after** - Remove cloned repository from temp
+
+This automated workflow enables rapid slide creation while maintaining quality and consistency.
