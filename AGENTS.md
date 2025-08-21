@@ -671,3 +671,60 @@ Presentation ready! The entire folder has been committed with all assets frozen.
 8. **Clean up after** - Remove cloned repository from temp
 
 This automated workflow enables rapid slide creation while maintaining quality and consistency.
+
+## Character Encoding and LaTeX Compatibility
+
+### Avoid Problematic Unicode Characters
+When creating slides, avoid using Unicode characters that may not render properly in LaTeX/pdflatex:
+
+#### Characters to Avoid and Their Replacements
+- `≠` → Use "is not equal to" or "differs from"
+- `≤` → Use `$\leq$` in math mode or "less than or equal to" in text
+- `≥` → Use `$\geq$` in math mode or "greater than or equal to" in text
+- `→` → Use `$\rightarrow$` in math mode or "->" in text (though → often works)
+- `×` → Use `$\times$` in math mode or "x" in text
+- `α, β, γ` etc. → Use `$\alpha$`, `$\beta$`, `$\gamma$` in math mode
+- Smart quotes `"` `"` → Use straight quotes `"` or LaTeX quotes `` ` ` '' and ` ' '
+- Em dash `—` → Use `---` for LaTeX em dash
+- Bullet `•` → Use markdown `-` for bullets
+
+#### Safe Alternatives
+- Use LaTeX math mode for all mathematical symbols
+- Use ASCII characters when possible
+- Test build before committing to catch encoding issues
+
+### Repository Location Considerations
+
+When cloning external repositories:
+- Clone to a subdirectory within the current working directory (e.g., `temp_repo/`)
+- Avoid using system temp directories like `/tmp/` which may have access restrictions
+- Always clean up cloned repositories after use with `rm -rf temp_repo/`
+
+### Working with Multiple Authors
+
+For presentations with multiple authors:
+- Use YAML list format for authors with affiliations
+- Include full institutional names in parentheses
+- Example:
+```yaml
+author: 
+    - Name1 Surname1 (Institution1, Institution2)
+    - Name2 Surname2 (Institution3)
+```
+
+### Handling Large Presentations (45+ minutes)
+
+For longer presentations:
+- Include section dividers using H1 headers (`#`) 
+- Add an appendix section for technical details
+- Consider creating a roadmap slide early on
+- Use `\pause` commands sparingly for reveals
+- Include more robustness and mechanism slides
+- Add detailed methodology sections
+
+### Build System Notes
+
+- Use `pandoc` directly with appropriate flags rather than relying on Make rules that may not exist
+- Standard build command: `pandoc README.md -t beamer --pdf-engine=pdflatex --slide-level 2 -H ../preamble-slides.tex -o README.pdf`
+- The `--slide-level 2` flag is crucial for proper slide breaks at H2 headers
+- Always reference the shared `preamble-slides.tex` from parent directory
