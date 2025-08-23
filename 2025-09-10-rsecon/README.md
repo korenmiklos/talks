@@ -1,7 +1,9 @@
 ---
 title: "BEAD: Reproducible Computational Research Made Simple"
-author: Miklós Koren (Central European University)
-date: RSEcon, September 11, 2025
+author: 
+    - Miklós Koren (Central European University)
+    - Krisztián Fekete (Central European University)
+date: RSEcon, September 10, 2025^[This project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No 313164). The views expressed are those of the authors and do not necessarily reflect those of the ERC or the European Commission.]
 aspectratio: 169
 lang: en
 ---
@@ -220,6 +222,8 @@ Questions?
 ### Contact
 - Web: [bead.zip](https://codedthinking.github.io/bead.zip)
 - GitHub: [github.com/codedthinking/bead.zip](https://github.com/codedthinking/bead.zip)
+
+![](images/erc-logo.png){ width=20% }
 
 ## References
 
