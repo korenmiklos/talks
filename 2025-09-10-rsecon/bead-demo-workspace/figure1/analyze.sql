@@ -1,19 +1,27 @@
--- Simple ASCII visualization of GDP vs Life Expectancy relationship
--- Using bar function for visualization
+-- Analysis: GDP per capita vs Life Expectancy
+-- Join the two datasets and create ASCII visualization
 
-WITH data AS (
+WITH joined_data AS (
     SELECT 
-        'USA' as country, 69287.5 as gdp_pc, 76.3 as life_exp
-    UNION ALL SELECT 'Germany', 50801.8, 81.3
-    UNION ALL SELECT 'UK', 47334.4, 81.3
-    UNION ALL SELECT 'China', 12556.3, 77.1
-    UNION ALL SELECT 'World', 12236.6, 71.0
-    UNION ALL SELECT 'India', 2256.6, 69.7
+        l.Country,
+        l.Year,
+        l.Life_expectancy,
+        g.GDP_per_capita_USD
+    FROM 
+        read_csv_auto('input/life-expectancy/life_expectancy.csv') l
+    INNER JOIN 
+        read_csv_auto('input/gdp-per-capita/gdp_per_capita.csv') g
+    ON 
+        l.Country = g.Country 
+        AND l.Year = g.Year
+    WHERE 
+        l.Year = 2021  -- Focus on most recent complete year
+    ORDER BY 
+        g.GDP_per_capita_USD DESC
 )
 SELECT 
-    printf('%-10s', country) as Country,
-    printf('$%7.0f', gdp_pc) as "GDP/capita",
-    printf('%4.1f', life_exp) as "Life Exp",
-    bar(life_exp, 60, 85, 25) as "Life Expectancy Chart"
-FROM data
-ORDER BY gdp_pc DESC;
+    printf('%-15s', Country) as Country,
+    printf('$%8.0f', GDP_per_capita_USD) as "GDP/capita",
+    printf('%5.1f', Life_expectancy) as "Life Exp",
+    bar(Life_expectancy, 65, 85, 30) as "Life Expectancy (65-85 years)"
+FROM joined_data;

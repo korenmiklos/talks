@@ -135,7 +135,120 @@ bead save results
 
 ## Demo Time
 
-Christian will now demonstrate BEAD in action...
+Let's see BEAD in action with a real example...
+
+## Demo Part 1: Create Analysis with Two Data Sources
+
+```bash
+$ bead new figure1
+Created "figure1"
+
+$ cd figure1
+$ bead input add life-expectancy
+Loading new data to life-expectancy ... Done
+
+$ bead input add gdp-per-capita  
+Loading new data to gdp-per-capita ... Done
+```
+
+## Demo Part 2: Workspace Structure
+
+```bash
+$ ls -la
+drwxr-xr-x  .bead-meta     # Metadata and provenance
+dr-xr-xr-x  input/         # Read-only input data
+drwxr-xr-x  output/        # Your results go here
+drwxr-xr-x  temp/          # Temporary files
+```
+
+Input folder is **read-only** - can't accidentally modify source data!
+
+## Demo Part 3: Process Data with SQL
+
+```bash
+$ cat > analyze.sql << 'EOF'
+-- Join GDP and life expectancy data
+WITH joined_data AS (
+    SELECT l.Country, l.Year, l.Life_expectancy,
+           g.GDP_per_capita_USD
+    FROM read_csv_auto('input/life-expectancy/life_expectancy.csv') l
+    JOIN read_csv_auto('input/gdp-per-capita/gdp_per_capita.csv') g
+    ON l.Country = g.Country AND l.Year = g.Year
+    WHERE l.Year = 2021
+)
+SELECT Country, GDP_per_capita_USD, Life_expectancy,
+       bar(Life_expectancy, 65, 85, 30) as Chart
+FROM joined_data ORDER BY GDP_per_capita_USD DESC;
+EOF
+```
+
+## Demo Part 4: Run Analysis
+
+```bash
+$ duckdb < analyze.sql
++----------------+------------+----------+--------------------------------+
+|    Country     | GDP/capita | Life Exp | Life Expectancy (65-85 years) |
++----------------+------------+----------+--------------------------------+
+| United States  | $   69288  |  76.3    | ##################             |
+| Germany        | $   50802  |  81.3    | ########################       |
+| United Kingdom | $   47334  |  81.3    | ########################       |
+| China          | $   12556  |  77.1    | ###################            |
+| World          | $   12237  |  71.0    | #########                      |
+| India          | $    2257  |  69.7    | #######                        |
++----------------+------------+----------+--------------------------------+
+```
+
+## Demo Part 5: Save as BEAD
+
+```bash
+$ duckdb < analyze.sql > output/figure1.txt
+$ bead save
+Successfully stored bead at figure1_20250825T184236645231+0200.zip
+```
+
+Every bead has:
+- Unique timestamp
+- Complete provenance
+- All code and results
+
+## Demo Part 6: Data Update Scenario
+
+Editor asks: "Please update with 2022-2023 data"
+
+```bash
+$ cd ../life-expectancy
+$ echo "World,2022,71.3" >> output/life_expectancy.csv
+$ echo "World,2023,71.5" >> output/life_expectancy.csv
+$ bead save
+Successfully stored bead at life-expectancy_20250825T184416025424+0200.zip
+```
+
+## Demo Part 7: Clean Up Workspace
+
+```bash
+$ bead zap
+Deleted workspace life-expectancy
+
+$ ls
+figure1/    gdp-per-capita/    bead-box/
+```
+
+Workspace gone but bead preserved!
+
+## Demo Part 8: Update Analysis
+
+```bash
+$ cd figure1
+$ bead input update life-expectancy
+Removing current data from life-expectancy
+Loading new data to life-expectancy ... Done
+
+$ duckdb < analyze.sql > output/figure1.txt
+$ bead save
+Successfully stored bead at figure1_20250825T184443082049+0200.zip
+```
+
+Analysis automatically uses latest data version!
 
 ## How BEAD Solves Our Problems
 

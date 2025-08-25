@@ -1,15 +1,15 @@
 {
     "inputs": {
         "gdp-per-capita": {
-            "content_id": "cbd30b49aa9182d75b49d01d758e6c880b64c080d0c5e8993ab63ddc92b9fb2ec799c91cfa0efc78561dfdf81c34e51d1af57732de95ca2a451912aa019913e6",
-            "freeze_time": "20250825T180149624424+0200",
-            "kind": "17ba46bb79f6931b18a493cb8256c298-70dc1c95-08e1-4347-a5b0-8291c6a6a291"
+            "content_id": "b0ce1fab0e25dc08ef2013cae0b9fc8cfa1ba9ef6e164657e543c1419f5a88f1da67064f747b385445adc3f527b0f1ff0b8ece3dabe03d00519a1983b7cc0ef7",
+            "freeze_time": "20250825T184125361896+0200",
+            "kind": "0f3224e0a73765154ef2caf6a1387a69-64c00bf7-91f7-4087-9614-ca0f2a6edc4f"
         },
         "life-expectancy": {
-            "content_id": "3b4008e9f6461642923565289a05fbf23eae5b2c8e5fe0136531b8650c282eb4c7fda7db1ce200588fc8d29fbc8e1f1ed567da30bcdc8571afe941f3f1ac45ef",
-            "freeze_time": "20250825T180416025424+0200",
-            "kind": "ae70f6cdde36ed73c50b9c384623c114-034da0c6-1ed7-4174-a711-0ffdfa566a18"
+            "content_id": "a4aa350c8a7bfded506185f369b66df06e9ec109d445065fe16e5f20ff78cf56ce8e1b80fe31da5d6d2fa074cfb08a21e18cd8c5d20c866049f631a344f1e43a",
+            "freeze_time": "20250825T184119716246+0200",
+            "kind": "85c1ff14e03e099ad55453b6cbc3efbf-5b643a8b-a4d0-4f48-9cb7-9d80eb703bfb"
         }
     },
-    "kind": "e01c67b8ba75327d2caf45a1bf039aa1-6f7a1f1a-1dd1-405a-a9a6-a5a68e9c760a"
+    "kind": "ed5a1b2b37c9806a483cffbbe9a22522-6b08bce7-6408-453f-8d69-ac601351a9d5"
 }
