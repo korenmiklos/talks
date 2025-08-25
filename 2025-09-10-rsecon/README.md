@@ -1,5 +1,5 @@
 ---
-title: "BEAD: Reproducible Computational Research Made Simple"
+title: "bead: Reproducible Computational Research Made Simple"
 author: 
     - Miklós Koren (Central European University)
     - Krisztián Fekete (Central European University)
@@ -77,7 +77,7 @@ $$\text{data}_1 = f(\text{code}_2, \text{data}_2)$$
 - Not suitable for large binary data
 
 ### Data Version Control (DVC)
-- Similar spirit to BEAD
+- Similar spirit to bead
 - More complex than needed
 - [dvc.org](https://dvc.org)
 
@@ -87,7 +87,7 @@ $$\text{data}_1 = f(\text{code}_2, \text{data}_2)$$
 - KNIME (no-code) - [knime.com](https://knime.com)
 - Too complex for heterogeneous teams
 
-## Enter BEAD
+## Enter bead
 
 **A command-line tool that ensures your output is a function of your input**
 
@@ -97,7 +97,7 @@ $$\text{data}_1 = f(\text{code}_2, \text{data}_2)$$
 - Different experience levels
 - Different operating systems
 
-## What BEAD Does NOT Do
+## What bead Does NOT Do
 
 ### Not a code runner
 - You run your own code
@@ -111,16 +111,16 @@ $$\text{data}_1 = f(\text{code}_2, \text{data}_2)$$
 - Works with flat files on file system
 - Files not too big (20GB works fine)
 
-## What BEAD Enforces
+## What bead Enforces
 
 ### Input data is immutable
 - Cannot modify raw data
 - Forces good practices
 - Preserves data lineage
 
-## Core BEAD Concepts
+## Core bead Concepts
 
-### The BEAD
+### The bead
 - Self-contained computational unit
 - Contains code, data, results
 - Packaged as ZIP file
@@ -135,7 +135,7 @@ bead save results
 
 ## Demo Time
 
-Let's see BEAD in action with a real example...
+Let's see bead in action with a real example...
 
 ## Demo Part 1: Create Analysis with Two Data Sources
 
@@ -198,7 +198,7 @@ $ duckdb < analyze.sql
 +----------------+------------+----------+--------------------------------+
 ```
 
-## Demo Part 5: Save as BEAD
+## Demo Part 5: Save as bead
 
 ```bash
 $ duckdb < analyze.sql > output/figure1.txt
@@ -250,9 +250,9 @@ Successfully stored bead at figure1_20250825T184443082049+0200.zip
 
 Analysis automatically uses latest data version!
 
-## How BEAD Solves Our Problems
+## How bead Solves Our Problems
 
-| Problem | BEAD Solution |
+| Problem | bead Solution |
 |---------|---------------|
 | "What data did we use?" | Every bead remembers exact version |
 | "It worked on my machine" | Exact same setup for everyone |
@@ -266,9 +266,9 @@ Analysis automatically uses latest data version!
 - Many cleaning steps
 - Green = using latest data version
 - Some steps outdated
-- BEAD tracks entire dependency graph
+- bead tracks entire dependency graph
 
-## BEAD in Practice
+## bead in Practice
 
 ### Step 1: Create workspace
 ```bash
@@ -292,7 +292,7 @@ R --file=analyze.R
 bead save figure1-v2
 ```
 
-## Why BEAD is Different
+## Why bead is Different
 
 - **Simple**: 4 commands to learn
 - **Universal**: Any language, any tool
@@ -316,16 +316,16 @@ pip install bead
 ```
 
 ### Documentation
-[codedthinking.github.io/bead.zip](https://codedthinking.github.io/bead.zip)
+[bead.zip](https://bead.zip)
 
 ### Source Code
-[github.com/codedthinking/bead.zip](https://github.com/codedthinking/bead.zip)
+[github.com/e3krisztian/bead](https://github.com/e3krisztian/bead)
 
 ## Key Takeaways
 
 1. **Data provenance is hard** - especially with changing teams
 2. **Existing tools too complex** - for heterogeneous research teams  
-3. **BEAD keeps it simple** - focuses on one thing well
+3. **bead keeps it simple** - focuses on one thing well
 4. **Reproducibility becomes automatic** - not an afterthought
 
 ## Thank You!
@@ -333,8 +333,8 @@ pip install bead
 Questions?
 
 ### Contact
-- Web: [bead.zip](https://codedthinking.github.io/bead.zip)
-- GitHub: [github.com/codedthinking/bead.zip](https://github.com/codedthinking/bead.zip)
+- Web: [bead.zip](https://bead.zip)
+- GitHub: [github.com/e3krisztian/bead](https://github.com/e3krisztian/bead)
 
 ![](images/erc-logo.png){ width=20% }
 
