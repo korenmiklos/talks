@@ -1,0 +1,15 @@
+{
+    "inputs": {
+        "gdp-per-capita": {
+            "content_id": "cbd30b49aa9182d75b49d01d758e6c880b64c080d0c5e8993ab63ddc92b9fb2ec799c91cfa0efc78561dfdf81c34e51d1af57732de95ca2a451912aa019913e6",
+            "freeze_time": "20250825T180149624424+0200",
+            "kind": "17ba46bb79f6931b18a493cb8256c298-70dc1c95-08e1-4347-a5b0-8291c6a6a291"
+        },
+        "life-expectancy": {
+            "content_id": "3b4008e9f6461642923565289a05fbf23eae5b2c8e5fe0136531b8650c282eb4c7fda7db1ce200588fc8d29fbc8e1f1ed567da30bcdc8571afe941f3f1ac45ef",
+            "freeze_time": "20250825T180416025424+0200",
+            "kind": "ae70f6cdde36ed73c50b9c384623c114-034da0c6-1ed7-4174-a711-0ffdfa566a18"
+        }
+    },
+    "kind": "e01c67b8ba75327d2caf45a1bf039aa1-6f7a1f1a-1dd1-405a-a9a6-a5a68e9c760a"
+}
