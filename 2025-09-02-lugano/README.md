@@ -184,20 +184,20 @@ Drop pre-1992: -516,260
 ↓
 Match CEO data: 1,063,172
 ↓
-Single CEO firms: 891,631
+Single CEO spells: 222,866
 ↓
-Analysis sample: 8,872,039 firm-years
+Analysis sample: 2,900,201 firm-years
 ```
 
 ## Descriptive Statistics
 
 | Variable | Mean | SD | N |
 |----------|------|-----|---|
-| Revenue (million HUF) | 245 | 890 | 8.9M |
-| Employment | 12.3 | 45.2 | 8.9M |
-| CEO changes/year | 0.067 | - | 8.9M |
-| Foreign owned | 0.09 | 0.29 | 8.9M |
-| State owned | 0.02 | 0.14 | 8.9M |
+| Revenue (million HUF) | 245 | 890 | 2.9M |
+| Employment | 12.3 | 45.2 | 2.9M |
+| CEO changes/year | 0.067 | - | 2.9M |
+| Foreign owned | 0.09 | 0.29 | 2.9M |
+| State owned | 0.02 | 0.14 | 2.9M |
 
 ## CEO Characteristics
 
@@ -207,7 +207,7 @@ Analysis sample: 8,872,039 firm-years
 | Hungarian name | 92% |
 | Owner-manager | 41% |
 | Multiple firms | 18% |
-| Connected component | 189,108 managers |
+| Connected component | 26,476 managers |
 
 ## Industry Distribution
 
@@ -216,6 +216,10 @@ Analysis sample: 8,872,039 firm-years
 ## Temporal Patterns
 
 \input{tables/table1.tex}
+
+## CEO Turnover Patterns
+
+\input{tables/table6.tex}
 
 # Methodology
 
@@ -340,6 +344,8 @@ Correlation = 0.31, but mostly noise!
 
 \input{tables/revenue_function.tex}
 
+Note: Now includes CEO age controls; sample restricted to firms with 10+ employees
+
 ## What Explains the Noise?
 
 ### Estimation Error
@@ -365,9 +371,31 @@ Correlation = 0.31, but mostly noise!
 
 Results robust to controls and fixed effects
 
+## Full Sample Results
+
+\input{tables/full_sample.tex}
+
+Consistent effects across different performance measures
+
+## EBITDA Results by Sector
+
+\input{tables/EBITDA_sectors.tex}
+
+Profitability effects similar across sectors
+
 ## Heterogeneity by Sector
 
 \input{tables/revenue_sectors.tex}
+
+## Heterogeneity by Foreign Ownership
+
+### Panel A: CEO Effects by Sector and Ownership
+\input{tables/table4_panelA.tex}
+
+### Panel B: Additional Ownership Patterns
+\input{tables/table4_panelB.tex}
+
+Foreign-owned firms show different CEO effect patterns
 
 ## Manager Effects on Multiple Outcomes
 
@@ -392,11 +420,11 @@ Results robust to controls and fixed effects
 
 | Restriction | True Effect | N |
 |-------------|------------|---|
-| Baseline | 5.5% | 8.9M |
-| Drop small firms | 5.2% | 6.2M |
-| Drop young firms | 5.8% | 7.1M |
-| Manufacturing only | 6.1% | 1.8M |
-| Connected component | 5.4% | 3.2M |
+| Baseline (10+ employees) | 5.5% | 2.9M |
+| Drop small firms (<20) | 5.2% | 2.2M |
+| Drop young firms | 5.8% | 2.5M |
+| Manufacturing only | 6.1% | 0.8M |
+| Connected component | 5.4% | 0.23M |
 
 ## Time Period Sensitivity
 
@@ -464,6 +492,12 @@ Performance = Manager skill + Match quality + Noise
 
 ### Implication
 One-size-fits-all CEO market unrealistic
+
+## Manager Autonomy in Family Firms
+
+\input{tables/tableA0.tex}
+
+Family ownership constrains manager decision-making
 
 # Implications
 
@@ -686,8 +720,9 @@ Full derivation available in paper
 2. Perfect competition in inputs
 3. Sector-specific output prices
 4. Managers maximize short-run profit
+5. CEO age affects productivity
 
 ### Testable Predictions
-1. $\alpha + \beta + \gamma < 1$
+1. $\alpha + \beta + \gamma < 1$ (confirmed: ~0.31 for fixed assets)
 2. Revenue shares constant
 3. Manager effects proportional to $1/\chi$
