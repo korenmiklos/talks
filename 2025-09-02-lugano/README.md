@@ -52,14 +52,14 @@ lang: en
 ## The Manager Effects Literature
 
 ### Seminal Papers
-- **Bertrand & Schoar (2003)**: Manager FE explain 4pp ROA variance
-- **Bennedsen et al (2020)**: CEO hospitalization → -7% performance
-- **Bandiera et al (2020)**: "Leader" CEOs → +8% productivity
+- **Bertrand & Schoar (2003)**: Heterogeneity in managerial "styles" (not single ROA effect)
+- **Bennedsen et al (2020)**: CEO hospitalization → ~7% performance drop
+- **Bandiera et al (2020)**: "Leader" CEOs → productivity gains
 
 ### Recent Evidence
-- **Quigley et al (2022)**: Effects 2× larger in private firms
-- **Metcalfe et al (2023)**: Managers explain 20-30% of retail variance
-- **Dahlstrand et al (2025)**: 12% TFP boost from "leader" CEOs
+- **Quigley et al (2022)**: CEO effects vary by ownership (magnitudes context-specific)
+- **Metcalfe et al (2023)**: Manager effects context-dependent, sensitive to mobility
+- **Gaure (2014)**, **Bonhomme et al (2023)**: Correlation bias in FE models
 
 ## The Identification Challenge
 
@@ -67,30 +67,32 @@ lang: en
 1. **Selection**: Good managers → good firms
 2. **Timing**: Changes during transitions
 3. **Unobservables**: Firm trends confounded with CEO effects
+4. **Limited mobility**: Bias depends on mobility patterns (Bonhomme et al 2023)
 
-### Current Solutions
-- Fixed effects (but spurious correlations?)
-- Sudden deaths (but rare, selected)
-- Movers design (but endogenous moves)
+### Current Solutions  
+- Fixed effects (correlation bias - Gaure 2014)
+- Sudden deaths (rare, still selected)
+- Movers design (endogenous moves, attenuation - Andrews et al 2008)
 
 ## Private vs Public Firms
 
 | Dimension | Public | Private |
 |-----------|--------|---------|
 | Governance | Dispersed | Concentrated |
-| CEO role | Strategic | Operational |
+| CEO role | Strategic | Constrained |
 | Monitoring | Market | Owner |
+| Compensation | Pay-performance link | Different contracting |
 | Data | Abundant | Scarce |
-| Share of economy | 1% | 99% |
+| Share of economy | <1% | >99% |
 
-Need specific approach for private firms
+Cole & Mehran (2008), Gao & Li (2015): Different compensation structures
 
 ## Our Contributions
 
-1. **Model**: Separate owner vs manager decisions
-2. **Data**: Universe of firms over 30 years
+1. **Model**: Separate owner vs manager decisions (building on Lucas 1978)
+2. **Data**: 1M+ firms, 26k connected CEOs (dwarfs Fee 2013: 500 firms)
 3. **Method**: Placebo-controlled event study
-4. **Finding**: 78% of effects are noise
+4. **Finding**: 75% of effects are spurious (true effect: 5.5%)
 
 # Theoretical Framework
 
@@ -109,15 +111,17 @@ $$Q_{imt} = \Omega_{it}A_i Z_{m} K_{it}^\alpha L_{imt}^{\beta} M_{imt}^{\gamma}$
 
 ### Owners Control
 - Physical capital investment
-- Organizational structure
+- Organizational structure  
 - Industry and location
 - CEO hiring/firing
 
-### Managers Control
-- Labor hiring
+### Managers Control (Limited)
+- Labor hiring (within budget)
 - Input purchasing
 - Operations
 - Day-to-day decisions
+
+**Evidence**: MOPS data shows plant managers often limited to ~$10k investment authority
 
 ## Optimization Problem
 
@@ -344,7 +348,10 @@ Correlation = 0.31, but mostly noise!
 
 \input{tables/revenue_function.tex}
 
-Note: Now includes CEO age controls; sample restricted to firms with 10+ employees
+- Fixed assets elasticity: 0.31 (was 0.24 in earlier version)
+- Intangibles: 22% revenue boost
+- Foreign ownership: 2.4% premium (now significant)
+- Note: CEO age controls added; 10+ employee firms only
 
 ## What Explains the Noise?
 
@@ -497,22 +504,24 @@ One-size-fits-all CEO market unrealistic
 
 \input{tables/tableA0.tex}
 
-Family ownership constrains manager decision-making
+- Family ownership → ~37% lower investment autonomy (our calculation)
+- Bloom et al (2012): Family firms more centralized across 20 countries
+- Pattern holds for plant managers, likely stronger for CEOs
 
 # Implications
 
 ## For Empirical Research
 
 ### Don't Use Raw Manager FE
-- 78% noise → severe attenuation bias
+- 75% noise → severe attenuation bias
 - Correlations misleading
 - Fixed effects are not causal effects
 
 ### Better Practices
-1. Include observable characteristics
-2. Use cohort or group effects
-3. CEO effects on LHS only
-4. Always consider placebos
+1. Include observable characteristics (foreign, education, cohort)
+2. Manager quality on LHS only (never RHS due to attenuation)
+3. Avoid simple correlations (inflated variance)
+4. Always implement placebo checks
 
 ## For Theory
 
@@ -529,14 +538,14 @@ Family ownership constrains manager decision-making
 ## For Policy
 
 ### Executive Compensation
-- Pay-performance sensitivity overstated?
-- Most "performance" not from CEO
-- Rethink optimal contracts
+- 75% of "performance" beyond CEO control
+- Focus on operational metrics under CEO control
+- Industry-relative performance better than absolute
 
 ### Corporate Governance
-- Board oversight less critical?
-- Owner-managers not that different
-- Focus on selection not monitoring
+- Owner constraints matter more than CEO autonomy
+- Board focus: selection > monitoring
+- Governance reforms have limited impact
 
 ## For Practice
 
@@ -554,27 +563,28 @@ Family ownership constrains manager decision-making
 
 | Study | Setting | Method | Effect |
 |-------|---------|--------|--------|
-| Bertrand & Schoar (2003) | US public | FE | 4pp ROA |
-| Bennedsen et al (2020) | Danish private | Hospitalization | -7% |
-| Bandiera et al (2020) | 6 countries | Time use | +8% |
-| **This paper** | Hungarian private | Placebo | **+5.5%** |
+| Bertrand & Schoar (2003) | US public | FE | Heterogeneity in styles |
+| Bennedsen et al (2020) | Danish private | Hospitalization | ~7% |
+| Chandra et al (2016) | US hospitals | Risk-adjusted | 5% of variance |
+| Page (2018) | Structural | Model | 1.7% shareholder value |
+| **This paper** | Hungarian private | Placebo | **5.5%** |
 
-We find smaller but more credible effects
+Causal estimates converge to smaller effects than correlational
 
 ## External Validity
 
 ### Generalizable
 - Broad economy coverage
 - Standard production technology
-- Similar to other EU countries
+- Aligns with quasi-experimental evidence globally
 
 ### Context-Specific
 - Transition economy history
-- Specific labor market institutions
-- Private firm focus
+- EU institutional environment
+- Private firm constraints
 
 ### Key Insight
-Noise problem likely universal
+Noise problem universal - affects all FE studies
 
 # Conclusion
 
@@ -583,7 +593,7 @@ Noise problem likely universal
 1. **Modeled** CEO value in private firms
 2. **Measured** using universe of Hungarian firms
 3. **Developed** placebo-controlled method
-4. **Found** 76% of "effects" are spurious
+4. **Found** 75% of "effects" are spurious
 
 ## What We Found
 
