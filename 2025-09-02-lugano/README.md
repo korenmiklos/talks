@@ -20,9 +20,9 @@ lang: en
 
 ## Preview of Results
 
-- Standard approach: 25% performance gap
-- Our placebo test: 20% is spurious
-- **True CEO effect: 5%**
+- Standard approach: 22.5% performance gap
+- Our placebo test: 17% is spurious
+- **True CEO effect: 5.5%**
 - Methodological implications for entire literature
 
 ## Why Should We Care?
@@ -296,25 +296,25 @@ $$y_{it} = \sum_{\tau=-5}^{5} \beta_\tau \cdot \mathbb{1}[\text{time to transiti
 ## Decomposing the Effects
 
 ### Actual Transitions
-- Good → Bad: -12.6% performance
-- Bad → Good: +12.7% performance
-- **Total gap**: 25.3%
+- Good → Bad: -11.3% performance
+- Bad → Good: +11.2% performance
+- **Total gap**: 22.5%
 
 ### Placebo Transitions
-- "Good" → "Bad": -9.8%
-- "Bad" → "Good": +9.9%
-- **Spurious gap**: 19.7%
+- "Good" → "Bad": -8.5%
+- "Bad" → "Good": +8.5%
+- **Spurious gap**: 17.0%
 
 ### True Effect
-25.3% - 19.7% = **5.5%** (p < 0.01)
+22.5% - 17.0% = **5.5%** (p < 0.01)
 
 ## Statistical Significance
 
 | Transition | Actual | Placebo | Difference |
 |------------|--------|---------|------------|
-| Bad→Good | 12.7*** | 9.9*** | 2.8** |
-| Good→Bad | -12.6*** | -9.8*** | -2.8** |
-| Gap | 25.3*** | 19.7*** | 5.5*** |
+| Bad→Good | 11.2*** | 8.5*** | 2.7** |
+| Good→Bad | -11.3*** | -8.5*** | -2.8** |
+| Gap | 22.5*** | 17.0*** | 5.5*** |
 
 Standard errors clustered at firm level
 
@@ -402,10 +402,10 @@ Results robust to controls and fixed effects
 
 | Period | True Effect | Placebo Effect |
 |--------|-------------|----------------|
-| 1992-2002 | 5.9% | 18.2% |
-| 2003-2012 | 5.3% | 19.8% |
-| 2013-2022 | 5.1% | 20.9% |
-| Full sample | 5.5% | 19.7% |
+| 1992-2002 | 5.9% | 16.2% |
+| 2003-2012 | 5.3% | 17.1% |
+| 2013-2022 | 5.4% | 17.5% |
+| Full sample | 5.5% | 17.0% |
 
 Placebo effects increasing over time!
 
@@ -549,12 +549,12 @@ Noise problem likely universal
 1. **Modeled** CEO value in private firms
 2. **Measured** using universe of Hungarian firms
 3. **Developed** placebo-controlled method
-4. **Found** 78% of "effects" are spurious
+4. **Found** 76% of "effects" are spurious
 
 ## What We Found
 
 ### Main Result
-True CEO effect = 5.5%, not 25%
+True CEO effect = 5.5%, not 22.5%
 
 ### Why the Difference?
 - Endogenous timing
