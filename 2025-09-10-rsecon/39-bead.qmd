@@ -1,0 +1,21 @@
+---
+title: bead
+subtitle: a provenance tool
+author:
+    - "Krisztián Fekete"
+    - "Miklós Koren"
+date: 2025-09-10
+format:
+  revealjs:
+    include-after-body:
+        file: terminal.html
+    # logo: bead.zip.png
+    footer: "bead"
+    slide-number: true
+    self-contained: true
+slide-level: 3
+---
+
+{{< include miklos1.md >}}
+{{< include krisztian.qmd >}}
+{{< include miklos2.md >}}

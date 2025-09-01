@@ -11,68 +11,36 @@ aspectratio: 169
 lang: en
 ---
 
-## The CEO Value Puzzle
+# Motivation
 
-- CEOs credited with firm success and failure
-- Academic evidence: 4-25% performance differences
-- But correlation is not causation
-- **This paper**: How much is real vs spurious?
+## What is the marginal product of a CEO?
+
+### What we know
+- Management matters. Consulting (India: Bloom et al. 2013), large-scale training (Italy: Giorcelli 2019, US: Bianchi and Giorcelli 2022, Giorcelli 2023)
+- Managers matter. Event studies around CEO changes (US: Bertrand and Schoar 2003, Schoar and Zuo 2016, Metcalfe et al. 2023, Italy: Sauvagnat and Schivard 2024, Denmark: Bennedsen et al 2020)
+
+### But
+- Most studies focus on public firms in rich countries.
+
+## What about privately held firms?
+1. Limited data on compensation, decisions, financials
+2. Owners often have oversized control roles
+3. Data on small firms more noisy
+
+## This paper
+1. Model CEO effects in presence of owner-chosen inputs
+2. Collect data on 1m+ firms, 1m+ CEOs in Hungary 1992--2022
+3. Design a placebo-controlled event study to measure true CEO effects
 
 ## Preview of Results
-
-- Standard approach: 22.5% performance gap
-- Our placebo test: 17% is spurious
+- Standard approach: 22.5% performance gap between "good" and "bad" CEOs
+- Our placebo test: 17% is noise
 - **True CEO effect: 5.5%**
-- Methodological implications for entire literature
 
-## Why Should We Care?
-
-### Academic
-- Manager fixed effects in thousands of papers
-- Identification challenges unresolved
-- Need better methods
-
-### Policy
-- Executive compensation debates
-- Corporate governance rules
-- Private equity strategies
 
 ## Roadmap
 
-1. Motivation and literature
-2. Theoretical framework
-3. Hungarian data universe
-4. Placebo methodology
-5. Main results
-6. Robustness and mechanisms
-7. Implications
 
-# Motivation
-
-## The Manager Effects Literature
-
-### Seminal Papers
-- **Bertrand & Schoar (2003)**: Heterogeneity in managerial "styles" (not single ROA effect)
-- **Bennedsen et al (2020)**: CEO hospitalization → ~7% performance drop
-- **Bandiera et al (2020)**: "Leader" CEOs → productivity gains
-
-### Recent Evidence
-- **Quigley et al (2022)**: CEO effects vary by ownership (magnitudes context-specific)
-- **Metcalfe et al (2023)**: Manager effects context-dependent, sensitive to mobility
-- **Gaure (2014)**, **Bonhomme et al (2023)**: Correlation bias in FE models
-
-## The Identification Challenge
-
-### Fundamental Problems
-1. **Selection**: Good managers → good firms
-2. **Timing**: Changes during transitions
-3. **Unobservables**: Firm trends confounded with CEO effects
-4. **Limited mobility**: Bias depends on mobility patterns (Bonhomme et al 2023)
-
-### Current Solutions  
-- Fixed effects (correlation bias - Gaure 2014)
-- Sudden deaths (rare, still selected)
-- Movers design (endogenous moves, attenuation - Andrews et al 2008)
 
 ## Private vs Public Firms
 
@@ -87,12 +55,6 @@ lang: en
 
 Cole & Mehran (2008), Gao & Li (2015): Different compensation structures
 
-## Our Contributions
-
-1. **Model**: Separate owner vs manager decisions (building on Lucas 1978)
-2. **Data**: 1M+ firms, 26k connected CEOs (dwarfs Fee 2013: 500 firms)
-3. **Method**: Placebo-controlled event study
-4. **Finding**: 75% of effects are spurious (true effect: 5.5%)
 
 # Theoretical Framework
 
@@ -103,11 +65,14 @@ Firms combine fixed and variable inputs:
 $$Q_{imt} = \Omega_{it}A_i Z_{m} K_{it}^\alpha L_{imt}^{\beta} M_{imt}^{\gamma}$$
 
 - $A_i$: Organizational capital (owner-chosen)
-- $Z_m$: Manager skill
+- $Z_m$: Manager skill ($\to$ TFP)
 - $K_{it}$: Physical capital (owner-chosen)
 - $L_{imt}$, $M_{imt}$: Labor, materials (manager-chosen)
 
 ## Division of Control
+- Concentrated ownership limits managerial discretion (Fama & Jensen, 1983; Jensen & Meckling, 1976)
+- Family firms retain control rights (Burkart et al., 2003)
+- Plant managers have even more limited control over investments (Bloom et al., 2012, 2019)
 
 ### Owners Control
 - Physical capital investment
@@ -115,13 +80,12 @@ $$Q_{imt} = \Omega_{it}A_i Z_{m} K_{it}^\alpha L_{imt}^{\beta} M_{imt}^{\gamma}$
 - Industry and location
 - CEO hiring/firing
 
-### Managers Control (Limited)
+### Managers Control
 - Labor hiring (within budget)
 - Input purchasing
 - Operations
 - Day-to-day decisions
 
-**Evidence**: MOPS data shows plant managers often limited to ~$10k investment authority
 
 ## Optimization Problem
 
@@ -131,6 +95,15 @@ $$\max_{L,M} P_{st}Q_{imt} - W_{st}L_{imt} - \varrho_{st}M_{imt}$$
 
 First-order conditions pin down optimal scale
 
+\begin{equation}\label{eq:revenue}
+R_{imst} = (P_{st}\Omega_{it}A_i Z_m)^{1/\chi}
+K_{it}^{\alpha/\chi}
+W_{st}^{-\beta/\chi}
+\varrho_{st}^{-\gamma/\chi}
+(1-\chi)^{(1-\chi)/\chi}.
+\end{equation}
+
+
 ## Surplus and Manager Value
 
 Surplus to fixed factors:
@@ -138,6 +111,12 @@ $$S_{imst} = \chi \cdot R_{imst}$$
 
 where $\chi = 1 - \beta - \gamma$
 
+\begin{equation}\label{eq:log_surplus}
+s_{imst} = C+\frac\alpha\chi k_{it} + \frac1\chi {z}_{m} + \frac1\chi p_{st} + \frac1\chi{\omega}_{it}+\frac1\chi a_i 
+- \frac\beta\chi w_{st} - \frac\gamma\chi \rho_{st},
+\end{equation}
+
+## 
 Manager contribution to log surplus:
 $$\Delta s = \frac{1}{\chi}(z_{m'} - z_m)$$
 

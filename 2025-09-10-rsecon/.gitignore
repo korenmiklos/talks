@@ -1,0 +1,61 @@
+# Bead managed folders
+input/
+temp/
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# Quarto cache and output
+.quarto/
+*_cache/
+*_files/
+
+# Generated files  
+README.tex
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+env/
+venv/
+.venv/
+.env
+
+# Julia
+Manifest.toml
+
+# Stata
+*.smcl
+*.stpr
+
+# Logs
+*.log
+server-*.log
+
+# Temporary files
+*.tmp
+*.bak

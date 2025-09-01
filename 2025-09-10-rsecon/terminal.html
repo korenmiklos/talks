@@ -1,0 +1,127 @@
+<style>
+.top-bottom-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.top-content {
+  align-self: flex-start;
+  font-size: 0.85em;
+  height: 60%; /* your desired fixed height */
+  width: 100%;
+}
+
+.bottom-content {
+  align-self: flex-end;
+  font-size: 0.85em;
+  color: #888;
+  display: flex;
+  flex-direction: row;
+  gap: 1em; /* optional spacing between left/right */
+  height: 40%; /* your desired fixed height */
+  width: 100%;
+}
+
+.bottom-left {
+  width: 40%;
+  overflow: auto;
+}
+
+.bottom-right {
+  width: 60%;
+  overflow: auto;
+}
+
+.terminal {
+  background-color: #111;
+  color: #0f0;
+  font-family: monospace;
+  padding: 1em;
+  padding-top: 0.5em; /* or 0 if you want it flush */
+  line-height: 1.1;
+  border-radius: 6px;
+  max-height: 360px;
+  height: 360px;
+  # height: 100%;
+  overflow-y: scroll;
+  box-shadow: 0 0 10px #000;
+  font-size: 0.65em;
+  word-break: break-all;  /* allows breaking long words */
+  // white-space: normal;    /* enables wrapping */
+  white-space: pre-wrap; /* preserve formatting but wrap long lines */
+}
+
+.terminal {
+  opacity: 0;
+  // visibility: hidden; /* Hide until scrolled */
+}
+.terminal.scrolled {
+  opacity: 1;
+  // visibility: visible; /* Show after scrolling */
+}
+
+.terminal pre {
+  // all: unset; /* removes default pre styling */
+  white-space: pre-wrap; /* preserve formatting but wrap long lines */
+  font-family: monospace;
+  color: inherit;
+  background: inherit;
+  font-size: 0.8em;
+}
+
+/* Prompt */
+.terminal .prompt {
+  color: #0ff;
+  font-weight: bold;
+}
+
+/* Command typed by user */
+.terminal .command {
+  color: #0f0;
+  font-weight: bold;
+}
+
+/* Output from the system */
+.terminal .output {
+  color: #fff;
+  font-weight: normal;
+  font-size: 0.8em;
+}
+
+/* terminal cursor */
+.cursor {
+  display: inline-block;
+  // width: 0.2em;
+  // margin-left: 0.1em; /* optional spacing from text */
+  width: 0.6em;
+  height: 1em;
+  background-color: #0f0;
+  animation: blink 1s step-start infinite;
+  vertical-align: bottom;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+</style>
+<script>
+function scrollTerminals() {
+  const currentSlide = Reveal.getCurrentSlide();
+  console.log("Current slide:", currentSlide);
+
+  const terminals = currentSlide.querySelectorAll('.terminal');
+  console.log("Terminals found:", terminals.length);
+  terminals.forEach(terminal => {
+    terminal.scrollTop = terminal.scrollHeight;
+    terminal.classList.add('scrolled'); // Show after scroll
+    console.log("Scrolled to:", terminal.scrollTop);
+  });
+}
+
+Reveal.on('ready', scrollTerminals);
+Reveal.on('slidechanged', scrollTerminals);
+</script>
