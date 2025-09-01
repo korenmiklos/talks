@@ -17,7 +17,7 @@ lang: en
 
 ### What we know
 - Management matters. Consulting (India: Bloom et al. 2013), large-scale training (Italy: Giorcelli 2019, US: Bianchi and Giorcelli 2022, Giorcelli 2023)
-- Managers matter. Event studies around CEO changes (US: Bertrand and Schoar 2003, Schoar and Zuo 2016, Metcalfe et al. 2023, Italy: Sauvagnat and Schivard 2024, Denmark: Bennedsen et al 2020)
+- Managers matter. Event studies around CEO changes (US: Bertrand and Schoar 2003, Schoar and Zuo 2016, Metcalfe et al. 2023, Italy: Sauvagnat and Schivardi 2024, Denmark: Bennedsen et al 2020)
 
 ### But
 - Most studies focus on public firms in rich countries.
@@ -142,18 +142,21 @@ r_{imst} = \frac\alpha\chi k_{it}  + \frac1\chi{z}_m + \lambda_i + \mu_{st} + \t
 
 ### Why Hungary?
 - Complete administrative data
-- All incorporated businesses
-- Mandatory CEO registration
+  - All incorporated businesses
+  - Mandatory CEO registration
 - 30+ years of coverage
-- EU member → relevant institutions
 
 ### Economic Background
 - Transition economy 1990s
 - EU accession 2004
 - Mix of domestic and foreign firms
-- Active CEO labor market
 
 ## Data Sources
+
+### Firm Registry (Cégjegyzék LTS)
+- CEO appointments and terminations
+- Ownership structure
+- Complete since 1992
 
 ### Balance Sheet Data (Mérleg LTS)
 - All firms filing financial statements
@@ -161,43 +164,23 @@ r_{imst} = \frac\alpha\chi k_{it}  + \frac1\chi{z}_m + \lambda_i + \mu_{st} + \t
 - 1980-2022 coverage
 - 10.2 million firm-years
 
-### Firm Registry (Cégjegyzék LTS)
-- CEO appointments and terminations
-- Manager characteristics
-- Ownership structure
-- Complete since 1992
-
 ## Sample Construction
+Exclude firms that:
 
-```
-Universe of firms: 1,579,432
-↓
-Drop pre-1992: -516,260
-↓
-Match CEO data: 1,063,172
-↓
-Single CEO spells: 222,866
-↓
-Analysis sample: 2,900,201 firm-years
-```
-
-## Descriptive Statistics
-
-| Variable | Mean | SD | N |
-|----------|------|-----|---|
-| Revenue (million HUF) | 245 | 890 | 2.9M |
-| Employment | 12.3 | 45.2 | 2.9M |
-| CEO changes/year | 0.067 | - | 2.9M |
-| Foreign owned | 0.09 | 0.29 | 2.9M |
-| State owned | 0.02 | 0.14 | 2.9M |
+- ever have more than 2 CEOs in a year
+- have more than 6 CEOs during their lifetime
+- are in their first year (often incomplete)
+- were ever state owned
+- operate in mining and finance
+- never reach 5 employees
 
 ## CEO Characteristics
 
 | Characteristic | Share |
 |----------------|-------|
-| Male | 74% |
-| Hungarian name | 92% |
-| Owner-manager | 41% |
+| Hungarian name | 95% |
+| Male (among HU) | 73% |
+| Founder | 69% |
 | Multiple firms | 18% |
 | Connected component | 26,476 managers |
 
@@ -211,290 +194,141 @@ Analysis sample: 2,900,201 firm-years
 
 ## CEO Turnover Patterns
 
-\input{tables/table6.tex}
+::: {.columns}
+:::: {.column}
+\input{tables/table6_panelA.tex}
+::::
+:::: {.column}
+\input{tables/table6_panelB.tex}
+::::
+:::
 
-# Methodology
+# Estimation
 
-## The Identification Problem
+## Estimation steps
+1. Estimate $\chi$ as $1-$ revenue share of labor and material
+2. Estimate revenue function with rich fixed effects to recover coefficients of fixed factors
+3. Estimate firm and manager fixed effects with TWFE on **largest connected component**
+4. Check dynamics of effects via event study
 
-### What We Want
-True CEO effect on firm performance
+## Surplus Share (1)
+Follow Halpern et al. (2015), Gandhi et al. (2020)
 
-### What We Observe
-$$\text{Performance}_{it} = \text{CEO effect}_m + \text{Firm trend}_i + \text{Shock}_{it}$$
+$$
+\hat\chi_s := 1 - \frac {\sum_{i\in s}(W_{st}L_{it} + \varrho_{st}M_{it}) } 
+  {\sum_{i\in s} R_{it}}
+$$
 
-### The Challenge
-CEO changes correlate with trends and shocks!
+## Revenue Function (2)
 
-## Standard Approaches and Problems
+$$
+r_{imst} = \frac\alpha\chi k_{it}  + \frac1\chi{z}_m + \lambda_i + \mu_{st} + \tilde \omega_{it}
+$$
 
-### Manager Fixed Effects
-$$y_{imt} = \alpha_i + \gamma_m + \epsilon_{imt}$$
-**Problem**: Assumes exogenous mobility
+### Assumptions
+1. All firms with the sector face the same prices
+2. Residual TFP uncorrelated with owner and manager choices
+  - Timing can be checked in event study.
+3. Owner and manager choices can be arbitrarily correlated
 
-### Event Studies
-Compare before/after CEO change
-**Problem**: Timing endogenous
+## Recovering Firm and Manager Fixed Effects (3)
+$$
+\tilde r_{imst} := \hat\chi r_{imst} - \hat\alpha k_{it} - \hat\mu_{st}=  {z}_m + \lambda_i  + \omega_{it}
+$$
+Remove firm fixed effect by subtracting firm average,
+$$
+\Delta\tilde r_{imt} =  
+\Delta {z}_{m_{it}} +
+\Delta\omega_{it}
+$$
+with
+$$
+\Delta x_{it} := x_{it} - \frac1{N_i}\sum_\tau x_{i\tau}
+$$
 
-### Instrumental Variables
-Deaths, retirements, etc.
-**Problem**: Rare, still selected
+## Identification Challenges
+1. Residual TFP trends may be correlated with manager change (reverse causality)
+  - We don't need _random mobility_.
+  - Usual solution: exogenous removal of CEO (hospitalization: Bennedsen et al 2020, death: Sauvagnat and Schivardi 2024)
+2. Firm and manager effects can only be interpreted against a baseline group in connected component
+  - We use _largest connected component_ (Abowd et al. 2002)
+3. Fixed effects estimated with small-sample noise
+  - IV designs can even exacerbate small-sample problem
+
+
+## A Two-Manager Example
+Manager effect
+
+| 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|
+| $z_1$ | $z_1$ | $z_1$ | $z_2$ | $z_2$ | $z_2$ |
+| $\omega_1$ | $\omega_2$ | $\omega_3$ |  $\omega_4$ |  $\omega_5$ |  $\omega_6$ |  
+
+$$
+\hat z_1 := z_1 + \frac13(\omega_1 + \omega_2 + \omega_3)
+$$
+$$
+\hat z_2 := z_2 + \frac13(\omega_4 + \omega_5 + \omega_6)
+$$
 
 ## Our Solution: Placebo Control
 
-### Intuition
-- Create fake CEO changes
-- Same probability as real changes
-- But random timing
-- Exclude actual transition periods
+When CEO doesn't change
+$$
+\Delta\tilde r_{imt} =  
+\Delta\omega_{it}.
+$$
+By doing the exact same estimation procedure around "non-changes," we can filter out the noise.
 
-### What Placebos Capture
-- Firm lifecycle effects
-- Industry trends  
-- Mean reversion
-- Any spurious correlations
+### Constructing Placebos
+1. Estimate time-variante hazard of CEO change ($\approx$ 20\%/year)
+2. Pick firms with long CEO tenures (7+ years)
+3. Randomly assign placebo changes with the estimated hazard
 
-## Constructing Placebos
+## Placebo Spells are Similar to Actual Ones
+\input{tables/table6_panelB.tex}
 
-### Algorithm
-1. For each firm, calculate CEO change probability
-2. Randomly assign placebo changes with same probability
-3. Exclude 2 years around actual changes
-4. Assign placebo "good" vs "bad" CEOs
 
-### Example
-- Firm has CEO change in 2010
-- Exclude 2009-2011 from placebo
-- Randomly assign placebo in, say, 2015
-- Compare actual vs placebo effects
+## Event Study (4)
+Treatment: CEO changes at time $g$.
 
-## Visual Intuition: Actual vs Placebo
+Control: Placebo change at time $g$.
 
-![](figures/placebo_vs_actual.pdf){ width=85% }
+$$
+\tilde r_{imt} =  \lambda_i + \gamma_{t-g} + \omega_{it}
+$$
+with $\gamma$ estimated with 2-treatment version of Callaway--Sant'Anna (2020), `xt2treatments` (Koren 2025) for different groups of managers.
 
-## Event Study Design
 
-### Specification
-$$y_{it} = \sum_{\tau=-5}^{5} \beta_\tau \cdot \mathbb{1}[\text{time to transition} = \tau] + \alpha_i + \delta_t + \epsilon_{it}$$
+# Results
 
-### Key Comparisons
-1. Actual good → bad CEO transitions
-2. Actual bad → good CEO transitions  
-3. Placebo transitions
-4. Difference = causal effect
+## Surplus Share by Industry (1)
+\input{tables/tableA1.tex}
 
-# Main Results
+## Revenue Function Estimation (2)
+\input{tables/table3.tex}
 
-## Event Study: Raw Results
-
-![](figures/event_study.pdf){ width=90% }
-
-## Decomposing the Effects
-
-### Actual Transitions
-- Good → Bad: -11.3% performance
-- Bad → Good: +11.2% performance
-- **Total gap**: 22.5%
-
-### Placebo Transitions
-- "Good" → "Bad": -8.5%
-- "Bad" → "Good": +8.5%
-- **Spurious gap**: 17.0%
-
-### True Effect
-22.5% - 17.0% = **5.5%** (p < 0.01)
-
-## Statistical Significance
-
-| Transition | Actual | Placebo | Difference |
-|------------|--------|---------|------------|
-| Bad→Good | 11.2*** | 8.5*** | 2.7** |
-| Good→Bad | -11.3*** | -8.5*** | -2.8** |
-| Gap | 22.5*** | 17.0*** | 5.5*** |
-
-Standard errors clustered at firm level
-
-## CEO Skill Distribution: Within Firm
-
-![](figures/manager_skill_within.pdf){ width=80% }
-
-P25-P75 difference: 9.6% productivity
-
-## CEO Skill Distribution: Connected Component
+## Manager Fixed Effects in the Giant Component (3)
 
 ![](figures/manager_skill_connected.pdf){ width=80% }
 
 P25-P75 difference: 24.6% productivity
 
-## Skill Correlation Across Firms
+## Event Study (4)
+![](figures/event_study_panel_c.pdf){ width=80% }
 
-![](figures/manager_skill_correlation.pdf){ width=80% }
+Dip in average TFP before CEO change. Elevated variance, stabilizing after CEO change.
 
-Correlation = 0.31, but mostly noise!
+## Split by "Good" and "Bad" CEOs ($\pm$ 1%)
+![](figures/event_study.pdf){ width=80% }
 
-## Revenue Function Estimation
+## Actual vs Placebo Effects
 
-\input{tables/revenue_function.tex}
-
-- Fixed assets elasticity: 0.31 (was 0.24 in earlier version)
-- Intangibles: 22% revenue boost
-- Foreign ownership: 2.4% premium (now significant)
-- Note: CEO age controls added; 10+ employee firms only
-
-## What Explains the Noise?
-
-### Estimation Error
-- Finite sample bias
-- Limited observations per manager
-- Attenuation in correlations
-
-### Real Heterogeneity  
-- Manager-firm match quality
-- Time-varying manager skills
-- Learning and adaptation
-
-### Endogenous Mobility
-- Selection into firms
-- Timing of transitions
-- Unobserved shocks
-
-# Robustness
-
-## Alternative Specifications
-
-\input{tables/revenue_controls.tex}
-
-Results robust to controls and fixed effects
-
-## Full Sample Results
-
-\input{tables/full_sample.tex}
-
-Consistent effects across different performance measures
-
-## EBITDA Results by Sector
-
-\input{tables/EBITDA_sectors.tex}
-
-Profitability effects similar across sectors
-
-## Heterogeneity by Sector
-
-\input{tables/revenue_sectors.tex}
-
-## Heterogeneity by Foreign Ownership
-
-### Panel A: CEO Effects by Sector and Ownership
-\input{tables/table4_panelA.tex}
-
-### Panel B: Additional Ownership Patterns
-\input{tables/table4_panelB.tex}
-
-Foreign-owned firms show different CEO effect patterns
-
-## Manager Effects on Multiple Outcomes
-
-\input{tables/manager_effects.tex}
-
-## Placebo Validity Checks
-
-### Test 1: Pre-trends
-- No differential trends before transitions
-- Parallel paths for actual and placebo
-
-### Test 2: Randomization
-- 1000 placebo draws
-- Consistent results
-- Distribution centered at zero
-
-### Test 3: Exclusion Windows
-- Results robust to 1-year, 3-year windows
-- Larger windows → smaller placebo effects
-
-## Sample Restrictions
-
-| Restriction | True Effect | N |
-|-------------|------------|---|
-| Baseline (10+ employees) | 5.5% | 2.9M |
-| Drop small firms (<20) | 5.2% | 2.2M |
-| Drop young firms | 5.8% | 2.5M |
-| Manufacturing only | 6.1% | 0.8M |
-| Connected component | 5.4% | 0.23M |
-
-## Time Period Sensitivity
-
-| Period | True Effect | Placebo Effect |
-|--------|-------------|----------------|
-| 1992-2002 | 5.9% | 16.2% |
-| 2003-2012 | 5.3% | 17.1% |
-| 2013-2022 | 5.4% | 17.5% |
-| Full sample | 5.5% | 17.0% |
-
-Placebo effects increasing over time!
-
-# Mechanisms
-
-## Why Do Placebos Generate Effects?
-
-### Firm Lifecycle
-- Growth firms more likely to change CEOs
-- Mean reversion after transitions
-- Captures 8-10% of placebo effect
-
-### Industry Shocks
-- Sectoral booms/busts coincide with CEO changes
-- Industry-year FE reduce placebo by 15%
-
-### Unobserved Firm Trends
-- Reorganizations, strategy shifts
-- Not captured by fixed effects
-- Likely explains remaining placebo effect
-
-## Manager Observable Characteristics
-
-| Characteristic | Effect on Productivity |
-|----------------|----------------------|
-| Foreign name | +3.2%*** |
-| Male | +1.1%** |
-| Owner-manager | +2.4%*** |
-| Age (10 years) | -0.8%** |
-| Multiple firms | +4.1%*** |
-
-R² of observables = 0.08
-
-## Entry Cohort Effects
-
-### Finding
-CEOs from same entry cohort have correlated performance
-
-### Interpretation
-- Common training/education
-- Network effects
-- Generational management styles
-
-### Implication
-Can use cohort FE to reduce noise
-
-## Match Quality
-
-### Theory
-Performance = Manager skill + Match quality + Noise
-
-### Evidence
-- Within-firm variance < across-firm variance
-- Correlation breaks down at extremes
-- Some CEO-firm pairs negative value
-
-### Implication
-One-size-fits-all CEO market unrealistic
-
-## Manager Autonomy in Family Firms
-
-\input{tables/tableA0.tex}
-
-- Family ownership → ~37% lower investment autonomy (our calculation)
-- Bloom et al (2012): Family firms more centralized across 20 countries
-- Pattern holds for plant managers, likely stronger for CEOs
+| Transition | Actual | Placebo | Difference |
+|------------|--------|---------|------------|
+| Bad $\to$ Good |  |  | 3.9** |
+| Good $\to$ Bad |  |  | -1.2** |
+| Gap | 22.1*** | 17.1*** | 5.0*** |
 
 # Implications
 
@@ -503,61 +337,14 @@ One-size-fits-all CEO market unrealistic
 ### Don't Use Raw Manager FE
 - 75% noise → severe attenuation bias
 - Correlations misleading
-- Fixed effects are not causal effects
 
 ### Better Practices
 1. Include observable characteristics (foreign, education, cohort)
 2. Manager quality on LHS only (never RHS due to attenuation)
 3. Avoid simple correlations (inflated variance)
-4. Always implement placebo checks
+4. Implement placebo checks
 
-## For Theory
 
-### Models Need Noise
-- Pure sorting models predict too much
-- Need measurement error or match quality
-- Time-varying skills important
-
-### Decreasing Returns Matter
-- Span of control limits CEO impact
-- Complementarity with firm assets
-- Not just additive effects
-
-## For Policy
-
-### Executive Compensation
-- 75% of "performance" beyond CEO control
-- Focus on operational metrics under CEO control
-- Industry-relative performance better than absolute
-
-### Corporate Governance
-- Owner constraints matter more than CEO autonomy
-- Board focus: selection > monitoring
-- Governance reforms have limited impact
-
-## For Practice
-
-### CEO Selection
-- Observable characteristics matter
-- Track record partially informative
-- Industry experience valuable
-
-### Private Equity
-- CEO replacement effects modest
-- Operational improvements > CEO changes
-- Manage expectations
-
-## Comparison with Literature
-
-| Study | Setting | Method | Effect |
-|-------|---------|--------|--------|
-| Bertrand & Schoar (2003) | US public | FE | Heterogeneity in styles |
-| Bennedsen et al (2020) | Danish private | Hospitalization | ~7% |
-| Chandra et al (2016) | US hospitals | Risk-adjusted | 5% of variance |
-| Page (2018) | Structural | Model | 1.7% shareholder value |
-| **This paper** | Hungarian private | Placebo | **5.5%** |
-
-Causal estimates converge to smaller effects than correlational
 
 ## External Validity
 
