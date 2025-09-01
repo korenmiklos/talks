@@ -75,16 +75,14 @@ $$Q_{imt} = \Omega_{it}A_i Z_{m} K_{it}^\alpha L_{imt}^{\beta} M_{imt}^{\gamma}$
 - Plant managers have even more limited control over investments (Bloom et al., 2012, 2019)
 
 ### Owners Control
-- Physical capital investment
-- Organizational structure  
-- Industry and location
-- CEO hiring/firing
+Physical capital investment, intellectual property, industry and location, CEO hiring/firing
 
 ### Managers Control
-- Labor hiring (within budget)
-- Input purchasing
-- Operations
-- Day-to-day decisions
+Labor hiring, input purchasing, operations, day-to-day decisions
+
+## Evidence on Manager Control Rights
+\input{tables/tableA0.tex}
+
 
 
 ## Optimization Problem
@@ -104,28 +102,39 @@ W_{st}^{-\beta/\chi}
 \end{equation}
 
 
-## Surplus and Manager Value
+## Surplus $=$ Rent to Fixed Factors
 
 Surplus to fixed factors:
-$$S_{imst} = \chi \cdot R_{imst}$$
+$$S_{imst} = R_{imst} - W_{st}L_{imst} - \varrho_{st}M_{imst} = \chi \cdot R_{imst}$$
 
 where $\chi = 1 - \beta - \gamma$
 
-\begin{equation}\label{eq:log_surplus}
-s_{imst} = C+\frac\alpha\chi k_{it} + \frac1\chi {z}_{m} + \frac1\chi p_{st} + \frac1\chi{\omega}_{it}+\frac1\chi a_i 
-- \frac\beta\chi w_{st} - \frac\gamma\chi \rho_{st},
+\begin{equation}\label{eq:surplus}
+S_{imst} = \chi (P_{st}\Omega_{it}A_i Z_m)^{1/\chi}
+K_{it}^{\alpha/\chi}
+W_{st}^{-\beta/\chi}
+\varrho_{st}^{-\gamma/\chi}
+(1-\chi)^{(1-\chi)/\chi}.
 \end{equation}
 
-## 
-Manager contribution to log surplus:
-$$\Delta s = \frac{1}{\chi}(z_{m'} - z_m)$$
+Owner controls $A_i$ and $K_{it}$
 
-## Empirical Implications
+Manager controls $Z_m$
 
-1. Revenue function decreasing returns to scale
-2. Manager effects scale with $1/\chi$
-3. Can identify from CEO transitions
-4. Need to control for selection
+## Estimable Equation
+Taking logs and substituting out invariant terms,
+
+\begin{equation}\label{eq:estimation}
+r_{imst} = \frac\alpha\chi k_{it}  + \frac1\chi{z}_m + \lambda_i + \mu_{st} + \tilde \omega_{it}
+\end{equation}
+
+### Assumptions
+1. All firms with the sector face the same prices
+2. Residual TFP uncorrelated with owner and manager choices
+  - Timing can be checked in event study.
+3. Owner and manager choices can be arbitrarily correlated
+
+### Estimate with Two-Way Fixed Effects
 
 # Data
 
