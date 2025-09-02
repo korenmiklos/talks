@@ -6,16 +6,28 @@ author:
     - Bálint Szilágyi (HUN-REN KRTK)
     - Álmos Telegdy (Corvinus)
     - András Vereckei (HUN-REN KRTK)
-date: Lugano, September 2, 2025
+date: REFLEX Workshop, September 2, 2025
 aspectratio: 169
 lang: en
 ---
+
+## Acknowledgements
+::: {.columns}
+:::: {.column width=50%}
+![](images/erc.png)
+::::
+:::: {.column width=50%}
+![](images/elvonal.png)
+::::
+:::
+
+This research was funded by the European Research Council (ERC Advanced Grant agreement number 101097789) and by the National Research, Development and Innovation Office (Forefront Research Excellence Program contract number 144193). The views expressed in this project are those of the authors and do not necessary reflect the official view of the European Union, the European Research Council, or the National Research, Development and Innovation Office.
 
 # Motivation
 
 ## What is the marginal product of a CEO?
 
-### What we know
+### We know
 - Management matters. Consulting (India: Bloom et al. 2013), large-scale training (Italy: Giorcelli 2019, US: Bianchi and Giorcelli 2022, Giorcelli 2023)
 - Managers matter. Event studies around CEO changes (US: Bertrand and Schoar 2003, Schoar and Zuo 2016, Metcalfe et al. 2023, Italy: Sauvagnat and Schivardi 2024, Denmark: Bennedsen et al 2020)
 
@@ -39,21 +51,11 @@ lang: en
 
 
 ## Roadmap
-
-
-
-## Private vs Public Firms
-
-| Dimension | Public | Private |
-|-----------|--------|---------|
-| Governance | Dispersed | Concentrated |
-| CEO role | Strategic | Constrained |
-| Monitoring | Market | Owner |
-| Compensation | Pay-performance link | Different contracting |
-| Data | Abundant | Scarce |
-| Share of economy | <1% | >99% |
-
-Cole & Mehran (2008), Gao & Li (2015): Different compensation structures
+1. Theoretical Framework
+2. Data: The Hungarian Commercial Registry
+3. Estimation Methodology
+4. Results
+5. Conclusion and Future Work
 
 
 # Theoretical Framework
@@ -164,6 +166,20 @@ r_{imst} = \frac\alpha\chi k_{it}  + \frac1\chi{z}_m + \lambda_i + \mu_{st} + \t
 - 1980-2022 coverage
 - 10.2 million firm-years
 
+## Data Cleaning
+### What is a firm?
+Fairly good numeric identifier by Tax Authority (NAV). We follow one-to-one business transitions to match with commercial registry.
+
+One firm = one legal entity (but we can see ultimate owners)
+
+### Who is a CEO?
+Owners, directors, accountants are all recorded.
+
+1. No numerical identifier before 2013 (but name, home address, mother's name 1999+, birth date 2010+) $\to$ entity resolution
+2. Time spells not always closed or contiguous
+3. CEO ("Managing Director") title is not always recorded $\to$ impute from past and present
+
+
 ## Sample Construction
 Exclude firms that:
 
@@ -196,10 +212,10 @@ Exclude firms that:
 
 ::: {.columns}
 :::: {.column}
-\input{tables/table6_panelA.tex}
+\input{tables/table2_panelA.tex}
 ::::
 :::: {.column}
-\input{tables/table6_panelB.tex}
+\input{tables/table2_panelB.tex}
 ::::
 :::
 
@@ -286,7 +302,7 @@ By doing the exact same estimation procedure around "non-changes," we can filter
 3. Randomly assign placebo changes with the estimated hazard
 
 ## Placebo Spells are Similar to Actual Ones
-\input{tables/table6_panelB.tex}
+\input{tables/table2_panelB.tex}
 
 
 ## Event Study (4)
@@ -511,3 +527,6 @@ Full derivation available in paper
 1. $\alpha + \beta + \gamma < 1$ (confirmed: ~0.31 for fixed assets)
 2. Revenue shares constant
 3. Manager effects proportional to $1/\chi$
+
+
+
