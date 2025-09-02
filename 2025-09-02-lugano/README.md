@@ -347,6 +347,7 @@ Dip in average TFP before CEO change. Elevated variance, stabilizing after CEO c
 | Gap | 22.1*** | 17.1*** | 5.0*** |
 
 ## Treatment Effects and Correlations with Outcomes
+\input{tables/better_ceo_atet.tex}
 
 ## Guidance For Empirical Research
 
@@ -369,5 +370,5 @@ Dip in average TFP before CEO change. Elevated variance, stabilizing after CEO c
 1. **Modeled** CEO value in private firms
 2. **Measured** using universe of Hungarian firms
 3. **Developed** placebo-controlled method
-4. **Found** 75% of "effects" are spurious
+4. **Found** 75% of "effects" are spurious. Better managers expand the firm, slowly receive more resources to do so.
 
