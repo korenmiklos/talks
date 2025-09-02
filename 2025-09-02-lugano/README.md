@@ -346,36 +346,21 @@ Dip in average TFP before CEO change. Elevated variance, stabilizing after CEO c
 | Good $\to$ Bad |  |  | -1.2** |
 | Gap | 22.1*** | 17.1*** | 5.0*** |
 
-# Implications
+## Treatment Effects and Correlations with Outcomes
 
-## For Empirical Research
+## Guidance For Empirical Research
 
 ### Don't Use Raw Manager FE
 - 75% noise → severe attenuation bias
 - Correlations misleading
 
 ### Better Practices
-1. Include observable characteristics (foreign, education, cohort)
+1. Include observable characteristics 
+  - education and work experience (De Pirro, Koren and Laki 2025)
+  - foreign name (Koren and Telegdy 2025)
+  - selectiveness of entry cohort (Koren and Orbán 2025)
 2. Manager quality on LHS only (never RHS due to attenuation)
-3. Avoid simple correlations (inflated variance)
-4. Implement placebo checks
-
-
-
-## External Validity
-
-### Generalizable
-- Broad economy coverage
-- Standard production technology
-- Aligns with quasi-experimental evidence globally
-
-### Context-Specific
-- Transition economy history
-- EU institutional environment
-- Private firm constraints
-
-### Key Insight
-Noise problem universal - affects all FE studies
+3. Implement placebo checks
 
 # Conclusion
 
@@ -385,148 +370,4 @@ Noise problem universal - affects all FE studies
 2. **Measured** using universe of Hungarian firms
 3. **Developed** placebo-controlled method
 4. **Found** 75% of "effects" are spurious
-
-## What We Found
-
-### Main Result
-True CEO effect = 5.5%, not 22.5%
-
-### Why the Difference?
-- Endogenous timing
-- Selection effects
-- Spurious correlations
-
-### Still Meaningful
-5.5% productivity gain substantial
-
-## What We Learned
-
-### Methodological
-- Standard FE approaches overstate
-- Placebo controls essential
-- Observable characteristics help
-
-### Economic
-- CEOs matter but less than thought
-- Firm fundamentals dominate
-- Match quality important
-
-## Implications Going Forward
-
-### For Researchers
-- Reconsider manager FE papers
-- Implement placebo checks
-- Focus on identification
-
-### For Policymakers
-- Moderate CEO compensation debates
-- Governance reforms less urgent
-- Focus on firm fundamentals
-
-### For Practitioners
-- CEO changes not magic bullets
-- Selection matters but has limits
-- Manage stakeholder expectations
-
-## Next Steps
-
-### Extensions
-- Dynamic effects over CEO tenure
-- Team production and complementarities
-- International comparison
-
-### Applications
-- Other management practices
-- Board effects
-- Family succession
-
-## Thank You
-
-**Contact**: korenm@ceu.edu
-
-**Paper**: [github.com/korenmiklos/ceo-value](https://github.com/korenmiklos/ceo-value)
-
-**Data**: Available through KRTK Adatbank
-
-**Funding**: 
-- ERC Advanced Grant 101097789
-- Hungarian NKFI KKP_22 144193
-
-# Appendix
-
-## Data Construction Details
-
-### Sample Filters
-1. Years 1992-2022 only
-2. Non-missing revenue and employment
-3. Single CEO at any point
-4. Exclude financial sector
-5. Trim 1% tails of growth rates
-
-### Variable Definitions
-- Revenue: Total sales excluding VAT
-- Employment: Average annual employees
-- Manager skill: CEO fixed effect from residualized surplus
-- Foreign: >50% foreign ownership
-- State: >50% state ownership
-
-## Econometric Details
-
-### Revenue Function Estimation
-1. Assume Cobb-Douglas technology
-2. Impose constant returns on variable inputs
-3. Estimate with firm and year FE
-4. Cluster SE at firm level
-
-### Manager Skill Estimation
-1. Residualize surplus from revenue function
-2. Estimate CEO fixed effects
-3. Normalize mean to zero
-4. Shrinkage for small samples
-
-## Additional Robustness
-
-### Alternative Surplus Measures
-- EBITDA instead of revenue
-- Value added
-- TFP from production function
-
-All give similar results
-
-### Alternative Samples
-- Balanced panel
-- Long-tenure CEOs only
-- Exclude crisis years
-
-Results robust
-
-## Placebo Algorithm Details
-
-```
-For each firm i:
-  1. Calculate P(CEO change)
-  2. Draw random years with probability P
-  3. Exclude window around actual changes
-  4. Assign placebo "quality" randomly
-  5. Run same event study
-```
-
-## Theory Appendix
-
-### Microfoundations
-Full derivation available in paper
-
-### Key Assumptions
-1. Cobb-Douglas technology
-2. Perfect competition in inputs
-3. Sector-specific output prices
-4. Managers maximize short-run profit
-5. CEO age affects productivity
-
-### Testable Predictions
-1. $\alpha + \beta + \gamma < 1$ (confirmed: ~0.31 for fixed assets)
-2. Revenue shares constant
-3. Manager effects proportional to $1/\chi$
-
-
 
