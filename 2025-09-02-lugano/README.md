@@ -70,22 +70,7 @@ $$Q_{imt} = \Omega_{it}A_i Z_{m} K_{it}^\alpha L_{imt}^{\beta} M_{imt}^{\gamma}$
 - $Z_m$: Manager skill ($\to$ TFP)
 - $K_{it}$: Physical capital (owner-chosen)
 - $L_{imt}$, $M_{imt}$: Labor, materials (manager-chosen)
-
-## Division of Control
-- Concentrated ownership limits managerial discretion (Fama & Jensen, 1983; Jensen & Meckling, 1976)
-- Family firms retain control rights (Burkart et al., 2003)
-- Plant managers have even more limited control over investments (Bloom et al., 2012, 2019)
-
-### Owners Control
-Physical capital investment, intellectual property, industry and location, CEO hiring/firing
-
-### Managers Control
-Labor hiring, input purchasing, operations, day-to-day decisions
-
-## Evidence on Manager Control Rights
-\input{tables/tableA0.tex}
-
-
+- $\Omega_{it}$: _Residual_ productivity
 
 ## Optimization Problem
 
@@ -200,10 +185,6 @@ Exclude firms that:
 | Multiple firms | 18% |
 | Connected component | 26,476 managers |
 
-## Industry Distribution
-
-\input{tables/tableA1.tex}
-
 ## Temporal Patterns
 
 \input{tables/table1.tex}
@@ -301,9 +282,6 @@ By doing the exact same estimation procedure around "non-changes," we can filter
 2. Pick firms with long CEO tenures (7+ years)
 3. Randomly assign placebo changes with the estimated hazard
 
-## Placebo Spells are Similar to Actual Ones
-\input{tables/table2_panelB.tex}
-
 
 ## Event Study (4)
 Treatment: CEO changes at time $g$.
@@ -317,12 +295,6 @@ with $\gamma$ estimated with 2-treatment version of Callaway--Sant'Anna (2020), 
 
 
 # Results
-
-## Surplus Share by Industry (1)
-\input{tables/tableA1.tex}
-
-## Revenue Function Estimation (2)
-\input{tables/table3.tex}
 
 ## Manager Fixed Effects in the Giant Component (3)
 
@@ -346,8 +318,17 @@ Dip in average TFP before CEO change. Elevated variance, stabilizing after CEO c
 | Good $\to$ Bad |  |  | -1.2** |
 | Gap | 22.1*** | 17.1*** | 5.0*** |
 
-## Treatment Effects and Correlations with Outcomes
-\input{tables/better_ceo_atet.tex}
+## Treatment Effects and Correlations with Outcomes (1)
+\input{tables/atet_manager.tex}
+
+## Treatment Effects and Correlations with Outcomes (2)
+\input{tables/atet_owner.tex}
+
+## Good Managers Gradually Receive/Build Intangible Assets
+![](figures/event_study_has_intangible.pdf)
+
+## But They Immediately Purchase More Material
+![](figures/event_study_lnM.pdf)
 
 ## Guidance For Empirical Research
 
@@ -371,4 +352,30 @@ Dip in average TFP before CEO change. Elevated variance, stabilizing after CEO c
 2. **Measured** using universe of Hungarian firms
 3. **Developed** placebo-controlled method
 4. **Found** 75% of "effects" are spurious. Better managers expand the firm, slowly receive more resources to do so.
+
+# Appendix
+## Division of Control
+- Concentrated ownership limits managerial discretion (Fama & Jensen, 1983; Jensen & Meckling, 1976)
+- Family firms retain control rights (Burkart et al., 2003)
+- Plant managers have even more limited control over investments (Bloom et al., 2012, 2019)
+
+### Owners Control
+Physical capital investment, intellectual property, industry and location, CEO hiring/firing
+
+### Managers Control
+Labor hiring, input purchasing, operations, day-to-day decisions
+
+## Evidence on Manager Control Rights
+\input{tables/tableA0.tex}
+
+## Surplus Share by Industry (1)
+\input{tables/tableA1.tex}
+
+## Revenue Function Estimation (2)
+\input{tables/table3.tex}
+
+
+
+## Placebo Spells are Similar to Actual Ones
+\input{tables/table2_panelB.tex}
 
