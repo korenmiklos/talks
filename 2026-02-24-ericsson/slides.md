@@ -15,18 +15,19 @@ date: February 2026
 [PSPDFKit founder (2024)]{.source}
 :::
 
-## {.stat-slide}
+## {.quote-slide}
 
-::: {.big-number}
+::: {.quote-container}
+![](fig/amodei.jpg){.avatar}
+
+::: {.big-number-inline}
 70–90%
 :::
 
-::: {.stat-context}
 of code at Anthropic is written by Claude
-:::
 
-::: {.source}
-Dario Amodei, Axios AI+ Summit (2025)
+[Dario Amodei]{.speaker}
+[Axios AI+ Summit (2025)]{.source}
 :::
 
 ## The AI coding revolution {.stat-slide}

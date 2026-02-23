@@ -122,6 +122,14 @@
   margin-top: 0.2em;
 }
 
+.reveal .big-number-inline {
+  font-size: 3em;
+  font-weight: 700;
+  color: #e61e25;
+  line-height: 1.2;
+  margin: 0.2em 0;
+}
+
 .reveal a {
   color: var(--r-link-color);
   text-decoration: none;
