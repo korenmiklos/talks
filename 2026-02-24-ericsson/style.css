@@ -1,0 +1,136 @@
+/**
+ * Koren theme for reveal.js
+ * White background, red headings, clean typography
+ */
+
+:root {
+  --r-background-color: #fff;
+  --r-main-font: system-ui, -apple-system, "Segoe UI", Helvetica, sans-serif;
+  --r-main-font-size: 32px;
+  --r-main-color: #232324;
+  --r-block-margin: 16px;
+  --r-heading-margin: 0 0 16px 0;
+  --r-heading-font: system-ui, -apple-system, "Segoe UI", Helvetica, sans-serif;
+  --r-heading-color: #e61e25;
+  --r-heading-line-height: 1.2;
+  --r-heading-font-weight: 600;
+  --r-heading1-size: 2em;
+  --r-heading2-size: 1.4em;
+  --r-code-font: "SF Mono", Menlo, Monaco, monospace;
+  --r-link-color: #e61e25;
+  --r-link-color-hover: #b5161c;
+  --r-selection-background-color: #e61e25;
+  --r-selection-color: #fff;
+}
+
+.reveal-viewport {
+  background: #fff;
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  color: var(--r-main-color);
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  color: var(--r-heading-color);
+  font-weight: var(--r-heading-font-weight);
+  text-transform: none;
+}
+
+.reveal h1 { font-size: var(--r-heading1-size); }
+.reveal h2 { font-size: var(--r-heading2-size); }
+
+.reveal .slides section {
+  line-height: 1.4;
+}
+
+.reveal ul {
+  list-style-type: square;
+}
+
+.reveal li {
+  margin-bottom: 0.5em;
+}
+
+.reveal img {
+  max-height: 55vh;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.reveal blockquote {
+  width: 90%;
+  padding: 1em 1.5em;
+  font-style: italic;
+  color: #444;
+  background: #f8f8f8;
+  border-left: 4px solid #e61e25;
+  box-shadow: none;
+}
+
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+}
+
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+}
+
+/* Custom classes */
+.reveal .subtitle {
+  font-size: 0.6em;
+  color: #666;
+}
+
+.reveal .big-number {
+  font-size: 5em;
+  font-weight: 700;
+  color: #e61e25;
+  line-height: 1;
+  margin: 0.2em 0;
+}
+
+.reveal .source {
+  font-size: 0.5em;
+  color: #999;
+}
+
+.reveal .highlight {
+  color: #e61e25;
+  font-weight: 600;
+}
+
+.reveal .equation {
+  font-family: var(--r-code-font);
+  color: #e61e25;
+  background: #f5f5f5;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+}
+
+.reveal .two-col {
+  display: flex;
+  gap: 2em;
+}
+
+.reveal .two-col .column {
+  flex: 1;
+  text-align: left;
+}
+
+/* Controls */
+.reveal .controls {
+  color: #e61e25;
+}
+
+.reveal .progress {
+  color: #e61e25;
+}
+
+.reveal .slide-number {
+  color: #999;
+  background: transparent;
+}
