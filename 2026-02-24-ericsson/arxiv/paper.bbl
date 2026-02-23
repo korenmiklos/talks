@@ -1,0 +1,194 @@
+\ifx\undefined\bysame
+\newcommand{\bysame}{\leavevmode\hbox to\leftmargin{\hrulefill\,\,}}
+\fi
+\begin{thebibliography}{xx}
+
+\harvarditem[Amodei]{Amodei}{2025}{amodei-2025}
+{\bf Amodei, Dario}, ``Interview at Axios {AI+} Summit,'' Axios September 2025.
+
+\harvarditem[Anderson et al.]{Anderson, de~Palma and
+  Thisse}{1992}{anderson-depalma-thisse-1992}
+{\bf Anderson, Simon~P., Andre de~Palma, and Jacques-Francois Thisse}, {\it
+  Discrete Choice Theory of Product Differentiation}, The MIT Press, October
+  1992.
+
+\harvarditem[{Anthropic}]{{Anthropic}}{2026}{anthropic-2026-cowork}
+{\bf {Anthropic}}, ``Cowork: Claude Code for the rest of your work,'' Claude
+  Blog January 2026.
+\newblock \url{https://claude.com/blog/cowork-research-preview}.
+
+\harvarditem[Arkolakis et al.]{Arkolakis, Costinot and
+  Rodr{\'i}guez-Clare}{2012}{arkolakis-costinot-rodriguez-clare-2012}
+{\bf Arkolakis, Costas, Arnaud Costinot, and Andr{\'e}s Rodr{\'i}guez-Clare},
+  ``New Trade Models, Same Old Gains?,'' {\it American Economic Review}, 2012,
+  {\it 102} (1), 94--130.
+
+\harvarditem[Aum and Shin]{Aum and Shin}{2022}{shin-2022-productivity}
+{\bf Aum, Sangmin and Yongseok Shin}, ``Is Software Eating the World?,'' {\it
+  Working Paper}, May 2022, (2022-10).
+
+\harvarditem[Boysel et al.]{Boysel, Nagle, Carter, Hermansen, Crosby, Luszcz,
+  Lincoln, Yue, Hoffmann and
+  Staub}{2024}{boysel-nagle-carter-hermansen-crosby-luszcz-lincoln-yue-hoffmann-staub-2024-oss-funding}
+{\bf Boysel, Sam, Frank Nagle, Hilary Carter, Anna Hermansen, Kevin Crosby,
+  Jeff Luszcz, Stephanie Lincoln, Daniel Yue, Manuel Hoffmann, and Alexander
+  Staub}, ``2024 Open Source Software Funding Report,'' Open Source Software
+  Funding Survey November 2024.
+\newblock \url{https://opensourcefundingsurvey2024.com/}.
+
+\harvarditem[Clements and Ohashi]{Clements and
+  Ohashi}{2005}{clements-ohashi-2005}
+{\bf Clements, Matthew~T. and Hiroshi Ohashi}, ``Indirect Network Effects and
+  the Product Cycle: Video Games in the U.S., 1994-2002,'' {\it Journal of
+  Industrial Economics}, 2005, {\it 53} (4), 515--542.
+
+\harvarditem[Cui et al.]{Cui, Demirer, Jaffe, Musolff, Peng and
+  Salz}{2025}{cui-demirer-jaffe-musolff-peng-salz-2025}
+{\bf Cui, Kevin~Zheyuan, Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng,
+  and Tobias Salz}, ``The Effects of Generative AI on High-Skilled Work:
+  Evidence from Three Field Experiments with Software Developers,'' {\it SSRN
+  Working Paper}, August 2025, (4945566).
+
+\harvarditem[Daniotti et al.]{Daniotti, Wachs, Feng and
+  Neffke}{2025}{daniotti-2025-ai-code}
+{\bf Daniotti, Simone, Johannes Wachs, Xiangnan Feng, and Frank Neffke}, ``Who
+  is using {AI} to code? {Global} diffusion and impact of generative {AI},''
+  November 2025.
+\newblock arXiv:2506.08945v2 [cs.CY]. \url{https://arxiv.org/abs/2506.08945v2}
+  (accessed January 2026).
+
+\harvarditem[del Rio-Chanona et al.]{del Rio-Chanona, Laurentsyeva and
+  Wachs}{2024}{del-rio-chanona-2024}
+{\bf del Rio-Chanona, R.~Maria, Nadzeya Laurentsyeva, and Johannes Wachs},
+  ``Large Language Models Reduce Public Knowledge Sharing on Online {Q\&A}
+  Platforms,'' {\it PNAS Nexus}, 2024, {\it 3} (9), pgae400.
+
+\harvarditem[Demirer et al.]{Demirer, Fradkin, Tadelis and
+  Peng}{2025}{demirer-fradkin-tadelis-peng-2025}
+{\bf Demirer, Mert, Andrey Fradkin, Nadav Tadelis, and Sida Peng}, ``The
+  Emerging Market for Intelligence: Pricing, Supply, and Demand for {LLM}s,''
+  Working paper December 2025.
+\newblock \url{https://andreyfradkin.com/assets/LLM_Demand_12_12_2025.pdf}
+  (accessed January 2026).
+
+\harvarditem[Eghbal]{Eghbal}{2016}{eghbal-2016}
+{\bf Eghbal, Nadia}, ``Roads and Bridges: The Unseen Labor Behind Our Digital
+  Infrastructure,'' Technical Report, Ford Foundation 2016.
+
+\harvarditem[Friesenbichler et al.]{Friesenbichler, Kügler and
+  Schieber-Knöbl}{2024}{friesenbichler-2024-intangible-capital}
+{\bf Friesenbichler, Klaus~S., Agnes Kügler, and Julia Schieber-Knöbl},
+  ``Intangible Capital as a Production Factor: Firm-level Evidence from
+  Austrian Microdata,'' {\it Applied Economics}, 2024, {\it 56} (23),
+  2687--2701.
+
+\harvarditem[{GitHub}]{{GitHub}}{2025}{github-innovation-graph-2025}
+{\bf {GitHub}}, ``Innovation Graph: Git Pushes,'' GitHub Innovation Graph 2025.
+\newblock Global metrics on git push activity to public repositories.
+
+\harvarditem[{GitHub}]{{GitHub}}{2026}{github-sponsors-2026}
+{\bf \bysame{}}, ``GitHub Sponsors,'' GitHub 2026.
+\newblock \url{https://github.com/sponsors} (accessed January 2026).
+
+\harvarditem[Gousios]{Gousios}{2013}{gousios-2013-ghtorrent}
+{\bf Gousios, Georgios}, ``The {GHTorrent} Dataset and Tool Suite,'' in
+  ``Proceedings of the 10th Working Conference on Mining Software
+  Repositories'' MSR '13 IEEE Press 2013, pp.~233--236.
+
+\harvarditem[{Grand View Research}]{{Grand View
+  Research}}{2022}{grand-view-research-2022-oss-services}
+{\bf {Grand View Research}}, ``Open Source Services Market Size \& Share
+  Report, 2030,'' Grand View Research 2022.
+\newblock Report ID: GVR-4-68040-059-2. End-user Insights section states: ``The
+  large enterprises segment dominated the market in 2022 and accounted for a
+  revenue share of more than 69.0\%.''.
+
+\harvarditem[Halpern et al.]{Halpern, Koren and
+  Szeidl}{2015}{halpern-koren-szeidl-2015}
+{\bf Halpern, L{\'a}szl{\'o}, Mikl{\'o}s Koren, and {\'A}d{\'a}m Szeidl},
+  ``Imported Inputs and Productivity,'' {\it American Economic Review}, 2015,
+  {\it 105} (12), 3660--3703.
+
+\harvarditem[Hoffmann et al.]{Hoffmann, Nagle and
+  Zhou}{2024}{hoffmann-nagle-zhou-2024}
+{\bf Hoffmann, Manuel, Frank Nagle, and Yanuo Zhou}, ``The Value of Open Source
+  Software,'' Working Paper 24-038, Harvard Business School 2024.
+
+\harvarditem[Huang et al.]{Huang, Reyna, Lerner, Xia and
+  Hempel}{2025}{huang-2025-control}
+{\bf Huang, Ruanqianqian, Avery Reyna, Sorin Lerner, Haijun Xia, and Brian
+  Hempel}, ``Professional Software Developers Don't Vibe, They Control: AI
+  Agent Use for Coding in 2025,'' December 2025.
+\newblock arXiv:2512.14012v1 [cs.SE]. \url{https://arxiv.org/abs/2512.14012v1}
+  (accessed January 2026).
+
+\harvarditem[Jimenez et al.]{Jimenez, Yang, Wettig, Yao, Pei, Press and
+  Narasimhan}{2024}{jimenez-2024-swebench}
+{\bf Jimenez, Carlos~E., John Yang, Alexander Wettig, Shunyu Yao, Kexin Pei,
+  Ofir Press, and Karthik~R. Narasimhan}, ``{SWE}-bench: Can Language Models
+  Resolve Real-world Github Issues?,'' in ``International Conference on
+  Learning Representations'' January 2024.
+\newblock OpenReview. \url{https://openreview.net/forum?id=VTF8yNQM66}
+  (accessed January 2026).
+
+\harvarditem[Jones]{Jones}{2020}{jones-2020-eseur}
+{\bf Jones, Derek~M.}, {\it Evidence-based Software Engineering: based on the
+  publicly available data}, Knowledge Software, Ltd, November 2020.
+\newblock Version 1.0. Accessed January 2026.
+
+\harvarditem[Krugman]{Krugman}{1980}{krugman-1980}
+{\bf Krugman, Paul}, ``Scale Economies, Product Differentiation, and the
+  Pattern of Trade,'' {\it American Economic Review}, 1980, {\it 70} (5),
+  950--959.
+
+\harvarditem[Lerner and Tirole]{Lerner and Tirole}{2002}{lerner-tirole-2002}
+{\bf Lerner, Josh and Jean Tirole}, ``Some Simple Economics of Open Source,''
+  {\it Journal of Industrial Economics}, 2002, {\it 50} (2), 197--234.
+
+\harvarditem[{Libraries.io}]{{Libraries.io}}{2025}{libraries-io-2025}
+{\bf {Libraries.io}}, ``Open Source Repository and Dependency Database,''
+  Libraries.io 2025.
+\newblock Accessed January 2026.
+
+\harvarditem[Melitz]{Melitz}{2003}{melitz-2003}
+{\bf Melitz, Marc~J.}, ``The Impact of Trade on Intra-Industry Reallocations
+  and Aggregate Industry Productivity,'' {\it Econometrica}, 2003, {\it 71}
+  (6), 1695--1725.
+
+\harvarditem[{npm}]{{npm}}{2022}{npm-fund-2022}
+{\bf {npm}}, ``npm-fund,'' npm Documentation October 2022.
+\newblock \url{https://docs.npmjs.com/cli/v10/commands/npm-fund} (last edited
+  October 5, 2022; accessed January 2026).
+
+\harvarditem[Orosz]{Orosz}{2025}{Orosz2025}
+{\bf Orosz, Gergely}, ``Stack Overflow Is Almost Dead,'' The Pragmatic Engineer
+  May 2025.
+
+\harvarditem[Peng et al.]{Peng, Kalliamvakou, Cihon and
+  Demirer}{2023}{peng-2023-copilot-productivity}
+{\bf Peng, Sida, Eirini Kalliamvakou, Peter Cihon, and Mert Demirer}, ``The
+  Impact of AI on Developer Productivity: Evidence from GitHub Copilot,'' {\it
+  arXiv preprint}, February 2023.
+
+\harvarditem[Pichai]{Pichai}{2024}{pichai-2024}
+{\bf Pichai, Sundar}, ``Alphabet {Q3} 2024 Earnings Call,'' Alphabet Investor
+  Relations October 2024.
+\newblock \url{https://abc.xyz/investor/}.
+
+\harvarditem[Stenberg]{Stenberg}{2025}{stenberg-2025}
+{\bf Stenberg, Daniel}, ``Death by a thousand slops,'' Blog post July 2025.
+\newblock curl maintainer describing AI-generated low-quality security reports.
+
+\harvarditem[Wang and Zhang]{Wang and
+  Zhang}{2017}{wang-2017-effort-distribution}
+{\bf Wang, Yong and Jing Zhang}, ``The Effort Distribution of Software
+  Development Phases,'' {\it Computer Science and Application}, 2017, {\it 7}
+  (5), 428--437.
+
+\harvarditem[Wathan]{Wathan}{2026}{wathan-2026}
+{\bf Wathan, Adam}, ``Comment on pull request ``feat: add llms.txt endpoint for
+  {LLM}-optimized documentation \#2388'','' GitHub January 2026.
+\newblock
+  \url{https://github.com/tailwindlabs/tailwindcss.com/pull/2388#issuecomment-3717222957}.
+
+\end{thebibliography}
