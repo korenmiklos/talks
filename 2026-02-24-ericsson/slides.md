@@ -12,7 +12,7 @@ date: February 2026
 > "I ship code I don't read."
 
 [Peter Steinberger]{.speaker}
-[PSPDFKit founder (2024)]{.source}
+[OpenClaw (2026)]{.source}
 :::
 
 ## {.quote-slide}
