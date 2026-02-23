@@ -1,17 +1,43 @@
 ---
 title: Vibe Coding Kills Open Source
-subtitle: The hidden cost of AI-assisted development
 author: Miklós Koren, Gábor Békés, Julian Hinz, Aaron Lohmann
 date: February 2026
 ---
 
-## The AI coding revolution
+## {.quote-slide}
+
+::: {.quote-container}
+![](fig/steinberger.jpg){.avatar}
+
+> "I ship code I don't read."
+
+[Peter Steinberger]{.speaker}
+[PSPDFKit founder (2024)]{.source}
+:::
+
+## {.stat-slide}
+
+::: {.big-number}
+70–90%
+:::
+
+::: {.stat-context}
+of code at Anthropic is written by Claude
+:::
+
+::: {.source}
+Dario Amodei, Axios AI+ Summit (2025)
+:::
+
+## The AI coding revolution {.stat-slide}
 
 ::: {.big-number}
 30%
 :::
 
+::: {.stat-context}
 of new code at Google is AI-generated
+:::
 
 ::: {.source}
 Pichai (2024)
@@ -39,12 +65,15 @@ How can both be true?
 npm downloads vs Stack Overflow questions
 :::
 
-## The creator's perspective
+## {.quote-slide}
+
+::: {.quote-container}
+![](fig/wathan.jpg){.avatar}
 
 > "Traffic to our docs is down 40% despite Tailwind being more popular than ever. Revenue is down close to 80%."
 
-::: {.source}
-Adam Wathan, Tailwind CSS creator (2026)
+[Adam Wathan]{.speaker}
+[Tailwind CSS creator (2026)]{.source}
 :::
 
 ## Stack Overflow is dying
@@ -115,13 +144,15 @@ more entry → better ecosystem → lower costs → more entry
 
 [less entry → worse ecosystem → higher costs → less entry]{.highlight}
 
-## What would save OSS?
+## What would save OSS? {.stat-slide}
 
 ::: {.big-number}
 84%
 :::
 
+::: {.stat-context}
 of revenue must come from sources independent of how users access the software
+:::
 
 ## A Spotify model for OSS
 
@@ -138,5 +169,18 @@ Vibe coding is a [fundamental shift]{.highlight} in how software is produced and
 The productivity gains are real. So is the threat to OSS.
 
 ::: {.source}
-koren.mk · codedthinking.com
+koren.mk
 :::
+
+## Acknowledgements {.disclaimer}
+
+::: {.columns}
+:::: {.column width=50%}
+![](fig/erc.png)
+::::
+:::: {.column width=50%}
+![](fig/elvonal.png)
+::::
+:::
+
+This research was funded by the European Union under the Horizon Europe grant 101061123 and by the National Research, Development and Innovation Office (Forefront Research Excellence Program contract number 144193). Views and opinions expressed are those of the authors only and do not necessarily reflect those of the European Union, the European Commission, or the National Research, Development and Innovation Office.

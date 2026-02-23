@@ -8,8 +8,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.6.1/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.6.1/dist/reveal.css">
   <style>
     .reveal .sourceCode {  /* see #7635 */
       overflow: visible;
@@ -30,7 +30,7 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.6.1/dist/theme/white.css" id="theme">
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -39,18 +39,42 @@
 
 <section id="title-slide">
   <h1 class="title">Vibe Coding Kills Open Source</h1>
-  <p class="subtitle">The hidden cost of AI-assisted development</p>
   <p class="author">Miklós Koren, Gábor Békés, Julian Hinz, Aaron
 Lohmann</p>
   <p class="date">February 2026</p>
 </section>
 
-<section id="the-ai-coding-revolution" class="slide level2">
-<h2>The AI coding revolution</h2>
+<section id="section" class="slide level2 quote-slide">
+<h2 class="quote-slide"></h2>
+<div class="quote-container">
+<p><img data-src="fig/steinberger.jpg" class="avatar" /></p>
+<blockquote>
+<p>“I ship code I don’t read.”</p>
+</blockquote>
+<p><span class="speaker">Peter Steinberger</span> <span
+class="source">PSPDFKit founder (2024)</span></p>
+</div>
+</section>
+<section id="section-1" class="slide level2 stat-slide">
+<h2 class="stat-slide"></h2>
+<div class="big-number">
+<p>70–90%</p>
+</div>
+<div class="stat-context">
+<p>of code at Anthropic is written by Claude</p>
+</div>
+<div class="source">
+<p>Dario Amodei, Axios AI+ Summit (2025)</p>
+</div>
+</section>
+<section id="the-ai-coding-revolution" class="slide level2 stat-slide">
+<h2 class="stat-slide">The AI coding revolution</h2>
 <div class="big-number">
 <p>30%</p>
 </div>
+<div class="stat-context">
 <p>of new code at Google is AI-generated</p>
+</div>
 <div class="source">
 <p>Pichai (2024)</p>
 </div>
@@ -77,14 +101,16 @@ engages with maintainers</span></li>
 <p>npm downloads vs Stack Overflow questions</p>
 </div>
 </section>
-<section id="the-creators-perspective" class="slide level2">
-<h2>The creator’s perspective</h2>
+<section id="section-2" class="slide level2 quote-slide">
+<h2 class="quote-slide"></h2>
+<div class="quote-container">
+<p><img data-src="fig/wathan.jpg" class="avatar" /></p>
 <blockquote>
 <p>“Traffic to our docs is down 40% despite Tailwind being more popular
 than ever. Revenue is down close to 80%.”</p>
 </blockquote>
-<div class="source">
-<p>Adam Wathan, Tailwind CSS creator (2026)</p>
+<p><span class="speaker">Adam Wathan</span> <span
+class="source">Tailwind CSS creator (2026)</span></p>
 </div>
 </section>
 <section id="stack-overflow-is-dying" class="slide level2">
@@ -151,13 +177,15 @@ adoption</p>
 <p><span class="highlight">less entry → worse ecosystem → higher costs →
 less entry</span></p>
 </section>
-<section id="what-would-save-oss" class="slide level2">
-<h2>What would save OSS?</h2>
+<section id="what-would-save-oss" class="slide level2 stat-slide">
+<h2 class="stat-slide">What would save OSS?</h2>
 <div class="big-number">
 <p>84%</p>
 </div>
+<div class="stat-context">
 <p>of revenue must come from sources independent of how users access the
 software</p>
+</div>
 </section>
 <section id="a-spotify-model-for-oss" class="slide level2">
 <h2>A Spotify model for OSS</h2>
@@ -175,18 +203,35 @@ not.</span></p>
 how software is produced and consumed.</p>
 <p>The productivity gains are real. So is the threat to OSS.</p>
 <div class="source">
-<p>koren.mk · codedthinking.com</p>
+<p>koren.mk</p>
 </div>
+</section>
+<section id="acknowledgements" class="slide level2 disclaimer">
+<h2 class="disclaimer">Acknowledgements</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="fig/erc.png" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="fig/elvonal.png" /></p>
+</div>
+</div>
+<p>This research was funded by the European Union under the Horizon
+Europe grant 101061123 and by the National Research, Development and
+Innovation Office (Forefront Research Excellence Program contract number
+144193). Views and opinions expressed are those of the authors only and
+do not necessarily reflect those of the European Union, the European
+Commission, or the National Research, Development and Innovation
+Office.</p>
 </section>
     </div>
   </div>
 
-  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.6.1/dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
-  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
-  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.6.1/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.6.1/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.6.1/plugin/zoom/zoom.js"></script>
 
   <script>
 
