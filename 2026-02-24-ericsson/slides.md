@@ -20,41 +20,22 @@ date: February 2026
 ::: {.quote-container}
 ![](fig/amodei.jpg){.avatar}
 
-::: {.big-number-inline}
-70–90%
-:::
-
-of code at Anthropic is written by Claude
+> "70-80-90% of code at Anthropic is written by Claude."
 
 [Dario Amodei]{.speaker}
 [Axios AI+ Summit (2025)]{.source}
 :::
-
-## The AI coding revolution {.stat-slide}
-
-::: {.big-number}
-30%
-:::
-
-::: {.stat-context}
-of new code at Google is AI-generated
-:::
-
-::: {.source}
-Pichai (2024)
-:::
-
 ## What is "vibe coding"?
 
-- AI agent selects and assembles open source packages
 - User describes intent, gets working software
+- AI agent selects and assembles open source packages
 - [User never reads docs, files bugs, or engages with maintainers]{.highlight}
 
 ## The puzzle
 
-Usage [↑]{.highlight}
+OSS usage [↑]{.highlight}
 
-Engagement [↓]{.highlight}
+OSS engagement [↓]{.highlight}
 
 How can both be true?
 
@@ -77,27 +58,19 @@ npm downloads vs Stack Overflow questions
 [Tailwind CSS creator (2026)]{.source}
 :::
 
-## Stack Overflow is dying
-
-![](arxiv/stackoverflow_questions.png)
-
-::: {.source}
-25% decline after ChatGPT launch (del Río-Chanona et al., 2024)
-:::
-
 ## Two channels
 
 ::: {.two-col}
 ::: {.column}
 **Productivity**
 
-AI lowers cost of using and building on OSS
+AI lowers cost of building OSS
 :::
 
 ::: {.column}
 **Demand diversion**
 
-Users don't engage, maintainers lose revenue
+Users don't engage, maintainers lose **visibility**
 :::
 :::
 
@@ -185,3 +158,13 @@ koren.mk
 :::
 
 This research was funded by the European Union under the Horizon Europe grant 101061123 and by the National Research, Development and Innovation Office (Forefront Research Excellence Program contract number 144193). Views and opinions expressed are those of the authors only and do not necessarily reflect those of the European Union, the European Commission, or the National Research, Development and Innovation Office.
+
+# Appendix
+## Stack Overflow is dying
+
+![](arxiv/stackoverflow_questions.png)
+
+::: {.source}
+25% decline after ChatGPT launch (del Río-Chanona et al., 2024)
+:::
+
