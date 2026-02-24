@@ -1,15 +1,18 @@
-slides.html: slides.md style.css
-	pandoc -t revealjs -s \
-		--self-contained \
-		--css style.css \
-		--variable revealjs-url=https://unpkg.com/reveal.js@4.6.1 \
-		--variable theme=white \
-		--variable slideNumber=true \
-		--variable transition=fade \
-		--variable center=true \
-		-o slides.html slides.md
+all: slides.pdf
+
+slides.tex: slides.md ../preamble-slides.tex
+	pandoc $< \
+		-t beamer \
+		--slide-level 2 \
+		-V aspectratio=169 \
+		-H ../preamble-slides.tex \
+		-o $@
+
+slides.pdf: slides.tex
+	pdflatex slides.tex
+	rm -f slides.log slides.nav slides.aux slides.snm slides.toc
 
 clean:
-	rm -f slides.html
+	rm -f slides.tex slides.pdf slides.log slides.nav slides.aux slides.snm slides.toc slides.out
 
-.PHONY: clean
+.PHONY: all clean

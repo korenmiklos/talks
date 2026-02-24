@@ -4,74 +4,64 @@ author: Miklós Koren, Gábor Békés, Julian Hinz, Aaron Lohmann
 date: February 2026
 ---
 
-## {.quote-slide}
+##
 
-::: {.quote-container}
-![](fig/steinberger.jpg){.avatar}
+![](fig/steinberger.jpg){width=20%}
+
+\vspace{1em}
 
 > "I ship code I don't read."
 
-[Peter Steinberger]{.speaker}
-[OpenClaw (2026)]{.source}
-:::
+**Peter Steinberger**, OpenClaw (2026)
 
-## {.quote-slide}
+##
 
-::: {.quote-container}
-![](fig/amodei.jpg){.avatar}
+![](fig/amodei.jpg){width=20%}
+
+\vspace{1em}
 
 > "70-80-90% of code at Anthropic is written by Claude."
 
-[Dario Amodei]{.speaker}
-[Axios AI+ Summit (2025)]{.source}
-:::
+**Dario Amodei**, Axios AI+ Summit (2025)
 ## What is "vibe coding"?
 
 - User describes intent, gets working software
 - AI agent selects and assembles open source packages
-- [User never reads docs, files bugs, or engages with maintainers]{.highlight}
+- **User never reads docs, files bugs, or engages with maintainers**
 
 ## The puzzle
 
-OSS usage [↑]{.highlight}
+OSS usage **↑**
 
-OSS engagement [↓]{.highlight}
+OSS engagement **↓**
 
 How can both be true?
 
 ## Tailwind CSS: A case study
 
-![](arxiv/tailwind_usage_vs_qa.png)
+![npm downloads vs Stack Overflow questions](arxiv/tailwind_usage_vs_qa.png){width=80%}
 
-::: {.source}
-npm downloads vs Stack Overflow questions
-:::
+##
 
-## {.quote-slide}
-
-::: {.quote-container}
-![](fig/wathan.jpg){.avatar}
+![](fig/wathan.jpg){width=20%}
 
 > "Traffic to our docs is down 40% despite Tailwind being more popular than ever. Revenue is down close to 80%."
 
-[Adam Wathan]{.speaker}
-[Tailwind CSS creator (2026)]{.source}
-:::
+**Adam Wathan**, Tailwind CSS creator (2026)
 
 ## Two channels
 
-::: {.two-col}
-::: {.column}
+::: columns
+:::: column
 **Productivity**
 
 AI lowers cost of building OSS
-:::
-
-::: {.column}
+::::
+:::: column
 **Demand diversion**
 
 Users don't engage, maintainers lose **visibility**
-:::
+::::
 :::
 
 ## How OSS maintainers earn returns
@@ -80,7 +70,7 @@ Users don't engage, maintainers lose **visibility**
 - Bug reports → reputation → job offers
 - Stars/downloads → sponsorships
 
-[All require direct engagement]{.highlight}
+**All require direct engagement**
 
 ## A model of the OSS ecosystem
 
@@ -88,17 +78,13 @@ Users don't engage, maintainers lose **visibility**
 - Users choose packages, choose how to use them
 - Vibe coding: higher productivity, lower engagement
 
-[π = π̄(1 - v)]{.equation}
+$$\pi = \bar\pi(1 - v)$$
 
-Revenue falls with vibe coding share v
+Revenue falls with vibe coding share $v$
 
 ## Which channel wins?
 
-Productivity gain: [~12%]{.highlight} cost reduction
-
-Revenue loss: [~70%]{.highlight} at high adoption
-
-[Demand diversion dominates]{.highlight}
+**Demand diversion** is about 6x as big as productivity gains
 
 ## Long-run equilibrium
 
@@ -106,7 +92,7 @@ Revenue loss: [~70%]{.highlight} at high adoption
 - Variety shrinks → less choice
 - Quality declines → worse software
 
-[Welfare can fall despite better AI]{.highlight}
+**Welfare can fall despite better AI**
 
 ## The magnification trap
 
@@ -116,17 +102,15 @@ more entry → better ecosystem → lower costs → more entry
 
 ...now works in reverse
 
-[less entry → worse ecosystem → higher costs → less entry]{.highlight}
+**less entry → worse ecosystem → higher costs → less entry**
 
-## What would save OSS? {.stat-slide}
+## What would save OSS?
 
-::: {.big-number}
-84%
-:::
+\centering
+\Huge 84%
 
-::: {.stat-context}
-of revenue must come from sources independent of how users access the software
-:::
+\normalsize
+of revenue must come from visibility independent sources
 
 ## A Spotify model for OSS
 
@@ -134,26 +118,23 @@ of revenue must come from sources independent of how users access the software
 - Revenue sharing based on attributable usage
 - Infrastructure for redistribution exists
 
-[The technology is ready. The will is not.]{.highlight}
-
 ## Takeaway
 
-Vibe coding is a [fundamental shift]{.highlight} in how software is produced and consumed.
+Vibe coding is a **fundamental shift** in how software is produced and consumed.
 
 The productivity gains are real. So is the threat to OSS.
 
-::: {.source}
-koren.mk
-:::
+\vfill
+\small koren.mk
 
-## Acknowledgements {.disclaimer}
+## Acknowledgements
 
-::: {.columns}
-:::: {.column width=50%}
-![](fig/erc.png)
+::: columns
+:::: column
+![](fig/erc.png){width=80%}
 ::::
-:::: {.column width=50%}
-![](fig/elvonal.png)
+:::: column
+![](fig/elvonal.png){width=80%}
 ::::
 :::
 
@@ -162,9 +143,5 @@ This research was funded by the European Union under the Horizon Europe grant 10
 # Appendix
 ## Stack Overflow is dying
 
-![](arxiv/stackoverflow_questions.png)
-
-::: {.source}
-25% decline after ChatGPT launch (del Río-Chanona et al., 2024)
-:::
+![25% decline after ChatGPT launch (del Río-Chanona et al., 2024)](arxiv/stackoverflow_questions.png){width=80%}
 
