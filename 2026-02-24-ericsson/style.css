@@ -1,0 +1,296 @@
+/**
+ * Koren theme for reveal.js
+ * White background, red headings, clean typography
+ */
+
+:root {
+  --r-background-color: #fff;
+  --r-main-font: system-ui, -apple-system, "Segoe UI", Helvetica, sans-serif;
+  --r-main-font-size: 32px;
+  --r-main-color: #232324;
+  --r-block-margin: 16px;
+  --r-heading-margin: 0 0 24px 0;
+  --r-heading-font: system-ui, -apple-system, "Segoe UI", Helvetica, sans-serif;
+  --r-heading-color: #e61e25;
+  --r-heading-line-height: 1.2;
+  --r-heading-font-weight: 600;
+  --r-heading1-size: 2em;
+  --r-heading2-size: 1.4em;
+  --r-code-font: "SF Mono", Menlo, Monaco, monospace;
+  --r-link-color: #e61e25;
+  --r-link-color-hover: #b5161c;
+  --r-selection-background-color: #e61e25;
+  --r-selection-color: #fff;
+}
+
+/* Selection styles */
+.reveal ::selection {
+  background: var(--r-selection-background-color);
+  color: var(--r-selection-color);
+}
+
+.reveal ::-moz-selection {
+  background: var(--r-selection-background-color);
+  color: var(--r-selection-color);
+}
+
+.reveal-viewport {
+  background: #fff;
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  color: var(--r-main-color);
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  color: var(--r-heading-color);
+  font-weight: var(--r-heading-font-weight);
+  text-transform: none;
+}
+
+.reveal h1 { font-size: var(--r-heading1-size); }
+.reveal h2 { font-size: var(--r-heading2-size); }
+
+.reveal .slides section {
+  line-height: 1.4;
+}
+
+.reveal ul {
+  list-style-type: square;
+}
+
+.reveal li {
+  margin-bottom: 0.5em;
+}
+
+.reveal img {
+  max-height: 55vh;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.reveal blockquote {
+  width: 85%;
+  margin: 0.8em auto;
+  padding: 0.8em 1.2em;
+  font-size: 1.1em;
+  font-style: italic;
+  color: #333;
+  background: transparent;
+  border-left: 4px solid #e61e25;
+  box-shadow: none;
+  text-align: left;
+}
+
+/* Quote slides with avatar */
+.reveal section.quote-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.reveal .quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+}
+
+.reveal .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1em;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.reveal .speaker {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.8em;
+}
+
+.reveal .quote-container .source {
+  font-size: 0.6em;
+  color: #888;
+  margin-top: 0.2em;
+}
+
+.reveal .big-number-inline {
+  font-size: 3em;
+  font-weight: 700;
+  color: #e61e25;
+  line-height: 1.2;
+  margin: 0.2em 0;
+}
+
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+}
+
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+}
+
+/* Title slide */
+.reveal #title-slide {
+  text-align: center;
+}
+
+.reveal #title-slide .title {
+  font-size: 2.2em;
+  margin-bottom: 0.2em;
+}
+
+.reveal #title-slide .subtitle {
+  font-size: 0.9em;
+  color: #666;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+}
+
+.reveal #title-slide .author {
+  font-size: 0.7em;
+  color: #444;
+  margin-bottom: 0.3em;
+}
+
+.reveal #title-slide .date {
+  font-size: 0.6em;
+  color: #888;
+}
+
+/* Custom classes */
+.reveal .subtitle {
+  font-size: 0.6em;
+  color: #666;
+}
+
+.reveal .big-number {
+  font-size: 4.5em;
+  font-weight: 700;
+  color: #e61e25;
+  line-height: 1;
+  margin: 0.3em 0;
+  letter-spacing: -0.02em;
+}
+
+.reveal .big-number p {
+  margin: 0;
+}
+
+/* Stat slides - centered with context */
+.reveal section.stat-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.reveal .stat-context {
+  font-size: 1.1em;
+  color: #555;
+  max-width: 70%;
+  text-align: center;
+}
+
+.reveal .source {
+  font-size: 0.5em;
+  color: #999;
+  margin-top: 1.5em;
+}
+
+.reveal .source p {
+  margin: 0;
+}
+
+.reveal .highlight {
+  color: #e61e25;
+  font-weight: 600;
+}
+
+.reveal .equation {
+  font-family: var(--r-code-font);
+  color: #e61e25;
+  background: #f5f5f5;
+  padding: 0.3em 0.6em;
+  border-radius: 4px;
+}
+
+.reveal .two-col {
+  display: flex;
+  gap: 3em;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.reveal .two-col .column {
+  flex: 1;
+  text-align: left;
+  max-width: 45%;
+}
+
+.reveal .two-col .column p {
+  margin: 0.5em 0;
+}
+
+/* Center slide - for quotes and big statements */
+.reveal section.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Disclaimer slide */
+.reveal section.disclaimer {
+  font-size: 0.55em;
+  color: #666;
+  text-align: left;
+}
+
+.reveal section.disclaimer p {
+  max-width: 90%;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.reveal section.disclaimer .columns {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin-bottom: 1em;
+}
+
+.reveal section.disclaimer .column {
+  flex: 0 0 auto;
+}
+
+.reveal section.disclaimer .column img {
+  max-height: 80px;
+  width: auto;
+}
+
+/* Controls */
+.reveal .controls {
+  color: #e61e25;
+}
+
+.reveal .progress {
+  color: #e61e25;
+}
+
+.reveal .slide-number {
+  color: #999;
+  background: transparent;
+}

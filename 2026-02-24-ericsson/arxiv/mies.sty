@@ -1,0 +1,68 @@
+% Layout
+\usepackage[utf8]{inputenc} % Input encoding
+\usepackage{setspace} % Adjust line spacing
+\usepackage[left=1.2in,right=1.2in,top=1.2in,bottom=1.2in]{geometry} % Page margins
+\usepackage{pdflscape} % Landscape pages
+\usepackage{lscape, longtable} % Tables spanning multiple pages
+\setlength\parindent{0pt} % No paragraph indentation
+\renewcommand{\baselinestretch}{1.25} % Adjust line spacing
+
+% Math
+\usepackage{amsmath} % Math equations
+\usepackage{amssymb} % Math symbols
+\usepackage{array} % Table formatting
+\usepackage{bm} % Bold math symbols
+
+% Figures
+\usepackage[labelfont=bf]{caption} % Figure captions
+\usepackage{rotating} % Rotate figures and tables
+\usepackage{graphicx} % Graphics inclusion
+\usepackage{placeins} % Control float placement
+\usepackage{float} % Improved float placement
+\usepackage{subcaption} % Subfigures and subcaptions
+\usepackage{tikz} % Tikz figures
+
+% Tables
+\usepackage{afterpage} % Landscape tables on page after
+\usepackage{longtable} % Tables on multiple pages
+\usepackage{threeparttable} % Tables with footnotes
+\usepackage{threeparttablex} % threeparttable with longtable
+\usepackage{booktabs} % Nice horizontal lines in tables
+\usepackage{tabularx} % Adjustable width tabulars
+\usepackage{supertabular} % Tables spanning multiple pages
+
+% Miscellaneous
+\usepackage{hyperref} % Hyperlinks
+\usepackage{comment} % Comment blocks of code
+\usepackage{rotating} % Rotate figures and tables
+\usepackage{textcomp} % Special text characters
+\usepackage[bottom]{footmisc} % Stick footnotes to the bottom
+\interfootnotelinepenalty=10000 % Don't break footnotes over pages
+
+% Custom commands and environments
+\newcommand{\bom}{\boldmath} % Bold math command
+\newcommand{\fmalpha}{\mbox{\bom${\alpha}$}} % Custom alpha symbol
+\newcommand{\fmbeta}{\mbox{\bom${\beta}$}} % Custom beta symbol
+\newcommand{\fmdelta}{\mbox{\bom${\delta}$}} % Custom delta symbol
+\newcommand{\fmtau}{\mbox{\bom${\tau}$}} % Custom tau symbol
+
+\newcommand{\header}[1]{\multicolumn{1}{c}{\rotatebox[origin=r]{-90}{#1}}} % Header command for rotated column headers
+
+\newcommand{\tba}{\begin{center}\textit{To be added.}\end{center}} % "To be added" placeholder
+
+% Bibliography
+\usepackage{natbib} % Bibliography and citation styles
+
+% Typesetting
+\usepackage{charter} % Charter font
+\usepackage{microtype} % Improved typesetting
+\usepackage{parskip} % Paragraph spacing
+
+% PDF properties
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
