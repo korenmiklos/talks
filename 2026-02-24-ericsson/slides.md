@@ -45,6 +45,8 @@ How can both be true?
 
 ![](fig/wathan.jpg){width=20%}
 
+\vspace{1em}
+
 > "Traffic to our docs is down 40% despite Tailwind being more popular than ever. Revenue is down close to 80%."
 
 **Adam Wathan**, Tailwind CSS creator (2026)
