@@ -26,7 +26,7 @@ aspectratio: 16
     - state visit
     - negotiation
     - agreement
-- Measure "intent" and "visits" at bilaterial level.
+- Measure "intent" and "visits" at bilateral level.
 
 ## Examples of "intent to cooperate"
 ![](exhibit/szijjarto.png) 
