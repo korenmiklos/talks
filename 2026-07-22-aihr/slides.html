@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Koren Miklós">
+  <meta name="dcterms.date" content="2026-01-01">
+  <title>AI és a munkaerőpiac: mit mondanak az adatok?</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/white.css" id="theme">
+  <style>
+    .reveal .slides { font-size: 0.75em; }
+    .reveal h1, .reveal h2, .reveal h3 { text-transform: none !important; }
+    .reveal h1 { font-size: 2.2em; color: #E52020; }
+    .reveal h2 { font-size: 1.5em; color: #E52020; }
+    .reveal h3 { font-size: 1.1em; }
+    .reveal section img { border: none; box-shadow: none; max-height: 80vh; max-width: 95%; object-fit: contain; }
+    .reveal ul, .reveal ol { display: block; text-align: left; }
+    .reveal .math { font-size: 1.05em; }
+    .reveal pre { font-size: 0.85em; }
+    .reveal small { font-size: 0.6em; color: #666; }
+    .reveal .columns { display: flex; gap: 1.5em; align-items: center; }
+    .reveal .column { flex: 1; }
+    .reveal .column img { max-height: 60vh; }
+    .reveal pre.mermaid { background: none; box-shadow: none; font-size: 0.7em; }
+  </style>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'neutral', securityLevel: 'loose',
+      sequence: { actorMargin: 50, width: 150, height: 40, mirrorActors: false }
+    });
+  </script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">AI és a munkaerőpiac: mit mondanak az adatok?</h1>
+  <p class="author">Koren Miklós</p>
+  <p class="date">2026</p>
+</section>
+
+<section id="magamról" class="slide level2">
+<h2>Magamról</h2>
+<ul>
+<li>Közgazdász, Central European University</li>
+<li>Kutatás: nemzetközi kereskedelem, gazdasági komplexitás, AI
+közgazdaságtana</li>
+</ul>
+<div>
+<ul>
+<li class="fragment">Koren, Békés, Hinz &amp; Lohmann (2026). <em>Vibe
+Coding Kills Open Source</em></li>
+<li class="fragment">Bárány &amp; Koren (2026). <em>Broken Ladders: AI,
+Teamwork, and Skill Formation</em></li>
+<li class="fragment">Koren, Bárány &amp; Wohak (2026). <em>The
+Directions of Technical Change</em></li>
+</ul>
+</div>
+</section>
+<section id="ai-közgazdaságtana" class="slide level2">
+<h2>AI közgazdaságtana</h2>
+<p><img data-src="fig/vibe-code-revolution.jpg" /></p>
+</section>
+<section id="ai-közgazdaságtana-1" class="slide level2">
+<h2>AI közgazdaságtana</h2>
+<p><img data-src="fig/llm-blog-post.png" /></p>
+</section>
+<section id="ai-oktatás" class="slide level2">
+<h2>AI oktatás</h2>
+<p><img data-src="fig/ai-workshop.png" /></p>
+</section>
+<section id="ai-alkalmazások-fejlesztése-dodo" class="slide level2">
+<h2>AI-alkalmazások fejlesztése: Dodo</h2>
+<p><img data-src="fig/dodo-getstarted.png" /></p>
+</section>
+<section id="ai-alkalmazások-fejlesztése-dodo-review"
+class="slide level2">
+<h2>AI-alkalmazások fejlesztése: Dodo Review</h2>
+<p><img data-src="fig/dodo-review.png" /></p>
+</section>
+<section id="hogy-működnek-az-llm-ek" class="slide level2">
+<h2>Hogy működnek az LLM-ek?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="fig/attention.png" /></p>
+<p>Vaswani et al. (2017)</p>
+<p><em>Attention Is All You Need</em></p>
+<p>Cited by 261,035</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="fig/stochastic-parrots.png" /></p>
+<p>Bender et al. (2021)</p>
+<p><em>On the Dangers of Stochastic Parrots</em></p>
+<p>Cited by 4,865</p>
+</div>
+</div>
+</section>
+<section id="hogy-működnek-az-llm-ek-1" class="slide level2">
+<h2>Hogy működnek az LLM-ek?</h2>
+<p><img data-src="fig/tattoo.png" /></p>
+<p>Folyó szöveget olvasó és író matematikai modell. Nem <em>érti</em>,
+hanem <em>folytatja</em> a szöveget.</p>
+</section>
+<section id="section" class="slide level2" data-state="mermaid-slide">
+<h2 data-state="mermaid-slide"></h2>
+<h2 style="color:#E52020; text-transform:none; font-size:1.5em;">LLM + Agent + Tool</h2>
+<pre class="mermaid">
+sequenceDiagram
+    participant User
+    participant Agent
+    participant LLM
+    participant Tool
+    User->>Agent: Book me a flight to Paris
+    Agent->>LLM: role: user, content: Book a flight
+    LLM-->>Agent: tool_call: web_search(flights to paris)
+    Agent->>Tool: web_search(flights to paris)
+    Tool-->>Agent: results: [...]
+    Agent->>LLM: role: tool, content: [...]
+    LLM-->>Agent: Here are a few options...
+    Agent-->>User: Here are a few flight options
+</pre>
+</section>
+<section id="kulcsfogalmak" class="slide level2">
+<h2>Kulcsfogalmak</h2>
+<ul>
+<li><strong>Agent:</strong> hagyományos szoftverprogram, általában a mi
+gépünkön</li>
+<li><strong>LLM:</strong> folyó szöveget olvasó és író matematikai
+modell, általában távoli eléréssel</li>
+<li><strong>Tool:</strong> külső eszköz, amit az agent hív meg az LLM
+kérésére</li>
+</ul>
+<div class="fragment">
+<p>Legjobb analógia: <strong>intelligens, de nem mindentudó
+munkatárs</strong>, nagyon olcsó és nagyon gyors</p>
+</div>
+</section>
+<section id="mítosz" class="slide level2">
+<h2>Mítosz…</h2>
+<ul>
+<li>“Az AI már többet tud, mint az ember.”</li>
+<li>“Az AI átveszi az uralmat.”</li>
+<li>“Az AI elveszi a munkádat.”</li>
+<li>“Minél intelligensebb az AI, annál hasznosabb.”</li>
+<li>“A drágább AI jobb.”</li>
+</ul>
+</section>
+<section id="mítosz-morális-pánik" class="slide level2">
+<h2>Mítosz: “morális pánik”</h2>
+<p><img data-src="fig/we-must-act-now.png" /></p>
+</section>
+<section id="és-valóság-jagged-intelligence" class="slide level2">
+<h2>…és valóság: Jagged Intelligence</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><img data-src="fig/jagged-intelligence.png" /></p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="fig/gpt4-vs-gpt5.png" /></p>
+<p>Az AI teljesítménye nagyon <strong>egyenetlen</strong> a feladatok
+között.</p>
+</div>
+</div>
+</section>
+<section id="mennyien-használják-kevesen." class="slide level2">
+<h2>Mennyien használják? Kevesen.</h2>
+<p><img data-src="fig/work-hours-genai.png" /></p>
+<p><small>Bick, Blandin, Deming, Fuchs-Schündeln &amp; Jessen (2026).
+<em>Mind the Gap: AI Adoption in Europe and the US</em></small></p>
+</section>
+<section id="mekkora-az-időmegtakarítás-kicsi." class="slide level2">
+<h2>Mekkora az időmegtakarítás? Kicsi.</h2>
+<p><img data-src="fig/time-savings.png" /></p>
+<p>Kb. <strong>1 óra</strong> használattal <strong>fél óra</strong>
+megtakarítást érnek el (1,5x)</p>
+</section>
+<section id="mi-történik-a-munkahelyeken" class="slide level2">
+<h2>Mi történik a munkahelyeken?</h2>
+<p><img data-src="fig/workplace-effects.png" /></p>
+<p><small>Humlum &amp; Vestergaard (2025). <em>Still Waters, Rapid
+Currents</em></small></p>
+</section>
+<section id="aki-használja-munkát-vált" class="slide level2">
+<h2>Aki használja, munkát vált</h2>
+<p><img data-src="fig/occupational-mobility.png" /></p>
+</section>
+<section id="és-jobban-keres" class="slide level2">
+<h2>…és jobban keres</h2>
+<p><img data-src="fig/job-characteristics.png" /></p>
+<p>Nincs se bérhatás, se elbocsátás a jelenlegi munkáltatónál, de sokan
+<strong>elmennek maguktól</strong>. Több AI-t használnak és
+<strong>12%-kal nő a bérük</strong>.</p>
+</section>
+<section id="miért-the-directions-of-technical-change"
+class="slide level2">
+<h2>Miért? The Directions of Technical Change</h2>
+<p>Koren, Bárány &amp; Wohak (2026)</p>
+<ol type="1">
+<li><p>Az AI-használat legfőbb költsége a <strong>saját időnk</strong>:
+feladat kiadása, ellenőrzése, koordinálás. (Menedzsment típusú
+feladatok.)</p></li>
+<li><p>A legtöbb szakma <strong>sokféle feladat</strong> elvégzését
+igényli (“messy jobs”)</p></li>
+</ol>
+<p><small>Garicano, Li &amp; Wu (2026). <em>Messy Jobs: The Work That AI
+Cannot Reach</em></small></p>
+</section>
+<section id="ki-fogadja-be-az-ai-t" class="slide level2">
+<h2>Ki fogadja be az AI-t?</h2>
+<p><img data-src="fig/adoption-threshold.png" /></p>
+</section>
+<section id="mekkora-a-termelékenységnövekedés" class="slide level2">
+<h2>Mekkora a termelékenységnövekedés?</h2>
+<p><img data-src="fig/productivity-gains.png" /></p>
+</section>
+<section id="következtetések" class="slide level2">
+<h2>Következtetések</h2>
+<ol type="1">
+<li>Rengeteg magasan képzett dolgozónak <strong>nem éri meg</strong> az
+AI-használat.</li>
+<li>Aki elkezdi használni, alig térül meg. (1 óra használattal 1,x óra
+munkát végez el.)</li>
+<li>Más munkakörben (pl. programozás) <strong>jobban ki lehet
+használni</strong> az előnyöket.</li>
+<li>Aki használja, <strong>munkát vált</strong> és többet keres.</li>
+</ol>
+</section>
+<section id="merre-tart-az-ai" class="slide level2">
+<h2>Merre tart az AI?</h2>
+<ul>
+<li><p>Az intelligencia (LLM) egyre <strong>gyorsabb és olcsóbb</strong>
+– versengő piac</p></li>
+<li><p>Üzleti lehetőségek máshol:</p>
+<ul>
+<li><strong>upstream:</strong> chipek és data centerek</li>
+<li><strong>downstream:</strong> üzleti alkalmazások, modern UX</li>
+</ul></li>
+</ul>
+</section>
+<section id="ár-és-minőség" class="slide level2">
+<h2>Ár és minőség</h2>
+<p><img
+data-src="https://codedthinking.github.io/2026-06-11-ai-workshop/assets/diagrams/tradeoff-scatter.svg" /></p>
+</section>
+<section id="nyílt-vs.-zárt-modellek" class="slide level2">
+<h2>Nyílt vs. zárt modellek</h2>
+<p><img
+data-src="https://codedthinking.github.io/2026-06-11-ai-workshop/assets/diagrams/open-closed-eci-gap.svg" /></p>
+</section>
+<section id="köszönöm" class="slide level2">
+<h2>Köszönöm!</h2>
+<p>Koren Miklós</p>
+<p>koren.mk</p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@4/plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: true,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
