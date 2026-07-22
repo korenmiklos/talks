@@ -6,8 +6,9 @@ date: 2026
 
 ## Magamról
 
-- Közgazdász, Central European University
-- Kutatás: nemzetközi kereskedelem, gazdasági komplexitás, AI közgazdaságtana
+- Közgazdász, egyetemi tanár, Central European University
+- Tananyag-, szoftverfejlesztő, tanácsadó, Coded Thinking
+- Kutatás: nemzetközi kereskedelem, gazdasági növekedés, menedzsment és versenyképesség, AI közgazdaságtana
 
 ::: {.incremental}
 - Koren, Békés, Hinz & Lohmann (2026). *Vibe Coding Kills Open Source*
@@ -26,10 +27,6 @@ date: 2026
 ## AI oktatás
 
 ![](fig/ai-workshop.png)
-
-## AI-alkalmazások fejlesztése: Dodo
-
-![](fig/dodo-getstarted.png)
 
 ## AI-alkalmazások fejlesztése: Dodo Review
 
@@ -136,7 +133,7 @@ Kb. **1 óra** használattal **fél óra** megtakarítást érnek el (1,5x)
 
 ![](fig/workplace-effects.png)
 
-<small>Humlum & Vestergaard (2025). *Still Waters, Rapid Currents*</small>
+<small>Humlum, A., & Vestergaard, E. (2025). *Still Waters, Rapid Currents: Early Labor Market Transformation under Generative AI*</small>
 
 ## Aki használja, munkát vált
 
@@ -194,3 +191,7 @@ Koren, Bárány & Wohak (2026)
 Koren Miklós
 
 koren.mk
+
+koren.dev
+
+codedthinking.com

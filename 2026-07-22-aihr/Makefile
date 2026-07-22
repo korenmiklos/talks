@@ -14,7 +14,7 @@ STYLE = \
   .reveal .column img { max-height: 60vh; }
 
 slides.html: slides.md
-	@printf '<style>$(STYLE)</style>\n<script type="module">\nimport mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";\nmermaid.initialize({ startOnLoad: true, theme: "neutral", securityLevel: "loose", sequence: { actorMargin: 50, width: 150, height: 40, mirrorActors: false } });\n</script>' > /tmp/aihr-header.html
+	@printf '%s\n' '<style>$(STYLE)</style>' '<script type="module">' 'import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";' 'mermaid.initialize({ startOnLoad: true, theme: "neutral", securityLevel: "loose", sequence: { actorMargin: 50, width: 150, height: 40, mirrorActors: false } });' '</script>' > /tmp/aihr-header.html
 	pandoc -t revealjs -s \
 	  --variable theme=white \
 	  --variable revealjs-url=https://unpkg.com/reveal.js@4 \
