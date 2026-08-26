@@ -4,8 +4,6 @@ title: How to maximize your ERC chances
 date: CEU ERC Workshop, August 26, 2026
 aspectratio: 1610
 lang: en
-links:
-  - Event page: https://koren.dev/events/2026-08-26-erc-workshop/
 ---
 
 ## My ERC history
