@@ -4,6 +4,8 @@ title: How to maximize your ERC chances
 date: CEU ERC Workshop, August 26, 2026
 aspectratio: 1610
 lang: en
+links:
+  - Event page: https://koren.dev/events/2026-08-26-erc-workshop/
 ---
 
 ## My ERC history
@@ -68,5 +70,3 @@ Don't try to guess what the panel wants. It is a diverse group.
 Don't spend time guessing who will be on the panel. Can even be counterproductive.
 
 # Good luck!
-
-Slides: [koren.dev/events/2026-08-26-erc-workshop/](https://koren.dev/events/2026-08-26-erc-workshop/)
