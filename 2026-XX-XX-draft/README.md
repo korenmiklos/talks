@@ -7,55 +7,54 @@ author:
 date: DRAFT --- venue and date TBD
 aspectratio: 169
 lang: en
+titlepage: true
+section-titles: true
 ---
-
-## Acknowledgements
-::: {.columns}
-:::: {.column width=50%}
-![](images/erc.png)
-::::
-:::: {.column width=50%}
-![](images/elvonal.png)
-::::
-:::
-
-This research was funded by the European Research Council (ERC Advanced Grant agreement number 101097789) and by the National Research, Development and Innovation Office (Forefront Research Excellence Program contract number 144193). The views expressed are those of the authors and do not necessarily reflect the official view of the European Union, the European Research Council, or the National Research, Development and Innovation Office.
 
 # Motivation
 
 ## Does the allocation of executive talent matter for GDP?
 
-- Misallocation lowers aggregate productivity \smallcite{Hsieh and Klenow 2009}
-- Talent is a fixed factor: who runs which firm matters
-- Executives are few, but their decisions scale with firm size
-- This is a macro question: we need the *whole* economy, not a selected sample
+Misallocation lowers aggregate productivity \smallcite{Hsieh and Klenow 2009}
 
-<!-- TODO: add recent misallocation/talent-allocation citations from baby-boom and choo-siow-calvo repos/issues -->
+\pause
+
+Executives are few, but their decisions scale with the firm.
+
+Who runs which firm is a macro question.
+
+<!-- TODO: add recent misallocation/talent-allocation citations from baby-boom repo and choo-siow-calvo issues -->
 
 ## A simple assignment model
 
-Firm $i$ has fundamentals $A_i$, executive $m$ has talent $Z_m$. With variable inputs substituted out, revenue is Cobb--Douglas in the two *fixed factors*:
+Firm $i$ employs labor $L$ under fixed factors: fundamentals $A_i$ and executive talent $Z_m$,
+$$
+Y_{im} = A_i^{1-\nu} Z_m^{\nu} \cdot f(L)
+$$
+\pause
+Diminishing returns to labor pin down firm scale. Substituting out labor, revenue is Cobb--Douglas in the *two fixed factors*:
 $$
 Y_{im} = A_i^{1-\nu} Z_m^{\nu}
 $$
 
-### Two implications
-- Diminishing returns to each factor pin down firm scale
-- $\partial^2 Y / \partial A\, \partial Z > 0$: firm fundamentals and talent are **complements**
+## Complementarity means assignment matters
 
-### Complementarity $\Rightarrow$ assignment matters
+$$
+\frac{\partial^2 Y}{\partial A\, \partial Z} > 0
+$$
+
 The efficient allocation matches better executives to better firms \smallcite{Becker 1973, Lucas 1978}
 
 ## Sorting shows up directly in GDP
 
-Sum output across the $n$ matches in the economy. With $a=\ln A$, $z=\ln Z$ jointly normal (law of large numbers),
+Sum over the $n$ matches. With $a=\ln A$, $z=\ln Z$ jointly normal,
 $$
 \frac{Y}{n} = \exp\Big\{(1-\nu)\mu_a + \nu\mu_z + \tfrac{1}{2}\big[(1-\nu)^2\sigma_a^2 + \nu^2\sigma_z^2\big] + \nu(1-\nu)\,\mathrm{Cov}(a,z)\Big\}
 $$
 
-- Marginal distributions fixed: GDP is increasing in $\mathrm{Cov}(a,z)$
-- **The covariance of talent and fundamentals across matches is an aggregate outcome**
-- How large is it in the data?
+\pause
+
+> Holding marginal distributions fixed, GDP increases in $\mathrm{Cov}(a,z)$.
 
 ## Talent allocation in one picture
 
@@ -64,15 +63,14 @@ $$
   frm/.style={rectangle, draw=black!70, fill=black!8, thick, minimum size=6mm, inner sep=1pt, font=\scriptsize},
   mgr/.style={circle, draw=black!70, fill=white, thick, minimum size=6mm, inner sep=1pt, font=\scriptsize},
   lnk/.style={dashed, black!60, thick},
-  scale=0.85, every node/.style={transform shape}
+  scale=0.82, every node/.style={transform shape}
 ]
 \node[font=\small\bfseries] at (0,0.9) {firms, ranked};
 \node[font=\small\bfseries] at (6,0.9) {executives, ranked};
 \foreach \r in {1,...,8} {
-  \node[frm] (a\r) at (0,-0.75*\r) {$A_{\r}$};
-  \node[mgr] (z\r) at (6,-0.75*\r) {$Z_{\r}$};
+  \node[frm] (a\r) at (0,-0.72*\r) {$A_{\r}$};
+  \node[mgr] (z\r) at (6,-0.72*\r) {$Z_{\r}$};
 }
-% imperfect positive sorting: mostly aligned, a few crossings
 \draw[lnk] (a1) -- (z2);
 \draw[lnk] (a2) -- (z1);
 \draw[lnk] (a3) -- (z3);
@@ -84,36 +82,37 @@ $$
 \end{tikzpicture}
 \end{center}
 
-Sorting is positive but imperfect. How far is the economy from the diagonal?
+How far is the economy from the diagonal?
 
-## The question and the challenge
+## The question, in two layers
 
 ### Layer 1: a macro question
-How strongly are productive firms matched with talented executives, and what does the allocation contribute to aggregate output?
+How strongly are productive firms matched with talented executives?
 
 \pause
 
 ### Layer 2: measuring something with nothing
-Neither firm fundamentals $A_i$ nor executive talent $Z_m$ is observable. How do you estimate a correlation between two latent variables?
+Neither $A_i$ nor $Z_m$ is observable.
 
 ## How can we measure executive talent?
 
-- Surveys and diary studies of what executives do \smallcite{Bandiera et al 2020}
-- Observable characteristics: education, experience, style
-- **From outcomes:** executives who move reveal their persistent contribution \smallcite{Bertrand and Schoar 2003}
-- Matched two-way decompositions in labor \smallcite{Abowd, Kramarz and Margolis 1999}
+Surveys and diaries of what executives do \smallcite{Bandiera et al 2020}
 
-We follow the outcome-based route --- but with a twist.
+Observable characteristics: education, experience, style
+
+\pause
+
+**From outcomes**: executives who move reveal their persistent contribution \smallcite{Bertrand and Schoar 2003, Abowd, Kramarz and Margolis 1999}
 
 ## What we do
 
-1. Use the **executive mobility network**: chains of moves connect firms and executives that never meet
+1. Use the **mobility network**: chains of moves connect firms and executives that never meet
 2. We do *not* estimate a latent talent for every executive
-3. We estimate the parameters of a **sorting model**, in particular $\mathrm{Corr}(a, z)$
+3. We estimate the parameters of a **sorting model**
 
 ## Our object of interest: four parameters
 
-Model $(A_i, Z_m)$ of matched pairs as jointly lognormal, add match noise:
+$(A_i, Z_m)$ of matched pairs jointly lognormal, plus match noise:
 $$
 y_{im} = a_i + z_m + \varepsilon_{im},
 \qquad
@@ -122,62 +121,68 @@ y_{im} = a_i + z_m + \varepsilon_{im},
 \right)
 $$
 
-### Four parameters
 $$
-\sigma_a, \quad \sigma_z, \quad \rho, \quad \sigma_\varepsilon
+\boldsymbol\theta = (\sigma_a, \quad \sigma_z, \quad \rho, \quad \sigma_\varepsilon)
 $$
 
-- $\rho$ = sorting: the correlation between firm fundamentals and executive talent
-- We estimate these on the full economy, using the network
-- How? Hold that thought --- first, what everyone else does
+$\rho$ = sorting. How we estimate it: hold that thought.
 
 # Prior art: fixed effects
 
 ## Mobility reveals talent
 
-- A firm switches executives; performance jumps
-- An executive improves *every* firm they run
-- Statistical evidence that their talent exceeds their predecessor's
+A firm switches executives; performance jumps.
 
-### The fixed-effects route
-Take logs of the lognormal model and treat $a_i$, $z_m$ as *parameters*:
+An executive improves *every* firm they run.
+
+\pause
+
+Treat $a_i$, $z_m$ as *parameters* and run OLS with two sets of dummies:
 $$
-y_{im} = a_i + z_m + \varepsilon_{im} \quad \Rightarrow \quad \text{OLS with two sets of dummies}
+y_{im} = a_i + z_m + \varepsilon_{im}
 $$
 
-- Labor: \smallcite{Abowd, Kramarz and Margolis 1999; Andrews et al 2008; Kline, Saggio and Sølvsten 2020}
-- Executives and managers: \smallcite{Bertrand and Schoar 2003; Fenizia 2022; Metcalfe, Sollaci and Syverson 2023}
+Labor: \smallcite{Abowd, Kramarz and Margolis 1999; Andrews et al 2008; Kline, Saggio and Sølvsten 2020}. Executives: \smallcite{Bertrand and Schoar 2003; Fenizia 2022; Metcalfe, Sollaci and Syverson 2023}
 
-## Two problems with fixed effects
+## Problem 1: fixed effects need a connected component
 
-### 1. Only works on a connected component
-Effects are identified only *within* a connected component of the mobility graph. Standard practice: keep the largest one, drop the rest.
+Effects are identified only *within* a connected component of the mobility graph.
 
-### 2. Noise makes second moments biased
-Because of $\varepsilon$, estimated effects are noisy. Second moments --- exactly what we care about --- are biased: $\widehat{\mathrm{Var}}$ too big, $\widehat{\mathrm{Cov}}$ too small \smallcite{Andrews et al 2008; Koren, Orbán and Telegdy 2025}
+Standard practice: keep the largest component, drop the rest.
+
+## Problem 2: noise biases second moments
+
+Because of $\varepsilon$ --- not lack of mobility --- estimated effects are noisy.
+
+\pause
+
+Second moments, exactly what we care about, are biased:
+$\widehat{\mathrm{Var}}$ too big, $\widehat{\mathrm{Cov}}$ too small \smallcite{Andrews et al 2008; Koren, Orbán and Telegdy 2025}
 
 Limited mobility makes both problems worse.
 
 ## Both problems are worse for executives
 
-- Executive mobility graph is **very sparse**: few moves per person
-- Hundreds of thousands of disconnected components
-- Firm outcomes are noisy
-- Estimates especially noisy --- *and* the usual corrections do not apply
+Executive mobility is rare: the graph is very sparse.
 
-Why corrections fail: next slide.
+Hundreds of thousands of disconnected components.
+
+Firm outcomes are noisy.
+
+\pause
+
+> Estimates are especially noisy --- *and* the usual corrections do not apply.
 
 ## The leave-one-out correction and leverage
 
-Idea \smallcite{Kline, Saggio and Sølvsten 2020}: estimate each effect *without* observation $i$, so noise does not contaminate its own estimate.
+Idea \smallcite{Kline, Saggio and Sølvsten 2020}: estimate each effect *without* observation $i$.
 
-- FE estimates are linear in outcomes; observation $i$ enters its own fitted value with weight $h_i$ = **leverage**
-- Bias correction re-weights by $1/(1-h_i)$
+FE estimates are linear in outcomes; observation $i$ enters its own fitted value with weight $h_i$ = **leverage**. Bias correction re-weights by $1/(1-h_i)$.
 
 \pause
 
 ### The catch
-$h_i = 1$: the effect is estimable *only* from observation $i$. Dropping it, we know nothing --- the correction divides by zero.
+When $h_i = 1$, the effect is estimable *only* from observation $i$. The correction divides by zero.
 
 **$h_i = 1$ exactly when edge $i$ is a bridge.**
 
@@ -192,7 +197,6 @@ $h_i = 1$: the effect is estimable *only* from observation $i$. Dropping it, we 
   lab/.style={font=\scriptsize\bfseries, align=center},
   scale=0.8, every node/.style={transform shape}
 ]
-% tree
 \node[lab] at (0,1.1) {a tree:\\ no cycles};
 \node[nd] (t1) at (0,0) {};
 \node[nd] (t2) at (-0.8,-1) {};
@@ -201,8 +205,6 @@ $h_i = 1$: the effect is estimable *only* from observation $i$. Dropping it, we 
 \node[nd] (t5) at (-0.3,-2) {};
 \draw[brd] (t1) -- (t2); \draw[brd] (t1) -- (t3);
 \draw[brd] (t2) -- (t4); \draw[brd] (t2) -- (t5);
-
-% forest
 \node[lab] at (3.6,1.1) {a forest:\\ disjoint trees};
 \node[nd] (f1) at (3.1,0) {};
 \node[nd] (f2) at (3.1,-1) {};
@@ -211,16 +213,12 @@ $h_i = 1$: the effect is estimable *only* from observation $i$. Dropping it, we 
 \node[nd] (f4) at (4.1,-1.5) {};
 \node[nd] (f5) at (4.7,-0.9) {};
 \draw[brd] (f3) -- (f4); \draw[brd] (f3) -- (f5);
-
-% cycle
 \node[lab] at (7.2,1.1) {a cycle:\\ two paths between nodes};
 \node[nd] (c1) at (6.6,-0.2) {};
 \node[nd] (c2) at (7.8,-0.2) {};
 \node[nd] (c3) at (7.8,-1.4) {};
 \node[nd] (c4) at (6.6,-1.4) {};
 \draw[cyc] (c1) -- (c2) -- (c3) -- (c4) -- (c1);
-
-% bridge connecting two cycles
 \node[lab] at (11.4,1.1) {a bridge:\\ removing it disconnects};
 \node[nd] (b1) at (10.2,-0.2) {};
 \node[nd] (b2) at (10.2,-1.4) {};
@@ -234,9 +232,7 @@ $h_i = 1$: the effect is estimable *only* from observation $i$. Dropping it, we 
 \end{tikzpicture}
 \end{center}
 
-- **Bridge** (red): the only path between its two sides --- leverage $= 1$
-- On a tree, *every* edge is a bridge
-- Bridges also connect cycles: tree-like edges in a general graph
+On a tree, *every* edge is a bridge. Bridges also connect cycles: the tree-like edges of a general graph.
 
 ## Which edges can the leave-out correction use?
 
@@ -248,7 +244,6 @@ $h_i = 1$: the effect is estimable *only* from observation $i$. Dropping it, we 
   keep/.style={draw=blue!60!black, very thick},
   scale=0.9, every node/.style={transform shape}
 ]
-% a mostly-tree bipartite network with one 4-cycle
 \node[mgr] (m1) at (0,0) {};
 \node[frm] (f1) at (1.5,0.6) {};
 \node[frm] (f2) at (1.5,-0.6) {};
@@ -260,9 +255,7 @@ $h_i = 1$: the effect is estimable *only* from observation $i$. Dropping it, we 
 \node[frm] (f5) at (7.5,-0.8) {};
 \node[mgr] (m5) at (9,-0.4) {};
 \node[mgr] (m6) at (9,-1.4) {};
-% cycle: m1-f1-m2-f2-m1
 \draw[keep] (m1) -- (f1) -- (m2) -- (f2) -- (m1);
-% bridges
 \draw[brd] (m2) -- (f3);
 \draw[brd] (f3) -- (m3);
 \draw[brd] (m2) -- (f4);
@@ -270,16 +263,16 @@ $h_i = 1$: the effect is estimable *only* from observation $i$. Dropping it, we 
 \draw[brd] (m4) -- (f5);
 \draw[brd] (f5) -- (m5);
 \draw[brd] (f5) -- (m6);
-\node[font=\scriptsize, blue!60!black, anchor=west] at (0,-1.8) {\textbf{blue}: on a cycle, leverage $<1$ --- usable};
-\node[font=\scriptsize, CTred, anchor=west] at (0,-2.3) {\textbf{red}: bridges, leverage $=1$ --- dropped by leave-out};
+\node[font=\scriptsize, blue!60!black, anchor=west] at (0,-1.9) {\textbf{blue}: on a cycle, leverage $<1$ --- usable};
+\node[font=\scriptsize, CTred, anchor=west] at (0,-2.4) {\textbf{red}: bridges, leverage $=1$ --- dropped};
 \end{tikzpicture}
 \end{center}
 
-Squares are firms, circles are executives, edges are jobs. Leave-out keeps only edges on cycles.
+Squares are firms, circles are executives, edges are jobs.
 
 ## The Hungarian executive mobility network
 
-Universe of Hungarian corporations and their registered chief executives, 1990--2022. An *observation* is an edge with an outcome: firm performance under that executive.
+Universe of Hungarian corporations and their chief executives, 1990--2022. An *observation* is an edge with an outcome: firm performance under that executive.
 
 | | Value |
 |:---|---:|
@@ -288,13 +281,11 @@ Universe of Hungarian corporations and their registered chief executives, 1990--
 | Firm--executive edges | 1,937,552 |
 | Connected components | 514,085 |
 | **Bridge share of edges** | **81.8%** |
-| Giant component: share of executives | 29.6% |
-| Giant component: share of firms | 33.0% |
 | Mean shortest path between executives (giant) | 19.5 |
 
 The graph is close to a forest, with long, sparse chains.
 
-## What is left after the standard corrections?
+## Leave-out estimation keeps one in ten observations
 
 | Stage | Matched pairs | % |
 |:---|---:|---:|
@@ -304,25 +295,36 @@ The graph is close to a forest, with long, sparse chains.
 
 <!-- TODO: notes mention a giant-component stage first and a 4.6% end point; committed kss_funnel.tex has the two stages above (10.1%). Reconcile. Giant component alone would keep 42.5% of edges. -->
 
-- Leave-out estimation keeps **one in ten** matched pairs
-- Survivors are highly mobile executives at highly connected firms --- not representative
-- For a macro question about the whole economy, this will not do
+\pause
+
+The survivors are highly mobile executives at highly connected firms --- not representative.
+
+For a macro question, dropping 90% of the economy will not do.
 
 # Our approach: a random-effects model on the network
 
 ## We model the joint distribution of all outcomes
 
-Instead of estimating 2.3 million fixed effects, we model the **joint distribution** of all 1.7 million outcomes on the network:
+Instead of estimating 2.3 million fixed effects, model the **joint distribution** of 1.7 million outcomes:
 $$
 \mathbf{x} = (a_1,\ldots,a_{N_f},z_1,\ldots,z_{N_m})^\top \sim \mathcal{N}(\mathbf{0}, \mathbf{Q}^{-1}),
 \qquad y_{im} = a_i + z_m + \varepsilon_{im}
 $$
 
-- $\mathbf{Q}$: sparse **precision matrix** encoding the mobility graph
-- A **Gaussian Markov random field** \smallcite{Rue and Held 2005}
-- Same four parameters as before: $\sigma_a$, $\sigma_z$, $\rho$, $\sigma_\varepsilon$
+A **Gaussian Markov random field** \smallcite{Rue and Held 2005}: the sparse precision matrix $\mathbf{Q}$ encodes the mobility graph.
 
-## The precision matrix, one edge at a time
+Same four parameters: $\sigma_a$, $\sigma_z$, $\rho$, $\sigma_\varepsilon$.
+
+## Maximum likelihood
+
+$$
+\ell(\boldsymbol{\theta}) = -\frac{K}{2}\ln(2\pi) - \frac{1}{2}\ln\det\boldsymbol{\Omega} - \frac{1}{2}\mathbf{y}^\top\boldsymbol{\Omega}^{-1}\mathbf{y}
+$$
+
+$$
+\boldsymbol{\Omega} = \mathbf{V}\mathbf{Q}^{-1}\mathbf{V}^\top + \sigma_\varepsilon^2\mathbf{R}
+\qquad\text{($\mathbf V$ maps matches to types)}
+$$
 
 $$
 \mathbf Q=\frac{1}{1-\rho^2}\,\mathbf S
@@ -331,7 +333,11 @@ $$
 \qquad \mathbf S=\operatorname{diag}(\sigma_a^{-1}\mathbf I_{N_f},\,\sigma_z^{-1}\mathbf I_{N_m})
 $$
 
-$\mathbf A$: adjacency, $\mathbf D$: degrees. Zoom in on a single firm--executive pair (degree 1 each):
+$\mathbf A$ = adjacency, $\mathbf D$ = degrees, $\rho$ on the edges, scales on the diagonal.
+
+## The precision matrix, one edge at a time
+
+Zoom in on a single firm--executive pair (degree 1 each):
 $$
 \mathbf{Q}_{\{i,m\}} = \frac{1}{1-\rho^2}
 \begin{bmatrix}
@@ -346,24 +352,27 @@ $$
 \end{bmatrix}
 $$
 
-- Off-diagonal entries of $\mathbf{Q}$ are nonzero **only along observed edges**
-- On a forest, every linked pair has correlation exactly $\rho$, variances $\sigma_a^2$, $\sigma_z^2$
+Off-diagonal entries of $\mathbf{Q}$ are nonzero **only along observed edges**.
+
+On a forest, every linked pair has correlation exactly $\rho$.
 
 # Detour: Gaussian Markov random fields
 
 ## What is a Gaussian Markov random field?
 
-A way to model jointly normal variables with a **sparse precision matrix**.
+Jointly normal variables with a **sparse precision matrix**.
 
-- Zero in $\mathbf{Q} \Leftrightarrow$ conditional independence given everyone else
-- *Conditional* dependence is local: only direct neighbors on the graph
-- *Unconditional* dependence can reach far --- it travels along paths
+\pause
 
-The graph disciplines 2.3M-dimensional $\mathbf{x}$ with a handful of parameters.
+Zero in $\mathbf{Q}$ $\Leftrightarrow$ conditional independence given everyone else.
+
+*Conditional* dependence is local --- only direct neighbors.
+
+*Unconditional* dependence travels along paths.
 
 ## The best-known GMRF: an AR(1)
 
-$x_t = \rho x_{t-1} + u_t$ on a line graph. Its precision matrix is tridiagonal:
+$x_t = \rho x_{t-1} + u_t$ on a line graph:
 $$
 \mathbf{Q} \propto
 \begin{bmatrix}
@@ -374,46 +383,162 @@ $$
 \end{bmatrix}
 $$
 
-- Partial correlation between neighbors: governed by $\rho$
-- Unconditional autocorrelation at lag $d$: $\rho^d$ --- decays with distance
-- Sparse precision, dense covariance
+\pause
+
+Partial correlation: only with neighbors. Unconditional autocorrelation at lag $d$: $\rho^d$.
+
+Sparse precision, dense covariance.
 
 ## On a tree, the GMRF looks just like an AR(1)
 
-Claim: on a tree, the unconditional covariance between any two nodes at graph distance $d$ is
 $$
 \operatorname{Cov}(x_k, x_\ell) = \sigma_k \sigma_\ell\, \rho^{\,d(k,\ell)}
 $$
 
-- Exactly the AR(1) pattern --- the tree is a branching timeline
-- Unique paths $\Rightarrow$ correlation decays geometrically per hop
-- Our variance-stable $\mathbf{Q}$ keeps marginals at $\sigma_a^2$, $\sigma_z^2$ on any forest
+A tree is a branching timeline: unique paths, geometric decay per hop.
 
-## End of detour: real networks have cycles
+Our variance-stable $\mathbf{Q}$ keeps marginals at $\sigma_a^2$, $\sigma_z^2$ on any forest.
 
-- Cycles create multiple paths $\Rightarrow$ covariances above $\rho^d$
-- The GMRF handles this exactly: all paths enter through $\mathbf{Q}^{-1}$
-- We estimate by **maximum likelihood** (computation: a section of its own)
-- And recall: our graph is 81.8% bridges --- *almost* a forest, so tree intuition nearly exact
+## Real networks have cycles
 
-# Identification: covariance decay along the network
+Multiple paths push covariances above $\rho^d$.
+
+The GMRF handles cycles exactly, through $\mathbf{Q}^{-1}$.
+
+\pause
+
+But where does this particular $\mathbf{Q}$ *come from*?
+
+# Where the GMRF comes from: link formation
+
+## A statistical model of link formation
+
+Not a competitive equilibrium --- a selection model for which type pairs appear as links.
+
+For equilibrium sorting with frictions, see \smallcite{Shimer and Smith 2000, Eeckhout and Kircher 2010, Bagger and Lentz 2019}
+
+\pause
+
+Before links form, firm and executive types are **independent**:
+$$
+a \sim \mathcal{N}(0, \omega_a^2), \qquad z \sim \mathcal{N}(0, \omega_z^2)
+$$
+
+Any correlation among *linked* pairs must come from link formation.
+
+## Match or not: a logit
+
+Payoff from matching: the surplus $a_i z_m$.
+
+Payoff from not matching: outside options, quadratic in own type.
+
+\pause
+
+$$
+\Pr(L_{im}=1\mid a_i,z_m)
+=\frac{e^{\eta(a_i,z_m)}}{1+e^{\eta(a_i,z_m)}},
+\qquad
+\eta = \kappa+\frac{1}{\tau}
+\Big[a_i z_m-\alpha_1a_i-\zeta_1z_m
+-\frac{\alpha_2}{2}a_i^2-\frac{\zeta_2}{2}z_m^2\Big]
+$$
+
+$\tau$ scales match frictions. The cross derivative of $\eta$ is positive: complementarity.
+
+## The likelihood of the observed graph
+
+Joint density of types and links: prior $\times$ each edge that did or did not happen,
+$$
+p(\mathbf x, E) \propto p_0(\mathbf x)
+\prod_{(i,m)\in E}\Pr(L_{im}{=}1\mid \mathbf x)
+\prod_{(i,m)\notin E}\Pr(L_{im}{=}0\mid \mathbf x)
+$$
+
+\pause
+
+Links are rare events. When $e^{\eta}$ is small,
+$$
+\Pr(L_{im}=1\mid a_i,z_m)\simeq e^{\eta(a_i,z_m)}
+\qquad\text{and absent pairs drop out.}
+$$
+
+The **sparse-link approximation**: keep only the positive links.
+
+## The tilted distribution is exactly our GMRF
+
+Each observed link adds a quadratic term to the exponent:
+$$
+p_E^+(\mathbf x)
+\propto p_0(\mathbf x)\prod_{(i,m)\in E}e^{\eta(a_i,z_m)}
+\propto \exp\Big(-\frac12\mathbf x^\top\mathbf Q\mathbf x + \mathbf b^\top\mathbf x\Big)
+$$
+
+$$
+\mathbf Q = \underbrace{\mathbf Q_0}_{\text{indep.\ prior}}
++ \underbrace{\frac{1}{\tau}\,\mathbf C \mathbf D}_{\text{repeated selection}}
+- \underbrace{\frac{1}{\tau}\,\mathbf A}_{\text{complementarity}}
+\;=\; \frac{1}{1-\rho^2}\mathbf S\left[(1-\rho^2)\mathbf I+\rho^2\mathbf D-\rho\mathbf A\right]\mathbf S
+$$
+
+> An equality, not an analogy: with $\tau = \sigma_a\sigma_z(1-\rho^2)/\rho$, link formation *generates* the variance-stable precision.
+
+## When is the approximation valid?
+
+The sparse-link approximation drops the shared logit denominators.
+
+Valid when the graph is sparse and forest-like; dense cyclical regions invalidate it.
+
+\pause
+
+So we **prune** the few cycle-closing edges in the dense core --- keeping every node and every component --- and estimate on the nearly-forest graph.
+
+Opposite of leave-out: KSS lives on the cycles, we lean on the trees. But we keep the data.
+
+<!-- TODO: pruning reduces the KSS-usable subsample further (from 10.1% to maybe half); add exact number once computed -->
+
+## Pruning: what the graph allows
+
+![](figures/rho_vs_rhomax.png){ height=72% }
+
+<!-- TODO: user prefers "the pruning figure actually produced by Ulrich in a commit/PR"; this is the committed rho_vs_rhomax.png. Flagged: it may still show the wrong (stale) rho estimate; possibly exclude for the talk. -->
+
+# Identification
 
 ## Covariance decays along the tree
 
-For two outcomes whose executives are $h$ edges apart on a tree:
+For two outcomes whose executives are $h$ edges apart:
 $$
 \mathrm{Cov}(y_{i_1 m_1},\, y_{i_2 m_2}) \;=\; \rho^{\,h-2}\,(\sigma_a + \rho\sigma_z)^2
 $$
 
-- **Level** of covariance: mixes $\sigma_a$, $\sigma_z$, $\rho$
-- **Speed of decay**: two extra hops multiply covariance by $\rho^2$ --- *nothing else*
-- Four parameters, many covariance moments: over-identified
-- Variance moments also load on $\sigma_\varepsilon^2$; covariances between distinct matches do not
+\pause
 
-Inspired by correlation decay across generations of family networks \smallcite{Clark 2014, Clark 2023}
-<!-- TODO: add the reference Clark himself credits (check big-talk repo for cite) -->
+The **level** mixes $\sigma_a$, $\sigma_z$, $\rho$.
 
-## Prima facie evidence of sorting: the 3-hop covariance
+The **speed of decay** is $\rho^2$ per two hops --- *nothing else*.
+
+Four parameters, many covariance moments.
+
+## Gregory Clark measured decay on family trees
+
+Correlation of social status between relatives $d$ steps apart on the family tree \smallcite{Clark 2023, PNAS}:
+$$
+\mathrm{Corr}(y_i, y_j) = \theta^2 b^{\,d(i,j)}
+$$
+
+<!-- TODO: verify Clark's exact notation from the PNAS paper (persistence b, attenuation theta); also add the earlier reference Clark himself credits -->
+
+\pause
+
+His formula is nearly ours. We got the idea from him.
+
+Family trees are trees; mobility networks are almost trees.
+
+## Covariance decay in the Hungarian data
+
+![](figures/cov_decay_moments.pdf){ height=75% }
+
+## Prima facie evidence of sorting
 
 \begin{center}
 \begin{tikzpicture}[
@@ -437,79 +562,207 @@ Inspired by correlation decay across generations of family networks \smallcite{C
 \end{tikzpicture}
 \end{center}
 
-- $m_1$ and $m_3$ never work at the same firm; $i_1$ and $i_2$ never share an executive
-- **No common shocks** --- yet their outcomes are correlated in the data
-- The model says exactly how much: $\rho^{2}(\sigma_a + \rho\sigma_z)^2$
-- Ratios of such moments deliver $\rho^2$ by method of moments --- before any likelihood
+$m_1$ and $m_3$ never share a firm; $i_1$ and $i_2$ never share an executive. **No common shocks.**
 
-## Covariance decay in the Hungarian data
+\pause
 
-![](figures/cov_decay_moments.pdf){ height=75% }
+Yet their outcomes are correlated --- and the model says by how much: $\rho^{2}(\sigma_a + \rho\sigma_z)^2$.
 
-<!-- Centered covariances on isolated shortest paths of length h; log scale. Decay speed matches the model fit. -->
-
-## Placebo: disconnected components
-
-- Model prediction: outcomes in *disjoint* components have **zero** covariance
-- Any story of common industry or regional shocks predicts otherwise
-
-<!-- TODO: compute covariance across disjoint components (placebo); planned, not yet run -->
+Ratios of such moments deliver $\rho^2$ by method of moments, before any likelihood.
 
 ## What about within-firm shocks over time?
 
-Concern: consecutive spells at the *same firm* share transitory conditions --- correlated $\varepsilon$, not sorting.
+Consecutive spells at the *same firm* share transitory conditions: correlated $\varepsilon$, not sorting.
 
-### Why this is not our identification
-- Common shocks are **localized**: they move nearby covariances
-- Sorting is identified by the **speed of decay over long chains**
+\pause
 
-### Three fixes that agree
-1. Minimum distance: drop the contaminated same-firm moment
-2. Firm-average estimator: allow arbitrary within-firm dependence
-3. AR(1) match shocks within firm: estimate the error process ($5$th parameter $\eta$)
+But common shocks are **localized**. Sorting is identified by the **speed of decay over long chains**.
 
-<!-- DRAFT AHEAD: sections below drafted from the paper; awaiting rest of the plan notes -->
+## Three fixes that agree
 
-# Estimation and computation
+1. **Minimum distance**: drop the contaminated same-firm moment
+2. **Firm-average**: allow arbitrary within-firm dependence
+3. **AR(1) match shocks**: estimate the error process (fifth parameter $\eta$)
 
-## Maximum likelihood at scale
-
-$$
-\ell(\boldsymbol{\theta}) = -\tfrac{K}{2}\ln(2\pi) - \tfrac{1}{2}\ln\det\boldsymbol{\Omega} - \tfrac{1}{2}\mathbf{y}^\top\boldsymbol{\Omega}^{-1}\mathbf{y},
-\qquad
-\boldsymbol{\Omega} = \mathbf{V}\mathbf{Q}^{-1}\mathbf{V}^\top + \sigma_\varepsilon^2\mathbf{R}_\eta
-$$
-
-- $\boldsymbol{\Omega}$ is $1.7\text{M} \times 1.7\text{M}$ and dense --- direct inversion infeasible
-- Woodbury: work with sparse $\mathbf{P} = \mathbf{Q} + \mathbf{V}^\top(\sigma_\varepsilon^2\mathbf{R}_\eta)^{-1}\mathbf{V}$ in node space
-- Exact sparse Cholesky gives log-determinant and quadratic form
-- 2.3M latent nodes; converges on a single machine (Julia)
-
-## Keeping the model well-defined: pruning
-
-- $\mathbf{Q} \succ 0$ requires $|\rho|\,\lambda_{NB} < 1$: a ceiling set by the graph's cycle structure (non-backtracking spectral radius)
-- We prune a few cycle-closing edges in one dense region --- keeping *every* node and component
-- Resulting ceiling: $\rho < 0.666$; estimates are interior
-- The graph is fixed before seeing outcomes
+All three give $\rho$ between 0.52 and 0.55.
 
 # Results
 
 ## Sorting is high: $\rho \approx 0.52$--$0.55$
 
-All estimators on the same graph and outcomes (log real revenue, demeaned by year and industry):
+Same graph, same outcomes (log real revenue, demeaned by year and industry):
 
 | Parameter | Naive MLE | Min. distance | Firm-average | AR(1) MLE |
 |:---|---:|---:|---:|---:|
 | $\rho$ | 0.379 | 0.555 | 0.537 | **0.518** |
 | Implied corr. $(a,z)$ | 0.381 | 0.555 | 0.544 | 0.525 |
 
-- Naive i.i.d.-error MLE is biased *down*: within-firm shocks masquerade as firm heterogeneity
-- Three different corrections for within-firm dependence **agree**: $0.52$--$0.55$
-- Preferred AR(1) fit: $\hat\sigma_a = 1.08$, $\hat\sigma_z = 0.24$, $\hat\sigma_\varepsilon = 1.72$, $\hat\eta = 0.51$
+\pause
 
-## Where does revenue variance come from?
+The naive i.i.d.-error MLE is biased *down*: within-firm shocks masquerade as firm heterogeneity.
 
-At the preferred fit, share of log-revenue variance:
+Preferred AR(1) fit: $\hat\sigma_a = 1.08$, $\hat\sigma_z = 0.24$, $\hat\sigma_\varepsilon = 1.72$, $\hat\eta = 0.51$.
+
+## GMRF vs leave-out on the common subgraph
+
+Comparison is only possible on the sample both can use: the leave-out-connected block.
+
+| | KSS | GMRF (AR1) |
+|:---|---:|---:|
+| Implied corr. $(a,z)$ | TBD | TBD |
+
+<!-- TODO: task to recompute AR(1) on the joint (common) subsample is running; fill in table when estimates land. Interim: on dense worker data the GMRF reproduces leave-out; on the sparse executive network the estimators diverge (Wohak and Koren 2025). -->
+
+## Counterfactuals: what is sorting worth?
+
+Expected revenue per match under the lognormal model:
+$$
+\frac{Y}{n} = \exp\left\{\mu_a+\mu_z+\mu_\varepsilon+\tfrac{1}{2}\big(V_a+V_z+V_\varepsilon+2\operatorname{Cov}(a,z)\big)\right\}
+$$
+
+Hold the marginal distributions fixed, change the allocation, and read off the change in expected output.
+
+## Three counterfactuals
+
+| Scenario | $\Delta$ expected output |
+|:---|---:|
+| Random assignment ($\rho = 0$) | $-12.9\%$ |
+| Compress talent dispersion, mean-preserving ($\sigma_z \to 0$) | $-12.9\%$ |
+| Perfect sorting ($\rho = 1$) | $\approx +45\%$ |
+
+<!-- TODO: reconcile. Paper: rho=0 costs 12.9% (V_cross=0.275). Committed sorting_counterfactual.csv: random reassignment -16.5%, perfect +44.9% (different convention/vintage). sigma_z compression holding E[Z] fixed removes exactly the covariance term, hence equals the rho=0 number -->
+
+\pause
+
+Killing talent dispersion costs exactly as much as scrambling the allocation: executives matter through *where they are*.
+
+Perfect sorting is an upper bound, not a policy.
+
+# Threats to identification
+
+## The threat: similarity, not propagation
+
+Outcomes on the network are correlated. Is it sorting?
+
+\pause
+
+The spells are at different times --- this is *similarity*, not shock propagation.
+
+Similarity could come from shared sector, region, or cohort: the homophily critique of network measurement.
+
+(What we *measure* is homophily of latent types --- the threat is homophily in something else.)
+
+<!-- TODO (t9x task filed): review network econometrics on homophily and longer paths — Graham (excess variance contrasts), post-2020 surveys -->
+
+## Our response: the Markov property is testable
+
+The GMRF makes a strong, discrete prediction:
+
+> Conditional on your direct neighbors, the rest of the network is irrelevant.
+
+\pause
+
+An edge is a discrete event, not "being close". A vague similarity story predicts second- and third-degree correlation *beyond* what direct links carry.
+
+Check: does conditioning on direct links kill the residual correlation?
+
+<!-- TODO: two conditional-independence checks in progress (planned for tomorrow) -->
+
+Later: controls for spatial and industry proximity (industry is already removed).
+
+## Placebo: disconnected components
+
+Executives in disjoint components live in the same country, often the same industry.
+
+The model predicts their outcomes have **zero** covariance.
+
+Any common-shock story predicts otherwise.
+
+<!-- TODO: compute covariance across disjoint components; planned for tomorrow -->
+
+# Related work
+
+## Executive effects in the literature
+
+**Fenizia (2022)**: Italian public managers, KSS. Excellent --- but retains only about 25% of managers. Exactly the problem we started from.
+
+<!-- TODO: verify Fenizia retention share -->
+
+**Metcalfe, Sollaci and Syverson (2023)**: retail managers, *negative* estimated correlation.
+
+\pause
+
+Noise does that: inflated variances shrink the correlation, and the mechanical negative covariance of the two noisy effects pushes it below zero. (Mechanics in appendix.)
+
+## Our companion papers
+
+**Wohak and Koren (2025)**: leave-out on sparse graphs. KSS and the GMRF use *opposite* parts of the graph --- cycles vs bridges. Even off the bridges, high leverage makes second-moment estimates noisy, and noise plus nonnegativity constraints means bias.
+
+**Koren, Orbán and Telegdy (2025)**: CEO value. A time-series estimator that removes spurious pre-trends from within-firm error correlation; after the correction, executive changes look unrelated to prior performance in the same Hungarian data.
+
+# Conclusion
+
+## Which estimator, when?
+
+| Network | Estimator |
+|:---|:---|
+| Dense (much mobility) | leave-out (KSS) --- little data lost |
+| Sparse, forest-like | GMRF |
+| In between | run both, compare |
+
+\pause
+
+Sparsity is where the GMRF is happy --- and where fixed effects break.
+
+## The method travels
+
+Sparse networks with latent node types are everywhere:
+
+buyer--supplier networks, international trade, ...
+
+The graph need not be bipartite.
+
+## Conclusion
+
+1. Sorting between executive talent and firm fundamentals is **high**: $\rho \approx 0.52$--$0.55$
+2. Four parameters replace millions of fixed effects --- using **all** the data, not 10%
+3. Identification is transparent: covariance decay along mobility chains, and it is testable
+4. Random assignment would cost **12.9%** of revenue
+
+# Appendix
+
+## Acknowledgements
+
+::: columns
+:::: column
+![](images/erc.png){width=80%}
+::::
+:::: column
+![](images/elvonal.png){width=80%}
+::::
+:::
+
+This research was funded by the European Research Council (ERC Advanced Grant agreement number 101097789) and by the National Research, Development and Innovation Office (Forefront Research Excellence Program contract number 144193). The views expressed are those of the authors and do not necessarily reflect the official view of the European Union, the European Research Council, or the National Research, Development and Innovation Office.
+
+## Why fixed-effects correlations come out negative
+
+The FE estimates are linear combinations of outcomes, including the noise.
+
+Whenever the firm effect loads *positively* on a noise term, the executive effect at the same match loads *negatively*: the two dummies share the same variation.
+
+\pause
+
+Inflated variances bias the correlation toward zero; the mechanical negative covariance pushes it further down.
+
+Consistent with the literature: estimated correlations below what we find, some negative.
+
+## Leave-out is noisy even where it exists
+
+![](figures/kss_vsml_common_bootstrap.png){ height=72% }
+
+Simulations on the common graph: KSS second moments (blue) disperse far more than the GMRF (red).
+
+## Model fit: where log-revenue variance goes
 
 | Component | Share |
 |:---|---:|
@@ -518,51 +771,14 @@ At the preferred fit, share of log-revenue variance:
 | Sorting covariance | 6.6% |
 | Match noise (within-firm correlated) | 63.5% |
 
-- Sorting covariance is **several times** the executive component
-- Executives matter mostly through *where they are allocated*
-
-## Random assignment would cost 12.9% of revenue
-
-Log-normal accounting benchmark, marginals held fixed:
-$$
-\frac{Y}{n} = \exp\left\{\mu_a+\mu_z+\mu_\varepsilon+\tfrac{1}{2}(V_a+V_z+V_\varepsilon+V_{\mathrm{cross}})\right\},
-\qquad V_{\mathrm{cross}} = 2\operatorname{Cov}(a,z)
-$$
-
-- Random assignment sets $V_{\mathrm{cross}} = 0.275 \to 0$
-- Mean revenue falls by 0.138 log units $=$ **12.9%**
-- Allocation of the observed sector, not an economy-wide GDP counterfactual
-
-## Conclusion
-
-1. Sorting between executive talent and firm fundamentals is **high**: $\rho \approx 0.52$--$0.55$
-2. A four-parameter random-effects model replaces millions of fixed effects --- and uses **all** the data, not 10%
-3. Identification: covariance decay along mobility chains --- transparent, testable
-4. Allocation matters: random assignment would lower revenue by 12.9%
-
-### Method travels
-Any sparse bipartite matching network: workers--firms, students--schools, patients--providers
-
-# Backup slides
+The sorting covariance is several times the executive component.
 
 ## The bipartite mobility graph
 
-- Nodes: firms (squares) and executives (circles); edges: unique firm--executive links
-- 514,085 components; the giant holds 42% of edges, the rest mostly single pairs
-- Degrees are tiny; paths are long
-
 ![](figures/edgelist_degree_hist.png){ width=48% } ![](figures/edgelist_path_length_hist.png){ width=48% }
 
-## Multi-executive spells
-
-- A match cluster: firm interval with a constant set of co-present executives
-- One outcome, one error term; design row loads $1/q$ on each of $q$ executives
-- Avoids crediting every executive with the full firm outcome
+The giant component holds 42% of edges; the rest are mostly single firm--executive pairs.
 
 ## Monte Carlo: correlated errors on the Hungarian graph
 
 ![](figures/correlated_eps_mc_hungarian.png){ height=75% }
-
-## Feasibility ceiling and pruning diagnostics
-
-![](figures/rho_vs_rhomax.png){ height=75% }
