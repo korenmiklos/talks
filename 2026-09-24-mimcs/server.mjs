@@ -331,35 +331,17 @@ async function handle(request, response) {
       const body = await readJson(request);
       if (typeof body.text !== "string" || !body.text.trim()) return send(response, 400, { error: "text must be a non-empty string" });
       const id = sessionId(request);
-      return trace("proxy.incoming", id, async (incoming) => {
+      return await trace("proxy.incoming", id, async (incoming) => {
         updateTrace(incoming, {
           input: body.text,
-          metadata: { app: "pii-proxy", channel: "incoming", sessionId: id }
+          metadata: { app: "pii-proxy", channel: "incoming", sessionId: id, route: "/api/demo" }
         });
-        const result = await trace(`${redactorName()}.incoming`, id, async (redactorInput) => {
-          updateTrace(redactorInput, {
-            input: body.text,
-            metadata: { app: redactorName(), channel: "incoming" }
-          });
-          return redactText(body.text, id);
-        });
-        await trace(`${result.backend}.output`, id, async (redactorOutput) => {
-          updateTrace(redactorOutput, {
-            output: { redacted: result.redacted, gates: result.detections },
-            metadata: { app: result.backend, channel: "redacted-output" }
-          });
-        });
+        const result = await redactText(body.text, id);
         const output = {
           traceId: randomUUID(), sessionId: id, input: body.text, redacted: result.redacted,
           restored: result.restore(result.redacted), remoteView: result.redacted,
           detections: result.detections
         };
-        await trace("proxy.user-output", id, async (userOutput) => {
-          updateTrace(userOutput, {
-            output: output.restored,
-            metadata: { app: "pii-proxy", channel: "outgoing" }
-          });
-        });
         return send(response, 200, output);
       });
     } catch (error) {
@@ -372,69 +354,25 @@ async function handle(request, response) {
       if (!upstream) return send(response, 503, { error: "Set UPSTREAM_URL and UPSTREAM_API_KEY to enable forwarding" });
       const body = await readJson(request);
       const id = sessionId(request);
-      return trace("proxy.incoming", id, async (incoming) => {
+      return await trace("proxy.incoming", id, async (incoming) => {
         updateTrace(incoming, {
           input: body,
           metadata: { app: "pii-proxy", channel: "incoming", sessionId: id, route: "/v1/chat/completions" }
         });
-        const result = await trace(`${redactorName()}.incoming`, id, async (redactorInput) => {
-          updateTrace(redactorInput, {
-            input: body,
-            metadata: { app: redactorName(), channel: "incoming" }
-          });
-          return redactPayload(body, id);
-        });
-        await trace(`${result.backend}.output`, id, async (redactorOutput) => {
-          updateTrace(redactorOutput, {
-            output: { payload: result.payload, gates: result.detections },
-            metadata: { app: result.backend, channel: "redacted-output" }
-          });
-        });
-        const providerResponse = await trace("openrouter.incoming", id, async (openRouterInput) => {
-          updateTrace(openRouterInput, {
-            input: result.payload,
-            metadata: { app: "openrouter", channel: "outgoing" }
-          });
-          return fetch(completionUrl, {
-            method: "POST",
-            headers: { "content-type": "application/json", ...(upstreamApiKey ? { authorization: `Bearer ${upstreamApiKey}` } : {}) },
-            body: JSON.stringify(result.payload)
-          });
+        const result = await redactPayload(body, id);
+        const providerResponse = await fetch(completionUrl, {
+          method: "POST",
+          headers: { "content-type": "application/json", ...(upstreamApiKey ? { authorization: `Bearer ${upstreamApiKey}` } : {}) },
+          body: JSON.stringify(result.payload)
         });
         if (body.stream && providerResponse.ok && providerResponse.body) {
-          const streamed = await trace("openrouter.output", id, async (openRouterOutput) => {
-            const output = await streamProviderResponse(providerResponse, response, result.restore);
-            updateTrace(openRouterOutput, {
-              output: { redactedText: output.redactedText },
-              metadata: { app: "openrouter", channel: "incoming" }
-            });
-            return output;
-          });
-          await trace("proxy.user-output", id, async (userOutput) => {
-            updateTrace(userOutput, {
-              output: streamed.restoredText,
-              metadata: { app: "pii-proxy", channel: "outgoing" }
-            });
-          });
+          await streamProviderResponse(providerResponse, response, result.restore);
           return;
         }
         const text = await providerResponse.text();
         let providerBody;
         try { providerBody = JSON.parse(text); } catch { providerBody = { choices: [{ message: { role: "assistant", content: text } }] }; }
-        await trace("openrouter.output", id, async (openRouterOutput) => {
-          updateTrace(openRouterOutput, {
-            output: providerBody,
-            metadata: { app: "openrouter", channel: "incoming" }
-          });
-        });
-        const restored = restoreWith(providerBody, result.restore);
-        await trace("proxy.user-output", id, async (userOutput) => {
-          updateTrace(userOutput, {
-            output: restored,
-            metadata: { app: "pii-proxy", channel: "outgoing" }
-          });
-        });
-        return send(response, providerResponse.status, restored);
+        return send(response, providerResponse.status, restoreWith(providerBody, result.restore));
       });
     } catch (error) {
       return send(response, 400, { error: error instanceof Error ? error.message : "Proxy request failed" });

@@ -35,7 +35,7 @@ This launcher disables `AGENTS.md`, `CLAUDE.md`, and skills while retaining the 
 - `POST /api/demo` runs local redaction and returns raw, redacted, and restored views.
 - `POST /v1/chat/completions` is an OpenAI-compatible proxy for a coding agent and forwards requests to OpenRouter.
 - `OPENROUTER_API_KEY` in `.env` enables OpenRouter forwarding; `UPSTREAM_URL` overrides it.
-- Langfuse records raw local input and redacted provider traffic.
+- Langfuse records only the raw request received by the proxy. Inspect the redacted provider request in OpenRouter.
 - `PII_REDACTOR=desert-ant` selects the native Desert Ant backend; `PII_REDACTOR=rampart` selects Rampart with its CPU ONNX classifier.
 - Both backends use the same proxy contract and restore placeholders locally.
 - Request redaction preserves JSON structure and OpenAI tool-call protocol fields.
