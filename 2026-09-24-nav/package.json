@@ -6,9 +6,6 @@
     "start": "node --env-file-if-exists=.env server.mjs"
   },
   "dependencies": {
-    "@desert-ant-labs/redact": "^3.5.0",
-    "@langfuse/otel": "^5.11.1",
-    "@langfuse/tracing": "^5.11.1",
-    "@opentelemetry/sdk-node": "^0.222.0"
+    "@desert-ant-labs/redact": "^3.5.0"
   }
 }
