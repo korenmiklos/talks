@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Helyi proxy kódoló ügynökökhöz</title>
+    <title>Helyi proxy coding agentekhez</title>
     <link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -14,8 +14,8 @@
           <div class="title-slide">
             <div>
               <p class="eyebrow">NAV - 2026. szeptember 24.</p>
-              <h1>Adatvédelem a felhő előtt</h1>
-              <p class="lede">Helyi proxy kódoló ügynökökhöz</p>
+              <h1>Adatvédelem a modellhívásokban</h1>
+              <p class="lede">Helyi proxy coding agentekhez</p>
             </div>
             <div class="title-meta">
               <p>Miklós Koren<br>koren.dev</p>
@@ -23,62 +23,62 @@
             </div>
             <span class="squares" aria-hidden="true"></span>
           </div>
-          <aside class="notes">A bemutató nyilvános modellkártyák és termékdokumentáció alapján készült, amelyeket 2026. szeptember 23-án értem el.</aside>
+          <aside class="notes">A bemutató nyilvános modellkártyák és termékdokumentáció alapján készült; ezeket 2026. szeptember 23-án értem el.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
               <p class="eyebrow">01 - Kitettség</p>
-              <h2>Egy kódoló ügynök nem csak a promptot küldi el</h2>
+              <h2>Egy modellhívás a promptnál többet is tartalmazhat</h2>
             </header>
             <div class="slide-content comparison">
               <div class="comparison-panel">
-                <h3>Kódoló ügynök</h3>
+                <h3>Coding agent</h3>
                 <p><span class="strong">Felhasználó</span><br>utasítások</p>
                 <p><span class="strong">Fájlok</span><br>forráskód és konfiguráció</p>
-                <p><span class="strong">Eszközök</span><br>terminál- és MCP-kimenet</p>
-                <p><span class="strong">Állapot</span><br>diffek és beszélgetési előzmény</p>
+                <p><span class="strong">Eszközök</span><br>terminál- és MCP-kimenetek</p>
+                <p><span class="strong">Állapot</span><br>diffek és előzmények</p>
               </div>
               <div class="comparison-panel dark">
                 <h3>Felhőmodell</h3>
-                <p>Minden modellhívás helyi adatot is tartalmazhat.</p>
+                <p>A modellhívás helyi adatot is tartalmazhat.</p>
                 <p><code>Anna Kovacs</code><br><code>anna@example.hu</code><br><code>DB_PASSWORD=***</code></p>
               </div>
             </div>
-            <p class="invariant">Az adatvédelmi határ minden kimenő modellhívásra vonatkozik.</p>
+            <p class="invariant">Minden kimenő modellhívást szűrni kell.</p>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>02</span></footer>
           </div>
-          <aside class="notes">A Pi egy minimális terminálos kódoló környezet: fájlokat vizsgál, parancsokat futtat és tartalmat szerkeszt. Forrás: pi.dev és pi.dev/docs/latest.</aside>
+          <aside class="notes">A coding agent fájlokat vizsgál, parancsot futtat és tartalmat szerkeszt.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
               <p class="eyebrow">02 - Térkép</p>
-              <h2>A személyes adatok eltávolításának három módja</h2>
+              <h2>Három eszközcsoport</h2>
             </header>
             <div class="slide-content grid-3">
               <article class="card">
                 <p class="card-number">01</p>
-                <h3>Szabályok és SDK-k</h3>
-                <p>Regexek<br>Ellenőrző összegek<br>Presidio<br>scrubadub</p>
+                <h3>Szabályok és könyvtárak</h3>
+                <p>Reguláris kifejezések<br>Ellenőrzőösszegek<br>Presidio<br>scrubadub</p>
                 <p class="strong">Gyors és auditálható</p>
-                <p>A kontextusban bizonytalan</p>
+                <p>Kontextusfüggő esetekben bizonytalan</p>
               </article>
               <article class="card">
                 <p class="card-number">02</p>
                 <h3>Távoli szolgáltatások</h3>
-                <p>Felhős DLP-szolgáltatások<br>Hosztolt redakció<br>Vállalati átjárók</p>
+                <p>Felhős DLP-szolgáltatások<br>Felhőben futó adatelfedés<br>Vállalati átjárók</p>
                 <p class="strong">Széles lefedettség</p>
-                <p>Az adat elhagyja az eszközt</p>
+                <p>Az adat elhagyja a gépet</p>
               </article>
               <article class="card">
                 <p class="card-number">03</p>
                 <h3>Helyi modellek</h3>
                 <p>Rampart<br>Desert Ant Redact<br>LFM2.5<br>GLiNER2</p>
                 <p class="strong">Az adat helyben marad</p>
-                <p>Proxyba illeszthető</p>
+                <p>Proxyba építhető</p>
               </article>
             </div>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>03</span></footer>
@@ -89,92 +89,92 @@
         <section>
           <div class="slide">
             <header>
-              <p class="eyebrow">03 - Determinisztikus felismerés</p>
-              <h2>A szabályok felismerik a jól meghatározható formátumokat</h2>
+              <p class="eyebrow">03 - Szabályalapú felismerés</p>
+              <h2>A szabályok egyértelmű formátumokat ismernek fel</h2>
             </header>
             <div class="slide-content grid-2">
               <article class="card">
                 <p class="card-number">STRUKTURÁLT AZONOSÍTÓK</p>
-                <h3>Használjunk determinisztikus felismerőket</h3>
-                <p>E-mail-címek<br>Hitelkártyák Luhn-ellenőrzéssel<br>IP-címek<br>Nemzeti azonosítók<br>Ismert titkok és API-kulcsformátumok</p>
+                <h3>Strukturált adatok</h3>
+                <p>E-mail-címek<br>Hitelkártyaszámok Luhn-ellenőrzéssel<br>IP-címek<br>Nemzeti azonosítók<br>Ismert titkok és API-kulcsformátumok</p>
               </article>
               <article class="card">
                 <p class="card-number">KONTEXTUSFÜGGŐ AZONOSÍTÓK</p>
-                <h3>Ehhez nyelvi modell kell</h3>
-                <p>Vezetéknév: személy, fájlnév vagy cég?</p>
+                <h3>A kontextus dönti el</h3>
+                <p>Vezetéknév: személy, fájl vagy cég?</p>
                 <p>Dátum: születésnap vagy kiadási dátum?</p>
-                <p>Az adattár útvonala azonosít egy munkavállalót?</p>
+                <p>Az elérési út azonosít-e munkavállalót?</p>
               </article>
             </div>
-            <p class="invariant">A helyi modell kezeli a kontextusfüggő eseteket.</p>
+            <p class="invariant">A kontextusfüggő eseteket helyi modell kezeli.</p>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>04</span></footer>
           </div>
-          <aside class="notes">A Rampart és a Desert Ant dokumentációja is hibrid felépítést ír le: neurális tokenosztályozó mellett determinisztikus felismerést alkalmaz. Források: huggingface.co/nationaldesignstudio/rampart és huggingface.co/desert-ant-labs/redact.</aside>
+          <aside class="notes">A Rampart és a Desert Ant dokumentációja is hibrid felépítést ír le: neurális tokenosztályozó mellett szabályalapú felismerést alkalmaz. Források: huggingface.co/nationaldesignstudio/rampart és huggingface.co/desert-ant-labs/redact.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
               <p class="eyebrow">04 - Bizalmi határ</p>
-              <h2>Külső redakcióval a személyes adat is elhagyja a gépet</h2>
+              <h2>Távoli adatelfedővel a személyes adat is kikerül a gépről</h2>
             </header>
             <div class="slide-content flow">
               <div class="flow-node"><h3>Kliens</h3><p>Nyers szöveg</p></div>
               <div class="arrow">&rarr;</div>
-              <div class="flow-node"><h3>Redakciós szolgáltatás</h3><p>Felismer és maszkol</p></div>
+              <div class="flow-node"><h3>Adatelfedő szolgáltatás</h3><p>Felismeri és elfedi</p></div>
               <div class="arrow">&rarr;</div>
-              <div class="flow-node"><h3>Modellszolgáltató</h3><p>Redaktált szöveg</p></div>
+              <div class="flow-node"><h3>Modellszolgáltató</h3><p>Elfedett szöveg</p></div>
               <div class="arrow">&rarr;</div>
               <div class="flow-node local"><h3>Követelmény</h3><p>Személyes adat nem hagyhatja el a kliensgépet.</p></div>
             </div>
             <div class="grid-2" style="margin-top: 30px;">
-              <div class="card"><h3>Hasznos, ha</h3><p>Központi szabályzat, dokumentumfeldolgozás, kép-OCR vagy szabályozott auditfolyamat kell.</p></div>
-              <div class="card"><h3>Nem használható, ha</h3><p>A szabály tiltja, hogy személyes adat elhagyja az ügyfél gépét.</p></div>
+              <div class="card"><h3>Indokolt</h3><p>Központi szabályzat, dokumentumfeldolgozás, kép-OCR vagy szabályozott auditfolyamat.</p></div>
+              <div class="card"><h3>Kizárt</h3><p>A szabályzat tiltja, hogy személyes adat elhagyja az ügyfél gépét.</p></div>
             </div>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>05</span></footer>
           </div>
-          <aside class="notes">Ez a dia a bizalmi határt mutatja. A Microsoft Presidio helyben is futtatható, ezért a 3. dián az SDK-k között szerepel, nem távoli szolgáltatásként.</aside>
+          <aside class="notes">A Microsoft Presidio helyben is futtatható, ezért az SDK-k között szerepel, nem a távoli szolgáltatások között.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
-              <p class="eyebrow">05 - Összehasonlítható jellemzők</p>
-              <h2>Hat modell és fejlesztőjük</h2>
+              <p class="eyebrow">05 - Összehasonlítás</p>
+              <h2>Hat vizsgált modell</h2>
             </header>
             <div class="slide-content table-wrap">
               <table class="model-table">
                 <thead>
-                  <tr><th>Modell</th><th>Fejlesztő</th><th>Paraméter</th><th>Artefaktum</th><th>Nyelv</th><th>Futtatás</th><th>Helyettesítés</th></tr>
+                  <tr><th>Modell</th><th>Fejlesztő</th><th>Paraméterszám</th><th>Fájlméret</th><th>Nyelvek</th><th>Környezet</th><th>Kimenet</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>Rampart</td><td>National Design Studio</td><td>18,5M</td><td>14,7 MB</td><td>7</td><td>Böngésző, Node</td><td>Tartós, címkézett tokenek</td></tr>
-                  <tr><td>Desert Ant Redact</td><td>Desert Ant Labs</td><td>23M</td><td>11,6-24,5 MB</td><td>27</td><td>Böngésző, Node, natív</td><td>Címkék típus szerint</td></tr>
-                  <tr><td>GLiNER2-PII</td><td>Fastino</td><td>205M</td><td>nincs megadva</td><td>7</td><td>Python, CPU</td><td>Szövegrészek vagy maszkolás</td></tr>
-                  <tr><td>LFM2.5 PII</td><td>Liquid AI</td><td>350M</td><td>modellfüggő</td><td>16</td><td>Transformers, CPU</td><td>Címkézett szövegrészek</td></tr>
-                  <tr><td>PII-Tracer</td><td>Perplexity</td><td>kb. 600M</td><td>változatfüggő</td><td>nincs megadva</td><td>GGUF, MLX, vLLM</td><td>Címkézett maszkok</td></tr>
+                  <tr><td>Rampart</td><td>National Design Studio</td><td>18,5M</td><td>14,7 MB</td><td>7</td><td>Böngésző, Node</td><td>Típusjelölt, állandó tokenek</td></tr>
+                  <tr><td>Desert Ant Redact</td><td>Desert Ant Labs</td><td>23M</td><td>11,6-24,5 MB</td><td>27</td><td>Böngésző, Node, natív</td><td>Típus szerinti címkék</td></tr>
+                  <tr><td>GLiNER2-PII</td><td>Fastino</td><td>205M</td><td>nincs megadva</td><td>7</td><td>Python, CPU</td><td>Szövegrészletek vagy elfedés</td></tr>
+                  <tr><td>LFM2.5 PII</td><td>Liquid AI</td><td>350M</td><td>modellfüggő</td><td>16</td><td>Transformers, CPU</td><td>Címkézett szövegrészletek</td></tr>
+                  <tr><td>PII-Tracer</td><td>Perplexity</td><td>kb. 600M</td><td>változatfüggő</td><td>nincs megadva</td><td>GGUF, MLX, vLLM</td><td>Címkézett placeholderek</td></tr>
                   <tr><td>Nemotron v2</td><td>OpenMed</td><td>1,4B / 50M aktív</td><td>változatfüggő</td><td>20</td><td>Transformers, MLX</td><td>55 címketípus</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="invariant">A fejlesztő és a műszaki jellemzők együtt számítanak.</p>
+            <p class="invariant">A fejlesztő is számít, nem csak a műszaki adatok.</p>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>06</span></footer>
           </div>
-          <aside class="notes">A nyilvános anyagokból nem megállapítható értékek ismeretlenek. Források: Rampart, Desert Ant, GLiNER2, LFM2.5, PII-Tracer és Nemotron v2 modellkártyái. A paraméterszámok az egyes modellkártyákban megadott teljes vagy aktív értékek. Publikálás előtt újra kell ellenőrizni, mert a modellkártyák változnak.</aside>
+          <aside class="notes">A nyilvános anyagok alapján meg nem állapítható értékeknél az „ismeretlen” szerepel. Források: Rampart, Desert Ant, GLiNER2, LFM2.5, PII-Tracer és Nemotron v2 modellkártyái. A paraméterszámok az egyes modellkártyákban megadott teljes vagy aktív értékek. Publikálás előtt újra kell ellenőrizni, mert a modellkártyák változnak.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
               <p class="eyebrow">06 - Architektúra</p>
-              <h2>A proxy megszabja, milyen adat kerül a felhőbe</h2>
+              <h2>A proxy szabja meg, mi kerül a felhőbe</h2>
             </header>
             <div class="slide-content flow">
-              <div class="flow-node"><h3>Kódoló ügynök</h3><p>Pi vagy OpenCode</p></div>
+              <div class="flow-node"><h3>Coding agent</h3><p>Nyers kérés és adattár-környezet</p></div>
               <div class="arrow">&rarr;</div>
-              <div class="flow-node local"><h3>Helyi proxy</h3><p>Felismer és átalakít</p></div>
+              <div class="flow-node local"><h3>Helyi proxy</h3><p>Felismer és helyettesít</p></div>
               <div class="arrow">&rarr;</div>
-              <div class="flow-node"><h3>OpenRouter</h3><p>Helyőrzőket kap</p></div>
+              <div class="flow-node"><h3>OpenRouter</h3><p>Placeholdereket kap</p></div>
               <div class="arrow">&rarr;</div>
               <div class="flow-node"><h3>Felhőmodell</h3><p>Nem kapja meg a helyettesítési táblát</p></div>
             </div>
@@ -182,113 +182,113 @@
               <div class="comparison-panel"><h3>Nyers helyi adat</h3><p><code>Anna Kovacs</code> &nbsp; <code>anna@example.hu</code></p></div>
               <div class="comparison-panel"><h3>Helyettesített kérés</h3><p><code>&lt;PERSON:7F2A&gt;</code> &nbsp; <code>&lt;EMAIL:9B11&gt;</code></p></div>
             </div>
-            <p class="invariant">Csak a proxy állítja vissza a választ. A helyettesítési tábla helyben marad.</p>
+            <p class="invariant">A tokeneket csak a proxy cseréli vissza. A helyettesítési tábla helyben marad.</p>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>07</span></footer>
           </div>
-          <aside class="notes">A demonstrációhoz javasolt architektúra. Az OpenRouter OpenAI-kompatibilis átjáró. A helyettesítési tábla nem kerülhet távoli telemetriába.</aside>
+          <aside class="notes">Ez a javasolt demonstrációs architektúra. Az OpenRouter OpenAI-kompatibilis átjáró. A helyettesítési tábla nem kerülhet távoli telemetriába.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
-              <p class="eyebrow">07 - A proxyn belül</p>
-              <h2>A proxy öt lépésben dolgozik</h2>
+              <p class="eyebrow">07 - A proxy működése</p>
+              <h2>A kérés útja a proxyn át</h2>
             </header>
             <div class="slide-content grid-5">
-              <article class="card"><p class="card-number">01</p><h3>Elfogás</h3><p>Minden modellhívás rögzítése</p></article>
+              <article class="card"><p class="card-number">01</p><h3>Elfogás</h3><p>Kimenő modellhívás</p></article>
               <article class="card"><p class="card-number">02</p><h3>Felismerés</h3><p>Szabályok és helyi modell</p></article>
-              <article class="card"><p class="card-number">03</p><h3>Helyettesítés</h3><p>Személyes szövegrészek helyett tokenek</p></article>
-              <article class="card"><p class="card-number">04</p><h3>Megőrzés</h3><p>Helyettesítési tábla rövid ideig</p></article>
-              <article class="card"><p class="card-number">05</p><h3>Visszaállítás</h3><p>Csak korábban kiadott tokeneknél</p></article>
+              <article class="card"><p class="card-number">03</p><h3>Helyettesítés</h3><p>Személyes adat helyett token</p></article>
+              <article class="card"><p class="card-number">04</p><h3>Tárolás</h3><p>A helyettesítési tábla rövid ideig marad helyben</p></article>
+              <article class="card"><p class="card-number">05</p><h3>Visszaállítás</h3><p>Csak korábban kiadott tokeneket cserél vissza</p></article>
             </div>
-            <p class="invariant">Alapszabály: az eredeti értékek és a helyettesítési tábla a gépen maradnak.</p>
+            <p class="invariant">Nyers adat és helyettesítési tábla: a gépen maradnak.</p>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>08</span></footer>
           </div>
-          <aside class="notes">Megvalósítás: beszélgetésenként új, véletlenszerű, típusjelölt tokenek; csak korábban kiadott tokenek visszaállítása; a helyettesítési tábla ne kerüljön távoli trace-be vagy hibajelentésbe.</aside>
+          <aside class="notes">Megvalósítás: beszélgetésenként új, véletlenszerű, típusjelölt tokenek; csak korábban kiadott tokenek visszaállítása; a helyettesítési tábla ne kerüljön távoli nyomon követési naplóba vagy hibajelentésbe.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
-              <p class="eyebrow">08 - Megfigyelhetőség</p>
-              <h2>Két trace mutatja, mit lát az OpenRouter</h2>
+              <p class="eyebrow">08 - Nyomon követhetőség</p>
+              <h2>Két naplóban látszik, mit kap az OpenRouter</h2>
             </header>
             <div class="slide-content trace-grid">
               <article class="trace">
-                <h3>Helyi trace</h3>
+                <h3>Helyi napló</h3>
                 <span class="trace-label">proxy.receive</span><p>Anna Kovacs<br>anna@example.hu</p>
                 <span class="trace-label">proxy.detect</span><p>PERSON &nbsp; EMAIL</p>
                 <span class="trace-label">proxy.map</span><p>7F2A = Anna Kovacs</p>
               </article>
               <article class="trace remote">
-                <h3>OpenRouter trace</h3>
+                <h3>OpenRouter-napló</h3>
                 <span class="trace-label">request.input</span><p><code>&lt;PERSON:7F2A&gt;</code><br><code>&lt;EMAIL:9B11&gt;</code></p>
                 <span class="trace-label">provider.output</span><p>Mondd meg <code>&lt;PERSON:7F2A&gt;</code> ...</p>
-                <span class="trace-label">NINCS A TRACE-BEN</span><p>Eredeti érték vagy helyettesítési tábla</p>
+                <span class="trace-label">NINCS A NAPLÓBAN</span><p>Nyers adat, helyettesítési tábla</p>
               </article>
             </div>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>09</span></footer>
           </div>
-          <aside class="notes">Az OpenRouter Broadcast támogatja a megfigyelhetőségi célokat. Forrás: openrouter.ai/docs/guides/features/broadcast . A nyilvános demóban szintetikus személyes adatot használjunk. Valódi nyers érték ne kerüljön hosztolt megfigyelhetőségbe.</aside>
+          <aside class="notes">Az OpenRouter Broadcast támogatja a nyomon követési célokat. Forrás: openrouter.ai/docs/guides/features/broadcast . A nyilvános demóban szintetikus személyes adatot használjunk. Valódi nyers érték ne kerüljön külső megfigyelési rendszerbe.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
               <p class="eyebrow">09 - Élő demonstráció</p>
-              <h2>Egy kérés, négy látható ellenőrzési pont</h2>
+              <h2>A kérés útja</h2>
             </header>
             <div class="slide-content grid-4">
-              <article class="card"><p class="card-number">01</p><h3>Pi küld</h3><p>Nyers feladat és adattár-kontekstus</p></article>
-              <article class="card"><p class="card-number">02</p><h3>Proxy fogad</h3><p>Nyers kérés, majd helyi találatok</p></article>
-              <article class="card"><p class="card-number">03</p><h3>OpenRouter lát</h3><p>Csak helyettesített szöveg és tokenek</p></article>
-              <article class="card"><p class="card-number">04</p><h3>Pi fogad</h3><p>Visszaállított modellválasz</p></article>
+              <article class="card"><p class="card-number">01</p><h3>Coding agent</h3><p>Nyers kérés és adattár-környezet</p></article>
+              <article class="card"><p class="card-number">02</p><h3>Helyi proxy</h3><p>Felismerés és helyettesítés</p></article>
+              <article class="card"><p class="card-number">03</p><h3>OpenRouter</h3><p>Helyettesített kérés</p></article>
+              <article class="card"><p class="card-number">04</p><h3>Coding agent</h3><p>Visszaállított válasz</p></article>
             </div>
             <div class="grid-2" style="margin-top: 30px;">
-              <div class="card"><h3>Helyi nézet</h3><p>A böngészőben látható proxy-lépések</p></div>
-              <div class="card"><h3>OpenRouter Broadcast</h3><p>Független bizonyíték a távoli nézetről</p></div>
+              <div class="card"><h3>Helyi nézet</h3><p>Nyers kérés, találatok, helyettesítési tábla</p></div>
+              <div class="card"><h3>OpenRouter Broadcast</h3><p>A távoli szolgáltatásnak küldött kérés</p></div>
             </div>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>10</span></footer>
           </div>
-          <aside class="notes">A Pi minimális terminálos környezet, TypeScript-bővítési lehetőséggel. Források: pi.dev, pi.dev/docs/latest és OpenRouter Broadcast.</aside>
+          <aside class="notes">A bemutatóban használt coding agent terminálalapú és TypeScriptben bővíthető.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
-              <p class="eyebrow">10 - Értékelés benchmark nélkül</p>
-              <h2>Öt szempont a modellválasztáshoz</h2>
+              <p class="eyebrow">10 - Modellkártyák</p>
+              <h2>A pontosságon kívül ezeket is nézzük</h2>
             </header>
             <div class="slide-content stack">
-              <div class="stack-row"><strong>Lefedettség</strong><span>Személyesadat-típusok és támogatott nyelvek</span></div>
-              <div class="stack-row"><strong>Csomagolás</strong><span>Paraméterszám, artefaktumméret és kvantálás</span></div>
+              <div class="stack-row"><strong>Lefedettség</strong><span>Személyes adatok típusai és támogatott nyelvek</span></div>
+              <div class="stack-row"><strong>Terjedelem</strong><span>Paraméterszám, modellfájlméret és kvantálás</span></div>
               <div class="stack-row"><strong>Futtatás</strong><span>CPU, böngésző, natív SDK és memóriaigény</span></div>
-              <div class="stack-row"><strong>Működés</strong><span>Címkézett szövegrészek, törlés, tokenek és visszaállítás</span></div>
-              <div class="stack-row"><strong>Irányítás</strong><span>Licenc, telemetria és egyedi kód igénye</span></div>
+              <div class="stack-row"><strong>Működés</strong><span>Címkézett szövegrészletek, törlés, tokenek, visszahelyettesítés</span></div>
+              <div class="stack-row"><strong>Irányítás</strong><span>Licenc, telemetria és saját kód igénye</span></div>
             </div>
-            <p class="invariant">A pontosságot később, saját forgalmi mintán mérjük. A gyártói tesztkészlet nem elég.</p>
+            <p class="invariant">A pontosságot saját kérések címkézett mintáján mérjük. A gyártó tesztkészlete nem elég.</p>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>11</span></footer>
           </div>
-          <aside class="notes">Ezek a dimenziók modellkártyákból, csomagolt artefaktumokból és helyi futtatásból megfigyelhetők. A pontosság továbbra is adathalmaz- és szabályzatfüggő.</aside>
+          <aside class="notes">Ezek a dimenziók modellkártyákból, kiadott modellfájlokból és helyi futtatásból megfigyelhetők. A pontosság továbbra is adathalmaz- és szabályzatfüggő.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
               <p class="eyebrow">11 - Összegzés</p>
-              <h2 class="conclusion">Kis helyi modellel is működik az adatvédelmi proxy</h2>
+              <h2 class="conclusion">A proxy kis helyi modellel is működik</h2>
             </header>
             <div class="slide-content">
               <div class="key-lines">
-                <p>A szabályok felismerik a szabályos formátumokat.</p>
-                <p>A helyi modell értelmezi a kétértelmű eseteket.</p>
-                <p>A proxy dönti el, milyen adat hagyhatja el a gépet.</p>
+                <p>Szabályok: e-mail, IP-cím, kulcs</p>
+                <p>Helyi modell: név, dátum, elérési út</p>
+                <p>Proxy: helyettesítés és visszaállítás</p>
               </div>
-              <p class="invariant">Helyben: felismerés, helyettesítés, visszaállítás.</p>
+              <p class="invariant">A felhő csak a helyettesített kérést kapja.</p>
             </div>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>12</span></footer>
           </div>
-          <aside class="notes">Következő lépés: a Desert Ant, az LFM2.5 és a Rampart tesztelése kódoló ügynöki forgalmon. A termékválasztás közvetlen telepítési tesztekig előzetes.</aside>
+          <aside class="notes">Következő lépés: a Desert Ant, az LFM2.5 és a Rampart tesztelése coding agent forgalmán. A termékválasztás közvetlen telepítési tesztekig előzetes.</aside>
         </section>
       </div>
     </div>
