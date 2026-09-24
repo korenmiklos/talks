@@ -4,6 +4,8 @@ import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { randomBytes, randomUUID } from "node:crypto";
 import { Redact } from "@desert-ant-labs/redact/native";
+import { startActiveObservation, propagateAttributes } from "@langfuse/tracing";
+import { langfuseEnabled, shutdownTelemetry } from "./instrumentation.mjs";
 const root = resolve(fileURLToPath(new URL(".", import.meta.url)));
 
 const upstream = (process.env.UPSTREAM_URL ?? (process.env.OPENROUTER_API_KEY ? "https://openrouter.ai/api" : undefined))?.replace(/\/$/, "");
@@ -23,6 +25,24 @@ let modelPromise;
 function loadModel() {
   modelPromise ??= Redact.load();
   return modelPromise;
+}
+
+function sessionId(request, fallback = "proxy-demo") {
+  const value = request.headers["x-pi-session-id"]
+    ?? request.headers["x-session-id"]
+    ?? request.headers["x-session-affinity"]
+    ?? process.env.PII_PROXY_SESSION_ID
+    ?? fallback;
+  return String(value).replace(/[^\x21-\x7e]/g, "_").slice(0, 199);
+}
+
+function trace(name, id, callback, options) {
+  if (!langfuseEnabled) return callback(null);
+  return propagateAttributes({ sessionId: id }, () => startActiveObservation(name, callback, options));
+}
+
+function updateTrace(observation, attributes) {
+  observation?.update(attributes);
 }
 
 
@@ -97,7 +117,7 @@ function restoreStreamText(text, mappings, state) {
   return restore(combined, mappings);
 }
 
-async function streamProviderResponse(providerResponse, response, mappings) {
+async function streamProviderResponse(providerResponse, response, mappings, generation) {
   response.writeHead(providerResponse.status, {
     "content-type": "text/event-stream; charset=utf-8",
     "cache-control": "no-cache",
@@ -146,9 +166,9 @@ async function streamProviderResponse(providerResponse, response, mappings) {
   }
   if (buffer) response.write(buffer);
   response.end();
+  updateTrace(generation, { output: { stream: true, redactedText } });
   return { redactedText, restoredText };
 }
-
 
 async function readJson(request) {
   let size = 0;
@@ -202,11 +222,22 @@ async function handle(request, response) {
     try {
       const body = await readJson(request);
       if (typeof body.text !== "string" || !body.text.trim()) return send(response, 400, { error: "text must be a non-empty string" });
-      const result = await redactText(body.text);
-      return send(response, 200, {
-        traceId: randomUUID(), input: body.text, redacted: result.redacted,
-        restored: restore(result.redacted, result.mappings), remoteView: result.redacted,
-        detections: result.detections
+      const id = sessionId(request);
+      return trace("pii-proxy-demo", id, async (span) => {
+        updateTrace(span, { input: body.text, metadata: { sessionId: id, model: "@desert-ant-labs/redact" } });
+        const result = await trace("proxy.redact", id, async (step) => {
+          updateTrace(step, { input: body.text });
+          const redaction = await redactText(body.text);
+          updateTrace(step, { output: { redacted: redaction.redacted, labels: redaction.detections.map(({ label }) => label) } });
+          return redaction;
+        });
+        const output = {
+          traceId: randomUUID(), sessionId: id, input: body.text, redacted: result.redacted,
+          restored: restore(result.redacted, result.mappings), remoteView: result.redacted,
+          detections: result.detections
+        };
+        updateTrace(span, { output: { remoteView: output.remoteView, restored: output.restored, detectionCount: output.detections.length } });
+        return send(response, 200, output);
       });
     } catch (error) {
       return send(response, 400, { error: error instanceof Error ? error.message : "Could not redact input" });
@@ -217,20 +248,46 @@ async function handle(request, response) {
     try {
       if (!upstream) return send(response, 503, { error: "Set UPSTREAM_URL and UPSTREAM_API_KEY to enable forwarding" });
       const body = await readJson(request);
-      const result = await redactPayload(body);
-      const providerResponse = await fetch(completionUrl, {
-        method: "POST",
-        headers: { "content-type": "application/json", ...(upstreamApiKey ? { authorization: `Bearer ${upstreamApiKey}` } : {}) },
-        body: JSON.stringify(result.payload)
+      const id = sessionId(request);
+      return trace("pii-proxy-request", id, async (span) => {
+        updateTrace(span, { input: body, metadata: { route: "/v1/chat/completions", sessionId: id } });
+        const result = await trace("proxy.dehydrate", id, async (step) => {
+          updateTrace(step, { input: body });
+          const redaction = await redactPayload(body);
+          updateTrace(step, { output: { payload: redaction.payload, labels: redaction.detections.map(({ label }) => label) } });
+          return redaction;
+        });
+        const provider = await trace("provider.chat-completion", id, async (generation) => {
+          updateTrace(generation, { model: body.model, input: result.payload });
+          const providerResponse = await fetch(completionUrl, {
+            method: "POST",
+            headers: { "content-type": "application/json", ...(upstreamApiKey ? { authorization: `Bearer ${upstreamApiKey}` } : {}) },
+            body: JSON.stringify(result.payload)
+          });
+          if (body.stream && providerResponse.ok && providerResponse.body) {
+            const streamed = await streamProviderResponse(providerResponse, response, result.mappings, generation);
+            return { status: providerResponse.status, streamed: true, ...streamed };
+          }
+          const text = await providerResponse.text();
+          let providerBody;
+          try { providerBody = JSON.parse(text); } catch { providerBody = { choices: [{ message: { role: "assistant", content: text } }] }; }
+          updateTrace(generation, { output: providerBody, usageDetails: providerBody.usage });
+          return { status: providerResponse.status, body: providerBody };
+        }, { asType: "generation" });
+        if (provider.streamed) {
+          await trace("proxy.rehydrate", id, async (step) => {
+            updateTrace(step, { input: provider.redactedText, output: provider.restoredText });
+          });
+          updateTrace(span, { output: { status: provider.status, restored: true, streamed: true } });
+          return;
+        }
+        const restored = restore(provider.body, result.mappings);
+        await trace("proxy.rehydrate", id, async (step) => {
+          updateTrace(step, { input: provider.body, output: restored });
+        });
+        updateTrace(span, { output: { status: provider.status, restored: true } });
+        return send(response, provider.status, restored);
       });
-      if (body.stream && providerResponse.ok && providerResponse.body) {
-        await streamProviderResponse(providerResponse, response, result.mappings);
-        return;
-      }
-      const text = await providerResponse.text();
-      let providerBody;
-      try { providerBody = JSON.parse(text); } catch { providerBody = { choices: [{ message: { role: "assistant", content: text } }] }; }
-      return send(response, providerResponse.status, restore(providerBody, result.mappings));
     } catch (error) {
       return send(response, 400, { error: error instanceof Error ? error.message : "Proxy request failed" });
     }
@@ -242,11 +299,13 @@ const server = createServer((request, response) => handle(request, response).cat
 server.listen(port, "127.0.0.1", () => {
   console.log(`PII proxy running at http://127.0.0.1:${port}`);
   console.log(upstream ? `Forwarding to ${upstream}` : "Demo mode: no upstream configured");
+  console.log(langfuseEnabled ? "Langfuse tracing enabled" : "Langfuse tracing disabled");
 });
 
 for (const signal of ["SIGINT", "SIGTERM"]) {
-  process.on(signal, () => {
+  process.on(signal, async () => {
     server.close();
+    await shutdownTelemetry();
     process.exit(0);
   });
 }
