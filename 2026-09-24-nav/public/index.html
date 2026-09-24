@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local PII Proxy</title>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark">CT</span><span>LOCAL / PII PROXY</span></div>
+        <a href="/slides" target="_blank" rel="noreferrer">View landscape deck ↗</a>
+      </header>
+
+      <section class="hero">
+        <p class="eyebrow">Privacy before the cloud</p>
+        <h1>Keep personal data<br><em>on this machine.</em></h1>
+        <p class="intro">A small OpenAI-compatible proxy using Desert Ant Redact. It detects locally, swaps in typed placeholders, and restores known values only after the model responds.</p>
+        <div class="local-pill"><span></span> Bound to 127.0.0.1 · no hosted redaction service</div>
+      </section>
+
+      <section class="demo-card">
+        <div class="section-head">
+          <div><p class="eyebrow">Live local check</p><h2>See the boundary</h2></div>
+          <span class="status" id="status">READY</span>
+        </div>
+        <label for="input">Synthetic coding-agent context</label>
+        <textarea id="input" spellcheck="false">Review account SSN 472-81-0094 for anna@example.hu from 192.168.1.25. DB_PASSWORD=demo-secret-123</textarea>
+        <div class="actions"><button id="run">Run local redaction</button><span id="latency"></span></div>
+
+        <div class="trace-grid" aria-live="polite">
+          <article class="trace local">
+            <div class="trace-title"><span class="step">01</span><h3>Proxy receives</h3><span class="trace-tag">LOCAL</span></div>
+            <pre id="raw">Raw text stays in this tab.</pre>
+          </article>
+          <article class="trace local">
+            <div class="trace-title"><span class="step">02</span><h3>Proxy detects</h3><span class="trace-tag">MODEL + RULES</span></div>
+            <div id="detections" class="detections"><span class="muted">Run the check to inspect labels.</span></div>
+          </article>
+          <article class="trace remote">
+            <div class="trace-title"><span class="step">03</span><h3>Cloud model sees</h3><span class="trace-tag">DEHYDRATED</span></div>
+            <pre id="remote">Nothing leaves localhost in demo mode.</pre>
+          </article>
+          <article class="trace restored">
+            <div class="trace-title"><span class="step">04</span><h3>User sees</h3><span class="trace-tag">RESTORED</span></div>
+            <pre id="restored">The known map restores exact tokens locally.</pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="architecture">
+        <div><p class="eyebrow">Proxy contract</p><h2>Every outbound model call crosses the same boundary.</h2></div>
+        <div class="flow"><span>Agent</span><b>→</b><strong>Local proxy</strong><b>→</b><span>OpenAI-compatible provider</span></div>
+        <p class="fineprint">The request endpoint is <code>POST /v1/chat/completions</code>. With <code>OPENROUTER_API_KEY</code>, the proxy forwards to OpenRouter; <code>UPSTREAM_URL</code> can override it. Streaming responses pass through with placeholder restoration.</p>
+      </section>
+
+      <footer><span>Desert Ant Redact · local-first demo</span><span>Not a guarantee of complete PII removal.</span></footer>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
