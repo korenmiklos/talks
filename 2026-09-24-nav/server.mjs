@@ -117,7 +117,7 @@ function restoreStreamText(text, mappings, state) {
   return restore(combined, mappings);
 }
 
-async function streamProviderResponse(providerResponse, response, mappings, generation) {
+async function streamProviderResponse(providerResponse, response, mappings) {
   response.writeHead(providerResponse.status, {
     "content-type": "text/event-stream; charset=utf-8",
     "cache-control": "no-cache",
@@ -166,7 +166,6 @@ async function streamProviderResponse(providerResponse, response, mappings, gene
   }
   if (buffer) response.write(buffer);
   response.end();
-  updateTrace(generation, { output: { stream: true, redactedText } });
   return { redactedText, restoredText };
 }
 
@@ -223,20 +222,35 @@ async function handle(request, response) {
       const body = await readJson(request);
       if (typeof body.text !== "string" || !body.text.trim()) return send(response, 400, { error: "text must be a non-empty string" });
       const id = sessionId(request);
-      return trace("pii-proxy-demo", id, async (span) => {
-        updateTrace(span, { input: body.text, metadata: { sessionId: id, model: "@desert-ant-labs/redact" } });
-        const result = await trace("proxy.redact", id, async (step) => {
-          updateTrace(step, { input: body.text });
-          const redaction = await redactText(body.text);
-          updateTrace(step, { output: { redacted: redaction.redacted, labels: redaction.detections.map(({ label }) => label) } });
-          return redaction;
+      return trace("proxy.incoming", id, async (incoming) => {
+        updateTrace(incoming, {
+          input: body.text,
+          metadata: { app: "pii-proxy", channel: "incoming", sessionId: id }
+        });
+        const result = await trace("desert-ant.incoming", id, async (desertAntInput) => {
+          updateTrace(desertAntInput, {
+            input: body.text,
+            metadata: { app: "desert-ant", channel: "incoming" }
+          });
+          return redactText(body.text);
+        });
+        await trace("desert-ant.output", id, async (desertAntOutput) => {
+          updateTrace(desertAntOutput, {
+            output: { redacted: result.redacted, gates: result.detections },
+            metadata: { app: "desert-ant", channel: "redacted-output" }
+          });
         });
         const output = {
           traceId: randomUUID(), sessionId: id, input: body.text, redacted: result.redacted,
           restored: restore(result.redacted, result.mappings), remoteView: result.redacted,
           detections: result.detections
         };
-        updateTrace(span, { output: { remoteView: output.remoteView, restored: output.restored, detectionCount: output.detections.length } });
+        await trace("proxy.user-output", id, async (userOutput) => {
+          updateTrace(userOutput, {
+            output: output.restored,
+            metadata: { app: "pii-proxy", channel: "outgoing" }
+          });
+        });
         return send(response, 200, output);
       });
     } catch (error) {
@@ -249,44 +263,69 @@ async function handle(request, response) {
       if (!upstream) return send(response, 503, { error: "Set UPSTREAM_URL and UPSTREAM_API_KEY to enable forwarding" });
       const body = await readJson(request);
       const id = sessionId(request);
-      return trace("pii-proxy-request", id, async (span) => {
-        updateTrace(span, { input: body, metadata: { route: "/v1/chat/completions", sessionId: id } });
-        const result = await trace("proxy.dehydrate", id, async (step) => {
-          updateTrace(step, { input: body });
-          const redaction = await redactPayload(body);
-          updateTrace(step, { output: { payload: redaction.payload, labels: redaction.detections.map(({ label }) => label) } });
-          return redaction;
+      return trace("proxy.incoming", id, async (incoming) => {
+        updateTrace(incoming, {
+          input: body,
+          metadata: { app: "pii-proxy", channel: "incoming", sessionId: id, route: "/v1/chat/completions" }
         });
-        const provider = await trace("provider.chat-completion", id, async (generation) => {
-          updateTrace(generation, { model: body.model, input: result.payload });
-          const providerResponse = await fetch(completionUrl, {
+        const result = await trace("desert-ant.incoming", id, async (desertAntInput) => {
+          updateTrace(desertAntInput, {
+            input: body,
+            metadata: { app: "desert-ant", channel: "incoming" }
+          });
+          return redactPayload(body);
+        });
+        await trace("desert-ant.output", id, async (desertAntOutput) => {
+          updateTrace(desertAntOutput, {
+            output: { payload: result.payload, gates: result.detections },
+            metadata: { app: "desert-ant", channel: "redacted-output" }
+          });
+        });
+        const providerResponse = await trace("openrouter.incoming", id, async (openRouterInput) => {
+          updateTrace(openRouterInput, {
+            input: result.payload,
+            metadata: { app: "openrouter", channel: "outgoing" }
+          });
+          return fetch(completionUrl, {
             method: "POST",
             headers: { "content-type": "application/json", ...(upstreamApiKey ? { authorization: `Bearer ${upstreamApiKey}` } : {}) },
             body: JSON.stringify(result.payload)
           });
-          if (body.stream && providerResponse.ok && providerResponse.body) {
-            const streamed = await streamProviderResponse(providerResponse, response, result.mappings, generation);
-            return { status: providerResponse.status, streamed: true, ...streamed };
-          }
-          const text = await providerResponse.text();
-          let providerBody;
-          try { providerBody = JSON.parse(text); } catch { providerBody = { choices: [{ message: { role: "assistant", content: text } }] }; }
-          updateTrace(generation, { output: providerBody, usageDetails: providerBody.usage });
-          return { status: providerResponse.status, body: providerBody };
-        }, { asType: "generation" });
-        if (provider.streamed) {
-          await trace("proxy.rehydrate", id, async (step) => {
-            updateTrace(step, { input: provider.redactedText, output: provider.restoredText });
+        });
+        if (body.stream && providerResponse.ok && providerResponse.body) {
+          const streamed = await trace("openrouter.output", id, async (openRouterOutput) => {
+            const output = await streamProviderResponse(providerResponse, response, result.mappings);
+            updateTrace(openRouterOutput, {
+              output: { redactedText: output.redactedText },
+              metadata: { app: "openrouter", channel: "incoming" }
+            });
+            return output;
           });
-          updateTrace(span, { output: { status: provider.status, restored: true, streamed: true } });
+          await trace("proxy.user-output", id, async (userOutput) => {
+            updateTrace(userOutput, {
+              output: streamed.restoredText,
+              metadata: { app: "pii-proxy", channel: "outgoing" }
+            });
+          });
           return;
         }
-        const restored = restore(provider.body, result.mappings);
-        await trace("proxy.rehydrate", id, async (step) => {
-          updateTrace(step, { input: provider.body, output: restored });
+        const text = await providerResponse.text();
+        let providerBody;
+        try { providerBody = JSON.parse(text); } catch { providerBody = { choices: [{ message: { role: "assistant", content: text } }] }; }
+        await trace("openrouter.output", id, async (openRouterOutput) => {
+          updateTrace(openRouterOutput, {
+            output: providerBody,
+            metadata: { app: "openrouter", channel: "incoming" }
+          });
         });
-        updateTrace(span, { output: { status: provider.status, restored: true } });
-        return send(response, provider.status, restored);
+        const restored = restore(providerBody, result.mappings);
+        await trace("proxy.user-output", id, async (userOutput) => {
+          updateTrace(userOutput, {
+            output: restored,
+            metadata: { app: "pii-proxy", channel: "outgoing" }
+          });
+        });
+        return send(response, providerResponse.status, restored);
       });
     } catch (error) {
       return send(response, 400, { error: error instanceof Error ? error.message : "Proxy request failed" });
