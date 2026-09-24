@@ -1,0 +1,2 @@
+#!/bin/sh
+exec pi --no-context-files --no-skills "$@"

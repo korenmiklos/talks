@@ -12,11 +12,21 @@ Open `index.html` directly in a browser. It embeds Reveal.js, the speaker-notes 
 - `source/local_pii_proxy_landscape_v2.pptx` is the copied source deck.
 - `server.mjs` implements the optional local PII proxy.
 
-## Proxy status
+## Run the proxy
 
-The proxy has not been validated in this checkout.
+```sh
+npm install
+PII_REDACTOR=rampart npm start
+curl http://127.0.0.1:4173/health
+```
 
-Two `npm start` attempts failed: one reported a duplicate `sessionId` declaration in `server.mjs`; the other reported that port `4173` was already in use. The proxy endpoints have not been checked.
+Start an isolated Pi session with:
+
+```sh
+./.pi/pi
+```
+
+This launcher disables `AGENTS.md`, `CLAUDE.md`, and skills while retaining the project privacy prompt.
 
 ## Proxy demonstration
 
@@ -28,3 +38,5 @@ Two `npm start` attempts failed: one reported a duplicate `sessionId` declaratio
 - Langfuse records raw local input and redacted provider traffic.
 - `PII_REDACTOR=desert-ant` selects the native Desert Ant backend; `PII_REDACTOR=rampart` selects Rampart with its CPU ONNX classifier.
 - Both backends use the same proxy contract and restore placeholders locally.
+- Request redaction preserves JSON structure and OpenAI tool-call protocol fields.
+- Streamed responses and tool arguments are restored locally, including placeholders split across chunks.

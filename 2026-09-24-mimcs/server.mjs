@@ -3,9 +3,9 @@ import { readFile } from "node:fs/promises";
 import { extname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { randomBytes, randomUUID } from "node:crypto";
-import { Redact } from "@desert-ant-labs/redact/native";
 import { startActiveObservation, propagateAttributes } from "@langfuse/tracing";
 import { langfuseEnabled, shutdownTelemetry } from "./instrumentation.mjs";
+import { redact as redactWithBackend, redactorName } from "./redactors.mjs";
 const root = resolve(fileURLToPath(new URL(".", import.meta.url)));
 
 const upstream = (process.env.UPSTREAM_URL ?? (process.env.OPENROUTER_API_KEY ? "https://openrouter.ai/api" : undefined))?.replace(/\/$/, "");
@@ -20,13 +20,6 @@ const contentTypes = {
   ".svg": "image/svg+xml",
   ".woff2": "font/woff2"
 };
-let modelPromise;
-
-function loadModel() {
-  modelPromise ??= Redact.load();
-  return modelPromise;
-}
-
 function sessionId(request, fallback = "proxy-demo") {
   const value = request.headers["x-pi-session-id"]
     ?? request.headers["x-session-id"]
@@ -35,6 +28,7 @@ function sessionId(request, fallback = "proxy-demo") {
     ?? fallback;
   return String(value).replace(/[^\x21-\x7e]/g, "_").slice(0, 199);
 }
+
 
 function trace(name, id, callback, options) {
   if (!langfuseEnabled) return callback(null);
@@ -60,6 +54,13 @@ function restore(value, mappings) {
   return value;
 }
 
+function restoreWith(value, restoreText) {
+  if (typeof value === "string") return restoreText(value);
+  if (Array.isArray(value)) return value.map((item) => restoreWith(item, restoreText));
+  if (value && typeof value === "object") return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, restoreWith(item, restoreText)]));
+  return value;
+}
+
 function redactIpAddresses(text, mappings) {
   return text.replace(/\b(?:\d{1,3}\.){3}\d{1,3}\b/g, (value) => {
     if (value.split(".").some((octet) => Number(octet) > 255)) return value;
@@ -80,17 +81,11 @@ function redactSecrets(text, mappings) {
   );
 }
 
-async function redactText(text) {
-  const result = await (await loadModel()).redaction(text);
+async function redactText(text, id) {
+  const result = await redactWithBackend(text, id);
   const mappings = new Map();
   let redacted = result.redactedText;
-  const detections = [];
-  for (const item of result.items) {
-    const placeholder = token(item.label);
-    redacted = redacted.split(item.placeholder).join(placeholder);
-    mappings.set(placeholder, item.original);
-    detections.push({ label: item.label, token: placeholder, confidence: item.confidence });
-  }
+  const detections = [...result.detections];
   redacted = redactIpAddresses(redacted, mappings);
   redacted = redactSecrets(redacted, mappings);
   for (const [placeholder] of mappings) {
@@ -99,25 +94,110 @@ async function redactText(text) {
       detections.push({ label, token: placeholder });
     }
   }
-  return { redacted, mappings, detections };
+  return {
+    backend: result.backend,
+    redacted,
+    detections,
+    restore: (value) => restoreWith(value, (text) => result.restore(restore(text, mappings)))
+  };
 }
 
-async function redactPayload(payload) {
-  const result = await redactText(JSON.stringify(payload));
-  return { payload: JSON.parse(result.redacted), ...result };
+
+async function redactPayload(payload, id) {
+  const restorers = [];
+  const detections = [];
+
+  const redactString = async (value) => {
+    if (!value) return value;
+    const result = await redactText(value, id);
+    restorers.push(result.restore);
+    detections.push(...result.detections);
+    return result.redacted;
+  };
+
+  const redactAllStrings = async (value) => {
+    if (typeof value === "string") return redactString(value);
+    if (Array.isArray(value)) {
+      const redacted = [];
+      for (const item of value) redacted.push(await redactAllStrings(item));
+      return redacted;
+    }
+    if (value && typeof value === "object") {
+      const redacted = {};
+      for (const [key, item] of Object.entries(value)) {
+        redacted[key] = await redactAllStrings(item);
+      }
+      return redacted;
+    }
+    return value;
+  };
+
+  const redactArguments = async (value) => {
+    if (typeof value !== "string") return redactAllStrings(value);
+    try {
+      const parsed = JSON.parse(value);
+      return JSON.stringify(await redactAllStrings(parsed));
+    } catch {
+      return redactString(value);
+    }
+  };
+
+  const redactContent = async (value) => {
+    if (typeof value === "string") return redactString(value);
+    if (!Array.isArray(value)) return value;
+    const redacted = [];
+    for (const part of value) {
+      if (!part || typeof part !== "object" || Array.isArray(part)) {
+        redacted.push(part);
+        continue;
+      }
+      const next = { ...part };
+      if (typeof next.text === "string") next.text = await redactString(next.text);
+      redacted.push(next);
+    }
+    return redacted;
+  };
+
+  const redactedPayload = structuredClone(payload);
+  if (typeof redactedPayload.user === "string") {
+    redactedPayload.user = await redactString(redactedPayload.user);
+  }
+  for (const message of redactedPayload.messages ?? []) {
+    if (!message || typeof message !== "object") continue;
+    if (typeof message.name === "string") message.name = await redactString(message.name);
+    message.content = await redactContent(message.content);
+    for (const field of ["reasoning", "reasoning_content", "refusal"]) {
+      if (typeof message[field] === "string") message[field] = await redactString(message[field]);
+    }
+    for (const call of message.tool_calls ?? []) {
+      if (call?.function && "arguments" in call.function) {
+        call.function.arguments = await redactArguments(call.function.arguments);
+      }
+    }
+  }
+
+  const restoreText = (text) => restorers.reduce((value, restore) => restore(value), text);
+  return {
+    backend: redactorName(),
+    redacted: JSON.stringify(redactedPayload),
+    payload: redactedPayload,
+    detections,
+    restore: (value) => restoreWith(value, restoreText)
+  };
 }
-function restoreStreamText(text, mappings, state) {
+
+function restoreStreamText(text, restoreText, state) {
   const combined = `${state.pending}${text}`;
   const partial = combined.lastIndexOf("<");
-  if (partial >= 0 && /^<[A-Z_]+:[A-F0-9]*$/i.test(combined.slice(partial))) {
+  if (partial >= 0 && /^<[A-Z_]*(?::[A-F0-9]*)?$/.test(combined.slice(partial))) {
     state.pending = combined.slice(partial);
-    return restore(combined.slice(0, partial), mappings);
+    return restoreText(combined.slice(0, partial));
   }
   state.pending = "";
-  return restore(combined, mappings);
+  return restoreText(combined);
 }
 
-async function streamProviderResponse(providerResponse, response, mappings) {
+async function streamProviderResponse(providerResponse, response, restoreText) {
   response.writeHead(providerResponse.status, {
     "content-type": "text/event-stream; charset=utf-8",
     "cache-control": "no-cache",
@@ -127,7 +207,15 @@ async function streamProviderResponse(providerResponse, response, mappings) {
   let buffer = "";
   let redactedText = "";
   let restoredText = "";
-  const state = { pending: "" };
+  const states = new Map();
+  const restoreChunk = (key, text, target) => {
+    let state = states.get(key);
+    if (!state) {
+      state = { pending: "", target };
+      states.set(key, state);
+    }
+    return restoreStreamText(text, restoreText, state);
+  };
   for await (const chunk of providerResponse.body) {
     buffer += decoder.decode(chunk, { stream: true });
     let newline;
@@ -140,10 +228,14 @@ async function streamProviderResponse(providerResponse, response, mappings) {
       }
       const payload = line.slice(5).trimStart();
       if (payload === "[DONE]") {
-        if (state.pending) {
-          const tail = restore(state.pending, mappings);
-          restoredText += tail;
-          response.write(`data: ${JSON.stringify({ choices: [{ index: 0, delta: { content: tail } }] })}\n\n`);
+        for (const state of states.values()) {
+          if (!state.pending) continue;
+          const tail = restoreText(state.pending);
+          const delta = state.target.kind === "arguments"
+            ? { tool_calls: [{ index: state.target.toolIndex, function: { arguments: tail } }] }
+            : { [state.target.field]: tail };
+          response.write(`data: ${JSON.stringify({ choices: [{ index: state.target.choiceIndex, delta }] })}\n\n`);
+          if (state.target.field === "content") restoredText += tail;
           state.pending = "";
         }
         response.write("data: [DONE]\n\n");
@@ -153,12 +245,29 @@ async function streamProviderResponse(providerResponse, response, mappings) {
       try { providerBody = JSON.parse(payload); } catch { response.write(`${line}\n\n`); continue; }
       const clientBody = structuredClone(providerBody);
       for (const choice of clientBody.choices ?? []) {
-        const content = choice.delta?.content;
-        if (typeof content === "string") {
-          redactedText += content;
-          const restoredContent = restoreStreamText(content, mappings, state);
-          restoredText += restoredContent;
-          choice.delta.content = restoredContent;
+        const delta = choice.delta;
+        if (!delta) continue;
+        const choiceIndex = choice.index ?? 0;
+        for (const field of ["content", "reasoning", "reasoning_content"]) {
+          const text = delta[field];
+          if (typeof text !== "string") continue;
+          if (field === "content") redactedText += text;
+          const restored = restoreChunk(
+            `${choiceIndex}:${field}`,
+            text,
+            { kind: "text", choiceIndex, field }
+          );
+          if (field === "content") restoredText += restored;
+          delta[field] = restored;
+        }
+        for (const call of delta.tool_calls ?? []) {
+          const args = call.function?.arguments;
+          if (typeof args !== "string") continue;
+          call.function.arguments = restoreChunk(
+            `${choiceIndex}:tool:${call.index ?? 0}`,
+            args,
+            { kind: "arguments", choiceIndex, toolIndex: call.index ?? 0 }
+          );
         }
       }
       response.write(`data: ${JSON.stringify(clientBody)}\n\n`);
@@ -215,7 +324,7 @@ async function handle(request, response) {
     if (url.pathname === "/app.js" && await serve("/public/app.js", response)) return;
     if (["/style.css", "/assets", "/vendor"].some((prefix) => url.pathname === prefix || url.pathname.startsWith(`${prefix}/`)) && await serve(url.pathname, response)) return;
   }
-  if (request.method === "GET" && url.pathname === "/health") return send(response, 200, { ok: true, model: "@desert-ant-labs/redact", upstream: Boolean(upstream) });
+  if (request.method === "GET" && url.pathname === "/health") return send(response, 200, { ok: true, redactor: redactorName(), upstream: Boolean(upstream) });
 
   if (request.method === "POST" && url.pathname === "/api/demo") {
     try {
@@ -227,22 +336,22 @@ async function handle(request, response) {
           input: body.text,
           metadata: { app: "pii-proxy", channel: "incoming", sessionId: id }
         });
-        const result = await trace("desert-ant.incoming", id, async (desertAntInput) => {
-          updateTrace(desertAntInput, {
+        const result = await trace(`${redactorName()}.incoming`, id, async (redactorInput) => {
+          updateTrace(redactorInput, {
             input: body.text,
-            metadata: { app: "desert-ant", channel: "incoming" }
+            metadata: { app: redactorName(), channel: "incoming" }
           });
-          return redactText(body.text);
+          return redactText(body.text, id);
         });
-        await trace("desert-ant.output", id, async (desertAntOutput) => {
-          updateTrace(desertAntOutput, {
+        await trace(`${result.backend}.output`, id, async (redactorOutput) => {
+          updateTrace(redactorOutput, {
             output: { redacted: result.redacted, gates: result.detections },
-            metadata: { app: "desert-ant", channel: "redacted-output" }
+            metadata: { app: result.backend, channel: "redacted-output" }
           });
         });
         const output = {
           traceId: randomUUID(), sessionId: id, input: body.text, redacted: result.redacted,
-          restored: restore(result.redacted, result.mappings), remoteView: result.redacted,
+          restored: result.restore(result.redacted), remoteView: result.redacted,
           detections: result.detections
         };
         await trace("proxy.user-output", id, async (userOutput) => {
@@ -268,17 +377,17 @@ async function handle(request, response) {
           input: body,
           metadata: { app: "pii-proxy", channel: "incoming", sessionId: id, route: "/v1/chat/completions" }
         });
-        const result = await trace("desert-ant.incoming", id, async (desertAntInput) => {
-          updateTrace(desertAntInput, {
+        const result = await trace(`${redactorName()}.incoming`, id, async (redactorInput) => {
+          updateTrace(redactorInput, {
             input: body,
-            metadata: { app: "desert-ant", channel: "incoming" }
+            metadata: { app: redactorName(), channel: "incoming" }
           });
-          return redactPayload(body);
+          return redactPayload(body, id);
         });
-        await trace("desert-ant.output", id, async (desertAntOutput) => {
-          updateTrace(desertAntOutput, {
+        await trace(`${result.backend}.output`, id, async (redactorOutput) => {
+          updateTrace(redactorOutput, {
             output: { payload: result.payload, gates: result.detections },
-            metadata: { app: "desert-ant", channel: "redacted-output" }
+            metadata: { app: result.backend, channel: "redacted-output" }
           });
         });
         const providerResponse = await trace("openrouter.incoming", id, async (openRouterInput) => {
@@ -294,7 +403,7 @@ async function handle(request, response) {
         });
         if (body.stream && providerResponse.ok && providerResponse.body) {
           const streamed = await trace("openrouter.output", id, async (openRouterOutput) => {
-            const output = await streamProviderResponse(providerResponse, response, result.mappings);
+            const output = await streamProviderResponse(providerResponse, response, result.restore);
             updateTrace(openRouterOutput, {
               output: { redactedText: output.redactedText },
               metadata: { app: "openrouter", channel: "incoming" }
@@ -318,7 +427,7 @@ async function handle(request, response) {
             metadata: { app: "openrouter", channel: "incoming" }
           });
         });
-        const restored = restore(providerBody, result.mappings);
+        const restored = restoreWith(providerBody, result.restore);
         await trace("proxy.user-output", id, async (userOutput) => {
           updateTrace(userOutput, {
             output: restored,
@@ -338,7 +447,7 @@ const server = createServer((request, response) => handle(request, response).cat
 server.listen(port, "127.0.0.1", () => {
   console.log(`PII proxy running at http://127.0.0.1:${port}`);
   console.log(upstream ? `Forwarding to ${upstream}` : "Demo mode: no upstream configured");
-  console.log(langfuseEnabled ? "Langfuse tracing enabled" : "Langfuse tracing disabled");
+  console.log(`Redactor: ${redactorName()}`);
 });
 
 for (const signal of ["SIGINT", "SIGTERM"]) {
