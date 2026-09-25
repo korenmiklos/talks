@@ -171,8 +171,11 @@ h3 {
   background: var(--ct-navy);
   color: var(--ct-white);
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
+  min-height: 100%;
   overflow: hidden;
   padding: 68px 76px 54px;
 }
@@ -547,6 +550,146 @@ td:first-child {
   font-size: 16px;
 }
 
+.demo-choice {
+  align-items: stretch;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 28px;
+}
+
+.demo-choice .card {
+  border-top: 7px solid var(--ct-red);
+  padding: 28px;
+}
+
+.demo-choice .card h3 {
+  font-size: 34px;
+  margin-top: 0;
+}
+
+.demo-choice .card p {
+  font-size: 25px;
+}
+
+.screenshot-layout {
+  align-items: stretch;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 0.9fr 1.1fr;
+  margin-top: 20px;
+}
+
+.demo-evidence {
+  align-self: center;
+}
+
+.prompt-line {
+  background: var(--ct-tint);
+  border-left: 7px solid var(--ct-red);
+  color: var(--ct-navy);
+  font-size: 24px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  padding: 16px 19px;
+}
+
+.prompt-line strong {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  margin-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.demo-result {
+  color: var(--ct-slate);
+  font-size: 23px;
+  line-height: 1.35;
+  margin-top: 14px;
+}
+
+.screenshot-slot {
+  align-items: center;
+  background: linear-gradient(135deg, var(--ct-tint), var(--ct-white));
+  border: 2px dashed var(--ct-line);
+  border-radius: 5px;
+  color: var(--ct-slate);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 330px;
+  padding: 26px;
+  text-align: center;
+}
+
+.screenshot-slot strong {
+  color: var(--ct-navy);
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.screenshot-slot code {
+  color: var(--ct-red);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 16px;
+  margin-top: 12px;
+}
+
+.screenshot-slot img {
+  height: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.screenshot-frame {
+  background: var(--ct-white);
+  border: 1px solid var(--ct-line);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  min-height: 330px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.screenshot-frame img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-height: 300px;
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+.screenshot-stack {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: 1fr 1fr;
+  min-height: 330px;
+}
+
+.screenshot-stack .screenshot-frame {
+  min-height: 0;
+}
+
+.screenshot-stack .screenshot-frame img {
+  max-height: 153px;
+}
+
+.screenshot-frame figcaption {
+  color: var(--ct-slate);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  padding: 6px 4px 2px;
+  text-transform: uppercase;
+}
+
 @media (max-width: 900px) {
   .reveal { font-size: 24px; }
   .slide { padding: 44px 48px 34px; }
@@ -786,7 +929,7 @@ td:first-child {
           <div class="slide">
             <header>
               <p class="eyebrow">09 - Élő demonstráció</p>
-              <h2>A kérés útja</h2>
+              <h2>A demonstráció útja</h2>
             </header>
             <div class="slide-content grid-4">
               <article class="card"><p class="card-number">01</p><h3>Coding agent</h3><p>Nyers kérés és adattár-környezet</p></article>
@@ -800,13 +943,110 @@ td:first-child {
             </div>
             <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>10</span></footer>
           </div>
-          <aside class="notes">A bemutatóban használt coding agent terminálalapú és TypeScriptben bővíthető.</aside>
+          <aside class="notes">A nyilvános demóban szintetikus és közismert neveket használtunk. A következő diák a 2026. szeptember 24-i, körülbelül 15:20-kor indított Pi-munkamenet menetét foglalják össze.</aside>
         </section>
 
         <section>
           <div class="slide">
             <header>
-              <p class="eyebrow">10 - Modellkártyák</p>
+              <p class="eyebrow">10 - Demo: kontextus</p>
+              <h2>A regex nem tudja, mi számít névnek</h2>
+            </header>
+            <div class="slide-content demo-choice">
+              <article class="card">
+                <h3>John McClane</h3>
+                <p>Személynév egy film történetében.</p>
+                <p class="strong">A szövegalak önmagában nem dönt.</p>
+              </article>
+              <article class="card">
+                <h3>Die Hard</h3>
+                <p>Filmcím, nem személynév.</p>
+                <p class="strong">A helyes címkéhez kontextus kell.</p>
+              </article>
+            </div>
+            <p class="invariant">A névfelismerés szemantikai feladat, nem egyszerű mintakeresés.</p>
+            <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>11</span></footer>
+          </div>
+          <aside class="notes">A John McClane és a Die Hard alakja hasonlóan tulajdonnév-szerű. Egy egyszerű reguláris kifejezés nem tudja megbízhatóan szétválasztani a személyt és a címet.</aside>
+        </section>
+
+        <section>
+          <div class="slide">
+            <header>
+              <p class="eyebrow">11 - Demo: visszakövetkeztetés</p>
+              <h2>A modell a kitakart nevet is azonosította</h2>
+            </header>
+            <div class="slide-content screenshot-layout">
+              <div class="demo-evidence">
+                <p class="prompt-line"><strong>Helyi felismerés</strong>A Rampart helyesen elfedte: John McClane</p>
+                <p class="prompt-line"><strong>Távoli következtetés</strong>A modell a történetből visszaazonosította a szereplőt.</p>
+                <p class="demo-result">A sikeres redakció nem garantál anonimitást, ha a megmaradó kontextus egyedi.</p>
+              </div>
+              <div class="screenshot-stack">
+                <figure class="screenshot-frame">
+                  <img src="figures/langfuse-john-mcclane-request.png" alt="A Langfuse naplóban a John McClane név két helyőrzőre cserélve">
+                  <figcaption>A felhőbe küldött kérés</figcaption>
+                </figure>
+                <figure class="screenshot-frame">
+                  <img src="figures/langfuse-john-mcclane-response.png" alt="A modell válasza és indoklása visszaazonosítja John McClane nevét">
+                  <figcaption>A modell válasza és indoklása</figcaption>
+                </figure>
+              </div>
+            </div>
+            <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>12</span></footer>
+          </div>
+          <aside class="notes">A Rampart felismerése ezen a példán működött. A felhőmodell általános tudása azonban elég volt ahhoz, hogy a kitakart nevet a kontextusból visszakövetkeztesse.</aside>
+        </section>
+
+        <section>
+          <div class="slide">
+            <header>
+              <p class="eyebrow">12 - Demo: eszközhasználat</p>
+              <h2>A korlátozott modell a gépen kezdett keresni</h2>
+            </header>
+            <div class="slide-content screenshot-layout">
+              <div class="demo-evidence">
+                <p class="prompt-line"><strong>Kérés</strong>Who is Bruce Willis?</p>
+                <p class="prompt-line"><strong>Megfigyelés</strong>A név elfedése után a modell összezavarodott, majd helyi keresést indított.</p>
+                <p class="demo-result">A redakció a promptot védi. A harness és az eszközök más útvonalakat nyitnak.</p>
+              </div>
+              <figure class="screenshot-frame">
+                <img src="figures/langfuse-bruce-willis-request.png" alt="A Langfuse naplóban Bruce Willis neve két helyőrzőre cserélve">
+                <figcaption>A felhőbe küldött kérés</figcaption>
+              </figure>
+            </div>
+            <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>13</span></footer>
+          </div>
+          <aside class="notes">A modell nem egyszerűen kevesebbet tudott. A hiányzó információt a coding agent harnessében elérhető eszközökkel próbálta pótolni, és ezzel új, potenciálisan súlyosabb adatvédelmi kockázatot teremtett.</aside>
+        </section>
+
+        <section>
+          <div class="slide">
+            <header>
+              <p class="eyebrow">13 - Demo: magyar nyelv</p>
+              <h2>Magyarul a felismerés és a következtetés is hibázott</h2>
+            </header>
+            <div class="slide-content screenshot-layout">
+              <div class="demo-evidence">
+                <p class="prompt-line"><strong>Kérés</strong>Kicsoda Hajnóczy Péter?</p>
+                <p class="prompt-line"><strong>Redakció</strong>Csak a „Péter” részt fedte el; a „Hajnóczy” kikerült.</p>
+                <p class="prompt-line"><strong>Válasz</strong>A modell Hajnóczy Józseffel keverte össze.</p>
+                <p class="demo-result">Egyszerre tért vissza az adatszivárgás és a hallucináció.</p>
+              </div>
+              <figure class="screenshot-frame">
+                <img src="figures/langfuse-hajnoczy-peter.png" alt="A Langfuse naplóban a Hajnóczy vezetéknév olvasható, míg a Péter keresztnév helyőrzőre cserélve">
+                <figcaption>A vezetéknév kikerült, a keresztnév helyőrzőt kapott</figcaption>
+              </figure>
+            </div>
+            <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>14</span></footer>
+          </div>
+          <aside class="notes">Ez az egy példa nem általános pontossági mérés, de megmutatja, hogy a nyelvi lefedettséget külön kell tesztelni. Itt a családnév kiszivárgott, a válasz pedig egy másik történelmi személlyel keverte össze az írót.</aside>
+        </section>
+
+        <section>
+          <div class="slide">
+            <header>
+              <p class="eyebrow">14 - Modellkártyák</p>
               <h2>A pontosságon kívül ezeket is nézzük</h2>
             </header>
             <div class="slide-content stack">
@@ -817,7 +1057,7 @@ td:first-child {
               <div class="stack-row"><strong>Irányítás</strong><span>Licenc, telemetria és saját kód igénye</span></div>
             </div>
             <p class="invariant">A pontosságot saját kérések címkézett mintáján mérjük. A gyártó tesztkészlete nem elég.</p>
-            <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>11</span></footer>
+            <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>15</span></footer>
           </div>
           <aside class="notes">Ezek a dimenziók modellkártyákból, kiadott modellfájlokból és helyi futtatásból megfigyelhetők. A pontosság továbbra is adathalmaz- és szabályzatfüggő.</aside>
         </section>
@@ -825,20 +1065,20 @@ td:first-child {
         <section>
           <div class="slide">
             <header>
-              <p class="eyebrow">11 - Összegzés</p>
-              <h2 class="conclusion">A proxy kis helyi modellel is működik</h2>
+              <p class="eyebrow">15 - Következtetés</p>
+              <h2 class="conclusion">A PII-redakció csak egy csatornát zár le</h2>
             </header>
             <div class="slide-content">
               <div class="key-lines">
-                <p>Szabályok: e-mail, IP-cím, kulcs</p>
-                <p>Helyi modell: név, dátum, elérési út</p>
-                <p>Proxy: helyettesítés és visszaállítás</p>
+                <p>Felismerés: egy kihagyott név kiszivárog</p>
+                <p>Modelltudás: az identitás visszakövetkeztethető</p>
+                <p>Harness és eszközök: új adatútvonalak nyílnak</p>
               </div>
-              <p class="invariant">A felhő csak a helyettesített kérést kapja.</p>
+              <p class="invariant">Egy nagyon okos agy egyik kezét kötöttük meg. A többi kezet is vizsgálni kell.</p>
             </div>
-            <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>12</span></footer>
+            <footer class="footer"><span class="brand">KOREN.DEV / CODED THINKING</span><span>16</span></footer>
           </div>
-          <aside class="notes">Következő lépés: a Desert Ant, az LFM2.5 és a Rampart tesztelése coding agent forgalmán. A termékválasztás közvetlen telepítési tesztekig előzetes.</aside>
+          <aside class="notes">A Q&amp;A fő tanulsága: a PII-redakciót nem önmagában, hanem a teljes agenttel együtt kell értékelni. A tesztnek le kell fednie a modelltudást, a harness viselkedését, az eszközjogosultságokat és minden támogatott nyelvet.</aside>
         </section>
       </div>
     </div>
