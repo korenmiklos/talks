@@ -59,6 +59,31 @@ The old `generate-tradeoff-scatter.py` and `generate-eci-gap.py` scripts referen
 - **Companion site:** codedthinking/ai-workshop (Jekyll, 2026-06-11/ dir has session replays)
 - **AIHR talk:** korenmiklos/talks/2026-07-22-aihr
 
+## Coding Agents & Tools on This Machine
+
+### Primary coding agents
+- **Hermes Agent** v0.20.0 — `~/.hermes/` (this session)
+- **Claude Code** v2.1.257 — `~/.claude/` + PATH (`claude`)
+- **OpenCode** — `~/.opencode/` + npm global (`opencode`)
+- **OMP** v17.3.5 — `~/.omp/` + PATH (`omp`)
+- **Ollama** v0.24.0 — `~/.ollama/` (local models)
+- **tiny-agents** — via huggingface-hub pipx
+
+### Editors / IDEs
+- **VS Code** 1.142.0 (snap)
+- **Neovim** v0.12.6 (snap)
+- **RStudio** 2026.09 (snap)
+
+### Other tools
+- **bead** — data download
+- **duckdb** 1.1.3 — database
+- **msgvault** — message archiving
+- **himalaya** 2.0.0 — email
+- **t9x** — codedthinking tool
+
+### Not installed
+Cursor, Zed, aider, Continue.dev, LM Studio, Loom CLI, Zoho One
+
 ## Still To Source
 
 - OpenAI Navier-Stokes image (GPT-4 blog, Cloudflare-blocked)
