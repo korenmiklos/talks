@@ -48,7 +48,7 @@ The old `generate-tradeoff-scatter.py` and `generate-eci-gap.py` scripts referen
 
 - `tender-main.do` + `programs/config.do` + `programs/01_dataprep_main.do` — From codedthinking/tender-home-bias-ai.
 - `table_home_bias.tex` — Regression output from the same.
-- `index.html` — Slide deck outline (titles only, no content yet)
+- `index.html` — Slide deck outline with Matrix stills and video embeds
 - `css/theme-9x.css` — 9x Academic design system theme from ai-slides-template
 
 ## Repos Referenced
@@ -62,7 +62,7 @@ The old `generate-tradeoff-scatter.py` and `generate-eci-gap.py` scripts referen
 ## Still To Source
 
 - OpenAI Navier-Stokes image (GPT-4 blog, Cloudflare-blocked)
-- Matrix scenes ("no spoon", steak vs protein, helicopter)
+- Matrix scenes sourced and added to `index.html`; see [Matrix visuals](matrix-visuals.md) for source links, credits, and playback notes.
 - "Emerging market of intelligence" paper (OpenRouter price elasticity)
 - Loom pricing/availability
 - Zoho One screen recording
