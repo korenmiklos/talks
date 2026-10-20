@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="'Brockmann','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;display=swap');
+      .mono { font-family: 'DM Mono', ui-monospace, monospace; }
+      .t  { fill:#fff; font-weight:700; }
+      .l  { fill:#D4D2E3; }
+      .m  { fill:#9795B5; }
+      .red{ fill:#E61E25; }
+      .cy { fill:#35E0D8; }
+    </style>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9795B5"/>
+    </marker>
+    <marker id="ar" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#E61E25"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="420" fill="#1D1D40"/>
+
+  <!-- header -->
+  <text x="500" y="42" class="t" font-size="32" text-anchor="middle">Everything is next-token prediction</text>
+  <text x="500" y="70" class="m" font-size="16" text-anchor="middle">The model reads all previous tokens and predicts the most likely next one.</text>
+
+  <!-- box 1: Input -->
+  <rect x="40" y="110" width="200" height="120" rx="12" fill="#24244D" stroke="rgba(151,149,181,0.25)"/>
+  <text x="140" y="162" class="t" font-size="22" text-anchor="middle">Input tokens</text>
+  <text x="140" y="192" class="mono m" font-size="15" text-anchor="middle">"The cat sat on"</text>
+
+  <!-- arrow 1 -->
+  <line x1="240" y1="170" x2="296" y2="170" stroke="#9795B5" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- box 2: Transformer -->
+  <rect x="300" y="100" width="300" height="140" rx="12" fill="#24244D" stroke="rgba(53,224,216,0.45)"/>
+  <text x="450" y="155" class="t" font-size="24" text-anchor="middle">Transformer</text>
+  <text x="450" y="185" class="m" font-size="15" text-anchor="middle">attention + feed-forward</text>
+  <text x="450" y="210" class="mono red" font-size="15" text-anchor="middle">&#215; many layers</text>
+
+  <!-- arrow 2 -->
+  <line x1="600" y1="170" x2="656" y2="170" stroke="#9795B5" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- box 3: Output -->
+  <rect x="660" y="110" width="300" height="120" rx="12" fill="#24244D" stroke="rgba(230,30,37,0.45)"/>
+  <text x="810" y="155" class="t" font-size="22" text-anchor="middle">Next token</text>
+  <text x="810" y="190" class="mono cy" font-size="18" text-anchor="middle">"the" &#8594; 0.62</text>
+
+  <!-- autoregressive loop -->
+  <path d="M810 232 L810 310 L140 310 L140 232" fill="none" stroke="#E61E25" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar)"/>
+  <text x="475" y="340" class="mono m" font-size="16" text-anchor="middle">append predicted token, repeat</text>
+
+  <!-- footer -->
+  <text x="500" y="396" class="mono m" font-size="14" text-anchor="middle">Stateless: the model has no memory. The full sequence is re-read every time.</text>
+</svg>

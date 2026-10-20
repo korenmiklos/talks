@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="'Brockmann','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;display=swap');
+      .mono { font-family: 'DM Mono', ui-monospace, monospace; }
+      .t  { fill:#fff; font-weight:700; }
+      .l  { fill:#D4D2E3; }
+      .m  { fill:#9795B5; }
+      .red{ fill:#E61E25; }
+      .cy { fill:#35E0D8; }
+    </style>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9795B5"/>
+    </marker>
+    <marker id="ac" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#35E0D8"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="420" fill="#1D1D40"/>
+
+  <!-- header -->
+  <text x="500" y="42" class="t" font-size="32" text-anchor="middle">The harness runs locally; the model is remote</text>
+
+  <!-- LOCAL region -->
+  <rect x="30" y="70" width="600" height="310" rx="14" fill="rgba(151,149,181,0.05)" stroke="rgba(151,149,181,0.3)"/>
+  <text x="52" y="96" class="mono l" font-size="14" letter-spacing="1.5">YOUR MACHINE</text>
+
+  <!-- You box -->
+  <rect x="52" y="180" width="120" height="80" rx="10" fill="#2C2C5A" stroke="rgba(151,149,181,0.2)"/>
+  <text x="112" y="228" class="t" font-size="20" text-anchor="middle">You</text>
+
+  <!-- arrow You -> Harness -->
+  <line x1="172" y1="220" x2="228" y2="220" stroke="#9795B5" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- Harness box -->
+  <rect x="232" y="160" width="220" height="120" rx="12" fill="#24244D" stroke="rgba(53,224,216,0.45)"/>
+  <text x="342" y="210" class="t" font-size="22" text-anchor="middle">Harness</text>
+  <text x="342" y="240" class="mono cy" font-size="13" text-anchor="middle">builds prompt &#183; runs tools</text>
+  <text x="342" y="260" class="mono cy" font-size="13" text-anchor="middle">asks permission &#183; loops</text>
+
+  <!-- Tools box -->
+  <rect x="260" y="310" width="164" height="54" rx="10" fill="#2C2C5A" stroke="rgba(151,149,181,0.2)"/>
+  <text x="342" y="344" class="t" font-size="17" text-anchor="middle">Tools</text>
+  <text x="342" y="282" class="m" font-size="13" text-anchor="middle">&#8595;</text>
+  <text x="440" y="344" class="mono m" font-size="13">files, shell, web</text>
+
+  <!-- network boundary -->
+  <line x1="648" y1="70" x2="648" y2="380" stroke="rgba(230,30,37,0.55)" stroke-width="2" stroke-dasharray="7 6"/>
+
+  <!-- REMOTE region -->
+  <rect x="666" y="70" width="310" height="310" rx="14" fill="rgba(230,30,37,0.06)" stroke="rgba(230,30,37,0.35)"/>
+  <text x="688" y="96" class="mono red" font-size="14" letter-spacing="1.5">CLOUD</text>
+
+  <!-- LLM box -->
+  <rect x="700" y="160" width="240" height="120" rx="12" fill="#24244D" stroke="rgba(230,30,37,0.5)"/>
+  <text x="820" y="210" class="t" font-size="24" text-anchor="middle">LLM</text>
+  <text x="820" y="240" class="m" font-size="14" text-anchor="middle">stateless &#183; next-token</text>
+  <text x="820" y="260" class="mono red" font-size="13" text-anchor="middle">Claude &#183; GPT &#183; Gemini</text>
+
+  <!-- arrows Harness <-> LLM -->
+  <line x1="452" y1="195" x2="696" y2="195" stroke="#9795B5" stroke-width="2" marker-end="url(#a)"/>
+  <text x="574" y="188" class="mono m" font-size="13" text-anchor="middle">prompt</text>
+  <line x1="696" y1="248" x2="454" y2="248" stroke="#35E0D8" stroke-width="2" marker-end="url(#ac)"/>
+  <text x="574" y="268" class="mono cy" font-size="13" text-anchor="middle">text + tool calls</text>
+
+  <!-- footer -->
+  <text x="500" y="406" class="mono m" font-size="14" text-anchor="middle">The loop: LLM asks for a tool &#8594; harness runs it locally &#8594; result sent back &#8594; LLM called again.</text>
+</svg>

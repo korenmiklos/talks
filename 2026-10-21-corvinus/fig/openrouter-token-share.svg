@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="'Brockmann','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;display=swap');
+      .mono { font-family: 'DM Mono', ui-monospace, monospace; }
+      .t  { fill:#fff; font-weight:700; }
+      .l  { fill:#D4D2E3; }
+      .m  { fill:#9795B5; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="560" fill="#1D1D40"/>
+
+  <!-- header -->
+  <text x="50" y="36" class="mono" font-size="14" fill="#35E0D8" letter-spacing="3">~ INTELLIGENCE IS A COMMODITY</text>
+  <text x="50" y="66" class="t" font-size="28">Weekly token consumption on OpenRouter</text>
+  <text x="50" y="88" class="m" font-size="15">Chinese open-weight models now drive the majority of usage &#8212; and the totals are exploding.</text>
+
+  <!-- legend -->
+  <g font-size="14" class="l">
+    <rect x="600" y="30" width="14" height="14" rx="2" fill="#4FB477"/><text x="620" y="42">U.S. models</text>
+    <rect x="720" y="30" width="14" height="14" rx="2" fill="#E0A85A"/><text x="740" y="42">Chinese models</text>
+    <rect x="870" y="30" width="14" height="14" rx="2" fill="#E61E25"/><text x="890" y="42">Other</text>
+  </g>
+
+  <!-- gridlines + y labels -->
+  <g stroke="rgba(151,149,181,0.14)" stroke-width="1">
+    <line x1="90" y1="470" x2="950" y2="470"/>
+    <line x1="90" y1="385" x2="950" y2="385"/>
+    <line x1="90" y1="300" x2="950" y2="300"/>
+    <line x1="90" y1="215" x2="950" y2="215"/>
+    <line x1="90" y1="130" x2="950" y2="130"/>
+  </g>
+  <g class="mono m" font-size="14" text-anchor="end">
+    <text x="78" y="474">0</text>
+    <text x="78" y="389">4T</text>
+    <text x="78" y="304">8T</text>
+    <text x="78" y="219">12T</text>
+    <text x="78" y="134">16T</text>
+  </g>
+
+  <!-- stacked areas -->
+  <polygon fill="#4FB477" fill-opacity="0.85" points="90,470 90,457.25 143.75,453 197.5,448.75 251.25,446.6 305,448.75 358.75,444.5 412.5,442.4 466.25,440.25 520,436 573.75,431.75 627.5,427.5 681.25,423.25 735,414.75 788.75,406.25 842.5,393.5 896.25,399.875 950,406.25 950,470"/>
+  <polygon fill="#E0A85A" fill-opacity="0.9" points="90,455.125 143.75,449.8 197.5,442.4 251.25,438.1 305,438.1 358.75,429.6 412.5,423.25 466.25,414.75 520,402 573.75,389.25 627.5,376.5 681.25,368 735,342.5 788.75,300 842.5,159.75 896.25,198 950,225.6 950,406.25 896.25,399.875 842.5,393.5 788.75,406.25 735,414.75 681.25,423.25 627.5,427.5 573.75,431.75 520,436 466.25,440.25 412.5,442.4 358.75,444.5 305,448.75 251.25,446.6 197.5,448.75 143.75,453 90,457.25"/>
+  <polygon fill="#E61E25" fill-opacity="0.95" points="90,454.1 143.75,448.75 197.5,441.3 251.25,437.06 305,437.06 358.75,428.6 412.5,422.2 466.25,412.6 520,399.875 573.75,387.1 627.5,373.3 681.25,364.8 735,338.25 788.75,293.6 842.5,149.1 896.25,188.4 950,217.1 950,225.6 896.25,198 842.5,159.75 788.75,300 735,342.5 681.25,368 627.5,376.5 573.75,389.25 520,402 466.25,414.75 412.5,423.25 358.75,429.6 305,438.1 251.25,438.1 197.5,442.4 143.75,449.8 90,455.125"/>
+
+  <!-- axes -->
+  <line x1="90" y1="130" x2="90" y2="470" stroke="#9795B5" stroke-width="1.2"/>
+  <line x1="90" y1="470" x2="950" y2="470" stroke="#9795B5" stroke-width="1.2"/>
+
+  <!-- x labels -->
+  <g class="mono m" font-size="14" text-anchor="middle">
+    <text x="90" y="492">Jan 2025</text>
+    <text x="197.5" y="492">Mar</text>
+    <text x="305" y="492">May</text>
+    <text x="412.5" y="492">Jul</text>
+    <text x="520" y="492">Sep</text>
+    <text x="627.5" y="492">Nov</text>
+    <text x="735" y="492">Jan 2026</text>
+    <text x="842.5" y="492">Mar</text>
+    <text x="950" y="492">May</text>
+  </g>
+
+  <!-- source -->
+  <text x="50" y="536" class="mono m" font-size="12">Redrawn from the OpenRouter LLM Ranking Leaderboard (Jan 2025 &#8211; May 2026). Curve approximate, for illustration.</text>
+</svg>

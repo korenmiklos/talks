@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" font-family="'Brockmann','Helvetica Neue',Arial,sans-serif">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;display=swap');
+      .mono { font-family: 'DM Mono', ui-monospace, monospace; }
+      .t  { fill:#fff; font-weight:700; }
+      .l  { fill:#D4D2E3; }
+      .m  { fill:#9795B5; }
+      .red{ fill:#E61E25; }
+      .cy { fill:#35E0D8; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="480" fill="#1D1D40"/>
+
+  <!-- header -->
+  <text x="500" y="42" class="t" font-size="32" text-anchor="middle">System, user, assistant</text>
+  <text x="500" y="70" class="m" font-size="16" text-anchor="middle">A conversation is a list of role-tagged messages. The model reads all of them every time.</text>
+
+  <!-- context window bracket -->
+  <text x="58" y="106" class="mono cy" font-size="14" letter-spacing="1.5">CONTEXT WINDOW</text>
+  <rect x="50" y="118" width="560" height="310" rx="12" fill="none" stroke="rgba(151,149,181,0.4)" stroke-dasharray="6 5"/>
+
+  <!-- system -->
+  <rect x="72" y="134" width="520" height="56" rx="10" fill="#2C2C5A" stroke="rgba(151,149,181,0.2)"/>
+  <rect x="72" y="134" width="5" height="56" rx="2" fill="#E61E25"/>
+  <text x="96" y="158" class="mono red" font-size="14" letter-spacing="1">SYSTEM</text>
+  <text x="96" y="178" class="l" font-size="15">Rules, persona, tools available</text>
+
+  <!-- user -->
+  <rect x="72" y="200" width="520" height="56" rx="10" fill="#24244D" stroke="rgba(151,149,181,0.2)"/>
+  <rect x="72" y="200" width="5" height="56" rx="2" fill="#35E0D8"/>
+  <text x="96" y="224" class="mono cy" font-size="14" letter-spacing="1">USER</text>
+  <text x="96" y="244" class="l" font-size="15">&#8220;Collapse sales to firm-year means&#8221;</text>
+
+  <!-- assistant -->
+  <rect x="72" y="266" width="520" height="56" rx="10" fill="#24244D" stroke="rgba(151,149,181,0.2)"/>
+  <rect x="72" y="266" width="5" height="56" rx="2" fill="#D4D2E3"/>
+  <text x="96" y="290" class="mono l" font-size="14" letter-spacing="1">ASSISTANT</text>
+  <text x="96" y="310" class="l" font-size="15">&#8220;Here is collapse.do &#8230;&#8221;</text>
+
+  <!-- generating -->
+  <rect x="72" y="332" width="520" height="56" rx="10" fill="#24244D" stroke="#E61E25" stroke-dasharray="6 4"/>
+  <rect x="72" y="332" width="5" height="56" rx="2" fill="#D4D2E3"/>
+  <text x="96" y="356" class="mono l" font-size="14" letter-spacing="1">ASSISTANT</text>
+  <text x="96" y="376" class="m" font-size="15" font-style="italic">writing the next reply, one token at a time &#8230;</text>
+  <text x="574" y="376" class="mono red" font-size="13" text-anchor="end">&#9608;</text>
+
+  <!-- arrow to LLM box -->
+  <rect x="700" y="200" width="250" height="120" rx="12" fill="#24244D" stroke="rgba(230,30,37,0.5)"/>
+  <text x="825" y="255" class="t" font-size="28" text-anchor="middle">LLM</text>
+  <text x="825" y="285" class="m" font-size="14" text-anchor="middle">predicts next token</text>
+
+  <line x1="612" y1="260" x2="696" y2="260" stroke="#9795B5" stroke-width="2"/>
+  <polygon points="696,254 708,260 696,266" fill="#9795B5"/>
+  <text x="654" y="250" class="mono m" font-size="12" text-anchor="middle">all messages</text>
+
+  <!-- footer -->
+  <text x="500" y="458" class="mono m" font-size="15" text-anchor="middle">No memory between calls &#8212; the full history is re-sent every single time.</text>
+</svg>
