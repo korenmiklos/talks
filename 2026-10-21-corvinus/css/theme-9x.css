@@ -1,0 +1,538 @@
+/* ============================================================
+   THE 9x ACADEMIC — Reveal.js theme
+   Based on the Coded Thinking / 9x Academic design system
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ---- Design tokens ---- */
+:root {
+  /* surfaces */
+  --x9-bg:          #1D1D40;
+  --x9-bg-raise:    #24244D;
+  --x9-bg-raise-2:  #2C2C5A;
+  --x9-code:        #15152F;
+
+  /* text */
+  --x9-text:        #D4D2E3;
+  --x9-text-2:      #9795B5;
+  --x9-text-muted:  #C4C2D3;
+
+  /* accents */
+  --x9-accent:      #E61E25;
+  --x9-accent-hover:#C41E23;
+  --x9-cyan:        #35E0D8;
+  --x9-cyan-dim:    #1FA9A3;
+
+  /* borders */
+  --x9-border:      rgba(151,149,181,0.18);
+  --x9-border-2:    rgba(151,149,181,0.32);
+
+  /* type */
+  --x9-font:      'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --x9-font-mono: 'DM Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* radii */
+  --x9-radius:     8px;
+  --x9-radius-sm:  4px;
+}
+
+
+/* ============================================================
+   REVEAL OVERRIDES
+   ============================================================ */
+
+.reveal-viewport {
+  background: var(--x9-bg);
+  background-color: var(--x9-bg);
+}
+
+.reveal {
+  font-family: var(--x9-font);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--x9-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ---- Headings ---- */
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: var(--x9-font);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0 0 0.6em 0;
+  text-transform: none;
+}
+
+.reveal h1 { font-size: 2.2em; }
+.reveal h2 { font-size: 1.4em; }
+.reveal h3 { font-size: 1.0em; color: var(--x9-cyan); }
+.reveal h4 { font-size: 0.85em; color: var(--x9-text-2); font-weight: 500; }
+
+
+/* ---- Body text ---- */
+
+.reveal p {
+  color: var(--x9-text);
+  line-height: 1.6;
+  margin: 0 0 0.8em 0;
+}
+
+.reveal strong { color: #fff; }
+.reveal em { color: var(--x9-text-muted); }
+
+.reveal a {
+  color: var(--x9-cyan);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+.reveal a:hover { color: var(--x9-accent); }
+
+
+/* ---- Lists ---- */
+
+.reveal ul,
+.reveal ol {
+  display: block;
+  text-align: left;
+  margin: 0 0 0.8em 1.2em;
+}
+
+.reveal li {
+  margin-bottom: 0.4em;
+  line-height: 1.5;
+}
+
+.reveal li::marker {
+  color: var(--x9-accent);
+}
+
+.reveal ol li::marker {
+  color: var(--x9-cyan);
+  font-family: var(--x9-font-mono);
+  font-weight: 500;
+}
+
+
+/* ---- Inline code ---- */
+
+.reveal code {
+  font-family: var(--x9-font-mono);
+  font-size: 0.85em;
+  background: var(--x9-bg-raise-2);
+  color: var(--x9-cyan);
+  padding: 0.15em 0.4em;
+  border-radius: var(--x9-radius-sm);
+}
+
+
+/* ---- Code blocks ---- */
+
+.reveal pre {
+  width: 100%;
+  margin: 0.8em 0;
+  box-shadow: none;
+  font-size: 0.55em;
+}
+
+.reveal pre code {
+  display: block;
+  padding: 1em 1.2em;
+  background: var(--x9-code);
+  border: 1px solid var(--x9-border);
+  border-radius: 12px 2px 12px 12px; /* 9x asymmetric radius */
+  color: #C9C7E0;
+  line-height: 1.55;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.reveal .hljs-ln-numbers {
+  color: var(--x9-text-2);
+  opacity: 0.5;
+}
+
+.code-caption {
+  font-family: var(--x9-font-mono);
+  font-size: 0.6em !important;
+  color: var(--x9-text-2) !important;
+  text-align: center;
+  margin-top: 0.3em !important;
+}
+
+
+/* ---- Blockquotes ---- */
+
+.reveal blockquote {
+  background: var(--x9-bg-raise);
+  border: 1px solid var(--x9-border);
+  border-left: 4px solid var(--x9-accent);
+  border-radius: 2px var(--x9-radius) var(--x9-radius) 2px;
+  padding: 1.2em 1.6em;
+  margin: 1em auto;
+  max-width: 85%;
+  text-align: left;
+  font-style: normal;
+  box-shadow: none;
+}
+
+.reveal blockquote p {
+  font-size: 1.05em;
+  line-height: 1.55;
+  color: var(--x9-text);
+}
+
+.reveal blockquote cite {
+  display: block;
+  margin-top: 0.8em;
+  font-family: var(--x9-font-mono);
+  font-size: 0.65em;
+  color: var(--x9-text-2);
+  font-style: normal;
+}
+
+
+/* ---- Tables ---- */
+
+.reveal table {
+  border-collapse: collapse;
+  margin: 0.8em auto;
+  font-size: 0.75em;
+}
+
+.reveal table th {
+  font-family: var(--x9-font-mono);
+  font-weight: 600;
+  font-size: 0.85em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--x9-cyan);
+  border-bottom: 2px solid var(--x9-accent);
+  padding: 0.6em 1em;
+  text-align: left;
+}
+
+.reveal table td {
+  color: var(--x9-text);
+  border-bottom: 1px solid var(--x9-border);
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+.reveal table tbody tr:last-child td {
+  border-bottom: 2px solid var(--x9-border-2);
+}
+
+.table-note {
+  font-size: 0.55em !important;
+  color: var(--x9-text-2) !important;
+  text-align: center;
+  margin-top: 0.3em !important;
+}
+
+
+/* ---- Images / figures ---- */
+
+.reveal figure {
+  margin: 0;
+}
+
+.reveal img {
+  max-width: 100%;
+  border-radius: var(--x9-radius);
+  border: none;
+  box-shadow: none;
+}
+
+.reveal figcaption {
+  font-family: var(--x9-font-mono);
+  font-size: 0.55em;
+  color: var(--x9-text-2);
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+
+/* ---- Video ---- */
+
+.video-container {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 12px 2px 12px 12px;
+  overflow: hidden;
+  border: 1px solid var(--x9-border);
+  display: inline-block;
+}
+
+.video-caption {
+  font-family: var(--x9-font-mono);
+  font-size: 0.55em !important;
+  color: var(--x9-text-2) !important;
+  text-align: center;
+  margin-top: 0.5em !important;
+}
+
+
+/* ============================================================
+   LAYOUT HELPERS
+   ============================================================ */
+
+/* Two-column layout */
+.columns {
+  display: flex;
+  gap: 2em;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.columns .col {
+  flex: 1;
+  min-width: 0;
+}
+
+.columns .col img {
+  width: 100%;
+}
+
+
+/* ============================================================
+   TITLE SLIDE
+   ============================================================ */
+
+.title-slide {
+  text-align: center;
+}
+
+.title-slide h1 {
+  font-size: 2.4em;
+  margin-bottom: 0.3em;
+}
+
+.title-slide h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.3em;
+}
+
+.title-slide .subtitle {
+  font-size: 1.1em;
+  color: var(--x9-text-2);
+  margin-bottom: 1.2em;
+}
+
+.title-slide .author {
+  font-family: var(--x9-font-mono);
+  font-size: 0.7em;
+  color: var(--x9-cyan);
+  letter-spacing: 0.04em;
+}
+
+.title-slide .date {
+  font-family: var(--x9-font-mono);
+  font-size: 0.6em;
+  color: var(--x9-text-2);
+}
+
+.title-slide .contact {
+  font-family: var(--x9-font-mono);
+  font-size: 0.6em;
+  color: var(--x9-text-2);
+}
+.title-slide .contact a {
+  color: var(--x9-cyan);
+}
+
+
+/* ---- 9x logo on title slides ---- */
+
+.x9-logo {
+  width: 180px;
+  height: auto;
+  margin: 0 auto 1.2em;
+  display: block;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+
+/* ---- Section divider ---- */
+
+.section-title {
+  font-size: 2em !important;
+  text-align: center;
+}
+
+.kicker {
+  font-family: var(--x9-font-mono);
+  font-weight: 500;
+  font-size: 0.55em !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--x9-text-2) !important;
+  text-align: center;
+}
+
+.kicker .accent {
+  color: var(--x9-accent);
+}
+
+
+/* ============================================================
+   TERMINAL COMPONENT
+   ============================================================ */
+
+.terminal {
+  background: var(--x9-code);
+  border: 1px solid var(--x9-border);
+  border-radius: 12px 2px 12px 12px;
+  overflow: hidden;
+  text-align: left;
+  margin: 0.8em auto;
+  max-width: 90%;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--x9-border);
+  background: rgba(45, 45, 80, 0.3);
+}
+
+.terminal-bar .dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.terminal-bar .dot.red    { background: #FF5F57; }
+.terminal-bar .dot.yellow { background: #FFBD2E; }
+.terminal-bar .dot.green  { background: #28CA41; }
+
+.terminal-title {
+  font-family: var(--x9-font-mono);
+  font-size: 0.45em;
+  color: var(--x9-text-2);
+  margin-left: auto;
+}
+
+.terminal-body {
+  font-family: var(--x9-font-mono) !important;
+  font-size: 0.52em !important;
+  line-height: 1.65 !important;
+  color: #C9C7E0 !important;
+  padding: 1em 1.2em !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  white-space: pre-wrap;
+}
+
+.terminal-body .prompt {
+  color: var(--x9-cyan);
+  font-weight: 500;
+}
+
+.terminal-body .output {
+  color: var(--x9-text-2);
+}
+
+
+/* ============================================================
+   CALLOUT BOXES
+   ============================================================ */
+
+.callout {
+  text-align: left;
+  padding: 0.8em 1.2em;
+  border-radius: 2px var(--x9-radius) var(--x9-radius) 2px;
+  margin: 0.5em 0;
+  font-size: 0.75em;
+  line-height: 1.5;
+  border-left: 4px solid var(--x9-border-2);
+  background: var(--x9-bg-raise);
+}
+
+.callout.warning {
+  border-left-color: #D49756;
+  background: rgba(212, 151, 86, 0.08);
+}
+.callout.warning strong { color: #D49756; }
+
+.callout.tip {
+  border-left-color: var(--x9-cyan);
+  background: rgba(53, 224, 216, 0.06);
+}
+.callout.tip strong { color: var(--x9-cyan); }
+
+.callout.info {
+  border-left-color: var(--x9-accent);
+  background: rgba(230, 30, 37, 0.06);
+}
+.callout.info strong { color: var(--x9-accent); }
+
+
+/* ============================================================
+   MATH
+   ============================================================ */
+
+.math-block {
+  margin: 1em 0;
+}
+
+.reveal .katex { color: #fff; }
+
+
+/* ============================================================
+   FRAGMENTS
+   ============================================================ */
+
+.reveal .fragment.highlight-red.visible {
+  color: var(--x9-accent);
+}
+
+
+/* ============================================================
+   SLIDE NUMBER & CONTROLS
+   ============================================================ */
+
+.reveal .slide-number {
+  font-family: var(--x9-font-mono);
+  font-size: 14px;
+  color: var(--x9-text-2);
+  background: transparent;
+  right: 20px;
+  bottom: 12px;
+}
+
+.reveal .controls {
+  color: var(--x9-accent);
+}
+
+.reveal .progress span {
+  background: var(--x9-accent);
+}
+
+
+/* ============================================================
+   PRINT / PDF EXPORT
+   ============================================================ */
+
+@media print {
+  .reveal-viewport {
+    background: var(--x9-bg) !important;
+  }
+  .reveal pre code {
+    border: 1px solid var(--x9-border-2);
+  }
+}

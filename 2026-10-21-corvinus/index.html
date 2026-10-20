@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic AI for Researchers — Corvinus Workshop</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="css/theme-9x.css" id="theme">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+  <!-- ============ TITLE ============ -->
+  <section class="title-slide" data-background-color="#1D1D40">
+    <img class="x9-logo" src="https://raw.githubusercontent.com/codedthinking/ai-slides-template/main/assets/9x-logo.svg" alt="The 9x Academic">
+    <h1>Agentic AI for Researchers</h1>
+    <p class="subtitle">A one-day workshop for economists &amp; social scientists</p>
+    <p class="author">Miklós Koren</p>
+    <p class="date">Corvinus University, October 21, 2026</p>
+  </section>
+
+  <!-- ============ ACT 1: THE INTELLIGENCE STACK ============ -->
+  <section data-background-color="#24244D">
+    <h2 class="section-title">The Intelligence Stack</h2>
+    <p class="kicker"><span class="accent">01</span> · Models, costs, trade-offs</p>
+  </section>
+
+  <section><h2>Why this matters</h2></section>
+  <section><h2>Training is a sunk cost; inference is marginal</h2></section>
+  <section><h2>Models are next-token predictors</h2></section>
+  <section><h2>Tokens → vectors → meaning</h2></section>
+  <section><h2>Context window = working memory</h2></section>
+  <section><h2>Cost versus capability</h2></section>
+  <section><h2>The Pareto frontier</h2></section>
+  <section><h2>Open versus closed models</h2></section>
+  <section><h2>The open–closed gap</h2></section>
+  <section><h2>OpenRouter: who is using what</h2></section>
+  <section><h2>Price sensitivity in the model market</h2></section>
+  <section><h2>The emerging market of intelligence</h2></section>
+  <section><h2>Choosing a model for a task</h2></section>
+
+  <!-- ============ ACT 2: WORKING WITH AGENTS ============ -->
+  <section data-background-color="#24244D">
+    <h2 class="section-title">Working with Agents</h2>
+    <p class="kicker"><span class="accent">02</span> · Harness, tools, skills</p>
+  </section>
+
+  <section><h2>The stack has five separable layers</h2></section>
+  <section><h2>Harness, tools, and the model</h2></section>
+  <section><h2>Tool use is structured output in a loop</h2></section>
+  <section><h2>Skills are reusable task templates</h2></section>
+  <section><h2>CLAUDE.md is project config for agents</h2></section>
+  <section><h2>Agents work only on top of good structure</h2></section>
+  <section><h2>Escape the toxic session</h2></section>
+  <section><h2>Never let one session verify itself</h2></section>
+  <section><h2>Match the model to the task</h2></section>
+  <section><h2>Cloud versus local: make or buy</h2></section>
+
+  <!-- ============ ACT 3: REPRODUCIBILITY ============ -->
+  <section data-background-color="#24244D">
+    <h2 class="section-title">Reproducibility</h2>
+    <p class="kicker"><span class="accent">03</span> · The agentic risk</p>
+  </section>
+
+  <section><h2>Day-1 practices make projects agent-legible</h2></section>
+  <section><h2>Agents create a new reproducibility risk</h2></section>
+  <section><h2>The same prompt does not produce the same code</h2></section>
+  <section><h2>Pin the exact model version</h2></section>
+  <section><h2>Commit the prompt and transcript alongside the diff</h2></section>
+  <section><h2>Treat the interaction as data</h2></section>
+
+  <!-- ============ EXERCISES ============ -->
+  <section data-background-color="#24244D">
+    <h2 class="section-title">Exercises</h2>
+    <p class="kicker"><span class="accent">04</span> · Live demos and hands-on</p>
+  </section>
+
+  <section><h2>Exercise 1: Understand the TED data</h2></section>
+  <section><h2>Exercise 2: Which contract amounts can be summed?</h2></section>
+  <section><h2>Exercise 3: Text classification with the same data</h2></section>
+  <section><h2>Exercise 4: Write a project config</h2></section>
+  <section><h2>Exercise 5: Empty folder to working project</h2></section>
+
+  <!-- ============ CLOSING ============ -->
+  <section class="title-slide" data-background-color="#1D1D40">
+    <img class="x9-logo" src="https://raw.githubusercontent.com/codedthinking/ai-slides-template/main/assets/9x-logo.svg" alt="The 9x Academic">
+    <h2>Thank you</h2>
+    <p class="subtitle">The durable investment is structure</p>
+    <p class="contact">koren.mk · koren.dev · codedthinking.com</p>
+  </section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/math/math.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    showSlideNumber: 'all',
+    transition: 'none',
+    backgroundTransition: 'none',
+    center: true,
+    width: 1200,
+    height: 700,
+    margin: 0.08,
+    plugins: [RevealNotes, RevealMarkdown, RevealHighlight, RevealMath.KaTeX]
+  });
+</script>
+</body>
+</html>

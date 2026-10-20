@@ -48,6 +48,8 @@ The old `generate-tradeoff-scatter.py` and `generate-eci-gap.py` scripts referen
 
 - `tender-main.do` + `programs/config.do` + `programs/01_dataprep_main.do` — From codedthinking/tender-home-bias-ai.
 - `table_home_bias.tex` — Regression output from the same.
+- `index.html` — Slide deck outline (titles only, no content yet)
+- `css/theme-9x.css` — 9x Academic design system theme from ai-slides-template
 
 ## Repos Referenced
 
