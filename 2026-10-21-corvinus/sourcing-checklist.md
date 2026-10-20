@@ -111,7 +111,7 @@ The exact model versions used in the comparison remain a presenter decision. Do 
 | OMP | [can1357/oh-my-pi](https://github.com/can1357/oh-my-pi); OMP here means Oh My Pi |
 | Hermes | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent); distinguish the agent from Hermes model releases |
 
-Source repositories and official brand pages were checked. No complete local logo pack was assembled. Repository code licences do not automatically grant trademark rights.
+Source repositories and official brand pages were checked. The [local logo pack](fig/logos/README.md) now contains SVGs, transparent PNGs, a preview and source notes for the presenter's requested set, including Meta as the Muse-model substitute. Repository code licences do not automatically grant trademark rights.
 
 ## TED materials and live exercises
 
