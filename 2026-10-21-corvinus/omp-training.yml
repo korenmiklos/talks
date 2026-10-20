@@ -1,0 +1,32 @@
+# Launch from the workshop folder:
+# omp --config ./omp-training.yml --no-skills --no-extensions --no-rules
+# Applies only to this launch; does not modify normal Omp settings.
+skills:
+  enabled: false
+advisor:
+  enabled: false
+memory:
+  backend: off
+autolearn:
+  enabled: false
+disabledProviders:
+  - native
+  - omp-plugins
+  - claude
+  - claude-plugins
+  - agent-plugins
+  - codex
+  - agents
+  - gemini
+  - opencode
+  - cursor
+  - windsurf
+  - cline
+  - github
+  - vscode
+  - agents-md
+  - claude-md
+  - custom-context
+  - mcp-json
+  - ssh-json
+  - builtin-defaults
