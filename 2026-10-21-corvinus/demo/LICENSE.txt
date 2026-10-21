@@ -1,0 +1,37 @@
+Code License:
+-------------------------------------------------------------------------------
+MIT License
+
+Copyright (c) 2026
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+Data License and Attribution:
+-------------------------------------------------------------------------------
+The raw TED CSV data included in this repository are published by the European
+Commission (Directorate-General for Internal Market, Industry, Entrepreneurship
+and SMEs) and are reused under Commission Decision 2011/833/EU of 12 December 2011
+on the reuse of Commission documents (OJ L 330, 14.12.2011, p. 39).
+
+Attribution:
+"TED csv dataset (2006-2023), Tenders Electronic Daily, supplement to the
+Official Journal of the European Union. DG Internal Market, Industry,
+Entrepreneurship, and SMEs, European Commission, Brussels."
+Available at: https://data.europa.eu/data/datasets/ted-csv?locale=en

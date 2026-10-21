@@ -302,6 +302,63 @@
   width: 100%;
 }
 
+/* Model versus harness logo slide */
+.model-harness-slide h2 {
+  margin-bottom: 0.75em;
+}
+
+.model-harness-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+}
+
+.model-harness-column {
+  padding: 24px 28px 28px;
+  border: 1px solid var(--x9-border-2);
+  border-radius: 12px 2px 12px 12px;
+  background: var(--x9-bg-raise);
+}
+
+.model-harness-column h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+  margin-bottom: 0.8em;
+  color: #fff;
+  font-size: 1.15em;
+}
+
+.logo-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.model-logo-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.harness-logo-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.logo-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 104px;
+  background: #fff;
+  border-radius: var(--x9-radius);
+}
+
+.model-harness-column .logo-tile img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
 
 /* ============================================================
    TITLE SLIDE

@@ -50,6 +50,8 @@ The old `generate-tradeoff-scatter.py` and `generate-eci-gap.py` scripts referen
 - `table_home_bias.tex` — Regression output from the same.
 - `index.html` — Slide deck outline with Matrix stills and video embeds
 - `css/theme-9x.css` — 9x Academic design system theme from ai-slides-template
+- `Makefile` — `make slides` serves the deck; `make omp` launches the training OMP under the isolated `corvinus-training` profile; `make omp-login` authenticates that profile
+- `demo/` — OMP demo workspace: TED 2023 pipeline (Stata code, raw archive and CSV), no README, so participants build the documentation live
 
 ## Repos Referenced
 

@@ -1,0 +1,3 @@
+# TED 2023 raw/derived data stays local (113 MB zip, 692 MB CSV; exceeds GitHub file limit)
+demo/data/
+demo/output/

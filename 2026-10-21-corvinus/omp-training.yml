@@ -1,6 +1,6 @@
-# Launch from the workshop folder:
-# omp --config ./omp-training.yml --no-skills --no-extensions --no-rules
-# Applies only to this launch; does not modify normal Omp settings.
+# Launch with `make omp`; it runs from demo/ under the isolated corvinus-training profile.
+# Authenticate that profile with `make omp-login`, or set TRAINING_OPENROUTER_API_KEY for one launch.
+# This overlay applies only to the training session and does not modify normal OMP settings.
 skills:
   enabled: false
 advisor:
