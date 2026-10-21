@@ -10,7 +10,7 @@ Checked 2026-10-20 for the Corvinus workshop on 2026-10-21. Existing repository 
 | Logistics deck | Verified the supplied PDF, including pages 13 and 16 |
 | Navier-Stokes image | Extracted exact image and verified original OpenAI post |
 | Open-model catch-up chart | Extracted exact chart and verified Epoch attribution |
-| Cost/capability frontier | Selected original-source alternative; old local chart needs qualification |
+| Cost/capability frontier | Added Artificial Analysis cost- and time-per-task captures (Oct 21, 2026); old local chart still needs qualification |
 | OpenRouter usage, task and speed figures | Selected sources and recorded measurement differences |
 | OpenRouter economics paper | Located and inspected PDF, including Figure 21 and Table 2 |
 | TED code and documentation | Copied existing source code; official codebook located |
