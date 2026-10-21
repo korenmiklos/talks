@@ -29,7 +29,7 @@ Common model-family marks and OpenCode come from [Lobe Icons](https://github.com
 | claude.svg | Lobe Icons claude-color.svg |
 | gemini.svg | Lobe Icons gemini-color.svg |
 | meta.svg | Lobe Icons meta-color.svg |
-| mimo.svg | Lobe Icons xiaomimimo.svg, Xiaomi MiMo mark |
+| mimo.svg | Xiaomi official brand logo (Wikimedia Commons); used as the MiMo provider mark |
 | deepseek.svg | Lobe Icons deepseek-color.svg |
 | glm.svg | Lobe Icons zai.svg, current Z.ai mark |
 | qwen.svg | Lobe Icons qwen-color.svg |
