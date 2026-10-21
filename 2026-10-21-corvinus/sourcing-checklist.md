@@ -22,6 +22,7 @@ Checked 2026-10-20 for the Corvinus workshop on 2026-10-21. Existing repository 
 | Exact Claude/OpenAI model versions | Not established by the sourcing checklist |
 | Personal Zoho One recording | Not located |
 | Loom | Public availability, limits and displayed prices checked; account access not tested |
+| AI-use survey charts | Added from user screenshots; original source not recorded |
 
 ## Existing material and repositories
 
