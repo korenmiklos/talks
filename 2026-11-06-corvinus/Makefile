@@ -13,4 +13,3 @@ README.pdf: README.md ../preamble-slides.tex preamble.tex $(ASSETS)
 
 clean:
 	rm -f README.aux README.log README.nav README.out README.snm README.toc
-

@@ -143,4 +143,3 @@ fontsize: 14pt
 
 <!-- Chat, REPL, notebook, teljes program: példák szóban, vagy később screenshotokkal. -->
 <!-- Zárás: az ingyenes eszközök könnyebb használata különösen az oktatásban számít. -->
-

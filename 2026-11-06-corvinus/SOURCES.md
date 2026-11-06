@@ -70,4 +70,3 @@ Az AI-közvetítés a modellben gyengítheti a fenntartók felhasználói kapcso
 2. A további küldött források és exhibitek beillesztése.
 3. A zárófólia finomítása az előadó hangsúlyai szerint.
 4. Ha kell százalék: a 2024-es nyelvhasználati minta nevezőjének visszakeresése.
-
