@@ -8,26 +8,14 @@ lang: hu-HU
 fontsize: 14pt
 ---
 
-## Miért nyúlok még mindig a Statához?
-
-<!-- Szándékosan csak cím: személyes nyitókérdés, az exhibit később kerülhet ide. -->
-
-## Melyik költség zuhan?
-
-```{=latex}
-\centering
-\includegraphics[height=0.74\textheight,trim=0 350bp 0 155bp,clip,keepaspectratio]{figures/price-of-intelligence.png}
-
-{\tiny Epoch AI, Emberson és Roodman (2026)}
-```
+# How I Learned to Stop Worrying and Love Stata
 
 ## Mit várunk egy elemzői eszköztől?
 
 1. Helyesség és ellenőrizhetőség
+2. Használhatóság
+3. Sebesség
 
-2. Sebesség
-
-3. Használhatóság
 
 ## A Stata kevés kódból sokat mond
 
@@ -38,10 +26,21 @@ fontsize: 14pt
 {\tiny Stata és Pandas. Koren és Kiss, JuliaCon 2024}
 ```
 
-## A Stata egy munkakörnyezet is
+## Kezdi.jl: Stata Juliában
+```{=latex}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{images/kezdi-jl.png}
 
-<!-- TODO: Miklós saját Stata / RStudio screenshotja. -->
-<!-- Az interaktív munkamódról, megszokásról és közösségi normákról szóban. -->
+{\tiny Koren és Kiss, 2024. docs.koren.dev/Kezdi.jl/}
+```
+
+
+## A Stata mint user interface
+
+```{=latex}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{images/stata-ide.png}
+```
 
 ## A Stata tartósan velünk maradt
 
@@ -52,6 +51,21 @@ fontsize: 14pt
 {\tiny Replikációs csomagok, a JuliaCon 2024 előadás ábrája}
 ```
 
+## És nagy a közösség ereje
+
+1. Jó alapértelmezések
+2. Elfogadott közös megoldások
+3. Ellenőrizhető eredmények
+
+
+```{=latex}
+\bigskip
+{\small Koren, Békés, Hinz és Lohmann (2026): \emph{Vibe Coding Kills Open Source}}
+```
+
+
+# How I Learned to Start Worrying and Use Something Else
+
 ## Két újítás, közel tizenkét év
 
 ```{=latex}
@@ -61,7 +75,17 @@ fontsize: 14pt
 {\tiny Spolsky (2003), Stata 14 (2015), Parquet 1.0 (2013), StataNow (2025)}
 ```
 
-## Egy kézzel átmásolt szám
+## A fejlődés sebessége College Station, Texasból is látszik
+
+```{=latex}
+\centering
+\includegraphics[height=0.74\textheight,trim=0 350bp 0 155bp,clip,keepaspectratio]{figures/price-of-intelligence.png}
+
+{\tiny Epoch AI, Emberson és Roodman (2026)}
+```
+
+
+## A sebesség igenis számít
 
 \vfill
 \begin{columns}[c]
@@ -88,57 +112,40 @@ fontsize: 14pt
 \end{columns}
 \vfill
 
-## Ki választja ki a jó megoldást?
 
-1. Jó alapértelmezések
 
-2. Elfogadott közös megoldások
-
-3. Ellenőrizhető eredmények
+## Ha sebesség, akkor DuckDB
 
 ```{=latex}
-\bigskip
-{\small Koren, Békés, Hinz és Lohmann (2026): \emph{Vibe Coding Kills Open Source}}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{images/getdodo-dev.png}
+
+{\small \url{https://getdodo.dev}}
 ```
 
-## A megszokott nyelv, másik motor
-
-\vfill
-\begin{columns}[c]
-\begin{column}{0.43\textwidth}
-\centering
-{\Large Stata}
-
-\medskip
-{\large \texttt{.dta} \quad \texttt{.do}}
-\end{column}
-\begin{column}{0.14\textwidth}
-\centering
-{\Large $\longrightarrow$}
-\end{column}
-\begin{column}{0.43\textwidth}
-\centering
-{\Large DuckDB}
-
-\medskip
-{\large DTA \quad Dodo}
-\end{column}
-\end{columns}
-\vfill
+## Olvass be .dta fájlokat
 
 ```{=latex}
 \centering
-{\small \url{https://getdodo.dev}}
+\includegraphics[width=\textwidth,keepaspectratio]{images/dodo-dta.png}
+
+{\small \url{https://getdodo.dev/dta}}
+```
+
+## Futtass .do fájlokat
+
+```{=latex}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{images/dodo.png}
+
+{\small \url{https://getdodo.dev/dodo}}
 ```
 
 ## Az interfészben van még tér
 
 1. Interaktívabb felület
-
 2. Gyorsabb visszajelzés
-
 3. Áttekinthetőbb műveletek
-
 4. Könnyebb hozzáférés
 
 <!-- Chat, REPL, notebook, teljes program: példák szóban, vagy később screenshotokkal. -->
