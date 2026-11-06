@@ -1,0 +1,30 @@
+\begin{tikzpicture}[x=1cm,y=1cm,font=\sffamily]
+\definecolor{timelinegrey}{RGB}{145,145,145}
+\draw[timelinegrey,line width=0.7pt] (0,0) -- (14,0);
+\coordinate (spolsky) at (0.9,0);
+\coordinate (parquet) at (6.35,0);
+\coordinate (unicode) at (7.45,0);
+\coordinate (import) at (13.1,0);
+\foreach \event in {spolsky,unicode} {
+  \fill[CTred] (\event) circle (2.4pt);
+  \draw[CTred!50,line width=0.7pt] (\event) -- ++(0,0.47);
+}
+\foreach \event in {parquet,import} {
+  \fill[black!75] (\event) circle (2.4pt);
+  \draw[black!35,line width=0.7pt] (\event) -- ++(0,-0.47);
+}
+\node[align=center,text width=3cm,font=\fontsize{11}{14}\selectfont] at (0.9,1.02)
+  {2003\\Spolsky\\Unicode-blogposzt};
+\node[align=center,text width=3cm,font=\fontsize{11}{14}\selectfont] at (7.45,1.02)
+  {2015\\Stata 14\\Unicode};
+\node[align=center,text width=3cm,font=\fontsize{11}{14}\selectfont] at (6.35,-1.02)
+  {2013\\Parquet 1.0\\első kiadás};
+\node[align=center,text width=3cm,font=\fontsize{11}{14}\selectfont] at (13.1,-1.02)
+  {2025\\StataNow\\Parquet-import};
+\draw[->,>=stealth,line width=1.4pt,CTred]
+  (0.9,1.75) .. controls (2.0,2.95) and (6.35,2.95) .. (7.45,1.75);
+\node[fill=white,inner sep=5pt,text=CTred,font=\fontsize{15}{18}\selectfont] at (4.17,2.55) {11,5 év};
+\draw[->,>=stealth,line width=1.4pt,black!75]
+  (6.35,-1.75) .. controls (7.45,-2.95) and (12.0,-2.95) .. (13.1,-1.75);
+\node[fill=white,inner sep=5pt,text=black!75,font=\fontsize{15}{18}\selectfont] at (9.72,-2.55) {12 év};
+\end{tikzpicture}
